@@ -194,7 +194,7 @@ function groupTableHTML(g, { compact = false } = {}) {
       <tbody>${rows}</tbody>
     </table>
   </div>
-  ${played ? "" : `<p class="muted table-note">Orden alfabético hasta que se jueguen partidos. <span style="color:var(--green)">▎1º</span> y <span style="color:var(--blue)">▎2º</span> clasifican directo, <span style="color:var(--gold)">▎3º</span> puede entrar entre los 8 mejores terceros.</p>`}`;
+  ${played ? "" : `<p class="muted table-note">Orden alfabético hasta que se jueguen partidos. <span style="color:var(--green)">▎1º</span> y <span style="color:var(--blue)">▎2º</span> clasifican directo, <span style="color:var(--gold)">▎3º</span> puntúa 1 pt si se acierta el equipo.</p>`}`;
 }
 
 /* ================================ Vistas ================================ */
@@ -204,7 +204,7 @@ function viewHome() {
   const stats = computeGlobalStats(CTX);
   const top3 = ranking.slice(0, 3);
   const leader = ranking[0];
-  const upcoming = CTX.matches.filter((m) => m.status !== "finished").slice(0, 5);
+  const upcoming = CTX.matches.filter((m) => m.status === "pending").slice(0, 5);
   const live = CTX.matches.filter((m) => m.status === "live");
   const anyPoints = leader && leader.breakdown.total > 0;
 
@@ -450,7 +450,7 @@ function viewGrupos(params) {
           <tbody>${predRows}</tbody>
         </table>
       </div>
-      <p class="muted table-note">* El 3º solo puntúa si queda 3º y entra entre los 8 mejores terceros del Mundial.</p>
+      <p class="muted table-note">* El 3º puntúa si queda realmente 3º en su grupo cuando este cierra.</p>
     </div>
   </div>`;
 }

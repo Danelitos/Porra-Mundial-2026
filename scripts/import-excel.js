@@ -359,12 +359,13 @@ for (const file of files) {
     if (!multiTemplate && matches.length) multiTemplate = matches;
     for (const [name, data] of Object.entries(byName)) {
       const conf = overrides[`${file}::${name}`] || {};
+      for (const mid of conf.excludeMatches || []) delete data.preds[mid];
       multiParticipants.push({
         id: conf.id || slugify(conf.name || name),
         name: conf.name || name,
         demo: false,
         source: `${file} → columna ${name}`,
-        pichichi: null,
+        pichichi: conf.pichichi || null,
         predictions: { matches: data.preds, groups: data.groupPicks, knockout: {} },
       });
     }
@@ -387,7 +388,7 @@ for (const file of files) {
   const id = conf.id || slugify(name);
   realParticipants.push({
     id, name, demo: false, source: file,
-    pichichi: pichichi || null,
+    pichichi: pichichi || conf.pichichi || null,
     predictions: { matches: preds, groups: groupPicks, knockout },
   });
   const nPreds = Object.keys(preds).length;
@@ -441,6 +442,32 @@ const realNames = new Set(realParticipants.map((p) => normName(p.name)));
 demos = demos.filter((d) => !realNames.has(normName(d.name.replace(/\s*\(demo\)/i, ""))));
 
 const participants = [...realParticipants, ...demos];
+
+/* --- correcciones de local/visitante (data/matches-corrections.json) ---- */
+// Algunos partidos del Excel tienen el equipo local y visitante invertidos.
+// Esta corrección se aplica tanto a los partidos como a las predicciones,
+// de modo que el motor puntúe con el orden real de local/visitante.
+const corrections = readJSON(path.join(DATA_DIR, "matches-corrections.json"), {});
+const swapIds = new Set(corrections.swapHomeAway || []);
+if (swapIds.size > 0) {
+  for (const m of matches) {
+    if (!swapIds.has(m.id)) continue;
+    [m.home, m.away] = [m.away, m.home];
+    if (m.score) [m.score.home, m.score.away] = [m.score.away, m.score.home];
+  }
+  for (const p of participants) {
+    for (const id of swapIds) {
+      const pred = p.predictions.matches[id];
+      if (!pred) continue;
+      p.predictions.matches[id] = {
+        home: pred.away,
+        away: pred.home,
+        sign: pred.sign === "1" ? "2" : pred.sign === "2" ? "1" : pred.sign,
+      };
+    }
+  }
+  console.log(`  🔄 Local/visitante corregidos en: ${[...swapIds].sort().join(", ")}`);
+}
 
 /* --- tournament.json: estado real del torneo (se conserva si existe) --- */
 
