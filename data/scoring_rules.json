@@ -19,7 +19,7 @@
     "champion": 15
   },
   "bonus": {
-    "pichichi": 5
+    "pichichi": 20
   },
   "tiebreakers": ["points", "exactCount", "signCount", "groupPicks", "name"],
   "tiebreakersLabels": {
@@ -39,8 +39,7 @@
         { "label": "⚠️ Nota", "value": "Si el marcador exacto ya implica el signo correcto, se suman ambos (3 + 1 = 4 pts)" },
         { "label": "Acertar el 1º del grupo", "value": "4 pts × 12 grupos" },
         { "label": "Acertar el 2º del grupo", "value": "2 pts × 12 grupos" },
-        { "label": "Acertar un 3º que pasa a 1/16", "value": "1 pt × 8 posibles = máx. 8 pts" },
-        { "label": "¿Por qué los terceros?", "value": "En este Mundial pasan los 2 primeros de cada grupo + los 8 MEJORES TERCEROS de los 12 grupos. Adivinar cuál de los 12 terceros se cuela entre los 8 elegidos vale 1 punto." }
+        { "label": "Acertar el 3º del grupo", "value": "1 pt × 12 grupos = máx. 12 pts" }
       ]
     },
     {
@@ -60,7 +59,7 @@
       "section": "Bonus",
       "icon": "🎯",
       "items": [
-        { "label": "Acertar el PICHICHI (máximo goleador) ⚽", "value": "5 pts" }
+        { "label": "Acertar el PICHICHI (máximo goleador) ⚽", "value": "20 pts" }
       ]
     },
     {

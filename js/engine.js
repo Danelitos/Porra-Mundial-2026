@@ -218,20 +218,20 @@ export function computeParticipant(p, ctx, options = {}) {
     groupResults[g.id] = res;
   }
 
-  // Terceros que pasan a 1/16: se sabe al cerrar la fase de grupos (tournament.bestThirds).
+  // Terceros: 1 punto por acertar el 3º de cualquier grupo (cuando el grupo está completo).
   let thirdsPts = 0, thirdsHits = 0;
-  const bestThirds = (!options.skipBonuses && tournament.bestThirds) || [];
-  if (bestThirds.length) {
+  if (!options.skipBonuses) {
     for (const g of groupsData.groups) {
+      if (!isGroupComplete(g.id, matches)) continue;
       const pick = p.predictions.groups[g.id] || {};
-      if (pick.third && bestThirds.includes(pick.third)) {
-        // Solo puntúa si además ese equipo quedó realmente 3º de su grupo.
-        const table = computeGroupTable(g, matches);
-        if (isGroupComplete(g.id, matches) && table[2].teamId === pick.third) {
-          thirdsPts += rules.groupStage.thirdQualifies;
-          thirdsHits++;
-          if (groupResults[g.id]) groupResults[g.id].third = true;
-        }
+      if (!pick.third) continue;
+      const table = computeGroupTable(g, matches);
+      if (table[2] && pick.third === table[2].teamId) {
+        thirdsPts += rules.groupStage.thirdQualifies;
+        thirdsHits++;
+        if (groupResults[g.id]) groupResults[g.id].third = true;
+      } else if (groupResults[g.id] && groupResults[g.id].third == null) {
+        groupResults[g.id].third = false;
       }
     }
   }

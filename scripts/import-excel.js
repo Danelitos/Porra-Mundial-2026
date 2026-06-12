@@ -7,7 +7,10 @@
  *   node scripts/import-excel.js --no-demo   → elimina los participantes demo
  *
  * Qué hace:
- *   1. Lee todos los .xlsx de la carpeta /excels (la plantilla común de la porra).
+ *   1. Lee todos los .xlsx de la carpeta /excels. Admite dos formatos:
+ *      - Libro individual (la plantilla común): un participante por archivo.
+ *      - Libro multi-participante: todas las porras en columnas (Aaron, Aitor…)
+ *        dentro de cada hoja "Grupo X". Se detecta automáticamente.
  *   2. Extrae pronósticos de los 72 partidos, clasificación prevista de cada
  *      grupo, eliminatorias (fase futura) y pichichi de cada participante.
  *   3. Genera data/participants.json y data/matches.json (calendario oficial).
@@ -19,6 +22,8 @@
  *
  * El nombre se deduce del nombre del archivo. Para personalizarlo, crea
  * excels/participants-config.json:  { "archivo.xlsx": { "name": "Nombre Bonito" } }
+ * Otras opciones por archivo: "id" y "excludeMatches" (ids de partidos que no
+ * puntúan a ese participante, p. ej. por entrar tarde a la porra: ["A1","A2"]).
  */
 
 import XLSX from "xlsx";
@@ -206,6 +211,81 @@ function parseKnockout(wb) {
   return { knockout, pichichi };
 }
 
+/* --------------- libro multi-participante (porras en columnas) --------------- */
+
+/** Fila de partido en formato multi: [jor, local, "vs", visitante, fecha, …triples L/V/± por persona]. */
+function isMultiMatchRow(r) {
+  return typeof r[0] === "number" && typeof r[1] === "string" && String(r[2]).trim().toLowerCase() === "vs";
+}
+
+function isMultiWorkbook(wb) {
+  for (const sheetName of wb.SheetNames) {
+    if (!GROUP_SHEET.test(sheetName)) continue;
+    if (sheetRows(wb, sheetName).some(isMultiMatchRow)) return true;
+  }
+  return false;
+}
+
+/** Extrae todos los participantes de un libro con las porras en columnas. */
+function parseMultiWorkbook(wb) {
+  const byName = {}; // nombre → { preds, groupPicks }
+  const matches = [];
+
+  for (const sheetName of wb.SheetNames) {
+    const m = sheetName.match(GROUP_SHEET);
+    if (!m) continue;
+    const groupId = m[1].toUpperCase();
+    const rows = sheetRows(wb, sheetName);
+
+    // Cabecera "JOR. | LOCAL | VS | VISITANTE | FECHA | <persona> …": cada
+    // persona ocupa 3 columnas (L, V, ±) a partir de la columna 5.
+    const header = rows.find((r) => typeof r[0] === "string" && r[0].trim().toUpperCase().startsWith("JOR"));
+    if (!header) continue;
+    const cols = {};
+    header.forEach((v, i) => {
+      if (i >= 5 && typeof v === "string" && v.trim() && !v.toUpperCase().includes("RESULTADO")) cols[v.trim()] = i;
+    });
+
+    let idx = 0;
+    for (const r of rows) {
+      if (isMultiMatchRow(r)) {
+        idx++;
+        const matchId = `${groupId}${idx}`;
+        matches.push({
+          id: matchId, group: groupId, matchday: r[0],
+          home: resolveTeam(r[1], groupsData),
+          away: resolveTeam(r[3], groupsData),
+          date: toISO(r[4], null),
+        });
+        for (const [name, c] of Object.entries(cols)) {
+          const p = (byName[name] ||= { preds: {}, groupPicks: {} });
+          const h = typeof r[c] === "number" ? r[c] : null;
+          const a = typeof r[c + 1] === "number" ? r[c + 1] : null;
+          const sign = normSign(r[c + 2]);
+          if (h != null && a != null) p.preds[matchId] = { home: h, away: a, sign: sign || signOf(h, a) };
+          else if (sign) p.preds[matchId] = { home: null, away: null, sign };
+        }
+      }
+      // Clasificación prevista: filas "🥇 1º" / "🥈 2º" / "🥉 3º".
+      const label = typeof r[0] === "string" ? r[0].trim() : "";
+      const pos = label.endsWith("1º") ? "first" : label.endsWith("2º") ? "second" : label.endsWith("3º") ? "third" : null;
+      if (pos) {
+        for (const [name, c] of Object.entries(cols)) {
+          const team = resolveTeam(r[c], groupsData);
+          if (team) (((byName[name] ||= { preds: {}, groupPicks: {} }).groupPicks)[groupId] ||= {})[pos] = team;
+        }
+      }
+    }
+  }
+  return { byName, matches };
+}
+
+/** Mismo participante con nombre corto/largo ("Roberto" ≈ "Roberto Alonso"). */
+function isSamePerson(a, b) {
+  const x = normName(a), y = normName(b);
+  return x === y || x.startsWith(y) || y.startsWith(x);
+}
+
 /* -------------------------- participantes demo -------------------------- */
 
 const DEMO_NAMES = ["Lucía", "Marcos", "Aitor", "Nerea", "Iker", "Paula", "Unai", "Carmen", "Hugo", "Sara"];
@@ -265,12 +345,33 @@ if (!files.length) {
 const overrides = readJSON(path.join(EXCELS_DIR, "participants-config.json"), {});
 
 let matchTemplate = null; // del primer libro: define los 72 partidos
+let multiTemplate = null; // plantilla de un libro multi (sin fechas): solo de respaldo
 let venues = {};
 const realParticipants = [];
+const multiParticipants = [];
 
 for (const file of files) {
   const full = path.join(EXCELS_DIR, file);
   const wb = XLSX.readFile(full);
+
+  if (isMultiWorkbook(wb)) {
+    const { byName, matches } = parseMultiWorkbook(wb);
+    if (!multiTemplate && matches.length) multiTemplate = matches;
+    for (const [name, data] of Object.entries(byName)) {
+      const conf = overrides[`${file}::${name}`] || {};
+      multiParticipants.push({
+        id: conf.id || slugify(conf.name || name),
+        name: conf.name || name,
+        demo: false,
+        source: `${file} → columna ${name}`,
+        pichichi: null,
+        predictions: { matches: data.preds, groups: data.groupPicks, knockout: {} },
+      });
+    }
+    console.log(`  📚 ${file}  →  libro multi-participante con ${Object.keys(byName).length} personas`);
+    continue;
+  }
+
   const { matches, preds, groupPicks } = parseGroupSheets(wb);
   const { knockout, pichichi } = parseKnockout(wb);
 
@@ -280,6 +381,8 @@ for (const file of files) {
   }
 
   const conf = overrides[file] || {};
+  // Partidos que no puntúan a este participante (p. ej. entró tarde a la porra).
+  for (const mid of conf.excludeMatches || []) delete preds[mid];
   const name = conf.name || nameFromFilename(file);
   const id = conf.id || slugify(name);
   realParticipants.push({
@@ -291,6 +394,18 @@ for (const file of files) {
   console.log(`  👤 ${name}  (${file})  →  ${nPreds}/72 pronósticos, pichichi: ${pichichi || "—"}`);
 }
 
+// Personas del libro multi que no llegaron también como Excel individual
+// (el individual gana: trae además pichichi y eliminatorias).
+for (const mp of multiParticipants) {
+  const dup = realParticipants.find((p) => isSamePerson(p.name, mp.name));
+  if (dup) {
+    console.log(`  ↩ ${mp.name}: ya importado como "${dup.name}" desde su Excel individual, se omite la columna.`);
+    continue;
+  }
+  realParticipants.push(mp);
+}
+
+if (!matchTemplate) matchTemplate = multiTemplate;
 if (!matchTemplate) {
   console.error("Ningún Excel contiene hojas de grupo válidas.");
   process.exit(1);
