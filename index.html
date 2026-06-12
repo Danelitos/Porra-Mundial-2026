@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Porra Mundial 2026 ⚽</title>
+  <title>Porra Mundial 2026</title>
   <meta name="description" content="Porra privada del Mundial FIFA 2026 — clasificación, pronósticos y estadísticas en directo." />
   <meta name="theme-color" content="#070d1a" />
   <link rel="manifest" href="manifest.json" />
@@ -13,6 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/lucide@0.462.0/dist/umd/lucide.min.js" defer></script>
 </head>
 <body>
   <div class="bg-glow" aria-hidden="true"></div>
@@ -27,46 +28,42 @@
       <span id="livesync" class="livesync" title="Sincronización de resultados"></span>
     </a>
     <nav class="mainnav" id="mainnav">
-      <a href="#/" data-route="home">Inicio</a>
-      <a href="#/ranking" data-route="ranking">Ranking</a>
-      <a href="#/participantes" data-route="participantes">Participantes</a>
-      <a href="#/grupos" data-route="grupos">Grupos</a>
-      <a href="#/resultados" data-route="resultados">Resultados</a>
-      <a href="#/escenarios" data-route="escenarios">Escenarios</a>
-      <a href="#/comparador" data-route="comparador">Comparador</a>
-      <a href="#/reglas" data-route="reglas">Reglas</a>
+      <a href="#/" data-route="home"><i data-lucide="house"></i>Inicio</a>
+      <a href="#/ranking" data-route="ranking"><i data-lucide="trophy"></i>Ranking</a>
+      <a href="#/participantes" data-route="participantes"><i data-lucide="users"></i>Participantes</a>
+      <a href="#/grupos" data-route="grupos"><i data-lucide="layout-grid"></i>Grupos</a>
+      <a href="#/resultados" data-route="resultados"><i data-lucide="calendar-days"></i>Partidos</a>
+      <a href="#/reglas" data-route="reglas"><i data-lucide="scroll-text"></i>Reglas</a>
     </nav>
-    <button class="iconbtn" id="sharebtn" title="Compartir">⤴</button>
+    <button class="iconbtn" id="sharebtn" title="Compartir" aria-label="Compartir"><i data-lucide="share-2"></i></button>
   </header>
 
   <main id="view" class="view">
     <div class="loading">
-      <div class="ball">⚽</div>
+      <div class="spinner" aria-hidden="true"></div>
       <p>Cargando la porra…</p>
     </div>
   </main>
 
   <nav class="bottomnav" id="bottomnav">
-    <a href="#/" data-route="home"><span>🏠</span>Inicio</a>
-    <a href="#/ranking" data-route="ranking"><span>🏅</span>Ranking</a>
-    <a href="#/grupos" data-route="grupos"><span>⚽</span>Grupos</a>
-    <a href="#/resultados" data-route="resultados"><span>📅</span>Partidos</a>
-    <button type="button" id="morebtn" aria-haspopup="dialog" aria-controls="more-sheet"><span>☰</span>Más</button>
+    <a href="#/" data-route="home"><span><i data-lucide="house"></i></span>Inicio</a>
+    <a href="#/ranking" data-route="ranking"><span><i data-lucide="trophy"></i></span>Ranking</a>
+    <a href="#/grupos" data-route="grupos"><span><i data-lucide="layout-grid"></i></span>Grupos</a>
+    <a href="#/resultados" data-route="resultados"><span><i data-lucide="calendar-days"></i></span>Partidos</a>
+    <button type="button" id="morebtn" aria-haspopup="dialog" aria-controls="more-sheet"><span><i data-lucide="menu"></i></span>Más</button>
   </nav>
 
   <div class="sheet-backdrop" id="sheet-backdrop" hidden></div>
   <div class="sheet" id="more-sheet" role="dialog" aria-modal="true" aria-label="Más secciones" hidden>
     <div class="sheet-handle" aria-hidden="true"></div>
     <nav class="sheet-links">
-      <a href="#/participantes" data-route="participantes"><span>👥</span><span class="tx"><b>Participantes</b><small>Las porras de toda la peña</small></span></a>
-      <a href="#/escenarios" data-route="escenarios"><span>🎯</span><span class="tx"><b>Escenarios</b><small>Qué necesita cada uno para ganar</small></span></a>
-      <a href="#/comparador" data-route="comparador"><span>⚔️</span><span class="tx"><b>Comparador</b><small>Cara a cara entre dos porristas</small></span></a>
-      <a href="#/reglas" data-route="reglas"><span>📜</span><span class="tx"><b>Reglas</b><small>Cómo se puntúa la porra</small></span></a>
+      <a href="#/participantes" data-route="participantes"><span><i data-lucide="users"></i></span><span class="tx"><b>Participantes</b><small>Las porras de toda la peña</small></span></a>
+      <a href="#/reglas" data-route="reglas"><span><i data-lucide="scroll-text"></i></span><span class="tx"><b>Reglas</b><small>Cómo se puntúa la porra</small></span></a>
     </nav>
   </div>
 
   <footer class="footer">
-    <p>Porra privada Mundial FIFA 2026 · hecha con ⚽ y JavaScript · <span id="footer-updated"></span></p>
+    <p>Porra privada Mundial FIFA 2026 · <span id="footer-updated"></span></p>
   </footer>
 
   <script type="module" src="app.js"></script>

@@ -9,7 +9,7 @@
  * Sube CACHE_VERSION al publicar cambios para invalidar cachés antiguas.
  */
 
-const CACHE_VERSION = "porra2026-v3";
+const CACHE_VERSION = "porra2026-v4";
 const SHELL = [
   "./",
   "./index.html",
@@ -21,6 +21,7 @@ const SHELL = [
   "./manifest.json",
   "./assets/logo.svg",
   "./assets/icon.svg",
+  "https://unpkg.com/lucide@0.462.0/dist/umd/lucide.min.js",
 ];
 
 self.addEventListener("install", (e) => {
@@ -61,7 +62,7 @@ self.addEventListener("fetch", (e) => {
       (hit) =>
         hit ||
         fetch(e.request).then((res) => {
-          if (res.ok && (url.origin === location.origin || url.hostname.includes("gstatic") || url.hostname.includes("googleapis"))) {
+          if (res.ok && (url.origin === location.origin || url.hostname.includes("gstatic") || url.hostname.includes("googleapis") || url.hostname === "unpkg.com")) {
             const copy = res.clone();
             caches.open(CACHE_VERSION).then((c) => c.put(e.request, copy));
           }

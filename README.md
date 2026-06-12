@@ -3,7 +3,7 @@
 Web privada para seguir nuestra porra del Mundial FIFA 2026 (USA · México · Canadá).
 100 % estática: HTML + CSS + JavaScript ES6, sin backend, lista para **GitHub Pages**.
 
-> 🏅 Ranking en vivo · 🔮 Pronósticos de cada participante · ⚽ Clasificación automática de grupos · 📈 Estadísticas y escenarios · 📱 PWA instalable
+> 🏅 Ranking en vivo · 🔮 Pronósticos de cada participante · ⚽ Clasificación automática de grupos · 📈 Estadísticas y evolución · 📱 PWA instalable
 
 ---
 
@@ -110,7 +110,7 @@ Desempates (configurables): más exactos → más signos → más aciertos de gr
 
 ```
 index.html            Shell de la aplicación (SPA con rutas #/)
-styles.css            Diseño: modo oscuro, glassmorphism, responsive
+styles.css            Diseño: modo oscuro, iconos Lucide, responsive
 app.js                Vistas y router
 js/engine.js          Motor de puntuación (compartido web + Node)
 data/
