@@ -146,4 +146,4 @@ La arquitectura ya lo soporta sin rehacer nada:
 
 `assets/logo.svg` es el **emblema oficial del Mundial 2026** (trofeo sobre el "26",
 obtenido de Wikipedia). Es una marca de FIFA usada aquí solo con fines personales en
-una porra privada. `assets/logo-alt.svg` conserva el logo alternativo propio.
+una porra privada.
