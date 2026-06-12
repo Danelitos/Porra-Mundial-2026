@@ -1,0 +1,22 @@
+{
+  "name": "porra-mundial-2026",
+  "version": "1.0.0",
+  "description": "Porra privada del Mundial FIFA 2026 — web estática para GitHub Pages",
+  "type": "module",
+  "scripts": {
+    "import": "node scripts/import-excel.js",
+    "result": "node scripts/update-result.js",
+    "sync": "node scripts/sync-results.js",
+    "serve": "npx serve -l 8080 ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Danelitos/Porra-Mundial-2026.git"
+  },
+  "homepage": "https://github.com/Danelitos/Porra-Mundial-2026#readme",
+  "author": "Danel",
+  "license": "MIT",
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  }
+}

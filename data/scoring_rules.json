@@ -1,0 +1,76 @@
+{
+  "porraName": "Porra Mundial 2026",
+  "edition": "USA · México · Canadá | 11 junio – 19 julio 2026",
+  "groupStage": {
+    "sign": 1,
+    "exact": 3,
+    "exactAddsSign": true,
+    "groupWinner": 4,
+    "groupSecond": 2,
+    "thirdQualifies": 1
+  },
+  "knockout": {
+    "r32": 2,
+    "r16": 3,
+    "qf": 4,
+    "sf": 5,
+    "thirdPlace": 6,
+    "runnerUp": 8,
+    "champion": 15
+  },
+  "bonus": {
+    "pichichi": 5
+  },
+  "tiebreakers": ["points", "exactCount", "signCount", "groupPicks", "name"],
+  "tiebreakersLabels": {
+    "points": "Más puntos totales",
+    "exactCount": "Más marcadores exactos acertados",
+    "signCount": "Más signos (1·X·2) acertados",
+    "groupPicks": "Más aciertos en clasificación de grupos",
+    "name": "Orden alfabético (último recurso)"
+  },
+  "rulesDisplay": [
+    {
+      "section": "Fase de Grupos",
+      "icon": "⚽",
+      "items": [
+        { "label": "Signo correcto (1, X o 2)", "value": "1 punto × 72 partidos = máx. 72 pts" },
+        { "label": "Marcador exacto (ej: 2-1)", "value": "3 puntos × 72 partidos = máx. 216 pts" },
+        { "label": "⚠️ Nota", "value": "Si el marcador exacto ya implica el signo correcto, se suman ambos (3 + 1 = 4 pts)" },
+        { "label": "Acertar el 1º del grupo", "value": "4 pts × 12 grupos" },
+        { "label": "Acertar el 2º del grupo", "value": "2 pts × 12 grupos" },
+        { "label": "Acertar un 3º que pasa a 1/16", "value": "1 pt × 8 posibles = máx. 8 pts" },
+        { "label": "¿Por qué los terceros?", "value": "En este Mundial pasan los 2 primeros de cada grupo + los 8 MEJORES TERCEROS de los 12 grupos. Adivinar cuál de los 12 terceros se cuela entre los 8 elegidos vale 1 punto." }
+      ]
+    },
+    {
+      "section": "Fase Eliminatoria",
+      "icon": "🔮",
+      "items": [
+        { "label": "Acertar clasificado en 1/16 de final", "value": "2 pts por acierto" },
+        { "label": "Acertar clasificado en octavos", "value": "3 pts por acierto" },
+        { "label": "Acertar clasificado en cuartos", "value": "4 pts por acierto" },
+        { "label": "Acertar finalista (semifinales)", "value": "5 pts por acierto" },
+        { "label": "Acertar ganador del 3er puesto", "value": "6 pts" },
+        { "label": "Acertar el SUBCAMPEÓN", "value": "8 pts" },
+        { "label": "Acertar el CAMPEÓN DEL MUNDO 🏆", "value": "15 pts" }
+      ]
+    },
+    {
+      "section": "Bonus",
+      "icon": "🎯",
+      "items": [
+        { "label": "Acertar el PICHICHI (máximo goleador) ⚽", "value": "5 pts" }
+      ]
+    },
+    {
+      "section": "Desempates",
+      "icon": "⚖️",
+      "items": [
+        { "label": "1º criterio", "value": "Más marcadores exactos acertados" },
+        { "label": "2º criterio", "value": "Más signos (1·X·2) acertados" },
+        { "label": "3º criterio", "value": "Más aciertos en clasificación de grupos" }
+      ]
+    }
+  ]
+}

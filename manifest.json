@@ -1,0 +1,26 @@
+{
+  "name": "Porra Mundial 2026",
+  "short_name": "Porra 2026",
+  "description": "Porra privada del Mundial FIFA 2026 — ranking, pronósticos y estadísticas",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#070d1a",
+  "theme_color": "#070d1a",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

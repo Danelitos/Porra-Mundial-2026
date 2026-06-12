@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Porra Mundial 2026 ⚽</title>
+  <meta name="description" content="Porra privada del Mundial FIFA 2026 — clasificación, pronósticos y estadísticas en directo." />
+  <meta name="theme-color" content="#070d1a" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/icon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#/">
+      <img src="assets/logo.svg" alt="Mundial 2026" class="brand-logo" />
+      <span class="brand-text">
+        <strong>Porra Mundial</strong>
+        <em>2026 · USA · MEX · CAN</em>
+      </span>
+      <span id="livesync" class="livesync" title="Sincronización de resultados"></span>
+    </a>
+    <nav class="mainnav" id="mainnav">
+      <a href="#/" data-route="home">Inicio</a>
+      <a href="#/ranking" data-route="ranking">Ranking</a>
+      <a href="#/participantes" data-route="participantes">Participantes</a>
+      <a href="#/grupos" data-route="grupos">Grupos</a>
+      <a href="#/resultados" data-route="resultados">Resultados</a>
+      <a href="#/escenarios" data-route="escenarios">Escenarios</a>
+      <a href="#/comparador" data-route="comparador">Comparador</a>
+      <a href="#/reglas" data-route="reglas">Reglas</a>
+    </nav>
+    <button class="iconbtn" id="sharebtn" title="Compartir">⤴</button>
+  </header>
+
+  <main id="view" class="view">
+    <div class="loading">
+      <div class="ball">⚽</div>
+      <p>Cargando la porra…</p>
+    </div>
+  </main>
+
+  <nav class="bottomnav" id="bottomnav">
+    <a href="#/" data-route="home"><span>🏠</span>Inicio</a>
+    <a href="#/ranking" data-route="ranking"><span>🏅</span>Ranking</a>
+    <a href="#/grupos" data-route="grupos"><span>⚽</span>Grupos</a>
+    <a href="#/resultados" data-route="resultados"><span>📅</span>Partidos</a>
+    <button type="button" id="morebtn" aria-haspopup="dialog" aria-controls="more-sheet"><span>☰</span>Más</button>
+  </nav>
+
+  <div class="sheet-backdrop" id="sheet-backdrop" hidden></div>
+  <div class="sheet" id="more-sheet" role="dialog" aria-modal="true" aria-label="Más secciones" hidden>
+    <div class="sheet-handle" aria-hidden="true"></div>
+    <nav class="sheet-links">
+      <a href="#/participantes" data-route="participantes"><span>👥</span><span class="tx"><b>Participantes</b><small>Las porras de toda la peña</small></span></a>
+      <a href="#/escenarios" data-route="escenarios"><span>🎯</span><span class="tx"><b>Escenarios</b><small>Qué necesita cada uno para ganar</small></span></a>
+      <a href="#/comparador" data-route="comparador"><span>⚔️</span><span class="tx"><b>Comparador</b><small>Cara a cara entre dos porristas</small></span></a>
+      <a href="#/reglas" data-route="reglas"><span>📜</span><span class="tx"><b>Reglas</b><small>Cómo se puntúa la porra</small></span></a>
+    </nav>
+  </div>
+
+  <footer class="footer">
+    <p>Porra privada Mundial FIFA 2026 · hecha con ⚽ y JavaScript · <span id="footer-updated"></span></p>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
