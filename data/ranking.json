@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-13T09:42:33.834Z",
+  "lastUpdated": "2026-06-13T21:42:45.788Z",
   "ranking": [
     {
       "position": 1,
@@ -210,6 +210,20 @@
       "total": 1,
       "exactHits": 0,
       "signHits": 1
+    },
+    {
+      "position": 16,
+      "id": "david",
+      "name": "David",
+      "demo": false,
+      "signPts": 0,
+      "exactPts": 0,
+      "groupPickPts": 0,
+      "thirdsPts": 0,
+      "pichichiPts": 0,
+      "total": 0,
+      "exactHits": 0,
+      "signHits": 0
     },
     {
       "position": 16,
