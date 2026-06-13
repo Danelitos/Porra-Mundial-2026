@@ -14,6 +14,20 @@ import { startLive, liveStatus } from "./js/live.js";
 
 let CTX = null;
 
+/* Memoización de los cálculos pesados (ranking, evolución, estadísticas).
+   Se cachean por "versión" de CTX.matches: live.js sustituye ese array al
+   sincronizar, así que el WeakMap invalida la caché solo cuando hay datos
+   nuevos. Resultado: navegar entre pestañas no recalcula nada. */
+const _memo = new WeakMap();
+function memo(key, fn) {
+  let cache = _memo.get(CTX.matches);
+  if (!cache) { cache = {}; _memo.set(CTX.matches, cache); }
+  return key in cache ? cache[key] : (cache[key] = fn());
+}
+const rankingOf = () => memo("ranking", () => computeRanking(CTX));
+const evolutionOf = () => memo("evolution", () => computeEvolution(CTX));
+const globalStatsOf = () => memo("stats", () => computeGlobalStats(CTX));
+
 const $view = document.getElementById("view");
 const PALETTE = ["#21c469", "#f5c343", "#4da3ff", "#ff5d6c", "#b07cff", "#3fd6c5", "#ff9f43", "#e84393", "#74b9ff", "#a3cb38", "#fd79a8", "#81ecec", "#ffeaa7", "#55efc4", "#fab1a0", "#00cec9", "#6c5ce7", "#fdcb6e", "#e17055", "#00b894"];
 
@@ -101,7 +115,7 @@ function matchCard(m, { showVenue = true } = {}) {
 
 /** Variación de posición respecto al día anterior. */
 function positionDeltas() {
-  const evo = computeEvolution(CTX);
+  const evo = evolutionOf();
   if (evo.length < 2) return {};
   const prev = evo[evo.length - 2].standings;
   const cur = evo[evo.length - 1].standings;
@@ -200,8 +214,8 @@ function groupTableHTML(g, { compact = false } = {}) {
 /* ================================ Vistas ================================ */
 
 function viewHome() {
-  const ranking = computeRanking(CTX);
-  const stats = computeGlobalStats(CTX);
+  const ranking = rankingOf();
+  const stats = globalStatsOf();
   const top3 = ranking.slice(0, 3);
   const leader = ranking[0];
   const upcoming = CTX.matches.filter((m) => m.status === "pending").slice(0, 5);
@@ -263,12 +277,12 @@ function viewHome() {
   </div>
 
   ${sectionTitle("chart-line", "Evolución de la porra")}
-  ${evolutionChart(computeEvolution(CTX))}
+  ${evolutionChart(evolutionOf())}
   `;
 }
 
 function viewRanking() {
-  const ranking = computeRanking(CTX);
+  const ranking = rankingOf();
   const deltas = positionDeltas();
   return `
   <div class="page-head">
@@ -284,7 +298,7 @@ function viewRanking() {
 }
 
 function viewParticipantes() {
-  const ranking = computeRanking(CTX);
+  const ranking = rankingOf();
   const cards = ranking.map((r) => `
     <a class="card hover participant-card" href="#/perfil/${esc(r.id)}" data-name="${esc(r.name.toLowerCase())}">
       ${avatarHTML(r.name, { size: "lg", demo: r.demo })}
@@ -304,12 +318,12 @@ function viewParticipantes() {
 function viewPerfil(id) {
   const p = CTX.participants.find((x) => x.id === id);
   if (!p) return `<div class="card">No existe ese participante. <a href="#/participantes">Volver</a></div>`;
-  const ranking = computeRanking(CTX);
+  const ranking = rankingOf();
   const r = ranking.find((x) => x.id === id);
   const b = r.breakdown, s = r.stats;
 
   // Evolución individual de la posición.
-  const evo = computeEvolution(CTX);
+  const evo = evolutionOf();
   const myEvo = evo.map((c) => ({ label: c.label, ...c.standings.find((st) => st.id === id) }));
 
   // Pronósticos agrupados por grupo.
@@ -407,7 +421,7 @@ function viewGrupos(params) {
   const sel = (params.get("g") || "A").toUpperCase();
   const g = CTX.groupsData.groups.find((x) => x.id === sel) || CTX.groupsData.groups[0];
   const complete = isGroupComplete(g.id, CTX.matches);
-  const ranking = computeRanking(CTX);
+  const ranking = rankingOf();
 
   const chips = CTX.groupsData.groups.map((x) =>
     `<a class="chip ${x.id === g.id ? "active" : ""}" href="#/grupos?g=${x.id}">${x.id === "H" ? "H 🇪🇸" : x.id}</a>`).join("");

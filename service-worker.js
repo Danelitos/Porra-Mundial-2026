@@ -3,13 +3,14 @@
  *
  * Estrategia:
  *  - App shell (HTML/CSS/JS/assets): cache-first con precarga.
- *  - data/*.json: network-first (los resultados cambian) con caché de respaldo.
+ *  - data/*.json: stale-while-revalidate — responde al instante con la caché
+ *    y actualiza en segundo plano (los marcadores en vivo los refresca live.js).
  *  - Fuentes de Google: cache-first en tiempo de ejecución.
  *
  * Sube CACHE_VERSION al publicar cambios para invalidar cachés antiguas.
  */
 
-const CACHE_VERSION = "porra2026-v4";
+const CACHE_VERSION = "porra2026-v5";
 const SHELL = [
   "./",
   "./index.html",
@@ -42,16 +43,21 @@ self.addEventListener("fetch", (e) => {
   const url = new URL(e.request.url);
   if (e.request.method !== "GET") return;
 
-  // Datos: red primero, caché como respaldo offline.
+  // Datos: stale-while-revalidate. Responde de inmediato con la copia en caché
+  // (carga instantánea al entrar) y refresca en segundo plano para la próxima vez.
   if (url.pathname.includes("/data/") && url.pathname.endsWith(".json")) {
     e.respondWith(
-      fetch(e.request)
-        .then((res) => {
-          const copy = res.clone();
-          caches.open(CACHE_VERSION).then((c) => c.put(e.request, copy));
-          return res;
-        })
-        .catch(() => caches.match(e.request))
+      caches.open(CACHE_VERSION).then(async (cache) => {
+        const cached = await cache.match(e.request);
+        const network = fetch(e.request)
+          .then((res) => {
+            if (res && res.ok) cache.put(e.request, res.clone());
+            return res;
+          })
+          .catch(() => cached);
+        // Si hay caché, la servimos ya; si no, esperamos a la red.
+        return cached || network;
+      })
     );
     return;
   }

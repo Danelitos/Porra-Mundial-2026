@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-12T21:30:00.000Z",
+  "lastUpdated": "2026-06-13T09:42:33.834Z",
   "participants": [
     {
       "id": "aitor",
@@ -7550,139 +7550,1005 @@
       "pichichi": "Harry Kane",
       "predictions": {
         "matches": {
-          "A1": { "home": 3, "away": 1, "sign": "1" },
-          "A2": { "home": 2, "away": 2, "sign": "2" },
-          "A3": { "home": 1, "away": 0, "sign": "1" },
-          "A4": { "home": 0, "away": 1, "sign": "X" },
-          "A5": { "home": 0, "away": 2, "sign": "2" },
-          "A6": { "home": 0, "away": 3, "sign": "2" },
-          "B1": { "home": 0, "away": 1, "sign": "2" },
-          "B2": { "home": 1, "away": 4, "sign": "2" },
-          "B3": { "home": 1, "away": 1, "sign": "2" },
-          "B4": { "home": 3, "away": 2, "sign": "X" },
-          "B5": { "home": 1, "away": 0, "sign": "X" },
-          "B6": { "home": 3, "away": 0, "sign": "1" },
-          "C1": { "home": 4, "away": 1, "sign": "1" },
-          "C2": { "home": 0, "away": 3, "sign": "2" },
-          "C3": { "home": 5, "away": 0, "sign": "1" },
-          "C4": { "home": 3, "away": 2, "sign": "1" },
-          "C5": { "home": 2, "away": 0, "sign": "1" },
-          "C6": { "home": 1, "away": 2, "sign": "2" },
-          "D1": { "home": 0, "away": 2, "sign": "2" },
-          "D2": { "home": 2, "away": 2, "sign": "2" },
-          "D3": { "home": 1, "away": 3, "sign": "X" },
-          "D4": { "home": 2, "away": 3, "sign": "X" },
-          "D5": { "home": 2, "away": 1, "sign": "1" },
-          "D6": { "home": 3, "away": 0, "sign": "1" },
-          "E1": { "home": 4, "away": 0, "sign": "1" },
-          "E2": { "home": 1, "away": 3, "sign": "2" },
-          "E3": { "home": 2, "away": 0, "sign": "1" },
-          "E4": { "home": 1, "away": 0, "sign": "X" },
-          "E5": { "home": 1, "away": 1, "sign": "2" },
-          "E6": { "home": 0, "away": 0, "sign": "2" },
-          "F1": { "home": 2, "away": 1, "sign": "1" },
-          "F2": { "home": 0, "away": 2, "sign": "2" },
-          "F3": { "home": 1, "away": 1, "sign": "2" },
-          "F4": { "home": 2, "away": 0, "sign": "1" },
-          "F5": { "home": 0, "away": 1, "sign": "2" },
-          "F6": { "home": 3, "away": 1, "sign": "X" },
-          "G1": { "home": 2, "away": 1, "sign": "1" },
-          "G2": { "home": 0, "away": 3, "sign": "2" },
-          "G3": { "home": 2, "away": 0, "sign": "1" },
-          "G4": { "home": 2, "away": 2, "sign": "2" },
-          "G5": { "home": 1, "away": 2, "sign": "1" },
-          "G6": { "home": 2, "away": 0, "sign": "1" },
-          "H1": { "home": 2, "away": 1, "sign": "1" },
-          "H2": { "home": 0, "away": 3, "sign": "2" },
-          "H3": { "home": 2, "away": 0, "sign": "1" },
-          "H4": { "home": 3, "away": 1, "sign": "1" },
-          "H5": { "home": 2, "away": 2, "sign": "1" },
-          "H6": { "home": 1, "away": 0, "sign": "X" },
-          "I1": { "home": 4, "away": 1, "sign": "1" },
-          "I2": { "home": 0, "away": 3, "sign": "2" },
-          "I3": { "home": 3, "away": 1, "sign": "1" },
-          "I4": { "home": 3, "away": 0, "sign": "1" },
-          "I5": { "home": 1, "away": 0, "sign": "X" },
-          "I6": { "home": 0, "away": 2, "sign": "1" },
-          "J1": { "home": 3, "away": 1, "sign": "1" },
-          "J2": { "home": 0, "away": 0, "sign": "2" },
-          "J3": { "home": 2, "away": 0, "sign": "1" },
-          "J4": { "home": 3, "away": 1, "sign": "X" },
-          "J5": { "home": 2, "away": 4, "sign": "2" },
-          "J6": { "home": 2, "away": 0, "sign": "X" },
-          "K1": { "home": 4, "away": 0, "sign": "1" },
-          "K2": { "home": 2, "away": 3, "sign": "2" },
-          "K3": { "home": 2, "away": 0, "sign": "1" },
-          "K4": { "home": 1, "away": 3, "sign": "X" },
-          "K5": { "home": 1, "away": 2, "sign": "X" },
-          "K6": { "home": 0, "away": 0, "sign": "1" },
-          "L1": { "home": 1, "away": 1, "sign": "1" },
-          "L2": { "home": 0, "away": 1, "sign": "2" },
-          "L3": { "home": 3, "away": 1, "sign": "1" },
-          "L4": { "home": 2, "away": 2, "sign": "2" },
-          "L5": { "home": 0, "away": 1, "sign": "2" },
-          "L6": { "home": 4, "away": 0, "sign": "1" }
+          "A1": {
+            "home": 3,
+            "away": 1,
+            "sign": "1"
+          },
+          "A2": {
+            "home": 2,
+            "away": 2,
+            "sign": "2"
+          },
+          "A3": {
+            "home": 1,
+            "away": 0,
+            "sign": "1"
+          },
+          "A4": {
+            "home": 0,
+            "away": 1,
+            "sign": "X"
+          },
+          "A5": {
+            "home": 0,
+            "away": 2,
+            "sign": "2"
+          },
+          "A6": {
+            "home": 0,
+            "away": 3,
+            "sign": "2"
+          },
+          "B1": {
+            "home": 0,
+            "away": 1,
+            "sign": "2"
+          },
+          "B2": {
+            "home": 1,
+            "away": 4,
+            "sign": "2"
+          },
+          "B3": {
+            "home": 1,
+            "away": 1,
+            "sign": "2"
+          },
+          "B4": {
+            "home": 3,
+            "away": 2,
+            "sign": "X"
+          },
+          "B5": {
+            "home": 1,
+            "away": 0,
+            "sign": "X"
+          },
+          "B6": {
+            "home": 3,
+            "away": 0,
+            "sign": "1"
+          },
+          "C1": {
+            "home": 4,
+            "away": 1,
+            "sign": "1"
+          },
+          "C2": {
+            "home": 0,
+            "away": 3,
+            "sign": "2"
+          },
+          "C3": {
+            "home": 5,
+            "away": 0,
+            "sign": "1"
+          },
+          "C4": {
+            "home": 3,
+            "away": 2,
+            "sign": "1"
+          },
+          "C5": {
+            "home": 2,
+            "away": 0,
+            "sign": "1"
+          },
+          "C6": {
+            "home": 1,
+            "away": 2,
+            "sign": "2"
+          },
+          "D1": {
+            "home": 0,
+            "away": 2,
+            "sign": "2"
+          },
+          "D2": {
+            "home": 2,
+            "away": 2,
+            "sign": "2"
+          },
+          "D3": {
+            "home": 1,
+            "away": 3,
+            "sign": "X"
+          },
+          "D4": {
+            "home": 2,
+            "away": 3,
+            "sign": "X"
+          },
+          "D5": {
+            "home": 2,
+            "away": 1,
+            "sign": "1"
+          },
+          "D6": {
+            "home": 3,
+            "away": 0,
+            "sign": "1"
+          },
+          "E1": {
+            "home": 4,
+            "away": 0,
+            "sign": "1"
+          },
+          "E2": {
+            "home": 1,
+            "away": 3,
+            "sign": "2"
+          },
+          "E3": {
+            "home": 2,
+            "away": 0,
+            "sign": "1"
+          },
+          "E4": {
+            "home": 1,
+            "away": 0,
+            "sign": "X"
+          },
+          "E5": {
+            "home": 1,
+            "away": 1,
+            "sign": "2"
+          },
+          "E6": {
+            "home": 0,
+            "away": 0,
+            "sign": "2"
+          },
+          "F1": {
+            "home": 2,
+            "away": 1,
+            "sign": "1"
+          },
+          "F2": {
+            "home": 0,
+            "away": 2,
+            "sign": "2"
+          },
+          "F3": {
+            "home": 1,
+            "away": 1,
+            "sign": "2"
+          },
+          "F4": {
+            "home": 2,
+            "away": 0,
+            "sign": "1"
+          },
+          "F5": {
+            "home": 0,
+            "away": 1,
+            "sign": "2"
+          },
+          "F6": {
+            "home": 3,
+            "away": 1,
+            "sign": "X"
+          },
+          "G1": {
+            "home": 2,
+            "away": 1,
+            "sign": "1"
+          },
+          "G2": {
+            "home": 0,
+            "away": 3,
+            "sign": "2"
+          },
+          "G3": {
+            "home": 2,
+            "away": 0,
+            "sign": "1"
+          },
+          "G4": {
+            "home": 2,
+            "away": 2,
+            "sign": "2"
+          },
+          "G5": {
+            "home": 1,
+            "away": 2,
+            "sign": "1"
+          },
+          "G6": {
+            "home": 2,
+            "away": 0,
+            "sign": "1"
+          },
+          "H1": {
+            "home": 2,
+            "away": 1,
+            "sign": "1"
+          },
+          "H2": {
+            "home": 0,
+            "away": 3,
+            "sign": "2"
+          },
+          "H3": {
+            "home": 2,
+            "away": 0,
+            "sign": "1"
+          },
+          "H4": {
+            "home": 3,
+            "away": 1,
+            "sign": "1"
+          },
+          "H5": {
+            "home": 2,
+            "away": 2,
+            "sign": "1"
+          },
+          "H6": {
+            "home": 1,
+            "away": 0,
+            "sign": "X"
+          },
+          "I1": {
+            "home": 4,
+            "away": 1,
+            "sign": "1"
+          },
+          "I2": {
+            "home": 0,
+            "away": 3,
+            "sign": "2"
+          },
+          "I3": {
+            "home": 3,
+            "away": 1,
+            "sign": "1"
+          },
+          "I4": {
+            "home": 3,
+            "away": 0,
+            "sign": "1"
+          },
+          "I5": {
+            "home": 1,
+            "away": 0,
+            "sign": "X"
+          },
+          "I6": {
+            "home": 0,
+            "away": 2,
+            "sign": "1"
+          },
+          "J1": {
+            "home": 3,
+            "away": 1,
+            "sign": "1"
+          },
+          "J2": {
+            "home": 0,
+            "away": 0,
+            "sign": "2"
+          },
+          "J3": {
+            "home": 2,
+            "away": 0,
+            "sign": "1"
+          },
+          "J4": {
+            "home": 3,
+            "away": 1,
+            "sign": "X"
+          },
+          "J5": {
+            "home": 2,
+            "away": 4,
+            "sign": "2"
+          },
+          "J6": {
+            "home": 2,
+            "away": 0,
+            "sign": "X"
+          },
+          "K1": {
+            "home": 4,
+            "away": 0,
+            "sign": "1"
+          },
+          "K2": {
+            "home": 2,
+            "away": 3,
+            "sign": "2"
+          },
+          "K3": {
+            "home": 2,
+            "away": 0,
+            "sign": "1"
+          },
+          "K4": {
+            "home": 1,
+            "away": 3,
+            "sign": "X"
+          },
+          "K5": {
+            "home": 1,
+            "away": 2,
+            "sign": "X"
+          },
+          "K6": {
+            "home": 0,
+            "away": 0,
+            "sign": "1"
+          },
+          "L1": {
+            "home": 1,
+            "away": 1,
+            "sign": "1"
+          },
+          "L2": {
+            "home": 0,
+            "away": 1,
+            "sign": "2"
+          },
+          "L3": {
+            "home": 3,
+            "away": 1,
+            "sign": "1"
+          },
+          "L4": {
+            "home": 2,
+            "away": 2,
+            "sign": "2"
+          },
+          "L5": {
+            "home": 0,
+            "away": 1,
+            "sign": "2"
+          },
+          "L6": {
+            "home": 4,
+            "away": 0,
+            "sign": "1"
+          }
         },
         "groups": {
-          "A": { "first": "MEX", "second": "KOR", "third": "CZE" },
-          "B": { "first": "SUI", "second": "BIH", "third": "CAN" },
-          "C": { "first": "BRA", "second": "SCO", "third": "MAR" },
-          "D": { "first": "PAR", "second": "TUR", "third": "USA" },
-          "E": { "first": "GER", "second": "ECU", "third": "CUW" },
-          "F": { "first": "NED", "second": "SWE", "third": "JPN" },
-          "G": { "first": "BEL", "second": "NZL", "third": "EGY" },
-          "H": { "first": "URU", "second": "ESP", "third": "CPV" },
-          "I": { "first": "NOR", "second": "FRA", "third": "SEN" },
-          "J": { "first": "ARG", "second": "AUT", "third": "JOR" },
-          "K": { "first": "POR", "second": "COL", "third": "COD" },
-          "L": { "first": "ENG", "second": "CRO", "third": "PAN" }
+          "A": {
+            "first": "MEX",
+            "second": "KOR",
+            "third": "CZE"
+          },
+          "B": {
+            "first": "SUI",
+            "second": "BIH",
+            "third": "CAN"
+          },
+          "C": {
+            "first": "BRA",
+            "second": "SCO",
+            "third": "MAR"
+          },
+          "D": {
+            "first": "PAR",
+            "second": "TUR",
+            "third": "USA"
+          },
+          "E": {
+            "first": "GER",
+            "second": "ECU",
+            "third": "CUW"
+          },
+          "F": {
+            "first": "NED",
+            "second": "SWE",
+            "third": "JPN"
+          },
+          "G": {
+            "first": "BEL",
+            "second": "NZL",
+            "third": "EGY"
+          },
+          "H": {
+            "first": "URU",
+            "second": "ESP",
+            "third": "CPV"
+          },
+          "I": {
+            "first": "NOR",
+            "second": "FRA",
+            "third": "SEN"
+          },
+          "J": {
+            "first": "ARG",
+            "second": "AUT",
+            "third": "JOR"
+          },
+          "K": {
+            "first": "POR",
+            "second": "COL",
+            "third": "COD"
+          },
+          "L": {
+            "first": "ENG",
+            "second": "CRO",
+            "third": "PAN"
+          }
         },
         "knockout": {
           "r32": [
-            { "home": "KOR", "away": "BIH" },
-            { "home": "GER", "away": "USA" },
-            { "home": "NED", "away": "SCO" },
-            { "home": "BRA", "away": "SWE" },
-            { "home": "NOR", "away": "JPN" },
-            { "home": "ECU", "away": "FRA" },
-            { "home": "MEX", "away": "SEN" },
-            { "home": "ENG", "away": "COD" },
-            { "home": "PAR", "away": "CAN" },
-            { "home": "BEL", "away": "CZE" },
-            { "home": "COL", "away": "CRO" },
-            { "home": "URU", "away": "AUT" },
-            { "home": "SUI", "away": "EGY" },
-            { "home": "ARG", "away": "ESP" },
-            { "home": "POR", "away": "PAN" },
-            { "home": "TUR", "away": "NZL" }
+            {
+              "home": "KOR",
+              "away": "BIH"
+            },
+            {
+              "home": "GER",
+              "away": "USA"
+            },
+            {
+              "home": "NED",
+              "away": "SCO"
+            },
+            {
+              "home": "BRA",
+              "away": "SWE"
+            },
+            {
+              "home": "NOR",
+              "away": "JPN"
+            },
+            {
+              "home": "ECU",
+              "away": "FRA"
+            },
+            {
+              "home": "MEX",
+              "away": "SEN"
+            },
+            {
+              "home": "ENG",
+              "away": "COD"
+            },
+            {
+              "home": "PAR",
+              "away": "CAN"
+            },
+            {
+              "home": "BEL",
+              "away": "CZE"
+            },
+            {
+              "home": "COL",
+              "away": "CRO"
+            },
+            {
+              "home": "URU",
+              "away": "AUT"
+            },
+            {
+              "home": "SUI",
+              "away": "EGY"
+            },
+            {
+              "home": "ARG",
+              "away": "ESP"
+            },
+            {
+              "home": "POR",
+              "away": "PAN"
+            },
+            {
+              "home": "TUR",
+              "away": "NZL"
+            }
           ],
           "r16": [
-            { "home": "GER", "away": "NOR" },
-            { "home": "BIH", "away": "NED" },
-            { "home": "BRA", "away": "FRA" },
-            { "home": "MEX", "away": "ENG" },
-            { "home": "CRO", "away": "URU" },
-            { "home": "PAR", "away": "CZE" },
-            { "home": "ESP", "away": "TUR" },
-            { "home": "EGY", "away": "POR" }
+            {
+              "home": "GER",
+              "away": "NOR"
+            },
+            {
+              "home": "BIH",
+              "away": "NED"
+            },
+            {
+              "home": "BRA",
+              "away": "FRA"
+            },
+            {
+              "home": "MEX",
+              "away": "ENG"
+            },
+            {
+              "home": "CRO",
+              "away": "URU"
+            },
+            {
+              "home": "PAR",
+              "away": "CZE"
+            },
+            {
+              "home": "ESP",
+              "away": "TUR"
+            },
+            {
+              "home": "EGY",
+              "away": "POR"
+            }
           ],
           "qf": [
-            { "home": "GER", "away": "NED" },
-            { "home": "CRO", "away": "CZE" },
-            { "home": "BRA", "away": "ENG" },
-            { "home": "ESP", "away": "POR" }
+            {
+              "home": "GER",
+              "away": "NED"
+            },
+            {
+              "home": "CRO",
+              "away": "CZE"
+            },
+            {
+              "home": "BRA",
+              "away": "ENG"
+            },
+            {
+              "home": "ESP",
+              "away": "POR"
+            }
           ],
           "sf": [
-            { "home": "NED", "away": "CRO" },
-            { "home": "ENG", "away": "ESP" }
+            {
+              "home": "NED",
+              "away": "CRO"
+            },
+            {
+              "home": "ENG",
+              "away": "ESP"
+            }
           ],
           "thirdPlace": [
-            { "home": "NED", "away": "ESP" }
+            {
+              "home": "NED",
+              "away": "ESP"
+            }
           ],
           "final": [
-            { "home": "CRO", "away": "ENG" }
+            {
+              "home": "CRO",
+              "away": "ENG"
+            }
           ]
         }
+      }
+    },
+    {
+      "id": "xabi",
+      "name": "Xabi",
+      "demo": false,
+      "source": "PORRA MUNDIAL 2026 v2.xlsx → columna Xabi",
+      "pichichi": null,
+      "predictions": {
+        "matches": {
+          "A1": {
+            "home": 2,
+            "away": 0,
+            "sign": "1"
+          },
+          "A2": {
+            "home": 1,
+            "away": 1,
+            "sign": "X"
+          },
+          "A3": {
+            "home": 1,
+            "away": 1,
+            "sign": "X"
+          },
+          "A4": {
+            "home": 1,
+            "away": 0,
+            "sign": "1"
+          },
+          "A5": {
+            "home": 2,
+            "away": 1,
+            "sign": "1"
+          },
+          "A6": {
+            "home": 1,
+            "away": 1,
+            "sign": "X"
+          },
+          "B1": {
+            "home": 2,
+            "away": 1,
+            "sign": "1"
+          },
+          "B2": {
+            "home": 0,
+            "away": 2,
+            "sign": "2"
+          },
+          "B3": {
+            "home": 1,
+            "away": 0,
+            "sign": "1"
+          },
+          "B4": {
+            "home": 2,
+            "away": 1,
+            "sign": "1"
+          },
+          "B5": {
+            "home": 2,
+            "away": 1,
+            "sign": "1"
+          },
+          "B6": {
+            "home": 1,
+            "away": 1,
+            "sign": "X"
+          },
+          "C1": {
+            "home": 2,
+            "away": 1,
+            "sign": "1"
+          },
+          "C2": {
+            "home": 0,
+            "away": 2,
+            "sign": "2"
+          },
+          "C3": {
+            "home": 4,
+            "away": 0,
+            "sign": "1"
+          },
+          "C4": {
+            "home": 1,
+            "away": 1,
+            "sign": "X"
+          },
+          "C5": {
+            "home": 3,
+            "away": 0,
+            "sign": "1"
+          },
+          "C6": {
+            "home": 1,
+            "away": 3,
+            "sign": "2"
+          },
+          "D1": {
+            "home": 1,
+            "away": 1,
+            "sign": "X"
+          },
+          "D2": {
+            "home": 1,
+            "away": 3,
+            "sign": "2"
+          },
+          "D3": {
+            "home": 1,
+            "away": 0,
+            "sign": "1"
+          },
+          "D4": {
+            "home": 2,
+            "away": 2,
+            "sign": "X"
+          },
+          "D5": {
+            "home": 1,
+            "away": 1,
+            "sign": "X"
+          },
+          "D6": {
+            "home": 2,
+            "away": 0,
+            "sign": "1"
+          },
+          "E1": {
+            "home": 6,
+            "away": 0,
+            "sign": "1"
+          },
+          "E2": {
+            "home": 0,
+            "away": 1,
+            "sign": "2"
+          },
+          "E3": {
+            "home": 2,
+            "away": 1,
+            "sign": "1"
+          },
+          "E4": {
+            "home": 4,
+            "away": 0,
+            "sign": "1"
+          },
+          "E5": {
+            "home": 1,
+            "away": 1,
+            "sign": "X"
+          },
+          "E6": {
+            "home": 0,
+            "away": 4,
+            "sign": "2"
+          },
+          "F1": {
+            "home": 3,
+            "away": 2,
+            "sign": "1"
+          },
+          "F2": {
+            "home": 1,
+            "away": 0,
+            "sign": "1"
+          },
+          "F3": {
+            "home": 2,
+            "away": 1,
+            "sign": "1"
+          },
+          "F4": {
+            "home": 1,
+            "away": 2,
+            "sign": "2"
+          },
+          "F5": {
+            "home": 1,
+            "away": 3,
+            "sign": "2"
+          },
+          "F6": {
+            "home": 1,
+            "away": 1,
+            "sign": "X"
+          },
+          "G1": {
+            "home": 2,
+            "away": 0,
+            "sign": "1"
+          },
+          "G2": {
+            "home": 1,
+            "away": 0,
+            "sign": "1"
+          },
+          "G3": {
+            "home": 2,
+            "away": 0,
+            "sign": "1"
+          },
+          "G4": {
+            "home": 0,
+            "away": 1,
+            "sign": "2"
+          },
+          "G5": {
+            "home": 0,
+            "away": 3,
+            "sign": "2"
+          },
+          "G6": {
+            "home": 1,
+            "away": 1,
+            "sign": "X"
+          },
+          "H1": {
+            "home": 5,
+            "away": 0,
+            "sign": "1"
+          },
+          "H2": {
+            "home": 0,
+            "away": 1,
+            "sign": "2"
+          },
+          "H3": {
+            "home": 3,
+            "away": 0,
+            "sign": "1"
+          },
+          "H4": {
+            "home": 4,
+            "away": 0,
+            "sign": "1"
+          },
+          "H5": {
+            "home": 1,
+            "away": 2,
+            "sign": "2"
+          },
+          "H6": {
+            "home": 0,
+            "away": 2,
+            "sign": "2"
+          },
+          "I1": {
+            "home": 2,
+            "away": 0,
+            "sign": "1"
+          },
+          "I2": {
+            "home": 1,
+            "away": 3,
+            "sign": "2"
+          },
+          "I3": {
+            "home": 3,
+            "away": 0,
+            "sign": "1"
+          },
+          "I4": {
+            "home": 1,
+            "away": 1,
+            "sign": "X"
+          },
+          "I5": {
+            "home": 1,
+            "away": 2,
+            "sign": "2"
+          },
+          "I6": {
+            "home": 2,
+            "away": 0,
+            "sign": "1"
+          },
+          "J1": {
+            "home": 3,
+            "away": 0,
+            "sign": "1"
+          },
+          "J2": {
+            "home": 2,
+            "away": 0,
+            "sign": "1"
+          },
+          "J3": {
+            "home": 2,
+            "away": 0,
+            "sign": "1"
+          },
+          "J4": {
+            "home": 0,
+            "away": 1,
+            "sign": "2"
+          },
+          "J5": {
+            "home": 0,
+            "away": 3,
+            "sign": "2"
+          },
+          "J6": {
+            "home": 1,
+            "away": 1,
+            "sign": "X"
+          },
+          "K1": {
+            "home": 2,
+            "away": 0,
+            "sign": "1"
+          },
+          "K2": {
+            "home": 0,
+            "away": 2,
+            "sign": "1"
+          },
+          "K3": {
+            "home": 3,
+            "away": 0,
+            "sign": "1"
+          },
+          "K4": {
+            "home": 2,
+            "away": 1,
+            "sign": "1"
+          },
+          "K5": {
+            "home": 1,
+            "away": 1,
+            "sign": "X"
+          },
+          "K6": {
+            "home": 1,
+            "away": 0,
+            "sign": "1"
+          },
+          "L1": {
+            "home": 2,
+            "away": 2,
+            "sign": "X"
+          },
+          "L2": {
+            "home": 1,
+            "away": 0,
+            "sign": "1"
+          },
+          "L3": {
+            "home": 2,
+            "away": 1,
+            "sign": "1"
+          },
+          "L4": {
+            "home": 1,
+            "away": 3,
+            "sign": "2"
+          },
+          "L5": {
+            "home": 0,
+            "away": 2,
+            "sign": "2"
+          },
+          "L6": {
+            "home": 1,
+            "away": 1,
+            "sign": "X"
+          }
+        },
+        "groups": {
+          "A": {
+            "first": "CZE",
+            "second": "MEX",
+            "third": "KOR"
+          },
+          "B": {
+            "first": "SUI",
+            "second": "CAN",
+            "third": "BIH"
+          },
+          "C": {
+            "first": "BRA",
+            "second": "MAR",
+            "third": "SCO"
+          },
+          "D": {
+            "first": "TUR",
+            "second": "PAR",
+            "third": "USA"
+          },
+          "E": {
+            "first": "GER",
+            "second": "ECU",
+            "third": "CIV"
+          },
+          "F": {
+            "first": "NED",
+            "second": "JPN",
+            "third": "SWE"
+          },
+          "G": {
+            "first": "BEL",
+            "second": "IRN",
+            "third": "EGY"
+          },
+          "H": {
+            "first": "ESP",
+            "second": "URU",
+            "third": "KSA"
+          },
+          "I": {
+            "first": "FRA",
+            "second": "NOR",
+            "third": "SEN"
+          },
+          "J": {
+            "first": "ARG",
+            "second": "AUT",
+            "third": "ALG"
+          },
+          "K": {
+            "first": "POR",
+            "second": "COL",
+            "third": "COD"
+          },
+          "L": {
+            "first": "ENG",
+            "second": "CRO",
+            "third": "GHA"
+          }
+        },
+        "knockout": {}
       }
     }
   ]
