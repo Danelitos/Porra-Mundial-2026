@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-14T09:21:44.308Z",
+  "lastUpdated": "2026-06-14T19:21:33.415Z",
   "matches": [
     {
       "id": "A1",
@@ -126,8 +126,12 @@
       "away": "CUW",
       "date": "2026-06-14T19:00:00+02:00",
       "venue": "NRG Stadium, Houston",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 7,
+        "away": 1
+      },
+      "status": "finished",
+      "minute": null
     },
     {
       "id": "F1",

@@ -14,7 +14,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { buildContext, computeRanking, computeGlobalStats } from "../js/engine.js";
-import { dayURL, mapEventsToUpdates, applyUpdates } from "../js/livesource.js";
+import { dayURL, relevantDates, mapEventsToUpdates, applyUpdates } from "../js/livesource.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DATA = (f) => path.join(ROOT, "data", f);
@@ -27,22 +27,47 @@ const matchesFile = readJSON("matches.json");
 const participantsFile = readJSON("participants.json");
 const tournament = readJSON("tournament.json");
 
-// Todas las fechas (UTC) que aparecen en el calendario: consultamos día a día
-// porque el endpoint por jornada devuelve como máximo 5 eventos con la clave
-// gratuita (y cada jornada tiene 24 partidos).
-const allDates = [...new Set(
-  matchesFile.matches.map((m) => new Date(m.date).toISOString().slice(0, 10))
-)].sort();
+// Por defecto solo consultamos los días "relevantes" (partidos no finalizados
+// que ya se jugaron o empiezan en las próximas ~36 h): así el job automático no
+// machaca la API con los 39 días del calendario en cada pasada. Con `--all` se
+// fuerza un resincronizado completo (útil para backfill manual).
+//
+// Consultamos día a día (eventsday.php), no por jornada, porque el endpoint por
+// jornada devuelve como máximo 5 eventos con la clave gratuita (y cada jornada
+// del Mundial tiene 24 partidos).
+const FULL = process.argv.includes("--all");
+const allDates = FULL
+  ? [...new Set(matchesFile.matches.map((m) => new Date(m.date).toISOString().slice(0, 10)))].sort()
+  : relevantDates(matchesFile.matches);
 
-console.log(`🔄 Consultando TheSportsDB (Mundial 2026, ${allDates.length} días)…`);
+if (!allDates.length) {
+  console.log("✔ No hay partidos pendientes que sondear ahora mismo.");
+  process.exit(0);
+}
 
+console.log(`🔄 Consultando TheSportsDB (Mundial 2026, ${allDates.length} día(s)${FULL ? ", modo completo" : ""})…`);
+
+// Resiliente: si un día concreto falla (timeout, throttle, HTTP != 200) lo
+// saltamos y seguimos con el resto, en vez de tumbar toda la sincronización.
+let failures = 0;
 const eventsArrays = await Promise.all(
   allDates.map(async (d) => {
-    const res = await fetch(dayURL(d));
-    if (!res.ok) throw new Error(`API día ${d}: HTTP ${res.status}`);
-    return (await res.json()).events || [];
+    try {
+      const res = await fetch(dayURL(d), { cache: "no-store" });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return (await res.json()).events || [];
+    } catch (err) {
+      failures++;
+      console.log(`   ⚠ Día ${d}: ${err.message} (saltado)`);
+      return [];
+    }
   })
 );
+
+if (failures === allDates.length) {
+  console.error("✖ La API no respondió en ningún día. Se aborta sin tocar los datos.");
+  process.exit(1);
+}
 
 const total = eventsArrays.reduce((s, e) => s + e.length, 0);
 const { updates, unmatched } = mapEventsToUpdates(eventsArrays, matchesFile.matches, groupsData);

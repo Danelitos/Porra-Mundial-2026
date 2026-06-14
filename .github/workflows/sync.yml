@@ -1,0 +1,54 @@
+name: Sincronizar resultados
+
+# Sincroniza los resultados del Mundial desde TheSportsDB y los guarda en el
+# repo (data/*.json). Al hacer commit sobre main, GitHub Pages republica la web
+# con el ranking ya actualizado. Así nadie depende de que la API responda en su
+# navegador: el navegador solo lee los JSON ya guardados.
+
+on:
+  schedule:
+    # Cada 10 minutos. GitHub puede retrasar los crons bajo carga; para una
+    # porra es más que suficiente. (Solo hace commit si algo cambió.)
+    - cron: "*/10 * * * *"
+  workflow_dispatch: # permite lanzarlo a mano desde la pestaña Actions
+
+# Evita que dos ejecuciones se pisen al hacer push.
+concurrency:
+  group: sync-results
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      # sync-results.js solo usa módulos nativos de Node + ficheros locales,
+      # así que no hace falta `npm install`.
+      - name: Sincronizar
+        run: node scripts/sync-results.js
+
+      - name: Commit y push si hay cambios
+        run: |
+          if [[ -z "$(git status --porcelain data/)" ]]; then
+            echo "Sin cambios; nada que publicar."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git commit -m "Auto-sync resultados ($(date -u '+%Y-%m-%d %H:%M UTC'))"
+          # Reintenta el push si main se movió mientras tanto.
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            echo "Push falló (intento $i), reintentando…"
+            sleep 5
+          done
+          exit 1
