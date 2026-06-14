@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-14T21:28:48.403Z",
+  "lastUpdated": "2026-06-14T22:38:56.723Z",
   "matches": [
     {
       "id": "A1",
@@ -143,9 +143,9 @@
       "venue": "AT&T Stadium, Dallas",
       "score": {
         "home": 2,
-        "away": 1
+        "away": 2
       },
-      "status": "live",
+      "status": "finished",
       "minute": null
     },
     {

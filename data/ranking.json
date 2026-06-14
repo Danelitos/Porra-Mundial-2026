@@ -1,8 +1,22 @@
 {
-  "lastUpdated": "2026-06-14T21:28:48.403Z",
+  "lastUpdated": "2026-06-14T22:38:56.723Z",
   "ranking": [
     {
       "position": 1,
+      "id": "wiki",
+      "name": "Wiki",
+      "demo": false,
+      "signPts": 6,
+      "exactPts": 6,
+      "groupPickPts": 0,
+      "thirdsPts": 0,
+      "pichichiPts": 0,
+      "total": 12,
+      "exactHits": 2,
+      "signHits": 6
+    },
+    {
+      "position": 2,
       "id": "mario",
       "name": "Mario",
       "demo": false,
@@ -16,9 +30,9 @@
       "signHits": 5
     },
     {
-      "position": 1,
-      "id": "wiki",
-      "name": "Wiki",
+      "position": 2,
+      "id": "pablo",
+      "name": "Pablo",
       "demo": false,
       "signPts": 5,
       "exactPts": 6,
@@ -30,23 +44,9 @@
       "signHits": 5
     },
     {
-      "position": 3,
+      "position": 4,
       "id": "coco",
       "name": "Coco",
-      "demo": false,
-      "signPts": 4,
-      "exactPts": 6,
-      "groupPickPts": 0,
-      "thirdsPts": 0,
-      "pichichiPts": 0,
-      "total": 10,
-      "exactHits": 2,
-      "signHits": 4
-    },
-    {
-      "position": 3,
-      "id": "pablo",
-      "name": "Pablo",
       "demo": false,
       "signPts": 4,
       "exactPts": 6,
@@ -62,17 +62,17 @@
       "id": "jaime",
       "name": "Jaime",
       "demo": false,
-      "signPts": 6,
+      "signPts": 7,
       "exactPts": 3,
       "groupPickPts": 0,
       "thirdsPts": 0,
       "pichichiPts": 0,
-      "total": 9,
+      "total": 10,
       "exactHits": 1,
-      "signHits": 6
+      "signHits": 7
     },
     {
-      "position": 5,
+      "position": 6,
       "id": "jonbel",
       "name": "JonBel",
       "demo": false,
@@ -114,7 +114,21 @@
       "signHits": 4
     },
     {
-      "position": 9,
+      "position": 8,
+      "id": "juanlu",
+      "name": "JuanLu",
+      "demo": false,
+      "signPts": 4,
+      "exactPts": 3,
+      "groupPickPts": 0,
+      "thirdsPts": 0,
+      "pichichiPts": 0,
+      "total": 7,
+      "exactHits": 1,
+      "signHits": 4
+    },
+    {
+      "position": 10,
       "id": "danel",
       "name": "Danel",
       "demo": false,
@@ -128,21 +142,7 @@
       "signHits": 3
     },
     {
-      "position": 9,
-      "id": "juanlu",
-      "name": "JuanLu",
-      "demo": false,
-      "signPts": 3,
-      "exactPts": 3,
-      "groupPickPts": 0,
-      "thirdsPts": 0,
-      "pichichiPts": 0,
-      "total": 6,
-      "exactHits": 1,
-      "signHits": 3
-    },
-    {
-      "position": 9,
+      "position": 10,
       "id": "luismi",
       "name": "LuisMi",
       "demo": false,
@@ -156,7 +156,7 @@
       "signHits": 3
     },
     {
-      "position": 9,
+      "position": 10,
       "id": "roberto",
       "name": "Roberto",
       "demo": false,
@@ -170,7 +170,7 @@
       "signHits": 3
     },
     {
-      "position": 9,
+      "position": 10,
       "id": "xabi",
       "name": "Xabi",
       "demo": false,
@@ -184,7 +184,7 @@
       "signHits": 3
     },
     {
-      "position": 9,
+      "position": 10,
       "id": "xabiere",
       "name": "Xabier E.",
       "demo": false,
@@ -227,6 +227,20 @@
     },
     {
       "position": 15,
+      "id": "juanro",
+      "name": "JuanRo",
+      "demo": false,
+      "signPts": 4,
+      "exactPts": 0,
+      "groupPickPts": 0,
+      "thirdsPts": 0,
+      "pichichiPts": 0,
+      "total": 4,
+      "exactHits": 0,
+      "signHits": 4
+    },
+    {
+      "position": 15,
       "id": "txiki",
       "name": "Txiki",
       "demo": false,
@@ -240,7 +254,7 @@
       "signHits": 4
     },
     {
-      "position": 18,
+      "position": 19,
       "id": "ignacio",
       "name": "Ignacio",
       "demo": false,
@@ -254,23 +268,9 @@
       "signHits": 3
     },
     {
-      "position": 18,
+      "position": 19,
       "id": "jokin",
       "name": "Jokin",
-      "demo": false,
-      "signPts": 3,
-      "exactPts": 0,
-      "groupPickPts": 0,
-      "thirdsPts": 0,
-      "pichichiPts": 0,
-      "total": 3,
-      "exactHits": 0,
-      "signHits": 3
-    },
-    {
-      "position": 18,
-      "id": "juanro",
-      "name": "JuanRo",
       "demo": false,
       "signPts": 3,
       "exactPts": 0,
