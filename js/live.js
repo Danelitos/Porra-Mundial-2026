@@ -8,7 +8,7 @@
  * Frecuencia: 60 s si hay partidos en juego, 5 min si no.
  */
 
-import { dayURL, relevantDates, mapEventsToUpdates, applyUpdates } from "./livesource.js";
+import { dayURL, relevantDates, mapEventsToUpdates, applyUpdates, viewStatus } from "./livesource.js";
 
 const POLL_LIVE = 60_000;
 const POLL_IDLE = 300_000;
@@ -57,7 +57,8 @@ export function startLive(ctx, onChange) {
   if (timer) return;
   const tick = async () => {
     await syncOnce(ctx, onChange);
-    const anyLive = ctx.matches.some((m) => m.status === "live");
+    // Sondeo rápido si hay (o debería haber, por hora) algún partido en juego.
+    const anyLive = ctx.matches.some((m) => viewStatus(m) === "live");
     timer = setTimeout(tick, anyLive ? POLL_LIVE : POLL_IDLE);
   };
   tick();

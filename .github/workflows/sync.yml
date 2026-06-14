@@ -1,15 +1,16 @@
 name: Sincronizar resultados
 
-# Sincroniza los resultados del Mundial desde TheSportsDB y los guarda en el
-# repo (data/*.json). Al hacer commit sobre main, GitHub Pages republica la web
-# con el ranking ya actualizado. Así nadie depende de que la API responda en su
-# navegador: el navegador solo lee los JSON ya guardados.
+# Sincroniza los resultados del Mundial desde football-data.org y los guarda en
+# el repo (data/*.json). Al hacer commit sobre main, GitHub Pages republica la
+# web con el ranking ya actualizado. Así nadie depende de que la API responda en
+# su navegador: el navegador solo lee los JSON ya guardados.
 
 on:
   schedule:
-    # Cada 10 minutos. GitHub puede retrasar los crons bajo carga; para una
-    # porra es más que suficiente. (Solo hace commit si algo cambió.)
-    - cron: "*/10 * * * *"
+    # Cada 3 minutos. OJO: GitHub no garantiza la puntualidad de los crons y bajo
+    # carga puede retrasarlos a 5-15 min; es lo máximo que se puede afinar sin
+    # pagar. (Solo hace commit si algo cambió.)
+    - cron: "*/3 * * * *"
   workflow_dispatch: # permite lanzarlo a mano desde la pestaña Actions
 
 # Evita que dos ejecuciones se pisen al hacer push.
@@ -33,6 +34,8 @@ jobs:
       # sync-results.js solo usa módulos nativos de Node + ficheros locales,
       # así que no hace falta `npm install`.
       - name: Sincronizar
+        env:
+          FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN }}
         run: node scripts/sync-results.js
 
       - name: Commit y push si hay cambios

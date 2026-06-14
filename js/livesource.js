@@ -48,6 +48,40 @@ export function relevantDates(matches, now = new Date()) {
   return [...dates].sort();
 }
 
+/** Ventana máxima razonable de un partido desde el saque inicial: 105 min de
+ *  juego + descanso + añadidos + margen ≈ 2 h 30. Pasada esta ventana dejamos
+ *  de inferir "en juego" por hora. */
+export const MATCH_WINDOW_MS = 150 * 60 * 1000;
+
+/**
+ * Estado "de cara a la web". Combina lo guardado / lo recibido de la API con una
+ * inferencia por hora: si ya pasó el saque inicial y el partido aún no está
+ * finalizado, lo mostramos "en juego" AUNQUE la API no lo confirme. Esto evita
+ * depender de que TheSportsDB tenga ese partido en su calendario o de que
+ * actualice su estado en directo (en la clave gratuita no siempre lo hace).
+ */
+export function viewStatus(m, now = Date.now()) {
+  if (m.status === "finished") return "finished";
+  if (m.status === "live") return "live";
+  const t = new Date(m.date).getTime();
+  return now >= t && now < t + MATCH_WINDOW_MS ? "live" : "pending";
+}
+
+/**
+ * Minuto aproximado de un partido en directo, como texto ("23", "Descanso",
+ * "67", "90+"). Si la API nos dio el minuto real, se respeta. Si no, se estima
+ * por la hora de inicio asumiendo un descanso de ~15 min.
+ */
+export function liveMinute(m, now = Date.now()) {
+  if (m.minute) return m.minute;
+  const elapsed = Math.floor((now - new Date(m.date).getTime()) / 60000);
+  if (elapsed < 1) return "1";
+  if (elapsed <= 45) return String(elapsed);
+  if (elapsed <= 60) return "Descanso";
+  if (elapsed <= 105) return String(elapsed - 15); // restamos el descanso
+  return "90+";
+}
+
 /** Estado de TheSportsDB → nuestro estado. */
 export function mapStatus(str) {
   const s = String(str || "").toUpperCase();

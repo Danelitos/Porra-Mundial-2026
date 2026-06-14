@@ -1,20 +1,26 @@
 /**
- * sync-results.js — Sincroniza los resultados reales desde TheSportsDB
+ * sync-results.js — Sincroniza los resultados reales desde football-data.org
  * y los PERSISTE en data/matches.json (+ instantáneas de ranking/estadísticas).
  *
  * Uso:
- *   npm run sync
+ *   FOOTBALL_DATA_TOKEN=xxxx npm run sync
  *
- * La web ya se sincroniza sola en el navegador; este script sirve para dejar
- * los resultados guardados en el repositorio (commit + push), de modo que la
- * web funcione aunque la API caiga y el historial quede versionado.
+ * Usamos football-data.org (no TheSportsDB) porque su plan gratuito devuelve
+ * LOS 72 partidos en una sola llamada, con marcador y estado en directo. La
+ * clave gratuita de TheSportsDB capaba la salida a 3 partidos por día, así que
+ * la mayoría de resultados nunca llegaban. El navegador sigue usando TheSportsDB
+ * (CORS abierto) para el directo inmediato; este script, en el servidor, deja
+ * los resultados completos guardados en el repo (commit + push).
+ *
+ * Token gratuito: https://www.football-data.org/client/register
  */
 
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { buildContext, computeRanking, computeGlobalStats } from "../js/engine.js";
-import { dayURL, relevantDates, mapEventsToUpdates, applyUpdates } from "../js/livesource.js";
+import { applyUpdates } from "../js/livesource.js";
+import { fetchWorldCupMatches, mapFDToUpdates } from "./footballdata.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DATA = (f) => path.join(ROOT, "data", f);
@@ -27,51 +33,20 @@ const matchesFile = readJSON("matches.json");
 const participantsFile = readJSON("participants.json");
 const tournament = readJSON("tournament.json");
 
-// Por defecto solo consultamos los días "relevantes" (partidos no finalizados
-// que ya se jugaron o empiezan en las próximas ~36 h): así el job automático no
-// machaca la API con los 39 días del calendario en cada pasada. Con `--all` se
-// fuerza un resincronizado completo (útil para backfill manual).
-//
-// Consultamos día a día (eventsday.php), no por jornada, porque el endpoint por
-// jornada devuelve como máximo 5 eventos con la clave gratuita (y cada jornada
-// del Mundial tiene 24 partidos).
-const FULL = process.argv.includes("--all");
-const allDates = FULL
-  ? [...new Set(matchesFile.matches.map((m) => new Date(m.date).toISOString().slice(0, 10)))].sort()
-  : relevantDates(matchesFile.matches);
+console.log("🔄 Consultando football-data.org (Mundial 2026, todos los partidos)…");
 
-if (!allDates.length) {
-  console.log("✔ No hay partidos pendientes que sondear ahora mismo.");
-  process.exit(0);
-}
-
-console.log(`🔄 Consultando TheSportsDB (Mundial 2026, ${allDates.length} día(s)${FULL ? ", modo completo" : ""})…`);
-
-// Resiliente: si un día concreto falla (timeout, throttle, HTTP != 200) lo
-// saltamos y seguimos con el resto, en vez de tumbar toda la sincronización.
-let failures = 0;
-const eventsArrays = await Promise.all(
-  allDates.map(async (d) => {
-    try {
-      const res = await fetch(dayURL(d), { cache: "no-store" });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      return (await res.json()).events || [];
-    } catch (err) {
-      failures++;
-      console.log(`   ⚠ Día ${d}: ${err.message} (saltado)`);
-      return [];
-    }
-  })
-);
-
-if (failures === allDates.length) {
-  console.error("✖ La API no respondió en ningún día. Se aborta sin tocar los datos.");
+let fdMatches;
+try {
+  fdMatches = await fetchWorldCupMatches(process.env.FOOTBALL_DATA_TOKEN);
+} catch (err) {
+  console.error(`✖ ${err.message}`);
+  console.error("  No se toca ningún dato. Comprueba el token (FOOTBALL_DATA_TOKEN).");
   process.exit(1);
 }
 
-const total = eventsArrays.reduce((s, e) => s + e.length, 0);
-const { updates, unmatched } = mapEventsToUpdates(eventsArrays, matchesFile.matches, groupsData);
+const { updates, unmatched } = mapFDToUpdates(fdMatches, matchesFile.matches, groupsData);
 const { matches, changed } = applyUpdates(matchesFile.matches, updates);
+const total = fdMatches.length;
 
 console.log(`   ${total} eventos recibidos · ${updates.length} con datos · ${changed} cambios`);
 if (unmatched.length) console.log("   ⚠ Sin emparejar:", unmatched.join(" | "));

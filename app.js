@@ -11,6 +11,7 @@ import {
   isGroupComplete, computeEvolution, computeGlobalStats,
 } from "./js/engine.js";
 import { startLive, liveStatus } from "./js/live.js";
+import { viewStatus, liveMinute } from "./js/livesource.js";
 
 let CTX = null;
 
@@ -24,6 +25,10 @@ function memo(key, fn) {
   if (!cache) { cache = {}; _memo.set(CTX.matches, cache); }
   return key in cache ? cache[key] : (cache[key] = fn());
 }
+/** Firma del estado visible de todos los partidos (para detectar cuándo un
+ *  partido pasa a "en juego"/"finalizado" por hora y conviene repintar). */
+const statusSignature = () => CTX.matches.map((m) => viewStatus(m)).join("");
+
 const rankingOf = () => memo("ranking", () => computeRanking(CTX));
 const evolutionOf = () => memo("evolution", () => computeEvolution(CTX));
 const globalStatsOf = () => memo("stats", () => computeGlobalStats(CTX));
@@ -96,19 +101,21 @@ function sectionTitle(iconName, label) {
 /* ============================== Componentes ============================== */
 
 function matchCard(m, { showVenue = true } = {}) {
-  const score = m.score && m.status !== "pending"
+  const st = viewStatus(m);
+  const score = m.score && st !== "pending"
     ? `${m.score.home} – ${m.score.away}`
     : `<span class="muted">VS</span>`;
-  const minute = m.status === "live" && m.minute ? ` <span class="minute-badge">${esc(m.minute)}′</span>` : "";
+  const min = st === "live" ? liveMinute(m) : null;
+  const minute = min ? ` <span class="minute-badge">${esc(/^\d/.test(min) ? min + "′" : min)}</span>` : "";
   return `
-  <div class="match-card ${m.status === "live" ? "is-live" : ""}">
+  <div class="match-card ${st === "live" ? "is-live" : ""}">
     <div class="team"><span class="flag">${CTX.teamsById[m.home]?.flag || "🏳️"}</span><span class="nm">${esc(CTX.teamsById[m.home]?.name || m.home)}</span></div>
-    <div class="score ${m.status === "pending" ? "pending" : ""}">${score}</div>
+    <div class="score ${st === "pending" ? "pending" : ""}">${score}</div>
     <div class="team right"><span class="nm">${esc(CTX.teamsById[m.away]?.name || m.away)}</span><span class="flag">${CTX.teamsById[m.away]?.flag || "🏳️"}</span></div>
     <div class="meta">
       <span>Grupo ${m.group} · J${m.matchday} · ${fmtDate(m.date)}</span>
       ${showVenue && m.venue ? `<span class="venue">${icon("map-pin")}${esc(m.venue)}</span>` : ""}
-      <span class="status-dot ${m.status}">${STATUS_LABEL[m.status]}${minute}</span>
+      <span class="status-dot ${st}">${STATUS_LABEL[st]}${minute}</span>
     </div>
   </div>`;
 }
@@ -218,8 +225,8 @@ function viewHome() {
   const stats = globalStatsOf();
   const top3 = ranking.slice(0, 3);
   const leader = ranking[0];
-  const upcoming = CTX.matches.filter((m) => m.status === "pending").slice(0, 5);
-  const live = CTX.matches.filter((m) => m.status === "live");
+  const upcoming = CTX.matches.filter((m) => viewStatus(m) === "pending").slice(0, 5);
+  const live = CTX.matches.filter((m) => viewStatus(m) === "live");
   const anyPoints = leader && leader.breakdown.total > 0;
 
   const podium = top3.length === 3 ? `
@@ -474,7 +481,7 @@ function viewResultados(params) {
   const fGroup = (params.get("g") || "").toUpperCase();
 
   let ms = [...CTX.matches];
-  if (fStatus !== "todos") ms = ms.filter((m) => m.status === fStatus);
+  if (fStatus !== "todos") ms = ms.filter((m) => viewStatus(m) === fStatus);
   if (fGroup) ms = ms.filter((m) => m.group === fGroup);
 
   const mkChip = (label, val) =>
@@ -648,6 +655,14 @@ async function boot() {
     });
     setInterval(updateSyncIndicator, 30_000);
     updateSyncIndicator();
+
+    // El estado "en juego" se infiere por la hora de inicio (no depende de la
+    // API), así que repintamos solo cuando algún partido cruza ese umbral.
+    let lastStatusSig = statusSignature();
+    setInterval(() => {
+      const sig = statusSignature();
+      if (sig !== lastStatusSig) { lastStatusSig = sig; render(); }
+    }, 30_000);
   } catch (err) {
     $view.innerHTML = `<div class="card error-card">
       ${icon("triangle-alert", "big")}
