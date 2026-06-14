@@ -14,7 +14,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { buildContext, computeRanking, computeGlobalStats } from "../js/engine.js";
-import { roundURL, GROUP_ROUNDS, mapEventsToUpdates, applyUpdates } from "../js/livesource.js";
+import { dayURL, mapEventsToUpdates, applyUpdates } from "../js/livesource.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DATA = (f) => path.join(ROOT, "data", f);
@@ -27,12 +27,19 @@ const matchesFile = readJSON("matches.json");
 const participantsFile = readJSON("participants.json");
 const tournament = readJSON("tournament.json");
 
-console.log("🔄 Consultando TheSportsDB (Mundial 2026, jornadas 1-3)…");
+// Todas las fechas (UTC) que aparecen en el calendario: consultamos día a día
+// porque el endpoint por jornada devuelve como máximo 5 eventos con la clave
+// gratuita (y cada jornada tiene 24 partidos).
+const allDates = [...new Set(
+  matchesFile.matches.map((m) => new Date(m.date).toISOString().slice(0, 10))
+)].sort();
+
+console.log(`🔄 Consultando TheSportsDB (Mundial 2026, ${allDates.length} días)…`);
 
 const eventsArrays = await Promise.all(
-  GROUP_ROUNDS.map(async (r) => {
-    const res = await fetch(roundURL(r));
-    if (!res.ok) throw new Error(`API jornada ${r}: HTTP ${res.status}`);
+  allDates.map(async (d) => {
+    const res = await fetch(dayURL(d));
+    if (!res.ok) throw new Error(`API día ${d}: HTTP ${res.status}`);
     return (await res.json()).events || [];
   })
 );

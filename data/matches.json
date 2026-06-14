@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-12T20:19:41.984Z",
+  "lastUpdated": "2026-06-14T09:21:44.308Z",
   "matches": [
     {
       "id": "A1",
@@ -37,8 +37,12 @@
       "away": "BIH",
       "date": "2026-06-12T21:00:00+02:00",
       "venue": "BMO Field, Toronto",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 1,
+        "away": 1
+      },
+      "status": "finished",
+      "minute": null
     },
     {
       "id": "D1",
@@ -48,8 +52,12 @@
       "away": "PAR",
       "date": "2026-06-13T03:00:00+02:00",
       "venue": "SoFi Stadium, Los Ángeles",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 4,
+        "away": 1
+      },
+      "status": "finished",
+      "minute": null
     },
     {
       "id": "D2",
@@ -59,8 +67,11 @@
       "away": "TUR",
       "date": "2026-06-13T06:00:00+02:00",
       "venue": "BC Place, Vancouver",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 2,
+        "away": 0
+      },
+      "status": "finished"
     },
     {
       "id": "B2",
@@ -70,8 +81,12 @@
       "away": "SUI",
       "date": "2026-06-13T21:00:00+02:00",
       "venue": "Levi's Stadium, San Francisco",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 1,
+        "away": 1
+      },
+      "status": "finished",
+      "minute": null
     },
     {
       "id": "C1",
@@ -81,8 +96,12 @@
       "away": "MAR",
       "date": "2026-06-14T00:00:00+02:00",
       "venue": "MetLife Stadium, Nueva York/NJ",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 1,
+        "away": 1
+      },
+      "status": "finished",
+      "minute": null
     },
     {
       "id": "C2",
@@ -92,8 +111,12 @@
       "away": "SCO",
       "date": "2026-06-14T03:00:00+02:00",
       "venue": "Gillette Stadium, Boston",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 0,
+        "away": 1
+      },
+      "status": "finished",
+      "minute": null
     },
     {
       "id": "E1",

@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-06-13T21:42:45.788Z",
+  "lastUpdated": "2026-06-14T09:22:22.383Z",
   "participants": 21,
-  "matchesPlayed": 2,
+  "matchesPlayed": 8,
   "matchesTotal": 72,
-  "totalGoals": 5,
-  "avgGoals": 2.5,
-  "totalExactHits": 7,
-  "totalSignHits": 18,
+  "totalGoals": 19,
+  "avgGoals": 2.38,
+  "totalExactHits": 18,
+  "totalSignHits": 59,
   "leader": {
-    "id": "guille",
-    "name": "Guille",
-    "total": 5
+    "id": "mario",
+    "name": "Mario",
+    "total": 10
   }
 }

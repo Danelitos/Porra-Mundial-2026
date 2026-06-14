@@ -8,7 +8,7 @@
  * Frecuencia: 60 s si hay partidos en juego, 5 min si no.
  */
 
-import { roundURL, GROUP_ROUNDS, mapEventsToUpdates, applyUpdates } from "./livesource.js";
+import { dayURL, relevantDates, mapEventsToUpdates, applyUpdates } from "./livesource.js";
 
 const POLL_LIVE = 60_000;
 const POLL_IDLE = 300_000;
@@ -21,8 +21,8 @@ export function liveStatus() {
   return { lastSync, lastError };
 }
 
-async function fetchRound(round) {
-  const res = await fetch(roundURL(round), { cache: "no-store" });
+async function fetchDay(date) {
+  const res = await fetch(dayURL(date), { cache: "no-store" });
   if (!res.ok) throw new Error(`API ${res.status}`);
   const json = await res.json();
   return json.events || [];
@@ -34,7 +34,8 @@ async function fetchRound(round) {
  */
 export async function syncOnce(ctx, onChange) {
   try {
-    const eventsArrays = await Promise.all(GROUP_ROUNDS.map(fetchRound));
+    const dates = relevantDates(ctx.matches);
+    const eventsArrays = await Promise.all(dates.map(fetchDay));
     const { updates } = mapEventsToUpdates(eventsArrays, ctx.matches, ctx.groupsData);
     const { matches, changed } = applyUpdates(ctx.matches, updates);
     lastSync = new Date();

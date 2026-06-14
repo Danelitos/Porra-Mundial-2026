@@ -12,6 +12,11 @@
     "name": "David",
     "excludeMatches": ["A1", "A2", "B1", "B2", "D1"]
   },
+  "Porra_Mundial_2026_Luismi.xlsx": {
+    "name": "LuisMi",
+    "pichichi": "Oyarzabal",
+    "excludeMatches": ["A1", "A2"]
+  },
   "PORRA_MUNDIAL_2026-Ignacio.xlsx::Aaron":  { "pichichi": "Harry Kane" },
   "PORRA_MUNDIAL_2026-Ignacio.xlsx::Coco":   { "pichichi": "Harry Kane" },
   "PORRA_MUNDIAL_2026-Ignacio.xlsx::Danel":  { "pichichi": "Kylian Mbappé" },

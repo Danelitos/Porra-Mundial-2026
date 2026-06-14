@@ -2,8 +2,13 @@
  * livesource.js — Resultados en tiempo real desde TheSportsDB (gratuita, sin clave, CORS abierto).
  *
  * Compartido entre el navegador (js/live.js) y Node (scripts/sync-results.js).
- * Liga: FIFA World Cup (id 4429), temporada 2026. Las jornadas 1-3 cubren
- * los 72 partidos de la fase de grupos.
+ * Liga: FIFA World Cup (id 4429), temporada 2026.
+ *
+ * IMPORTANTE: se consulta POR DÍA (eventsday.php), no por jornada. El endpoint
+ * por jornada (eventsround.php) con la clave gratuita devuelve como máximo 5
+ * eventos, pero cada jornada del Mundial tiene 24 partidos — por eso la mayoría
+ * de partidos jugados nunca se marcaban como finalizados. Consultando por fecha
+ * obtenemos todos los partidos de cada día sin ese tope.
  */
 
 import { resolveTeam } from "./engine.js";
@@ -11,10 +16,36 @@ import { resolveTeam } from "./engine.js";
 export const API_BASE = "https://www.thesportsdb.com/api/v1/json/3";
 export const LEAGUE_ID = 4429;
 export const SEASON = "2026";
-export const GROUP_ROUNDS = [1, 2, 3];
 
-export function roundURL(round) {
-  return `${API_BASE}/eventsround.php?id=${LEAGUE_ID}&r=${round}&s=${SEASON}`;
+/** Margen hacia el futuro: además de los días pasados, sondeamos los partidos
+ *  que arrancan en las próximas ~36 h (para cogerlos en directo). */
+const FUTURE_HORIZON_MS = 36 * 3600 * 1000;
+
+/** URL de los eventos de un día concreto (YYYY-MM-DD, en UTC). */
+export function dayURL(date) {
+  return `${API_BASE}/eventsday.php?d=${date}&l=${LEAGUE_ID}`;
+}
+
+/**
+ * Días (UTC) que conviene sondear: todos los de partidos aún no finalizados que
+ * ya se jugaron o empiezan en las próximas ~36 h. Se incluye el día anterior y
+ * el posterior de cada uno para absorber desfases horarios entre la API y
+ * nuestro calendario. Se reduce solo a medida que los partidos se cierran.
+ */
+export function relevantDates(matches, now = new Date()) {
+  const horizon = now.getTime() + FUTURE_HORIZON_MS;
+  const dates = new Set();
+  for (const m of matches) {
+    if (m.status === "finished") continue;
+    const t = new Date(m.date).getTime();
+    if (t > horizon) continue;
+    const base = new Date(m.date);
+    for (const delta of [-1, 0, 1]) {
+      const d = new Date(base.getTime() + delta * 86_400_000);
+      dates.add(d.toISOString().slice(0, 10));
+    }
+  }
+  return [...dates].sort();
 }
 
 /** Estado de TheSportsDB → nuestro estado. */
