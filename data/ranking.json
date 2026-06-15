@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-15T20:58:55.293Z",
+  "lastUpdated": "2026-06-15T21:03:43.226Z",
   "ranking": [
     {
       "position": 1,
@@ -7,12 +7,12 @@
       "name": "Wiki",
       "demo": false,
       "signPts": 7,
-      "exactPts": 6,
+      "exactPts": 9,
       "groupPickPts": 0,
       "thirdsPts": 0,
       "pichichiPts": 0,
-      "total": 13,
-      "exactHits": 2,
+      "total": 16,
+      "exactHits": 3,
       "signHits": 7
     },
     {
@@ -30,7 +30,21 @@
       "signHits": 6
     },
     {
-      "position": 3,
+      "position": 2,
+      "id": "roberto",
+      "name": "Roberto",
+      "demo": false,
+      "signPts": 6,
+      "exactPts": 6,
+      "groupPickPts": 0,
+      "thirdsPts": 0,
+      "pichichiPts": 0,
+      "total": 12,
+      "exactHits": 2,
+      "signHits": 6
+    },
+    {
+      "position": 4,
       "id": "coco",
       "name": "Coco",
       "demo": false,
@@ -44,7 +58,7 @@
       "signHits": 5
     },
     {
-      "position": 3,
+      "position": 4,
       "id": "mario",
       "name": "Mario",
       "demo": false,
@@ -58,7 +72,7 @@
       "signHits": 5
     },
     {
-      "position": 5,
+      "position": 6,
       "id": "jaime",
       "name": "Jaime",
       "demo": false,
@@ -72,7 +86,7 @@
       "signHits": 8
     },
     {
-      "position": 6,
+      "position": 7,
       "id": "guille",
       "name": "Guille",
       "demo": false,
@@ -86,7 +100,7 @@
       "signHits": 6
     },
     {
-      "position": 6,
+      "position": 7,
       "id": "jonbel",
       "name": "JonBel",
       "demo": false,
@@ -100,7 +114,7 @@
       "signHits": 6
     },
     {
-      "position": 8,
+      "position": 9,
       "id": "jonmo",
       "name": "JonMo",
       "demo": false,
@@ -114,9 +128,9 @@
       "signHits": 5
     },
     {
-      "position": 8,
-      "id": "roberto",
-      "name": "Roberto",
+      "position": 9,
+      "id": "juanlu",
+      "name": "JuanLu",
       "demo": false,
       "signPts": 5,
       "exactPts": 3,
@@ -128,21 +142,7 @@
       "signHits": 5
     },
     {
-      "position": 10,
-      "id": "juanlu",
-      "name": "JuanLu",
-      "demo": false,
-      "signPts": 4,
-      "exactPts": 3,
-      "groupPickPts": 0,
-      "thirdsPts": 0,
-      "pichichiPts": 0,
-      "total": 7,
-      "exactHits": 1,
-      "signHits": 4
-    },
-    {
-      "position": 10,
+      "position": 11,
       "id": "xabi",
       "name": "Xabi",
       "demo": false,
