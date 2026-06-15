@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-15T03:41:21.654Z",
+  "lastUpdated": "2026-06-15T05:02:52.369Z",
   "matches": [
     {
       "id": "A1",
@@ -172,10 +172,10 @@
       "date": "2026-06-15T04:00:00+02:00",
       "venue": "Est. BBVA, Monterrey",
       "score": {
-        "home": 3,
+        "home": 5,
         "away": 1
       },
-      "status": "live",
+      "status": "finished",
       "minute": null
     },
     {

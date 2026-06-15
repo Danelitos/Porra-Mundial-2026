@@ -1,10 +1,24 @@
 {
-  "lastUpdated": "2026-06-15T03:41:21.654Z",
+  "lastUpdated": "2026-06-15T05:02:52.369Z",
   "ranking": [
     {
       "position": 1,
       "id": "wiki",
       "name": "Wiki",
+      "demo": false,
+      "signPts": 7,
+      "exactPts": 6,
+      "groupPickPts": 0,
+      "thirdsPts": 0,
+      "pichichiPts": 0,
+      "total": 13,
+      "exactHits": 2,
+      "signHits": 7
+    },
+    {
+      "position": 2,
+      "id": "pablo",
+      "name": "Pablo",
       "demo": false,
       "signPts": 6,
       "exactPts": 6,
@@ -16,7 +30,21 @@
       "signHits": 6
     },
     {
-      "position": 2,
+      "position": 3,
+      "id": "coco",
+      "name": "Coco",
+      "demo": false,
+      "signPts": 5,
+      "exactPts": 6,
+      "groupPickPts": 0,
+      "thirdsPts": 0,
+      "pichichiPts": 0,
+      "total": 11,
+      "exactHits": 2,
+      "signHits": 5
+    },
+    {
+      "position": 3,
       "id": "mario",
       "name": "Mario",
       "demo": false,
@@ -30,46 +58,32 @@
       "signHits": 5
     },
     {
-      "position": 2,
-      "id": "pablo",
-      "name": "Pablo",
-      "demo": false,
-      "signPts": 5,
-      "exactPts": 6,
-      "groupPickPts": 0,
-      "thirdsPts": 0,
-      "pichichiPts": 0,
-      "total": 11,
-      "exactHits": 2,
-      "signHits": 5
-    },
-    {
-      "position": 4,
-      "id": "coco",
-      "name": "Coco",
-      "demo": false,
-      "signPts": 4,
-      "exactPts": 6,
-      "groupPickPts": 0,
-      "thirdsPts": 0,
-      "pichichiPts": 0,
-      "total": 10,
-      "exactHits": 2,
-      "signHits": 4
-    },
-    {
       "position": 5,
       "id": "jaime",
       "name": "Jaime",
       "demo": false,
-      "signPts": 7,
+      "signPts": 8,
       "exactPts": 3,
       "groupPickPts": 0,
       "thirdsPts": 0,
       "pichichiPts": 0,
-      "total": 10,
+      "total": 11,
       "exactHits": 1,
-      "signHits": 7
+      "signHits": 8
+    },
+    {
+      "position": 6,
+      "id": "guille",
+      "name": "Guille",
+      "demo": false,
+      "signPts": 6,
+      "exactPts": 3,
+      "groupPickPts": 0,
+      "thirdsPts": 0,
+      "pichichiPts": 0,
+      "total": 9,
+      "exactHits": 1,
+      "signHits": 6
     },
     {
       "position": 6,
@@ -86,9 +100,9 @@
       "signHits": 6
     },
     {
-      "position": 7,
-      "id": "guille",
-      "name": "Guille",
+      "position": 8,
+      "id": "jonmo",
+      "name": "JonMo",
       "demo": false,
       "signPts": 5,
       "exactPts": 3,
@@ -101,20 +115,20 @@
     },
     {
       "position": 8,
-      "id": "jonmo",
-      "name": "JonMo",
+      "id": "roberto",
+      "name": "Roberto",
       "demo": false,
-      "signPts": 4,
+      "signPts": 5,
       "exactPts": 3,
       "groupPickPts": 0,
       "thirdsPts": 0,
       "pichichiPts": 0,
-      "total": 7,
+      "total": 8,
       "exactHits": 1,
-      "signHits": 4
+      "signHits": 5
     },
     {
-      "position": 8,
+      "position": 10,
       "id": "juanlu",
       "name": "JuanLu",
       "demo": false,
@@ -128,9 +142,9 @@
       "signHits": 4
     },
     {
-      "position": 8,
-      "id": "roberto",
-      "name": "Roberto",
+      "position": 10,
+      "id": "xabi",
+      "name": "Xabi",
       "demo": false,
       "signPts": 4,
       "exactPts": 3,
@@ -142,7 +156,7 @@
       "signHits": 4
     },
     {
-      "position": 11,
+      "position": 12,
       "id": "danel",
       "name": "Danel",
       "demo": false,
@@ -156,7 +170,7 @@
       "signHits": 3
     },
     {
-      "position": 11,
+      "position": 12,
       "id": "luismi",
       "name": "LuisMi",
       "demo": false,
@@ -170,21 +184,7 @@
       "signHits": 3
     },
     {
-      "position": 11,
-      "id": "xabi",
-      "name": "Xabi",
-      "demo": false,
-      "signPts": 3,
-      "exactPts": 3,
-      "groupPickPts": 0,
-      "thirdsPts": 0,
-      "pichichiPts": 0,
-      "total": 6,
-      "exactHits": 1,
-      "signHits": 3
-    },
-    {
-      "position": 11,
+      "position": 12,
       "id": "xabiere",
       "name": "Xabier E.",
       "demo": false,
@@ -202,33 +202,47 @@
       "id": "aaron",
       "name": "Aaron",
       "demo": false,
-      "signPts": 4,
+      "signPts": 5,
       "exactPts": 0,
       "groupPickPts": 0,
       "thirdsPts": 0,
       "pichichiPts": 0,
-      "total": 4,
+      "total": 5,
       "exactHits": 0,
-      "signHits": 4
+      "signHits": 5
     },
     {
       "position": 15,
       "id": "aitor",
       "name": "Aitor",
       "demo": false,
-      "signPts": 4,
+      "signPts": 5,
       "exactPts": 0,
       "groupPickPts": 0,
       "thirdsPts": 0,
       "pichichiPts": 0,
-      "total": 4,
+      "total": 5,
       "exactHits": 0,
-      "signHits": 4
+      "signHits": 5
     },
     {
       "position": 15,
       "id": "juanro",
       "name": "JuanRo",
+      "demo": false,
+      "signPts": 5,
+      "exactPts": 0,
+      "groupPickPts": 0,
+      "thirdsPts": 0,
+      "pichichiPts": 0,
+      "total": 5,
+      "exactHits": 0,
+      "signHits": 5
+    },
+    {
+      "position": 18,
+      "id": "ignacio",
+      "name": "Ignacio",
       "demo": false,
       "signPts": 4,
       "exactPts": 0,
@@ -240,7 +254,7 @@
       "signHits": 4
     },
     {
-      "position": 15,
+      "position": 18,
       "id": "txiki",
       "name": "Txiki",
       "demo": false,
@@ -254,9 +268,9 @@
       "signHits": 4
     },
     {
-      "position": 19,
-      "id": "ignacio",
-      "name": "Ignacio",
+      "position": 20,
+      "id": "david",
+      "name": "David",
       "demo": false,
       "signPts": 3,
       "exactPts": 0,
@@ -268,7 +282,7 @@
       "signHits": 3
     },
     {
-      "position": 19,
+      "position": 20,
       "id": "jokin",
       "name": "Jokin",
       "demo": false,
@@ -280,20 +294,6 @@
       "total": 3,
       "exactHits": 0,
       "signHits": 3
-    },
-    {
-      "position": 21,
-      "id": "david",
-      "name": "David",
-      "demo": false,
-      "signPts": 2,
-      "exactPts": 0,
-      "groupPickPts": 0,
-      "thirdsPts": 0,
-      "pichichiPts": 0,
-      "total": 2,
-      "exactHits": 0,
-      "signHits": 2
     }
   ]
 }
