@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-15T21:03:43.226Z",
+  "lastUpdated": "2026-06-15T23:59:34.760Z",
   "matches": [
     {
       "id": "A1",
@@ -216,8 +216,12 @@
       "away": "URU",
       "date": "2026-06-16T00:00:00+02:00",
       "venue": "Hard Rock Stadium, Miami",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 1,
+        "away": 1
+      },
+      "status": "live",
+      "minute": null
     },
     {
       "id": "G2",
