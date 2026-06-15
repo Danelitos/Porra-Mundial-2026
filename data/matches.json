@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-14T22:38:56.723Z",
+  "lastUpdated": "2026-06-15T03:41:21.654Z",
   "matches": [
     {
       "id": "A1",
@@ -156,8 +156,12 @@
       "away": "ECU",
       "date": "2026-06-15T01:00:00+02:00",
       "venue": "Lincoln Financial, Filadelfia",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 1,
+        "away": 0
+      },
+      "status": "finished",
+      "minute": null
     },
     {
       "id": "F2",
@@ -167,8 +171,12 @@
       "away": "TUN",
       "date": "2026-06-15T04:00:00+02:00",
       "venue": "Est. BBVA, Monterrey",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 3,
+        "away": 1
+      },
+      "status": "live",
+      "minute": null
     },
     {
       "id": "H1",

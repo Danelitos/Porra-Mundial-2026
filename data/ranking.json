@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-14T22:38:56.723Z",
+  "lastUpdated": "2026-06-15T03:41:21.654Z",
   "ranking": [
     {
       "position": 1,
@@ -128,7 +128,21 @@
       "signHits": 4
     },
     {
-      "position": 10,
+      "position": 8,
+      "id": "roberto",
+      "name": "Roberto",
+      "demo": false,
+      "signPts": 4,
+      "exactPts": 3,
+      "groupPickPts": 0,
+      "thirdsPts": 0,
+      "pichichiPts": 0,
+      "total": 7,
+      "exactHits": 1,
+      "signHits": 4
+    },
+    {
+      "position": 11,
       "id": "danel",
       "name": "Danel",
       "demo": false,
@@ -142,7 +156,7 @@
       "signHits": 3
     },
     {
-      "position": 10,
+      "position": 11,
       "id": "luismi",
       "name": "LuisMi",
       "demo": false,
@@ -156,21 +170,7 @@
       "signHits": 3
     },
     {
-      "position": 10,
-      "id": "roberto",
-      "name": "Roberto",
-      "demo": false,
-      "signPts": 3,
-      "exactPts": 3,
-      "groupPickPts": 0,
-      "thirdsPts": 0,
-      "pichichiPts": 0,
-      "total": 6,
-      "exactHits": 1,
-      "signHits": 3
-    },
-    {
-      "position": 10,
+      "position": 11,
       "id": "xabi",
       "name": "Xabi",
       "demo": false,
@@ -184,7 +184,7 @@
       "signHits": 3
     },
     {
-      "position": 10,
+      "position": 11,
       "id": "xabiere",
       "name": "Xabier E.",
       "demo": false,

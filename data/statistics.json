@@ -1,12 +1,12 @@
 {
-  "lastUpdated": "2026-06-14T22:38:56.723Z",
+  "lastUpdated": "2026-06-15T03:41:21.654Z",
   "participants": 21,
-  "matchesPlayed": 10,
+  "matchesPlayed": 11,
   "matchesTotal": 72,
-  "totalGoals": 31,
-  "avgGoals": 3.1,
+  "totalGoals": 32,
+  "avgGoals": 2.91,
   "totalExactHits": 18,
-  "totalSignHits": 85,
+  "totalSignHits": 86,
   "leader": {
     "id": "wiki",
     "name": "Wiki",
