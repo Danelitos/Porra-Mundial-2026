@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-15T18:07:15.349Z",
+  "lastUpdated": "2026-06-15T19:31:33.760Z",
   "matches": [
     {
       "id": "A1",
@@ -201,8 +201,12 @@
       "away": "EGY",
       "date": "2026-06-15T21:00:00+02:00",
       "venue": "Hard Rock Stadium, Miami",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 0,
+        "away": 1
+      },
+      "status": "live",
+      "minute": null
     },
     {
       "id": "H2",
