@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-15T05:02:52.369Z",
+  "lastUpdated": "2026-06-15T16:52:18.443Z",
   "matches": [
     {
       "id": "A1",
@@ -186,8 +186,12 @@
       "away": "CPV",
       "date": "2026-06-15T18:00:00+02:00",
       "venue": "Mercedes-Benz Stadium, Atlanta",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "status": "live",
+      "minute": null
     },
     {
       "id": "G1",
