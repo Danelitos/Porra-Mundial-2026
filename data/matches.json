@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-16T21:05:07.136Z",
+  "lastUpdated": "2026-06-16T21:07:01.933Z",
   "matches": [
     {
       "id": "A1",
@@ -258,7 +258,7 @@
       "date": "2026-06-16T21:00:00+02:00",
       "venue": "MetLife Stadium, Nueva York/NJ",
       "score": {
-        "home": 2,
+        "home": 3,
         "away": 1
       },
       "status": "live",
