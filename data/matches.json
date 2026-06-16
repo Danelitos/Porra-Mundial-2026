@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-15T23:59:34.760Z",
+  "lastUpdated": "2026-06-16T04:54:16.851Z",
   "matches": [
     {
       "id": "A1",
@@ -220,7 +220,7 @@
         "home": 1,
         "away": 1
       },
-      "status": "live",
+      "status": "finished",
       "minute": null
     },
     {
@@ -231,8 +231,12 @@
       "away": "NZL",
       "date": "2026-06-16T03:00:00+02:00",
       "venue": "Lumen Field, Seattle",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 2,
+        "away": 2
+      },
+      "status": "finished",
+      "minute": null
     },
     {
       "id": "J2",
