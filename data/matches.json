@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-17T18:01:25.532Z",
+  "lastUpdated": "2026-06-17T20:28:01.291Z",
   "matches": [
     {
       "id": "A1",
@@ -310,7 +310,7 @@
         "home": 1,
         "away": 1
       },
-      "status": "live",
+      "status": "finished",
       "minute": null
     },
     {
@@ -321,8 +321,12 @@
       "away": "CRO",
       "date": "2026-06-17T22:00:00+02:00",
       "venue": "AT&T Stadium, Dallas",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 1,
+        "away": 0
+      },
+      "status": "live",
+      "minute": null
     },
     {
       "id": "L2",
