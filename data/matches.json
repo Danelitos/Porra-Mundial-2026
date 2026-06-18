@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-17T23:56:32.844Z",
+  "lastUpdated": "2026-06-18T04:53:07.809Z",
   "matches": [
     {
       "id": "A1",
@@ -337,7 +337,7 @@
       "date": "2026-06-18T01:00:00+02:00",
       "venue": "Lincoln Financial, Filadelfia",
       "score": {
-        "home": 0,
+        "home": 1,
         "away": 0
       },
       "status": "live",
@@ -351,8 +351,12 @@
       "away": "COL",
       "date": "2026-06-18T04:00:00+02:00",
       "venue": "Levi's Stadium, San Francisco",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 1,
+        "away": 3
+      },
+      "status": "finished",
+      "minute": null
     },
     {
       "id": "A4",
