@@ -1,4 +1,275 @@
 {
-  "lastUpdated": null,
-  "scorers": []
+  "lastUpdated": "2026-06-18T18:57:25.333Z",
+  "scorers": [
+    {
+      "name": "Lionel Messi",
+      "teamId": "ARG",
+      "teamName": "Argentina",
+      "goals": 3,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 1
+    },
+    {
+      "name": "Folarin Balogun",
+      "teamId": "USA",
+      "teamName": "United States",
+      "goals": 2,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 1
+    },
+    {
+      "name": "Kai Havertz",
+      "teamId": "GER",
+      "teamName": "Germany",
+      "goals": 2,
+      "assists": 0,
+      "penalties": 1,
+      "playedMatches": 1
+    },
+    {
+      "name": "Yasin Ayari",
+      "teamId": "SWE",
+      "teamName": "Sweden",
+      "goals": 2,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 1
+    },
+    {
+      "name": "Elijah Just",
+      "teamId": "NZL",
+      "teamName": "New Zealand",
+      "goals": 2,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 1
+    },
+    {
+      "name": "Kylian Mbappé",
+      "teamId": "FRA",
+      "teamName": "France",
+      "goals": 2,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 1
+    },
+    {
+      "name": "Erling Haaland",
+      "teamId": "NOR",
+      "teamName": "Norway",
+      "goals": 2,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 1
+    },
+    {
+      "name": "Harry Kane",
+      "teamId": "ENG",
+      "teamName": "England",
+      "goals": 2,
+      "assists": 0,
+      "penalties": 1,
+      "playedMatches": 1
+    },
+    {
+      "name": "Julián Quiñones",
+      "teamId": "MEX",
+      "teamName": "Mexico",
+      "goals": 1,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 1
+    },
+    {
+      "name": "Raúl Jiménez",
+      "teamId": "MEX",
+      "teamName": "Mexico",
+      "goals": 1,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 1
+    },
+    {
+      "name": "Ladislav Krejčí",
+      "teamId": "CZE",
+      "teamName": "Czechia",
+      "goals": 1,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 2
+    },
+    {
+      "name": "In-beom Hwang",
+      "teamId": "KOR",
+      "teamName": "South Korea",
+      "goals": 1,
+      "assists": 1,
+      "penalties": 0,
+      "playedMatches": 1
+    },
+    {
+      "name": "Hyun-Gyu Oh",
+      "teamId": "KOR",
+      "teamName": "South Korea",
+      "goals": 1,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 1
+    },
+    {
+      "name": "Jovo Lukić",
+      "teamId": "BIH",
+      "teamName": "Bosnia-Herzegovina",
+      "goals": 1,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 2
+    },
+    {
+      "name": "Cyle Larin",
+      "teamId": "CAN",
+      "teamName": "Canada",
+      "goals": 1,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 1
+    },
+    {
+      "name": "Mauricio",
+      "teamId": "PAR",
+      "teamName": "Paraguay",
+      "goals": 1,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 1
+    },
+    {
+      "name": "Gio Reyna",
+      "teamId": "USA",
+      "teamName": "United States",
+      "goals": 1,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 1
+    },
+    {
+      "name": "Breel Embolo",
+      "teamId": "SUI",
+      "teamName": "Switzerland",
+      "goals": 1,
+      "assists": 0,
+      "penalties": 1,
+      "playedMatches": 2
+    },
+    {
+      "name": "Boualem Khoukhi",
+      "teamId": "QAT",
+      "teamName": "Qatar",
+      "goals": 1,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 1
+    },
+    {
+      "name": "Ismael Saibari",
+      "teamId": "MAR",
+      "teamName": "Morocco",
+      "goals": 1,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 1
+    },
+    {
+      "name": "Vinicius Junior",
+      "teamId": "BRA",
+      "teamName": "Brazil",
+      "goals": 1,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 1
+    },
+    {
+      "name": "John McGinn",
+      "teamId": "SCO",
+      "teamName": "Scotland",
+      "goals": 1,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 1
+    },
+    {
+      "name": "Nestor Irankunda",
+      "teamId": "AUS",
+      "teamName": "Australia",
+      "goals": 1,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 1
+    },
+    {
+      "name": "Connor Metcalfe",
+      "teamId": "AUS",
+      "teamName": "Australia",
+      "goals": 1,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 1
+    },
+    {
+      "name": "Felix Kalu Nmecha",
+      "teamId": "GER",
+      "teamName": "Germany",
+      "goals": 1,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 1
+    },
+    {
+      "name": "Livano Comenencia",
+      "teamId": "CUW",
+      "teamName": "Curaçao",
+      "goals": 1,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 1
+    },
+    {
+      "name": "Nico Schlotterbeck",
+      "teamId": "GER",
+      "teamName": "Germany",
+      "goals": 1,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 1
+    },
+    {
+      "name": "Jamal Musiala",
+      "teamId": "GER",
+      "teamName": "Germany",
+      "goals": 1,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 1
+    },
+    {
+      "name": "Nathaniel Brown",
+      "teamId": "GER",
+      "teamName": "Germany",
+      "goals": 1,
+      "assists": 1,
+      "penalties": 0,
+      "playedMatches": 1
+    },
+    {
+      "name": "Deniz Undav",
+      "teamId": "GER",
+      "teamName": "Germany",
+      "goals": 1,
+      "assists": 2,
+      "penalties": 0,
+      "playedMatches": 1
+    }
+  ]
 }
