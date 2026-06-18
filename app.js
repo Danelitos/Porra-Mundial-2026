@@ -9,6 +9,7 @@
 import {
   buildContext, computeRanking, computeGroupTable,
   isGroupComplete, computeEvolution, computeGlobalStats,
+  normName, levenshtein,
 } from "./js/engine.js";
 import { startLive, liveStatus } from "./js/live.js";
 import { viewStatus, liveMinute } from "./js/livesource.js";
@@ -521,6 +522,86 @@ function viewReglas() {
   <div class="grid grid-2 align-start">${sections}</div>`;
 }
 
+/** ¿Dos nombres de jugador se refieren al mismo? (tolera "Mbappé" vs "Kylian Mbappé"). */
+function samePlayer(a, b) {
+  const na = normName(a), nb = normName(b);
+  if (!na || !nb) return false;
+  if (na === nb) return true;
+  if (na.length >= 4 && (nb.includes(na) || na.includes(nb))) return true;
+  return levenshtein(na, nb, 2) <= 2;
+}
+
+function scorerRow(s, pos) {
+  const flag = (s.teamId && CTX.teamsById[s.teamId]?.flag) || "🏳️";
+  const teamName = (s.teamId && CTX.teamsById[s.teamId]?.name) || s.teamName || "";
+  // Porristas que apostaron por este goleador como pichichi.
+  const backers = CTX.participants.filter((p) => p.pichichi && samePlayer(p.pichichi, s.name));
+  const backersBadge = backers.length
+    ? `<span class="pill gold" title="${esc(backers.map((b) => b.name).join(", "))}">${icon("ticket")}${backers.length}</span>`
+    : "";
+  const extra = [
+    s.penalties ? `${s.penalties} de penalti` : "",
+    s.assists ? `${s.assists} asist.` : "",
+  ].filter(Boolean).join(" · ");
+  return `
+  <div class="scorer-row ${medalClass(pos)}" style="--i:${pos}">
+    <div class="pos"><b>${pos}</b></div>
+    <div class="who">
+      <div class="nm">${pos === 1 ? icon("crown", "crown") : ""}${esc(s.name)} ${backersBadge}</div>
+      <div class="sub"><span class="flag">${flag}</span>${esc(teamName)}${extra ? ` · ${esc(extra)}` : ""}</div>
+    </div>
+    <div class="goals"><b>${s.goals}</b><small>${s.goals === 1 ? "gol" : "goles"}</small></div>
+  </div>`;
+}
+
+function viewGoleadores() {
+  const scorers = CTX.scorers || [];
+  const top = scorers[0] || null;
+
+  // Apuestas de la peña: agrupa los pichichis elegidos y cruza con los goles reales.
+  const picks = {};
+  for (const p of CTX.participants) {
+    if (!p.pichichi) continue;
+    const key = normName(p.pichichi);
+    if (!picks[key]) picks[key] = { label: p.pichichi, backers: [] };
+    picks[key].backers.push(p.name);
+  }
+  const bets = Object.values(picks).map((b) => {
+    const sc = scorers.find((s) => samePlayer(s.name, b.label));
+    return { ...b, goals: sc ? sc.goals : 0, scoring: !!sc };
+  }).sort((a, b) => b.goals - a.goals || b.backers.length - a.backers.length || a.label.localeCompare(b.label, "es"));
+
+  const list = scorers.length
+    ? `<div class="scorer-table">${scorers.map((s, i) => scorerRow(s, i + 1)).join("")}</div>`
+    : `<div class="card empty-card">${icon("goal", "big")}
+        <p>La tabla de máximos goleadores aparecerá en cuanto se marquen los primeros goles del torneo.</p></div>`;
+
+  const betRows = bets.map((b) => `
+    <tr>
+      <td>${b.scoring && samePlayer(b.label, top?.name || "") ? icon("crown", "crown") : ""}${esc(b.label)}</td>
+      <td class="num"><b class="${b.goals > 0 ? "hit" : "muted"}">${b.goals}</b></td>
+      <td>${b.backers.map((n) => `<span class="chip mini">${esc(n)}</span>`).join(" ")}</td>
+    </tr>`).join("");
+
+  return `
+  <div class="page-head">
+    <h1>${icon("goal")}Máximos goleadores</h1>
+    <p>Bota de oro del Mundial en directo${top ? ` · va de pichichi <b>${esc(top.name)}</b> con ${top.goals} ${top.goals === 1 ? "gol" : "goles"}` : ""}. El pichichi de la porra se concede a quien acierte el máximo goleador del torneo.</p>
+  </div>
+
+  ${sectionTitle("trophy", "Clasificación de goleadores")}
+  ${list}
+
+  ${sectionTitle("ticket", "Las apuestas de la peña")}
+  <div class="table-wrap">
+    <table class="std">
+      <thead><tr><th>Pichichi apostado</th><th class="num">Goles</th><th>Porristas</th></tr></thead>
+      <tbody>${betRows || `<tr><td colspan="3" class="muted">Nadie ha elegido pichichi todavía.</td></tr>`}</tbody>
+    </table>
+  </div>
+  <p class="muted table-note">Los goles se actualizan automáticamente con la tabla oficial de la FIFA.</p>`;
+}
+
 /* ================================ Router ================================ */
 
 const routes = {
@@ -529,6 +610,7 @@ const routes = {
   participantes: viewParticipantes,
   grupos: viewGrupos,
   resultados: viewResultados,
+  goleadores: viewGoleadores,
   reglas: viewReglas,
 };
 
@@ -560,7 +642,7 @@ function render() {
   });
   document.getElementById("morebtn")?.classList.toggle(
     "active",
-    ["participantes", "reglas"].includes(active)
+    ["participantes", "goleadores", "reglas"].includes(active)
   );
 
   // Centra el chip activo en los carruseles de filtros (móvil).
@@ -631,12 +713,13 @@ async function loadJSON(file) {
 async function boot() {
   refreshIcons(); // iconos estáticos de cabecera y navegación
   try {
-    const [rules, groupsData, matchesFile, participantsFile, tournament] = await Promise.all([
+    const [rules, groupsData, matchesFile, participantsFile, tournament, scorersFile] = await Promise.all([
       loadJSON("scoring_rules.json"),
       loadJSON("groups.json"),
       loadJSON("matches.json"),
       loadJSON("participants.json"),
       loadJSON("tournament.json"),
+      loadJSON("scorers.json").catch(() => ({ lastUpdated: null, scorers: [] })),
     ]);
     CTX = buildContext({
       rules, groupsData,
@@ -644,6 +727,8 @@ async function boot() {
       participants: participantsFile.participants,
       tournament,
     });
+    CTX.scorers = scorersFile.scorers || [];
+    CTX.scorersUpdated = scorersFile.lastUpdated || null;
     document.getElementById("footer-updated").textContent =
       "última actualización: " + fmtUpdated(tournament.lastUpdated);
     render();

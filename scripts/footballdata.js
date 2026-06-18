@@ -30,6 +30,44 @@ export async function fetchWorldCupMatches(token) {
   return json.matches || [];
 }
 
+/** Descarga la tabla de máximos goleadores. Lanza si el token falta o falla. */
+export async function fetchWorldCupScorers(token, limit = 30) {
+  if (!token) throw new Error("Falta FOOTBALL_DATA_TOKEN");
+  const res = await fetch(`${API}/competitions/${COMPETITION}/scorers?limit=${limit}`, {
+    headers: { "X-Auth-Token": token },
+  });
+  if (!res.ok) {
+    const body = await res.text().catch(() => "");
+    throw new Error(`football-data scorers ${res.status}: ${body.slice(0, 200)}`);
+  }
+  const json = await res.json();
+  return json.scorers || [];
+}
+
+/**
+ * Normaliza la tabla de goleadores de football-data.org a nuestro formato.
+ * Resuelve el equipo a nuestro id (para pintar la bandera); si no se puede,
+ * deja teamId en null y conserva el nombre que devuelve la API.
+ * Devuelve [{ name, teamId, teamName, goals, assists, penalties, playedMatches }].
+ */
+export function mapFDScorers(fdScorers, groupsData) {
+  return fdScorers
+    .filter((s) => s.player?.name)
+    .map((s) => {
+      const teamId =
+        resolveTeam(s.team?.name, groupsData) || resolveTeam(s.team?.tla, groupsData) || null;
+      return {
+        name: s.player.name,
+        teamId,
+        teamName: s.team?.name || null,
+        goals: s.goals ?? 0,
+        assists: s.assists ?? 0,
+        penalties: s.penalties ?? 0,
+        playedMatches: s.playedMatches ?? 0,
+      };
+    });
+}
+
 /** Estado de football-data.org → nuestro estado. */
 export function mapStatus(s) {
   const v = String(s || "").toUpperCase();

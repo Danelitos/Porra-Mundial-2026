@@ -20,11 +20,12 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { buildContext, computeRanking, computeGlobalStats } from "../js/engine.js";
 import { applyUpdates } from "../js/livesource.js";
-import { fetchWorldCupMatches, mapFDToUpdates } from "./footballdata.js";
+import { fetchWorldCupMatches, mapFDToUpdates, fetchWorldCupScorers, mapFDScorers } from "./footballdata.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DATA = (f) => path.join(ROOT, "data", f);
 const readJSON = (f) => JSON.parse(fs.readFileSync(DATA(f), "utf8"));
+const readJSONOr = (f, fallback) => (fs.existsSync(DATA(f)) ? readJSON(f) : fallback);
 const writeJSON = (f, o) => fs.writeFileSync(DATA(f), JSON.stringify(o, null, 2) + "\n", "utf8");
 
 const groupsData = readJSON("groups.json");
@@ -51,34 +52,60 @@ const total = fdMatches.length;
 console.log(`   ${total} eventos recibidos · ${updates.length} con datos · ${changed} cambios`);
 if (unmatched.length) console.log("   ⚠ Sin emparejar:", unmatched.join(" | "));
 
-if (!changed) {
+// Máximos goleadores: llamada independiente y no crítica. Si falla (p. ej. el
+// plan gratuito devuelve la tabla vacía hasta que hay goles), no abortamos el
+// sync de resultados; simplemente dejamos scorers.json como estaba.
+let scorersChanged = false;
+const scorersFile = readJSONOr("scorers.json", { lastUpdated: null, scorers: [] });
+try {
+  const fdScorers = await fetchWorldCupScorers(process.env.FOOTBALL_DATA_TOKEN);
+  const scorers = mapFDScorers(fdScorers, groupsData);
+  if (JSON.stringify(scorers) !== JSON.stringify(scorersFile.scorers)) {
+    scorersFile.scorers = scorers;
+    scorersChanged = true;
+  }
+  console.log(`   ${scorers.length} goleadores recibidos${scorersChanged ? " · actualizados" : " · sin cambios"}`);
+} catch (err) {
+  console.log(`   ⚠ No se pudieron leer goleadores: ${err.message}`);
+}
+
+if (!changed && !scorersChanged) {
   console.log("✔ Todo estaba ya al día.");
   process.exit(0);
 }
 
 const now = new Date().toISOString();
-matchesFile.matches = matches;
-matchesFile.lastUpdated = now;
-tournament.lastUpdated = now;
 
-const ctx = buildContext({
-  rules, groupsData, matches,
-  participants: participantsFile.participants,
-  tournament,
-});
-const ranking = computeRanking(ctx);
-const stats = computeGlobalStats(ctx);
-
-writeJSON("matches.json", matchesFile);
-writeJSON("tournament.json", tournament);
-writeJSON("ranking.json", {
-  lastUpdated: now,
-  ranking: ranking.map((r) => ({ position: r.position, id: r.id, name: r.name, demo: r.demo, ...r.breakdown, exactHits: r.stats.exactHits, signHits: r.stats.signHits })),
-});
-writeJSON("statistics.json", { lastUpdated: now, ...stats });
-
-console.log("\n🏅 Ranking actual:");
-for (const r of ranking.slice(0, 10)) {
-  console.log(`  ${String(r.position).padStart(2)}. ${r.name.padEnd(20)} ${r.breakdown.total} pts${r.demo ? "  (demo)" : ""}`);
+if (scorersChanged) {
+  scorersFile.lastUpdated = now;
+  writeJSON("scorers.json", scorersFile);
 }
-console.log("\n✔ Resultados guardados. Haz commit + push para publicar.");
+
+if (changed) {
+  matchesFile.matches = matches;
+  matchesFile.lastUpdated = now;
+  tournament.lastUpdated = now;
+
+  const ctx = buildContext({
+    rules, groupsData, matches,
+    participants: participantsFile.participants,
+    tournament,
+  });
+  const ranking = computeRanking(ctx);
+  const stats = computeGlobalStats(ctx);
+
+  writeJSON("matches.json", matchesFile);
+  writeJSON("tournament.json", tournament);
+  writeJSON("ranking.json", {
+    lastUpdated: now,
+    ranking: ranking.map((r) => ({ position: r.position, id: r.id, name: r.name, demo: r.demo, ...r.breakdown, exactHits: r.stats.exactHits, signHits: r.stats.signHits })),
+  });
+  writeJSON("statistics.json", { lastUpdated: now, ...stats });
+
+  console.log("\n🏅 Ranking actual:");
+  for (const r of ranking.slice(0, 10)) {
+    console.log(`  ${String(r.position).padStart(2)}. ${r.name.padEnd(20)} ${r.breakdown.total} pts${r.demo ? "  (demo)" : ""}`);
+  }
+}
+
+console.log("\n✔ Datos guardados. Haz commit + push para publicar.");

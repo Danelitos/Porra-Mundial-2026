@@ -419,6 +419,39 @@ h3 > svg.lucide { color: var(--green); margin-right: 8px; }
 .rank-row .pts b { font-family: var(--font-display); font-size: 1.3rem; font-weight: 800; }
 .rank-row .pts small { display: block; color: var(--text-faint); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; }
 
+/* ---------------------------- Goleadores ---------------------------- */
+.scorer-table { display: flex; flex-direction: column; gap: 9px; }
+.scorer-row {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) auto;
+  gap: 12px; align-items: center;
+  padding: 11px 16px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(180deg, rgba(160, 190, 240, 0.055), rgba(160, 190, 240, 0.022));
+  border: 1px solid var(--border-soft);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s, box-shadow 0.2s;
+  animation: fadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.scorer-row:nth-child(-n+10) { animation-delay: calc(var(--i, 0) * 0.04s); }
+.scorer-row:hover { transform: translateX(5px); border-color: var(--border); box-shadow: -3px 0 0 var(--gold); }
+.scorer-row .pos { text-align: center; }
+.scorer-row .pos b { font-family: var(--font-display); font-weight: 900; font-size: 1.25rem; color: var(--text-dim); }
+.scorer-row.gold { border-color: rgba(255, 206, 79, 0.4); background: linear-gradient(90deg, rgba(255, 206, 79, 0.12), rgba(160, 190, 240, 0.025)); }
+.scorer-row.gold .pos b { color: var(--gold); }
+.scorer-row.silver { border-color: rgba(204, 216, 232, 0.28); background: linear-gradient(90deg, rgba(204, 216, 232, 0.07), rgba(160, 190, 240, 0.025)); }
+.scorer-row.silver .pos b { color: var(--silver); }
+.scorer-row.bronze { border-color: rgba(224, 154, 98, 0.3); background: linear-gradient(90deg, rgba(224, 154, 98, 0.08), rgba(160, 190, 240, 0.025)); }
+.scorer-row.bronze .pos b { color: var(--bronze); }
+.scorer-row .who { min-width: 0; }
+.scorer-row .who .nm { font-weight: 700; display: flex; align-items: center; gap: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.scorer-row .who .sub { font-size: 0.75rem; color: var(--text-faint); display: flex; align-items: center; gap: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.scorer-row .who .sub .flag { font-size: 1rem; }
+.scorer-row .goals { text-align: right; }
+.scorer-row .goals b { font-family: var(--font-display); font-size: 1.4rem; font-weight: 800; color: var(--gold); }
+.scorer-row .goals small { display: block; color: var(--text-faint); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; }
+
+.chip.mini { padding: 2px 9px; font-size: 0.72rem; pointer-events: none; }
+
 /* ----------------------------- Stat tiles ----------------------------- */
 
 .stat-tile { text-align: center; padding: 18px 10px; overflow: hidden; }
