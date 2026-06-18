@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-18T21:10:34.445Z",
+  "lastUpdated": "2026-06-18T23:10:42.467Z",
   "scorers": [
     {
       "name": "Lionel Messi",
@@ -9,6 +9,15 @@
       "assists": 0,
       "penalties": 0,
       "playedMatches": 1
+    },
+    {
+      "name": "Cyle Larin",
+      "teamId": "CAN",
+      "teamName": "Canada",
+      "goals": 2,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 2
     },
     {
       "name": "Folarin Balogun",
@@ -83,6 +92,15 @@
       "playedMatches": 2
     },
     {
+      "name": "Jonathan David",
+      "teamId": "CAN",
+      "teamName": "Canada",
+      "goals": 2,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 2
+    },
+    {
       "name": "Julián Quiñones",
       "teamId": "MEX",
       "teamName": "Mexico",
@@ -131,15 +149,6 @@
       "name": "Jovo Lukić",
       "teamId": "BIH",
       "teamName": "Bosnia-Herzegovina",
-      "goals": 1,
-      "assists": 0,
-      "penalties": 0,
-      "playedMatches": 2
-    },
-    {
-      "name": "Cyle Larin",
-      "teamId": "CAN",
-      "teamName": "Canada",
       "goals": 1,
       "assists": 0,
       "penalties": 0,
@@ -259,15 +268,6 @@
       "teamName": "Germany",
       "goals": 1,
       "assists": 0,
-      "penalties": 0,
-      "playedMatches": 1
-    },
-    {
-      "name": "Nathaniel Brown",
-      "teamId": "GER",
-      "teamName": "Germany",
-      "goals": 1,
-      "assists": 1,
       "penalties": 0,
       "playedMatches": 1
     }

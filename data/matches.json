@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-18T21:10:34.445Z",
+  "lastUpdated": "2026-06-18T23:10:42.467Z",
   "matches": [
     {
       "id": "A1",
@@ -396,8 +396,12 @@
       "away": "QAT",
       "date": "2026-06-19T00:00:00+02:00",
       "venue": "BMO Field, Toronto",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 3,
+        "away": 0
+      },
+      "status": "live",
+      "minute": null
     },
     {
       "id": "A3",
