@@ -962,7 +962,24 @@ document.getElementById("sharebtn").addEventListener("click", async () => {
 });
 
 if ("serviceWorker" in navigator && location.protocol !== "file:") {
-  window.addEventListener("load", () => navigator.serviceWorker.register("service-worker.js").catch(() => {}));
+  // Auto-actualización: cuando un service worker nuevo toma el control (tras subir
+  // CACHE_VERSION), recargamos una vez para servir el shell nuevo sin que el
+  // usuario tenga que vaciar la caché a mano.
+  let refreshing = false;
+  navigator.serviceWorker.addEventListener("controllerchange", () => {
+    if (refreshing) return;
+    refreshing = true;
+    window.location.reload();
+  });
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("service-worker.js").then((reg) => {
+      // Busca actualizaciones al arrancar y cada vez que la pestaña vuelve a primer plano.
+      reg.update().catch(() => {});
+      document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "visible") reg.update().catch(() => {});
+      });
+    }).catch(() => {});
+  });
 }
 
 boot();
