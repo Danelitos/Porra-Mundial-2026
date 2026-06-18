@@ -877,6 +877,173 @@ select.ctl {
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
 }
 
+/* ------------------------- Fase eliminatoria (cuadro) ------------------------- */
+
+.bk-legend { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 4px 0 14px; }
+.bk-legend .key { display: inline-flex; align-items: center; gap: 7px; font-size: 0.78rem; color: var(--text-dim); }
+.bk-legend .sw { width: 13px; height: 13px; border-radius: 4px; flex: none; }
+.bk-legend .sw.set { background: var(--green); }
+.bk-legend .sw.prov { background: var(--gold); }
+.bk-legend .sw.third { background: transparent; border: 1px dashed var(--gold-deep); }
+
+.bracket-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 6px 2px 14px;
+  margin: 0 -4px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.bracket {
+  --bk-gap: 30px;          /* hueco entre columnas = longitud del conector */
+  --bk-line: rgba(160, 190, 240, 0.28);
+  display: flex;
+  gap: var(--bk-gap);
+  height: 760px;
+  width: max-content;
+  padding: 0 6px;
+}
+
+.bk-col { flex: 0 0 152px; display: flex; flex-direction: column; }
+.bk-col-head {
+  height: 34px;
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  font-size: 0.68rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--text-dim);
+}
+.bk-col-head svg.lucide { width: 15px; height: 15px; }
+.bk-col.final .bk-col-head { color: var(--gold); }
+.bk-col.final .bk-col-head svg.lucide { color: var(--gold); }
+
+.bk-round { flex: 1; display: flex; flex-direction: column; }
+.bk-match { flex: 1 1 0; display: flex; flex-direction: column; justify-content: center; position: relative; }
+.bk-col.final .bk-round { justify-content: center; }
+.bk-col.final .bk-match { flex: 0 0 auto; }
+
+.bk-card {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: 10px;
+  padding: 5px 8px;
+  box-shadow: 0 4px 14px rgba(2, 6, 14, 0.25);
+}
+.bk-head { display: flex; justify-content: space-between; gap: 6px; margin-bottom: 3px; }
+.bk-head .bk-no { font-size: 0.56rem; font-weight: 700; color: var(--text-faint); }
+.bk-head .bk-date { font-size: 0.56rem; color: var(--text-faint); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bk-vs { position: relative; height: 1px; background: var(--border-soft); margin: 2px 0; }
+.bk-vs span { display: none; }
+
+.bk-team { display: flex; align-items: center; gap: 7px; min-height: 22px; font-size: 0.76rem; }
+.bk-team .flag { font-size: 1rem; line-height: 1; flex: none; }
+.bk-team .nm { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bk-team.is-set .nm { color: var(--green); }
+.bk-pos { color: var(--text-dim); font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bk-team.is-third .bk-pos { color: var(--gold); }
+/* Etiqueta pequeña de posición de origen (1ºA, 2ºB…) junto al equipo. */
+.bk-tag {
+  margin-left: auto; flex: none; font-size: 0.58rem; font-weight: 800;
+  color: var(--text-faint); background: var(--surface-strong);
+  padding: 1px 5px; border-radius: 6px;
+}
+.bk-tag.prov { color: var(--gold); background: var(--gold-soft); }
+
+/* Tarjetas reflejadas en la mitad derecha (bandera a la derecha). */
+.bk-card.mirror .bk-team { flex-direction: row-reverse; text-align: right; }
+.bk-card.mirror .bk-tag { margin-left: 0; margin-right: auto; }
+.bk-card.mirror .bk-head { flex-direction: row-reverse; }
+
+/* Banner del campeón bajo la final. */
+.bk-col.final { position: relative; }
+.bk-champ {
+  position: absolute; left: 0; right: 0; bottom: 8px;
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  font-size: 0.66rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--gold);
+}
+.bk-champ svg.lucide { width: 22px; height: 22px; }
+.bk-champ.inline {
+  position: static; flex-direction: row; justify-content: center; gap: 8px;
+  padding: 10px; margin-bottom: 4px; border-radius: 12px;
+  background: var(--gold-soft); border: 1px solid rgba(255, 206, 79, 0.28);
+}
+.bk-champ.inline svg.lucide { width: 18px; height: 18px; }
+
+/* ---- Conectores ----
+   Cada partido "emisor" dibuja una línea horizontal (::after) que cruza el
+   hueco hasta el borde de la columna receptora; cada partido "receptor"
+   dibuja una barra vertical (::before) que une el centro de sus dos orígenes.
+   La barra ocupa el 50% central del slot, que equivale justo a la distancia
+   entre los centros de los dos partidos que la alimentan. */
+.bk-col.left .bk-match::after,
+.bk-col.right .bk-match::after {
+  content: ""; position: absolute; top: 50%; height: 2px; width: var(--bk-gap);
+  background: var(--bk-line);
+}
+.bk-col.left .bk-match::after { right: calc(-1 * var(--bk-gap)); }
+.bk-col.right .bk-match::after { left: calc(-1 * var(--bk-gap)); }
+
+.bk-col.left:not(.r-r32) .bk-match::before,
+.bk-col.right:not(.r-r32) .bk-match::before {
+  content: ""; position: absolute; top: 25%; bottom: 25%; width: 2px;
+  background: var(--bk-line);
+}
+.bk-col.left:not(.r-r32) .bk-match::before { left: -3px; }
+.bk-col.right:not(.r-r32) .bk-match::before { right: -3px; }
+
+/* ---- Responsive: lista por rondas en móvil, cuadro completo en escritorio ---- */
+.bk-desktop { display: none; }
+.bk-mobile { display: block; }
+
+.bk-rounds { margin-bottom: 12px; }
+
+/* Mini-cuadro de móvil: dos rondas conectadas (la elegida + a la que avanza). */
+.bk-mini-scroll { overflow-x: auto; overflow-y: hidden; padding: 2px 2px 8px; margin: 0 -4px; -webkit-overflow-scrolling: touch; }
+.bk-mini {
+  --bk-gap: 22px;
+  --bk-line: rgba(160, 190, 240, 0.42);
+  display: flex; gap: var(--bk-gap); min-width: 320px; padding: 0 4px;
+}
+.bk-mini-col { flex: 1 1 0; min-width: 148px; display: flex; flex-direction: column; }
+.bk-mini-col .bk-match { flex: 1 1 0; display: flex; flex-direction: column; justify-content: center; position: relative; }
+
+.bk-mini .bk-card { padding: 10px 12px; border-radius: 12px; }
+.bk-mini .bk-head { margin-bottom: 6px; }
+.bk-mini .bk-head .bk-no, .bk-mini .bk-head .bk-date { font-size: 0.62rem; }
+.bk-mini .bk-team { min-height: 28px; font-size: 0.92rem; gap: 9px; }
+.bk-mini .bk-team .flag { font-size: 1.25rem; }
+.bk-mini .bk-pos { font-size: 0.92rem; }
+.bk-mini .bk-tag { font-size: 0.62rem; }
+.bk-mini .bk-vs { margin: 6px 0; }
+
+/* Conectores del mini-cuadro (codo en el centro del hueco entre columnas):
+   tarjeta izquierda → centro, barra vertical que une el par, centro → tarjeta
+   derecha. Así las líneas quedan siempre visibles en el hueco, no bajo la tarjeta. */
+.bk-mini-col.send .bk-match::after {
+  content: ""; position: absolute; top: 50%; right: calc(var(--bk-gap) / -2);
+  width: calc(var(--bk-gap) / 2); height: 2px; background: var(--bk-line);
+}
+.bk-mini-col.recv .bk-match::before {
+  content: ""; position: absolute; top: 25%; bottom: 25%; left: calc(var(--bk-gap) / -2);
+  width: 2px; background: var(--bk-line);
+}
+.bk-mini-col.recv .bk-match::after {
+  content: ""; position: absolute; top: 50%; left: calc(var(--bk-gap) / -2);
+  width: calc(var(--bk-gap) / 2); height: 2px; background: var(--bk-line);
+}
+
+.bk-mini-hint { margin: 8px 2px 0; font-size: 0.78rem; }
+.bk-final-wrap { max-width: 340px; margin: 4px auto 0; }
+.bk-final-wrap .bk-card { padding: 11px 14px; }
+.bk-final-wrap .bk-team { min-height: 30px; font-size: 0.98rem; }
+.bk-final-wrap .bk-team .flag { font-size: 1.3rem; }
+
+@media (min-width: 860px) {
+  .bk-mobile { display: none; }
+  .bk-desktop { display: block; }
+}
+
 /* ------------------------------ Impresión ------------------------------ */
 
 @media print {

@@ -602,6 +602,143 @@ function viewGoleadores() {
   <p class="muted table-note">Los goles se actualizan automáticamente con la tabla oficial de la FIFA.</p>`;
 }
 
+/* ============================ Fase eliminatoria ============================ */
+
+/** Resuelve una casilla del cuadro a un equipo concreto o, si aún no se sabe,
+ *  a la etiqueta de posición (1º A, 2º B, 3º C/E/F…, Ganador 73). */
+function resolveBracketSlot(slot) {
+  if (!slot) return { label: "—" };
+  if (slot.type === "w" || slot.type === "r") {
+    const idx = slot.type === "w" ? 0 : 1;
+    const label = (slot.type === "w" ? "1º " : "2º ") + slot.g;
+    const g = CTX.groupsData.groups.find((x) => x.id === slot.g);
+    if (!g) return { label };
+    const table = computeGroupTable(g, CTX.matches);
+    const teamId = table[idx]?.teamId;
+    if (isGroupComplete(g.id, CTX.matches)) return { label, teamId, confirmed: true };
+    const played = table.some((r) => r.pj > 0);
+    return { label, provisional: played ? teamId : null };
+  }
+  if (slot.type === "t") return { label: "3º " + slot.g.join("/"), third: true };
+  if (slot.type === "m") return { label: "Ganador " + slot.n, fromMatch: slot.n };
+  return { label: "—" };
+}
+
+/** Una línea de equipo dentro de un partido del cuadro. */
+function bracketTeam(slot) {
+  const r = resolveBracketSlot(slot);
+  if (r.confirmed && r.teamId) {
+    const t = CTX.teamsById[r.teamId];
+    return `<div class="bk-team is-set"><span class="flag">${t?.flag || "🏳️"}</span><span class="nm">${esc(t?.name || r.teamId)}</span><span class="bk-tag">${esc(r.label)}</span></div>`;
+  }
+  if (r.provisional) {
+    const t = CTX.teamsById[r.provisional];
+    return `<div class="bk-team is-prov" title="Provisional · grupo sin cerrar"><span class="flag">${t?.flag || "🏳️"}</span><span class="nm">${esc(t?.name || r.provisional)}</span><span class="bk-tag prov">${esc(r.label)}</span></div>`;
+  }
+  return `<div class="bk-team ${r.third ? "is-third" : ""}"><span class="bk-pos">${esc(r.label)}</span></div>`;
+}
+
+function bracketCard(n, { mirror = false } = {}) {
+  const m = CTX.bracket.matches[String(n)];
+  if (!m) return "";
+  const d = new Date(m.date).toLocaleDateString("es-ES", { day: "numeric", month: "short" });
+  return `
+    <div class="bk-card${mirror ? " mirror" : ""}">
+      <div class="bk-head"><span class="bk-no">#${n}</span><span class="bk-date">${d}${m.venue ? " · " + esc(m.venue) : ""}</span></div>
+      ${bracketTeam(m.home)}
+      <div class="bk-vs"><span>VS</span></div>
+      ${bracketTeam(m.away)}
+    </div>`;
+}
+
+function bracketMatch(n, { mirror = false } = {}) {
+  return `<div class="bk-match">${bracketCard(n, { mirror })}</div>`;
+}
+
+function bracketColumn(title, nums, { side, round, mirror = false } = {}) {
+  return `
+  <div class="bk-col ${side} r-${round}">
+    <div class="bk-col-head">${esc(title)}</div>
+    <div class="bk-round">${nums.map((n) => bracketMatch(n, { mirror })).join("")}</div>
+  </div>`;
+}
+
+const BK_ROUND_ORDER = ["r32", "r16", "qf", "sf", "final"];
+
+function viewEliminatorias(params) {
+  const bk = CTX.bracket;
+  if (!bk) return `<div class="card error-card">${icon("triangle-alert", "big")}<h2>No hay datos del cuadro</h2><p class="muted">Falta data/bracket.json.</p></div>`;
+  const L = bk.layout.left, R = bk.layout.right, T = bk.rounds;
+  // ----- Vista móvil: mini-cuadro de dos rondas conectadas (estilo Google) -----
+  // La pestaña elegida muestra esa ronda (izquierda) enlazada con la ronda a la
+  // que avanza (derecha). El orden lineal izquierda+derecha del layout garantiza
+  // que cada par de partidos contiguos alimenta al de la columna siguiente.
+  const sel = BK_ROUND_ORDER.includes(params?.get("ronda")) ? params.get("ronda") : "r32";
+  const ADJ = { r32: "r16", r16: "qf", qf: "sf", sf: "final", final: null };
+  const linRound = (r) => (r === "final" ? bk.layout.final : [...(L[r] || []), ...(R[r] || [])]);
+  const roundChips = BK_ROUND_ORDER.map((r) =>
+    `<a class="chip ${r === sel ? "active" : ""}" href="#/eliminatorias?ronda=${r}">${esc(T[r])}</a>`).join("");
+
+  const leftNums = linRound(sel);
+  const nextR = ADJ[sel];
+  const rightNums = nextR ? linRound(nextR) : [];
+  const miniH = Math.max(1, leftNums.length) * 122; // alto = nº de partidos de la columna izquierda (deja separación entre tarjetas)
+  const mobileBracket = sel === "final"
+    ? `<div class="bk-final-wrap">
+         <div class="bk-champ inline">${icon("crown", "crown")}<span>Final · Campeón del Mundo</span></div>
+         ${bracketCard(bk.layout.final[0])}
+       </div>`
+    : `<div class="bk-mini-scroll">
+         <div class="bk-mini" style="height:${miniH}px">
+           <div class="bk-mini-col send">${leftNums.map((n) => `<div class="bk-match">${bracketCard(n)}</div>`).join("")}</div>
+           <div class="bk-mini-col recv">${rightNums.map((n) => `<div class="bk-match">${bracketCard(n)}</div>`).join("")}</div>
+         </div>
+       </div>
+       <p class="muted bk-mini-hint">${esc(T[sel])} → ${esc(T[nextR])}. Desliza para ver el resto.</p>`;
+
+  const mobileList = `
+    <div class="chips bk-rounds">${roundChips}</div>
+    ${mobileBracket}`;
+
+  // ----- Vista escritorio: cuadro completo conectado -----
+  const fullBracket = `
+    <div class="bracket-scroll">
+      <div class="bracket">
+        ${bracketColumn(T.r32, L.r32, { side: "left", round: "r32" })}
+        ${bracketColumn(T.r16, L.r16, { side: "left", round: "r16" })}
+        ${bracketColumn(T.qf, L.qf, { side: "left", round: "qf" })}
+        ${bracketColumn(T.sf, L.sf, { side: "left", round: "sf" })}
+        <div class="bk-col final r-final">
+          <div class="bk-col-head">${icon("trophy")}${esc(T.final)}</div>
+          <div class="bk-round">${bracketMatch(bk.layout.final[0])}
+            <div class="bk-champ">${icon("crown", "crown")}<span>Campeón del Mundo</span></div>
+          </div>
+        </div>
+        ${bracketColumn(T.sf, R.sf, { side: "right", round: "sf", mirror: true })}
+        ${bracketColumn(T.qf, R.qf, { side: "right", round: "qf", mirror: true })}
+        ${bracketColumn(T.r16, R.r16, { side: "right", round: "r16", mirror: true })}
+        ${bracketColumn(T.r32, R.r32, { side: "right", round: "r32", mirror: true })}
+      </div>
+    </div>`;
+
+  return `
+  <div class="page-head bk-page-head">
+    <h1>${icon("git-merge")}Fase eliminatoria</h1>
+    <p>Cuadro oficial del Mundial 2026. El <b>1º</b> y <b>2º</b> de cada grupo se rellenan solos al cerrarse; los <b>terceros</b> los asigna la FIFA al final.</p>
+  </div>
+
+  <div class="bk-legend">
+    <span class="key"><span class="sw set"></span>Clasificado</span>
+    <span class="key"><span class="sw prov"></span>Provisional</span>
+    <span class="key"><span class="sw third"></span>Tercero por determinar</span>
+  </div>
+
+  <div class="bk-mobile">${mobileList}</div>
+  <div class="bk-desktop">${fullBracket}
+    <p class="muted table-note">Desliza el cuadro en horizontal para verlo entero. Cruces oficiales según el reglamento FIFA del Mundial 2026.</p>
+  </div>`;
+}
+
 /* ================================ Router ================================ */
 
 const routes = {
@@ -611,6 +748,7 @@ const routes = {
   grupos: viewGrupos,
   resultados: viewResultados,
   goleadores: viewGoleadores,
+  eliminatorias: viewEliminatorias,
   reglas: viewReglas,
 };
 
@@ -642,7 +780,7 @@ function render() {
   });
   document.getElementById("morebtn")?.classList.toggle(
     "active",
-    ["participantes", "goleadores", "reglas"].includes(active)
+    ["participantes", "eliminatorias", "goleadores", "reglas"].includes(active)
   );
 
   // Centra el chip activo en los carruseles de filtros (móvil).
@@ -713,13 +851,14 @@ async function loadJSON(file) {
 async function boot() {
   refreshIcons(); // iconos estáticos de cabecera y navegación
   try {
-    const [rules, groupsData, matchesFile, participantsFile, tournament, scorersFile] = await Promise.all([
+    const [rules, groupsData, matchesFile, participantsFile, tournament, scorersFile, bracketFile] = await Promise.all([
       loadJSON("scoring_rules.json"),
       loadJSON("groups.json"),
       loadJSON("matches.json"),
       loadJSON("participants.json"),
       loadJSON("tournament.json"),
       loadJSON("scorers.json").catch(() => ({ lastUpdated: null, scorers: [] })),
+      loadJSON("bracket.json").catch(() => null),
     ]);
     CTX = buildContext({
       rules, groupsData,
@@ -729,6 +868,7 @@ async function boot() {
     });
     CTX.scorers = scorersFile.scorers || [];
     CTX.scorersUpdated = scorersFile.lastUpdated || null;
+    CTX.bracket = bracketFile;
     document.getElementById("footer-updated").textContent =
       "última actualización: " + fmtUpdated(tournament.lastUpdated);
     render();
