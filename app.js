@@ -620,7 +620,9 @@ function resolveBracketSlot(slot) {
     return { label, provisional: played ? teamId : null };
   }
   if (slot.type === "t") return { label: "3º " + slot.g.join("/"), third: true };
-  if (slot.type === "m") return { label: "Ganador " + slot.n, fromMatch: slot.n };
+  // El ganador de una eliminatoria no se conoce hasta que se juega: como en los
+  // cuadros oficiales, mostramos "Por definir" (no el nº interno de partido).
+  if (slot.type === "m") return { label: "Por definir", tbd: true, fromMatch: slot.n };
   return { label: "—" };
 }
 
@@ -635,7 +637,8 @@ function bracketTeam(slot) {
     const t = CTX.teamsById[r.provisional];
     return `<div class="bk-team is-prov" title="Provisional · grupo sin cerrar"><span class="flag">${t?.flag || "🏳️"}</span><span class="nm">${esc(t?.name || r.provisional)}</span><span class="bk-tag prov">${esc(r.label)}</span></div>`;
   }
-  return `<div class="bk-team ${r.third ? "is-third" : ""}"><span class="bk-pos">${esc(r.label)}</span></div>`;
+  const cls = r.third ? "is-third" : r.tbd ? "is-tbd" : "";
+  return `<div class="bk-team ${cls}"><span class="bk-pos">${esc(r.label)}</span></div>`;
 }
 
 function bracketCard(n, { mirror = false } = {}) {
@@ -837,6 +840,28 @@ function wireEvents(route) {
       const estado = params.get("estado") || "todos";
       location.hash = `#/resultados?estado=${estado}${e.target.value ? "&g=" + e.target.value : ""}`;
     });
+  }
+  if (route === "eliminatorias") {
+    // Cambiar de fase deslizando el dedo en horizontal (además de tocar las pestañas).
+    const area = document.querySelector(".bk-mobile");
+    if (area) {
+      let x0 = null, y0 = null;
+      area.addEventListener("touchstart", (e) => {
+        const t = e.changedTouches[0]; x0 = t.clientX; y0 = t.clientY;
+      }, { passive: true });
+      area.addEventListener("touchend", (e) => {
+        if (x0 == null) return;
+        const t = e.changedTouches[0];
+        const dx = t.clientX - x0, dy = t.clientY - y0;
+        x0 = null;
+        // Solo un swipe horizontal claro (evita confundir con scroll vertical).
+        if (Math.abs(dx) < 60 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
+        const cur = new URLSearchParams(location.hash.split("?")[1] || "").get("ronda") || "r32";
+        let i = BK_ROUND_ORDER.indexOf(cur); if (i < 0) i = 0;
+        const ni = dx < 0 ? Math.min(BK_ROUND_ORDER.length - 1, i + 1) : Math.max(0, i - 1);
+        if (ni !== i) location.hash = `#/eliminatorias?ronda=${BK_ROUND_ORDER[ni]}`;
+      }, { passive: true });
+    }
   }
 }
 

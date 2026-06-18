@@ -941,6 +941,7 @@ select.ctl {
 .bk-team.is-set .nm { color: var(--green); }
 .bk-pos { color: var(--text-dim); font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .bk-team.is-third .bk-pos { color: var(--gold); }
+.bk-team.is-tbd .bk-pos { color: var(--text-faint); font-weight: 600; }
 /* Etiqueta pequeña de posición de origen (1ºA, 2ºB…) junto al equipo. */
 .bk-tag {
   margin-left: auto; flex: none; font-size: 0.58rem; font-weight: 800;
