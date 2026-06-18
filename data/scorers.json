@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-18T18:57:25.333Z",
+  "lastUpdated": "2026-06-18T21:10:34.445Z",
   "scorers": [
     {
       "name": "Lionel Messi",
@@ -74,6 +74,15 @@
       "playedMatches": 1
     },
     {
+      "name": "Johan Manzambi",
+      "teamId": "SUI",
+      "teamName": "Switzerland",
+      "goals": 2,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 2
+    },
+    {
       "name": "Julián Quiñones",
       "teamId": "MEX",
       "teamName": "Mexico",
@@ -134,7 +143,7 @@
       "goals": 1,
       "assists": 0,
       "penalties": 0,
-      "playedMatches": 1
+      "playedMatches": 2
     },
     {
       "name": "Mauricio",
@@ -159,7 +168,7 @@
       "teamId": "SUI",
       "teamName": "Switzerland",
       "goals": 1,
-      "assists": 0,
+      "assists": 1,
       "penalties": 1,
       "playedMatches": 2
     },
@@ -170,7 +179,7 @@
       "goals": 1,
       "assists": 0,
       "penalties": 0,
-      "playedMatches": 1
+      "playedMatches": 2
     },
     {
       "name": "Ismael Saibari",
@@ -259,15 +268,6 @@
       "teamName": "Germany",
       "goals": 1,
       "assists": 1,
-      "penalties": 0,
-      "playedMatches": 1
-    },
-    {
-      "name": "Deniz Undav",
-      "teamId": "GER",
-      "teamName": "Germany",
-      "goals": 1,
-      "assists": 2,
       "penalties": 0,
       "playedMatches": 1
     }

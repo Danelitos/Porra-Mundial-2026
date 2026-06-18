@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-18T18:34:17.192Z",
+  "lastUpdated": "2026-06-18T21:10:34.445Z",
   "matches": [
     {
       "id": "A1",
@@ -381,8 +381,12 @@
       "away": "BIH",
       "date": "2026-06-18T21:00:00+02:00",
       "venue": "Est. BBVA, Monterrey",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 4,
+        "away": 1
+      },
+      "status": "finished",
+      "minute": null
     },
     {
       "id": "B3",
