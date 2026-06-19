@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-19T02:07:10.879Z",
+  "lastUpdated": "2026-06-19T06:42:18.884Z",
   "matches": [
     {
       "id": "A1",
@@ -412,10 +412,10 @@
       "date": "2026-06-19T03:00:00+02:00",
       "venue": "Est. Azteca, Ciudad de México",
       "score": {
-        "home": 0,
+        "home": 1,
         "away": 0
       },
-      "status": "live",
+      "status": "finished",
       "minute": null
     },
     {
