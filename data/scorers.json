@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-18T23:10:42.467Z",
+  "lastUpdated": "2026-06-19T02:07:10.879Z",
   "scorers": [
     {
       "name": "Lionel Messi",
@@ -9,6 +9,15 @@
       "assists": 0,
       "penalties": 0,
       "playedMatches": 1
+    },
+    {
+      "name": "Jonathan David",
+      "teamId": "CAN",
+      "teamName": "Canada",
+      "goals": 3,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 2
     },
     {
       "name": "Cyle Larin",
@@ -92,22 +101,13 @@
       "playedMatches": 2
     },
     {
-      "name": "Jonathan David",
-      "teamId": "CAN",
-      "teamName": "Canada",
-      "goals": 2,
-      "assists": 0,
-      "penalties": 0,
-      "playedMatches": 2
-    },
-    {
       "name": "Julián Quiñones",
       "teamId": "MEX",
       "teamName": "Mexico",
       "goals": 1,
       "assists": 0,
       "penalties": 0,
-      "playedMatches": 1
+      "playedMatches": 2
     },
     {
       "name": "Raúl Jiménez",
@@ -116,7 +116,7 @@
       "goals": 1,
       "assists": 0,
       "penalties": 0,
-      "playedMatches": 1
+      "playedMatches": 2
     },
     {
       "name": "Ladislav Krejčí",
@@ -134,7 +134,7 @@
       "goals": 1,
       "assists": 1,
       "penalties": 0,
-      "playedMatches": 1
+      "playedMatches": 2
     },
     {
       "name": "Hyun-Gyu Oh",
@@ -143,7 +143,7 @@
       "goals": 1,
       "assists": 0,
       "penalties": 0,
-      "playedMatches": 1
+      "playedMatches": 2
     },
     {
       "name": "Jovo Lukić",
