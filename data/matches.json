@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-19T06:42:18.884Z",
+  "lastUpdated": "2026-06-19T19:09:29.151Z",
   "matches": [
     {
       "id": "A1",
@@ -437,8 +437,12 @@
       "away": "AUS",
       "date": "2026-06-19T21:00:00+02:00",
       "venue": "SoFi Stadium, Los Ángeles",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "status": "live",
+      "minute": null
     },
     {
       "id": "C4",
