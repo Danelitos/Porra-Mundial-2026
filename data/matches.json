@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-20T20:39:10.105Z",
+  "lastUpdated": "2026-06-20T21:54:08.422Z",
   "matches": [
     {
       "id": "A1",
@@ -502,7 +502,7 @@
       "date": "2026-06-20T22:00:00+02:00",
       "venue": "NRG Stadium, Houston",
       "score": {
-        "home": 0,
+        "home": 1,
         "away": 1
       },
       "status": "live",

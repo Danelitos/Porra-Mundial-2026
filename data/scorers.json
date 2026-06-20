@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-20T19:03:10.330Z",
+  "lastUpdated": "2026-06-20T21:54:08.422Z",
   "scorers": [
     {
       "name": "Lionel Messi",
@@ -62,6 +62,15 @@
       "goals": 2,
       "assists": 0,
       "penalties": 1,
+      "playedMatches": 2
+    },
+    {
+      "name": "Deniz Undav",
+      "teamId": "GER",
+      "teamName": "Germany",
+      "goals": 2,
+      "assists": 2,
+      "penalties": 0,
       "playedMatches": 2
     },
     {
@@ -257,15 +266,6 @@
       "name": "Connor Metcalfe",
       "teamId": "AUS",
       "teamName": "Australia",
-      "goals": 1,
-      "assists": 0,
-      "penalties": 0,
-      "playedMatches": 2
-    },
-    {
-      "name": "Felix Kalu Nmecha",
-      "teamId": "GER",
-      "teamName": "Germany",
       "goals": 1,
       "assists": 0,
       "penalties": 0,
