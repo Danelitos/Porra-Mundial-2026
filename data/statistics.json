@@ -1,12 +1,12 @@
 {
-  "lastUpdated": "2026-06-20T04:47:07.560Z",
+  "lastUpdated": "2026-06-20T08:15:29.160Z",
   "participants": 21,
-  "matchesPlayed": 31,
+  "matchesPlayed": 32,
   "matchesTotal": 72,
-  "totalGoals": 95,
-  "avgGoals": 3.06,
+  "totalGoals": 96,
+  "avgGoals": 3,
   "totalExactHits": 48,
-  "totalSignHits": 332,
+  "totalSignHits": 336,
   "leader": {
     "id": "pablo",
     "name": "Pablo",

@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-20T04:47:07.560Z",
+  "lastUpdated": "2026-06-20T08:15:29.160Z",
   "ranking": [
     {
       "position": 1,
@@ -20,14 +20,14 @@
       "id": "roberto",
       "name": "Roberto",
       "demo": false,
-      "signPts": 19,
+      "signPts": 20,
       "exactPts": 12,
       "groupPickPts": 0,
       "thirdsPts": 0,
       "pichichiPts": 0,
-      "total": 31,
+      "total": 32,
       "exactHits": 4,
-      "signHits": 19
+      "signHits": 20
     },
     {
       "position": 3,
@@ -87,6 +87,20 @@
     },
     {
       "position": 7,
+      "id": "luismi",
+      "name": "LuisMi",
+      "demo": false,
+      "signPts": 13,
+      "exactPts": 12,
+      "groupPickPts": 0,
+      "thirdsPts": 0,
+      "pichichiPts": 0,
+      "total": 25,
+      "exactHits": 4,
+      "signHits": 13
+    },
+    {
+      "position": 8,
       "id": "david",
       "name": "David",
       "demo": false,
@@ -98,20 +112,6 @@
       "total": 25,
       "exactHits": 3,
       "signHits": 16
-    },
-    {
-      "position": 8,
-      "id": "luismi",
-      "name": "LuisMi",
-      "demo": false,
-      "signPts": 12,
-      "exactPts": 12,
-      "groupPickPts": 0,
-      "thirdsPts": 0,
-      "pichichiPts": 0,
-      "total": 24,
-      "exactHits": 4,
-      "signHits": 12
     },
     {
       "position": 9,
@@ -129,6 +129,20 @@
     },
     {
       "position": 10,
+      "id": "xabiere",
+      "name": "Xabier E.",
+      "demo": false,
+      "signPts": 14,
+      "exactPts": 9,
+      "groupPickPts": 0,
+      "thirdsPts": 0,
+      "pichichiPts": 0,
+      "total": 23,
+      "exactHits": 3,
+      "signHits": 14
+    },
+    {
+      "position": 11,
       "id": "ignacio",
       "name": "Ignacio",
       "demo": false,
@@ -142,23 +156,9 @@
       "signHits": 17
     },
     {
-      "position": 11,
+      "position": 12,
       "id": "xabi",
       "name": "Xabi",
-      "demo": false,
-      "signPts": 13,
-      "exactPts": 9,
-      "groupPickPts": 0,
-      "thirdsPts": 0,
-      "pichichiPts": 0,
-      "total": 22,
-      "exactHits": 3,
-      "signHits": 13
-    },
-    {
-      "position": 11,
-      "id": "xabiere",
-      "name": "Xabier E.",
       "demo": false,
       "signPts": 13,
       "exactPts": 9,
@@ -255,22 +255,22 @@
     },
     {
       "position": 19,
-      "id": "jokin",
-      "name": "Jokin",
+      "id": "juanlu",
+      "name": "JuanLu",
       "demo": false,
-      "signPts": 11,
+      "signPts": 12,
       "exactPts": 3,
       "groupPickPts": 0,
       "thirdsPts": 0,
       "pichichiPts": 0,
-      "total": 14,
+      "total": 15,
       "exactHits": 1,
-      "signHits": 11
+      "signHits": 12
     },
     {
-      "position": 19,
-      "id": "juanlu",
-      "name": "JuanLu",
+      "position": 20,
+      "id": "jokin",
+      "name": "Jokin",
       "demo": false,
       "signPts": 11,
       "exactPts": 3,
