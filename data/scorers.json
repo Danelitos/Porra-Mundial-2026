@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-20T17:47:20.318Z",
+  "lastUpdated": "2026-06-20T19:03:10.330Z",
   "scorers": [
     {
       "name": "Lionel Messi",
@@ -62,7 +62,7 @@
       "goals": 2,
       "assists": 0,
       "penalties": 1,
-      "playedMatches": 1
+      "playedMatches": 2
     },
     {
       "name": "Yasin Ayari",
@@ -133,6 +133,15 @@
       "teamName": "Netherlands",
       "goals": 2,
       "assists": 0,
+      "penalties": 0,
+      "playedMatches": 2
+    },
+    {
+      "name": "Cody Gakpo",
+      "teamId": "NED",
+      "teamName": "Netherlands",
+      "goals": 2,
+      "assists": 2,
       "penalties": 0,
       "playedMatches": 2
     },
@@ -260,16 +269,7 @@
       "goals": 1,
       "assists": 0,
       "penalties": 0,
-      "playedMatches": 1
-    },
-    {
-      "name": "Livano Comenencia",
-      "teamId": "CUW",
-      "teamName": "Curaçao",
-      "goals": 1,
-      "assists": 0,
-      "penalties": 0,
-      "playedMatches": 1
+      "playedMatches": 2
     }
   ]
 }
