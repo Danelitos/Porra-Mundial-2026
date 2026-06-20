@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-20T19:03:10.330Z",
+  "lastUpdated": "2026-06-20T20:39:10.105Z",
   "matches": [
     {
       "id": "A1",
@@ -501,8 +501,12 @@
       "away": "CIV",
       "date": "2026-06-20T22:00:00+02:00",
       "venue": "NRG Stadium, Houston",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 0,
+        "away": 1
+      },
+      "status": "live",
+      "minute": null
     },
     {
       "id": "E4",
