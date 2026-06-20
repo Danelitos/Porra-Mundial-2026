@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-19T23:05:04.530Z",
+  "lastUpdated": "2026-06-20T00:18:38.276Z",
   "matches": [
     {
       "id": "A1",
@@ -456,7 +456,7 @@
         "home": 0,
         "away": 1
       },
-      "status": "live",
+      "status": "finished",
       "minute": null
     },
     {
