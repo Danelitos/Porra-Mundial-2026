@@ -1,6 +1,15 @@
 {
-  "lastUpdated": "2026-06-20T21:54:08.422Z",
+  "lastUpdated": "2026-06-20T22:03:02.385Z",
   "scorers": [
+    {
+      "name": "Deniz Undav",
+      "teamId": "GER",
+      "teamName": "Germany",
+      "goals": 3,
+      "assists": 2,
+      "penalties": 0,
+      "playedMatches": 2
+    },
     {
       "name": "Lionel Messi",
       "teamId": "ARG",
@@ -62,15 +71,6 @@
       "goals": 2,
       "assists": 0,
       "penalties": 1,
-      "playedMatches": 2
-    },
-    {
-      "name": "Deniz Undav",
-      "teamId": "GER",
-      "teamName": "Germany",
-      "goals": 2,
-      "assists": 2,
-      "penalties": 0,
       "playedMatches": 2
     },
     {
