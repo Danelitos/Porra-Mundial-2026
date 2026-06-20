@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-20T08:15:29.160Z",
+  "lastUpdated": "2026-06-20T17:47:20.318Z",
   "matches": [
     {
       "id": "A1",
@@ -486,8 +486,12 @@
       "away": "SWE",
       "date": "2026-06-20T19:00:00+02:00",
       "venue": "AT&T Stadium, Dallas",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 2,
+        "away": 0
+      },
+      "status": "live",
+      "minute": null
     },
     {
       "id": "E3",

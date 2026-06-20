@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-20T04:47:07.560Z",
+  "lastUpdated": "2026-06-20T17:47:20.318Z",
   "scorers": [
     {
       "name": "Lionel Messi",
@@ -71,7 +71,7 @@
       "goals": 2,
       "assists": 0,
       "penalties": 0,
-      "playedMatches": 1
+      "playedMatches": 2
     },
     {
       "name": "Elijah Just",
@@ -122,6 +122,15 @@
       "name": "Matheus Cunha",
       "teamId": "BRA",
       "teamName": "Brazil",
+      "goals": 2,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 2
+    },
+    {
+      "name": "Brian Brobbey",
+      "teamId": "NED",
+      "teamName": "Netherlands",
       "goals": 2,
       "assists": 0,
       "penalties": 0,
@@ -257,15 +266,6 @@
       "name": "Livano Comenencia",
       "teamId": "CUW",
       "teamName": "Curaçao",
-      "goals": 1,
-      "assists": 0,
-      "penalties": 0,
-      "playedMatches": 1
-    },
-    {
-      "name": "Nico Schlotterbeck",
-      "teamId": "GER",
-      "teamName": "Germany",
       "goals": 1,
       "assists": 0,
       "penalties": 0,
