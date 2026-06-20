@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-20T00:18:38.276Z",
+  "lastUpdated": "2026-06-20T04:47:07.560Z",
   "matches": [
     {
       "id": "A1",
@@ -426,8 +426,12 @@
       "away": "PAR",
       "date": "2026-06-19T06:00:00+02:00",
       "venue": "BC Place, Vancouver",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 0,
+        "away": 1
+      },
+      "status": "live",
+      "minute": null
     },
     {
       "id": "D3",
@@ -467,8 +471,12 @@
       "away": "HAI",
       "date": "2026-06-20T03:00:00+02:00",
       "venue": "MetLife Stadium, Nueva York/NJ",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 3,
+        "away": 0
+      },
+      "status": "finished",
+      "minute": null
     },
     {
       "id": "F3",

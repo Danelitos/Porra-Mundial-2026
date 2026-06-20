@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-20T00:18:38.276Z",
+  "lastUpdated": "2026-06-20T04:47:07.560Z",
   "scorers": [
     {
       "name": "Lionel Messi",
@@ -43,6 +43,15 @@
       "teamName": "Morocco",
       "goals": 2,
       "assists": 0,
+      "penalties": 0,
+      "playedMatches": 2
+    },
+    {
+      "name": "Vinicius Junior",
+      "teamId": "BRA",
+      "teamName": "Brazil",
+      "goals": 2,
+      "assists": 2,
       "penalties": 0,
       "playedMatches": 2
     },
@@ -110,6 +119,15 @@
       "playedMatches": 2
     },
     {
+      "name": "Matheus Cunha",
+      "teamId": "BRA",
+      "teamName": "Brazil",
+      "goals": 2,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 2
+    },
+    {
       "name": "Julián Quiñones",
       "teamId": "MEX",
       "teamName": "Mexico",
@@ -170,7 +188,7 @@
       "goals": 1,
       "assists": 0,
       "penalties": 0,
-      "playedMatches": 1
+      "playedMatches": 2
     },
     {
       "name": "Gio Reyna",
@@ -194,15 +212,6 @@
       "name": "Boualem Khoukhi",
       "teamId": "QAT",
       "teamName": "Qatar",
-      "goals": 1,
-      "assists": 0,
-      "penalties": 0,
-      "playedMatches": 2
-    },
-    {
-      "name": "Vinicius Junior",
-      "teamId": "BRA",
-      "teamName": "Brazil",
       "goals": 1,
       "assists": 0,
       "penalties": 0,
@@ -255,15 +264,6 @@
     },
     {
       "name": "Nico Schlotterbeck",
-      "teamId": "GER",
-      "teamName": "Germany",
-      "goals": 1,
-      "assists": 0,
-      "penalties": 0,
-      "playedMatches": 1
-    },
-    {
-      "name": "Jamal Musiala",
       "teamId": "GER",
       "teamName": "Germany",
       "goals": 1,
