@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-21T18:10:10.676Z",
+  "lastUpdated": "2026-06-21T19:59:47.799Z",
   "matches": [
     {
       "id": "A1",
@@ -561,8 +561,12 @@
       "away": "IRN",
       "date": "2026-06-21T21:00:00+02:00",
       "venue": "Lumen Field, Seattle",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "status": "live",
+      "minute": null
     },
     {
       "id": "H4",
