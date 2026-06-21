@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-21T20:32:34.697Z",
+  "lastUpdated": "2026-06-21T21:38:25.204Z",
   "ranking": [
     {
       "position": 1,
@@ -255,22 +255,22 @@
     },
     {
       "position": 19,
-      "id": "jokin",
-      "name": "Jokin",
+      "id": "juanlu",
+      "name": "JuanLu",
       "demo": false,
-      "signPts": 14,
+      "signPts": 15,
       "exactPts": 3,
       "groupPickPts": 0,
       "thirdsPts": 0,
       "pichichiPts": 0,
-      "total": 17,
+      "total": 18,
       "exactHits": 1,
-      "signHits": 14
+      "signHits": 15
     },
     {
-      "position": 19,
-      "id": "juanlu",
-      "name": "JuanLu",
+      "position": 20,
+      "id": "jokin",
+      "name": "Jokin",
       "demo": false,
       "signPts": 14,
       "exactPts": 3,
