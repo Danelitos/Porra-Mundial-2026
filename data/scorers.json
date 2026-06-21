@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-21T06:32:35.580Z",
+  "lastUpdated": "2026-06-21T18:03:56.243Z",
   "scorers": [
     {
       "name": "Deniz Undav",
@@ -173,6 +173,15 @@
       "playedMatches": 2
     },
     {
+      "name": "Mikel Oyarzabal",
+      "teamId": "ESP",
+      "teamName": "Spain",
+      "goals": 2,
+      "assists": 1,
+      "penalties": 0,
+      "playedMatches": 2
+    },
+    {
       "name": "Julián Quiñones",
       "teamId": "MEX",
       "teamName": "Mexico",
@@ -257,15 +266,6 @@
       "name": "Boualem Khoukhi",
       "teamId": "QAT",
       "teamName": "Qatar",
-      "goals": 1,
-      "assists": 0,
-      "penalties": 0,
-      "playedMatches": 2
-    },
-    {
-      "name": "John McGinn",
-      "teamId": "SCO",
-      "teamName": "Scotland",
       "goals": 1,
       "assists": 0,
       "penalties": 0,
