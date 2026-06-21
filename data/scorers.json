@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-21T18:03:56.243Z",
+  "lastUpdated": "2026-06-21T22:48:58.634Z",
   "scorers": [
     {
       "name": "Deniz Undav",
@@ -86,6 +86,15 @@
       "name": "Yasin Ayari",
       "teamId": "SWE",
       "teamName": "Sweden",
+      "goals": 2,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 2
+    },
+    {
+      "name": "Maximiliano Araújo",
+      "teamId": "URU",
+      "teamName": "Uruguay",
       "goals": 2,
       "assists": 0,
       "penalties": 0,
@@ -260,15 +269,6 @@
       "goals": 1,
       "assists": 1,
       "penalties": 1,
-      "playedMatches": 2
-    },
-    {
-      "name": "Boualem Khoukhi",
-      "teamId": "QAT",
-      "teamName": "Qatar",
-      "goals": 1,
-      "assists": 0,
-      "penalties": 0,
       "playedMatches": 2
     }
   ]

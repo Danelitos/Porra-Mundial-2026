@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-21T21:38:25.204Z",
+  "lastUpdated": "2026-06-21T22:48:58.634Z",
   "matches": [
     {
       "id": "A1",
@@ -576,8 +576,12 @@
       "away": "CPV",
       "date": "2026-06-22T00:00:00+02:00",
       "venue": "Hard Rock Stadium, Miami",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 0,
+        "away": 1
+      },
+      "status": "live",
+      "minute": null
     },
     {
       "id": "G4",
