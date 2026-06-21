@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-21T01:41:22.593Z",
+  "lastUpdated": "2026-06-21T06:32:35.580Z",
   "matches": [
     {
       "id": "A1",
@@ -520,7 +520,7 @@
         "home": 0,
         "away": 0
       },
-      "status": "live",
+      "status": "finished",
       "minute": null
     },
     {
@@ -531,8 +531,12 @@
       "away": "JPN",
       "date": "2026-06-21T06:00:00+02:00",
       "venue": null,
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 0,
+        "away": 4
+      },
+      "status": "finished",
+      "minute": null
     },
     {
       "id": "H3",

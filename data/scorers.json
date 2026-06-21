@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-20T22:03:02.385Z",
+  "lastUpdated": "2026-06-21T06:32:35.580Z",
   "scorers": [
     {
       "name": "Deniz Undav",
@@ -71,6 +71,15 @@
       "goals": 2,
       "assists": 0,
       "penalties": 1,
+      "playedMatches": 2
+    },
+    {
+      "name": "Daichi Kamada",
+      "teamId": "JPN",
+      "teamName": "Japan",
+      "goals": 2,
+      "assists": 0,
+      "penalties": 0,
       "playedMatches": 2
     },
     {
@@ -151,6 +160,15 @@
       "teamName": "Netherlands",
       "goals": 2,
       "assists": 2,
+      "penalties": 0,
+      "playedMatches": 2
+    },
+    {
+      "name": "Ayase Ueda",
+      "teamId": "JPN",
+      "teamName": "Japan",
+      "goals": 2,
+      "assists": 1,
       "penalties": 0,
       "playedMatches": 2
     },
@@ -248,24 +266,6 @@
       "name": "John McGinn",
       "teamId": "SCO",
       "teamName": "Scotland",
-      "goals": 1,
-      "assists": 0,
-      "penalties": 0,
-      "playedMatches": 2
-    },
-    {
-      "name": "Nestor Irankunda",
-      "teamId": "AUS",
-      "teamName": "Australia",
-      "goals": 1,
-      "assists": 0,
-      "penalties": 0,
-      "playedMatches": 2
-    },
-    {
-      "name": "Connor Metcalfe",
-      "teamId": "AUS",
-      "teamName": "Australia",
       "goals": 1,
       "assists": 0,
       "penalties": 0,
