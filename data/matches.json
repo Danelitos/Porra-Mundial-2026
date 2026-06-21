@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-21T19:59:47.799Z",
+  "lastUpdated": "2026-06-21T20:32:34.697Z",
   "matches": [
     {
       "id": "A1",
@@ -547,7 +547,7 @@
       "date": "2026-06-21T18:00:00+02:00",
       "venue": "Mercedes-Benz Stadium, Atlanta",
       "score": {
-        "home": 5,
+        "home": 4,
         "away": 0
       },
       "status": "finished",

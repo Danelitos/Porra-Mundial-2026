@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-21T19:59:47.799Z",
+  "lastUpdated": "2026-06-21T20:32:34.697Z",
   "ranking": [
     {
       "position": 1,
@@ -7,16 +7,30 @@
       "name": "Pablo",
       "demo": false,
       "signPts": 23,
-      "exactPts": 18,
+      "exactPts": 15,
       "groupPickPts": 0,
       "thirdsPts": 0,
       "pichichiPts": 0,
-      "total": 41,
-      "exactHits": 6,
+      "total": 38,
+      "exactHits": 5,
       "signHits": 23
     },
     {
-      "position": 2,
+      "position": 1,
+      "id": "roberto",
+      "name": "Roberto",
+      "demo": false,
+      "signPts": 23,
+      "exactPts": 15,
+      "groupPickPts": 0,
+      "thirdsPts": 0,
+      "pichichiPts": 0,
+      "total": 38,
+      "exactHits": 5,
+      "signHits": 23
+    },
+    {
+      "position": 3,
       "id": "mario",
       "name": "Mario",
       "demo": false,
@@ -28,20 +42,6 @@
       "total": 35,
       "exactHits": 5,
       "signHits": 20
-    },
-    {
-      "position": 3,
-      "id": "roberto",
-      "name": "Roberto",
-      "demo": false,
-      "signPts": 23,
-      "exactPts": 12,
-      "groupPickPts": 0,
-      "thirdsPts": 0,
-      "pichichiPts": 0,
-      "total": 35,
-      "exactHits": 4,
-      "signHits": 23
     },
     {
       "position": 4,
@@ -129,6 +129,34 @@
     },
     {
       "position": 10,
+      "id": "coco",
+      "name": "Coco",
+      "demo": false,
+      "signPts": 20,
+      "exactPts": 9,
+      "groupPickPts": 0,
+      "thirdsPts": 0,
+      "pichichiPts": 0,
+      "total": 29,
+      "exactHits": 3,
+      "signHits": 20
+    },
+    {
+      "position": 11,
+      "id": "jonbel",
+      "name": "JonBel",
+      "demo": false,
+      "signPts": 19,
+      "exactPts": 9,
+      "groupPickPts": 0,
+      "thirdsPts": 0,
+      "pichichiPts": 0,
+      "total": 28,
+      "exactHits": 3,
+      "signHits": 19
+    },
+    {
+      "position": 12,
       "id": "ignacio",
       "name": "Ignacio",
       "demo": false,
@@ -142,7 +170,7 @@
       "signHits": 21
     },
     {
-      "position": 11,
+      "position": 13,
       "id": "jaime",
       "name": "Jaime",
       "demo": false,
@@ -156,7 +184,7 @@
       "signHits": 24
     },
     {
-      "position": 12,
+      "position": 14,
       "id": "xabiere",
       "name": "Xabier E.",
       "demo": false,
@@ -170,21 +198,7 @@
       "signHits": 17
     },
     {
-      "position": 13,
-      "id": "coco",
-      "name": "Coco",
-      "demo": false,
-      "signPts": 20,
-      "exactPts": 6,
-      "groupPickPts": 0,
-      "thirdsPts": 0,
-      "pichichiPts": 0,
-      "total": 26,
-      "exactHits": 2,
-      "signHits": 20
-    },
-    {
-      "position": 13,
+      "position": 15,
       "id": "guille",
       "name": "Guille",
       "demo": false,
@@ -196,20 +210,6 @@
       "total": 26,
       "exactHits": 2,
       "signHits": 20
-    },
-    {
-      "position": 15,
-      "id": "jonbel",
-      "name": "JonBel",
-      "demo": false,
-      "signPts": 19,
-      "exactPts": 6,
-      "groupPickPts": 0,
-      "thirdsPts": 0,
-      "pichichiPts": 0,
-      "total": 25,
-      "exactHits": 2,
-      "signHits": 19
     },
     {
       "position": 16,
