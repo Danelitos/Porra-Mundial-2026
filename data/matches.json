@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-21T06:32:35.580Z",
+  "lastUpdated": "2026-06-21T16:22:13.859Z",
   "matches": [
     {
       "id": "A1",
@@ -546,8 +546,12 @@
       "away": "KSA",
       "date": "2026-06-21T18:00:00+02:00",
       "venue": "Mercedes-Benz Stadium, Atlanta",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 1,
+        "away": 0
+      },
+      "status": "live",
+      "minute": null
     },
     {
       "id": "G3",
