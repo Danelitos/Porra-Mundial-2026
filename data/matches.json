@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-21T22:48:58.634Z",
+  "lastUpdated": "2026-06-22T00:01:55.706Z",
   "matches": [
     {
       "id": "A1",
@@ -577,8 +577,8 @@
       "date": "2026-06-22T00:00:00+02:00",
       "venue": "Hard Rock Stadium, Miami",
       "score": {
-        "home": 0,
-        "away": 1
+        "home": 2,
+        "away": 2
       },
       "status": "live",
       "minute": null

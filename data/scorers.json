@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-21T22:48:58.634Z",
+  "lastUpdated": "2026-06-22T00:01:55.706Z",
   "scorers": [
     {
       "name": "Deniz Undav",
@@ -96,7 +96,7 @@
       "teamId": "URU",
       "teamName": "Uruguay",
       "goals": 2,
-      "assists": 0,
+      "assists": 1,
       "penalties": 0,
       "playedMatches": 2
     },
@@ -107,7 +107,7 @@
       "goals": 2,
       "assists": 0,
       "penalties": 0,
-      "playedMatches": 1
+      "playedMatches": 2
     },
     {
       "name": "Kylian Mbappé",
