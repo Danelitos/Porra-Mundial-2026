@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-22T00:01:55.706Z",
+  "lastUpdated": "2026-06-22T04:52:38.929Z",
   "matches": [
     {
       "id": "A1",
@@ -580,7 +580,7 @@
         "home": 2,
         "away": 2
       },
-      "status": "live",
+      "status": "finished",
       "minute": null
     },
     {
@@ -591,8 +591,12 @@
       "away": "EGY",
       "date": "2026-06-22T03:00:00+02:00",
       "venue": "Lumen Field, Seattle",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 1,
+        "away": 3
+      },
+      "status": "finished",
+      "minute": null
     },
     {
       "id": "J4",
