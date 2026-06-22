@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-22T19:09:29.974Z",
+  "lastUpdated": "2026-06-22T21:52:09.872Z",
   "matches": [
     {
       "id": "A1",
@@ -632,8 +632,12 @@
       "away": "IRQ",
       "date": "2026-06-22T23:00:00+02:00",
       "venue": "MetLife Stadium, Nueva York/NJ",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 1,
+        "away": 0
+      },
+      "status": "live",
+      "minute": null
     },
     {
       "id": "I4",
