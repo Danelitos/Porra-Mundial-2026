@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-23T19:25:45.117Z",
+  "lastUpdated": "2026-06-23T21:15:22.407Z",
   "scorers": [
     {
       "name": "Lionel Messi",
@@ -209,6 +209,15 @@
       "playedMatches": 2
     },
     {
+      "name": "Cristiano Ronaldo",
+      "teamId": "POR",
+      "teamName": "Portugal",
+      "goals": 2,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 2
+    },
+    {
       "name": "Julián Quiñones",
       "teamId": "MEX",
       "teamName": "Mexico",
@@ -257,15 +266,6 @@
       "name": "Jovo Lukić",
       "teamId": "BIH",
       "teamName": "Bosnia-Herzegovina",
-      "goals": 1,
-      "assists": 0,
-      "penalties": 0,
-      "playedMatches": 2
-    },
-    {
-      "name": "Mauricio",
-      "teamId": "PAR",
-      "teamName": "Paraguay",
       "goals": 1,
       "assists": 0,
       "penalties": 0,

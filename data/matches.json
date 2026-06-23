@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-23T19:25:45.117Z",
+  "lastUpdated": "2026-06-23T21:15:22.407Z",
   "matches": [
     {
       "id": "A1",
@@ -703,8 +703,12 @@
       "away": "GHA",
       "date": "2026-06-23T22:00:00+02:00",
       "venue": "AT&T Stadium, Dallas",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "status": "pending",
+      "minute": null
     },
     {
       "id": "B5",
