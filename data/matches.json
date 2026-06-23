@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-23T01:26:31.211Z",
+  "lastUpdated": "2026-06-23T05:11:16.260Z",
   "matches": [
     {
       "id": "A1",
@@ -606,8 +606,12 @@
       "away": "ALG",
       "date": "2026-06-22T05:00:00+02:00",
       "venue": null,
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 1,
+        "away": 2
+      },
+      "status": "finished",
+      "minute": null
     },
     {
       "id": "J3",
@@ -649,9 +653,9 @@
       "venue": "Gillette Stadium, Boston",
       "score": {
         "home": 3,
-        "away": 1
+        "away": 2
       },
-      "status": "live",
+      "status": "finished",
       "minute": null
     },
     {

@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-23T01:26:31.211Z",
+  "lastUpdated": "2026-06-23T05:11:16.260Z",
   "scorers": [
     {
       "name": "Lionel Messi",
@@ -191,6 +191,15 @@
       "playedMatches": 2
     },
     {
+      "name": "Ismaïla Sarr",
+      "teamId": "SEN",
+      "teamName": "Senegal",
+      "goals": 2,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 2
+    },
+    {
       "name": "Julián Quiñones",
       "teamId": "MEX",
       "teamName": "Mexico",
@@ -260,15 +269,6 @@
       "goals": 1,
       "assists": 0,
       "penalties": 0,
-      "playedMatches": 2
-    },
-    {
-      "name": "Breel Embolo",
-      "teamId": "SUI",
-      "teamName": "Switzerland",
-      "goals": 1,
-      "assists": 1,
-      "penalties": 1,
       "playedMatches": 2
     }
   ]

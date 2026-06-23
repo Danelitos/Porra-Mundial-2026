@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-06-23T01:26:31.211Z",
+  "lastUpdated": "2026-06-23T05:11:16.260Z",
   "participants": 21,
-  "matchesPlayed": 42,
+  "matchesPlayed": 44,
   "matchesTotal": 72,
-  "totalGoals": 126,
-  "avgGoals": 3,
-  "totalExactHits": 80,
-  "totalSignHits": 469,
+  "totalGoals": 134,
+  "avgGoals": 3.05,
+  "totalExactHits": 82,
+  "totalSignHits": 490,
   "leader": {
-    "id": "mario",
-    "name": "Mario",
-    "total": 44
+    "id": "david",
+    "name": "David",
+    "total": 45
   }
 }
