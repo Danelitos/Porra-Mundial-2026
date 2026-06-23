@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-23T22:41:07.238Z",
+  "lastUpdated": "2026-06-23T23:42:21.157Z",
   "matches": [
     {
       "id": "A1",
@@ -681,8 +681,12 @@
       "away": "CRO",
       "date": "2026-06-23T19:00:00+02:00",
       "venue": "Lincoln Financial, Filadelfia",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "status": "pending",
+      "minute": null
     },
     {
       "id": "K4",
