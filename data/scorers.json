@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-23T15:13:34.867Z",
+  "lastUpdated": "2026-06-23T19:25:45.117Z",
   "scorers": [
     {
       "name": "Lionel Messi",
@@ -78,7 +78,7 @@
       "teamId": "BRA",
       "teamName": "Brazil",
       "goals": 2,
-      "assists": 2,
+      "assists": 1,
       "penalties": 0,
       "playedMatches": 2
     },
@@ -143,7 +143,7 @@
       "goals": 2,
       "assists": 0,
       "penalties": 1,
-      "playedMatches": 1
+      "playedMatches": 2
     },
     {
       "name": "Johan Manzambi",
