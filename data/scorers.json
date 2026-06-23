@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-23T11:55:15.819Z",
+  "lastUpdated": "2026-06-23T15:13:34.867Z",
   "scorers": [
     {
       "name": "Lionel Messi",
@@ -177,7 +177,7 @@
       "teamId": "NED",
       "teamName": "Netherlands",
       "goals": 2,
-      "assists": 2,
+      "assists": 1,
       "penalties": 0,
       "playedMatches": 2
     },
