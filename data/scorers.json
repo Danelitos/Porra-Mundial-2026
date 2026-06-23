@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-23T05:11:16.260Z",
+  "lastUpdated": "2026-06-23T11:55:15.819Z",
   "scorers": [
     {
       "name": "Lionel Messi",
@@ -89,6 +89,15 @@
       "goals": 2,
       "assists": 0,
       "penalties": 1,
+      "playedMatches": 2
+    },
+    {
+      "name": "Crysencio Summerville",
+      "teamId": "NED",
+      "teamName": "Netherlands",
+      "goals": 2,
+      "assists": 1,
+      "penalties": 0,
       "playedMatches": 2
     },
     {
@@ -257,15 +266,6 @@
       "name": "Mauricio",
       "teamId": "PAR",
       "teamName": "Paraguay",
-      "goals": 1,
-      "assists": 0,
-      "penalties": 0,
-      "playedMatches": 2
-    },
-    {
-      "name": "Gio Reyna",
-      "teamId": "USA",
-      "teamName": "United States",
       "goals": 1,
       "assists": 0,
       "penalties": 0,
