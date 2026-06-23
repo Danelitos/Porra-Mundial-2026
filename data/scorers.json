@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-22T23:16:42.107Z",
+  "lastUpdated": "2026-06-23T01:26:31.211Z",
   "scorers": [
     {
       "name": "Lionel Messi",
@@ -11,20 +11,29 @@
       "playedMatches": 2
     },
     {
+      "name": "Kylian Mbappé",
+      "teamId": "FRA",
+      "teamName": "France",
+      "goals": 4,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 2
+    },
+    {
+      "name": "Erling Haaland",
+      "teamId": "NOR",
+      "teamName": "Norway",
+      "goals": 4,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 2
+    },
+    {
       "name": "Deniz Undav",
       "teamId": "GER",
       "teamName": "Germany",
       "goals": 3,
       "assists": 2,
-      "penalties": 0,
-      "playedMatches": 2
-    },
-    {
-      "name": "Kylian Mbappé",
-      "teamId": "FRA",
-      "teamName": "France",
-      "goals": 3,
-      "assists": 0,
       "penalties": 0,
       "playedMatches": 2
     },
@@ -113,15 +122,6 @@
       "name": "Elijah Just",
       "teamId": "NZL",
       "teamName": "New Zealand",
-      "goals": 2,
-      "assists": 0,
-      "penalties": 0,
-      "playedMatches": 2
-    },
-    {
-      "name": "Erling Haaland",
-      "teamId": "NOR",
-      "teamName": "Norway",
       "goals": 2,
       "assists": 0,
       "penalties": 0,
