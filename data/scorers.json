@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-24T18:16:43.318Z",
+  "lastUpdated": "2026-06-24T20:14:45.941Z",
   "scorers": [
     {
       "name": "Lionel Messi",
@@ -159,7 +159,16 @@
       "teamId": "SUI",
       "teamName": "Switzerland",
       "goals": 2,
-      "assists": 0,
+      "assists": 1,
+      "penalties": 0,
+      "playedMatches": 3
+    },
+    {
+      "name": "Ruben Vargas",
+      "teamId": "SUI",
+      "teamName": "Switzerland",
+      "goals": 2,
+      "assists": 1,
       "penalties": 0,
       "playedMatches": 3
     },
@@ -259,15 +268,6 @@
       "teamName": "South Korea",
       "goals": 1,
       "assists": 1,
-      "penalties": 0,
-      "playedMatches": 2
-    },
-    {
-      "name": "Hyun-Gyu Oh",
-      "teamId": "KOR",
-      "teamName": "South Korea",
-      "goals": 1,
-      "assists": 0,
       "penalties": 0,
       "playedMatches": 2
     }
