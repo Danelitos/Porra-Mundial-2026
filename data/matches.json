@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-24T20:14:45.941Z",
+  "lastUpdated": "2026-06-24T21:13:57.101Z",
   "matches": [
     {
       "id": "A1",
@@ -727,10 +727,10 @@
       "date": "2026-06-24T21:00:00+02:00",
       "venue": "Est. BBVA, Monterrey",
       "score": {
-        "home": 2,
+        "home": 3,
         "away": 1
       },
-      "status": "live",
+      "status": "finished",
       "minute": null
     },
     {
@@ -742,10 +742,10 @@
       "date": "2026-06-24T21:00:00+02:00",
       "venue": "BMO Field, Toronto",
       "score": {
-        "home": 1,
-        "away": 0
+        "home": 2,
+        "away": 1
       },
-      "status": "live",
+      "status": "finished",
       "minute": null
     },
     {

@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-24T20:14:45.941Z",
+  "lastUpdated": "2026-06-24T21:13:57.101Z",
   "scorers": [
     {
       "name": "Lionel Messi",
@@ -38,6 +38,15 @@
       "playedMatches": 2
     },
     {
+      "name": "Johan Manzambi",
+      "teamId": "SUI",
+      "teamName": "Switzerland",
+      "goals": 3,
+      "assists": 1,
+      "penalties": 0,
+      "playedMatches": 3
+    },
+    {
       "name": "Jonathan David",
       "teamId": "CAN",
       "teamName": "Canada",
@@ -71,7 +80,7 @@
       "goals": 2,
       "assists": 0,
       "penalties": 0,
-      "playedMatches": 2
+      "playedMatches": 3
     },
     {
       "name": "Vinicius Junior",
@@ -80,7 +89,7 @@
       "goals": 2,
       "assists": 1,
       "penalties": 0,
-      "playedMatches": 2
+      "playedMatches": 3
     },
     {
       "name": "Kai Havertz",
@@ -155,7 +164,7 @@
       "playedMatches": 1
     },
     {
-      "name": "Johan Manzambi",
+      "name": "Ruben Vargas",
       "teamId": "SUI",
       "teamName": "Switzerland",
       "goals": 2,
@@ -164,11 +173,11 @@
       "playedMatches": 3
     },
     {
-      "name": "Ruben Vargas",
-      "teamId": "SUI",
-      "teamName": "Switzerland",
+      "name": "Ermin Mahmic",
+      "teamId": "BIH",
+      "teamName": "Bosnia-Herzegovina",
       "goals": 2,
-      "assists": 1,
+      "assists": 0,
       "penalties": 0,
       "playedMatches": 3
     },
@@ -179,7 +188,7 @@
       "goals": 2,
       "assists": 0,
       "penalties": 0,
-      "playedMatches": 2
+      "playedMatches": 3
     },
     {
       "name": "Brian Brobbey",
@@ -259,15 +268,6 @@
       "teamName": "Czechia",
       "goals": 1,
       "assists": 0,
-      "penalties": 0,
-      "playedMatches": 2
-    },
-    {
-      "name": "In-beom Hwang",
-      "teamId": "KOR",
-      "teamName": "South Korea",
-      "goals": 1,
-      "assists": 1,
       "penalties": 0,
       "playedMatches": 2
     }
