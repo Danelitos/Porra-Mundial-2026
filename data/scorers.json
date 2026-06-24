@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-24T21:13:57.101Z",
+  "lastUpdated": "2026-06-24T22:59:20.700Z",
   "scorers": [
     {
       "name": "Lionel Messi",
@@ -9,6 +9,15 @@
       "assists": 0,
       "penalties": 0,
       "playedMatches": 2
+    },
+    {
+      "name": "Vinicius Junior",
+      "teamId": "BRA",
+      "teamName": "Brazil",
+      "goals": 4,
+      "assists": 1,
+      "penalties": 0,
+      "playedMatches": 3
     },
     {
       "name": "Kylian Mbappé",
@@ -27,6 +36,15 @@
       "assists": 0,
       "penalties": 0,
       "playedMatches": 2
+    },
+    {
+      "name": "Ismael Saibari",
+      "teamId": "MAR",
+      "teamName": "Morocco",
+      "goals": 3,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 3
     },
     {
       "name": "Deniz Undav",
@@ -72,24 +90,6 @@
       "assists": 0,
       "penalties": 0,
       "playedMatches": 2
-    },
-    {
-      "name": "Ismael Saibari",
-      "teamId": "MAR",
-      "teamName": "Morocco",
-      "goals": 2,
-      "assists": 0,
-      "penalties": 0,
-      "playedMatches": 3
-    },
-    {
-      "name": "Vinicius Junior",
-      "teamId": "BRA",
-      "teamName": "Brazil",
-      "goals": 2,
-      "assists": 1,
-      "penalties": 0,
-      "playedMatches": 3
     },
     {
       "name": "Kai Havertz",

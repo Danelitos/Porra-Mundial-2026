@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-24T21:13:57.101Z",
+  "lastUpdated": "2026-06-24T22:59:20.700Z",
   "matches": [
     {
       "id": "A1",
@@ -756,8 +756,12 @@
       "away": "HAI",
       "date": "2026-06-25T00:00:00+02:00",
       "venue": "MetLife Stadium, Nueva York/NJ",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 2,
+        "away": 2
+      },
+      "status": "live",
+      "minute": null
     },
     {
       "id": "C6",
@@ -767,8 +771,12 @@
       "away": "BRA",
       "date": "2026-06-25T00:00:00+02:00",
       "venue": "Gillette Stadium, Boston",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 0,
+        "away": 2
+      },
+      "status": "live",
+      "minute": null
     },
     {
       "id": "A5",
