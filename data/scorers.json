@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-24T05:48:34.138Z",
+  "lastUpdated": "2026-06-24T18:16:43.318Z",
   "scorers": [
     {
       "name": "Lionel Messi",
@@ -44,7 +44,7 @@
       "goals": 3,
       "assists": 0,
       "penalties": 0,
-      "playedMatches": 2
+      "playedMatches": 3
     },
     {
       "name": "Cyle Larin",
@@ -53,7 +53,7 @@
       "goals": 2,
       "assists": 0,
       "penalties": 0,
-      "playedMatches": 2
+      "playedMatches": 3
     },
     {
       "name": "Folarin Balogun",
@@ -161,7 +161,7 @@
       "goals": 2,
       "assists": 0,
       "penalties": 0,
-      "playedMatches": 2
+      "playedMatches": 3
     },
     {
       "name": "Matheus Cunha",
