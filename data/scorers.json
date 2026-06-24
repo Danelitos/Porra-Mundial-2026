@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-23T21:15:22.407Z",
+  "lastUpdated": "2026-06-24T05:48:34.138Z",
   "scorers": [
     {
       "name": "Lionel Messi",
@@ -146,6 +146,15 @@
       "playedMatches": 2
     },
     {
+      "name": "Daniel Muñoz",
+      "teamId": "COL",
+      "teamName": "Colombia",
+      "goals": 2,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 1
+    },
+    {
       "name": "Johan Manzambi",
       "teamId": "SUI",
       "teamName": "Switzerland",
@@ -257,15 +266,6 @@
       "name": "Hyun-Gyu Oh",
       "teamId": "KOR",
       "teamName": "South Korea",
-      "goals": 1,
-      "assists": 0,
-      "penalties": 0,
-      "playedMatches": 2
-    },
-    {
-      "name": "Jovo Lukić",
-      "teamId": "BIH",
-      "teamName": "Bosnia-Herzegovina",
       "goals": 1,
       "assists": 0,
       "penalties": 0,

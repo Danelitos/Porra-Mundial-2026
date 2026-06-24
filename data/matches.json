@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-24T01:33:50.999Z",
+  "lastUpdated": "2026-06-24T05:48:34.138Z",
   "matches": [
     {
       "id": "A1",
@@ -696,8 +696,12 @@
       "away": "COD",
       "date": "2026-06-23T22:00:00+02:00",
       "venue": null,
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 1,
+        "away": 0
+      },
+      "status": "finished",
+      "minute": null
     },
     {
       "id": "L3",
