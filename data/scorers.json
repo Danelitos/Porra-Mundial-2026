@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-25T00:20:04.190Z",
+  "lastUpdated": "2026-06-25T04:40:21.054Z",
   "scorers": [
     {
       "name": "Lionel Messi",
@@ -78,6 +78,15 @@
       "teamId": "BRA",
       "teamName": "Brazil",
       "goals": 3,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 3
+    },
+    {
+      "name": "Julián Quiñones",
+      "teamId": "MEX",
+      "teamName": "Mexico",
+      "goals": 2,
       "assists": 0,
       "penalties": 0,
       "playedMatches": 3
@@ -243,15 +252,6 @@
       "assists": 0,
       "penalties": 0,
       "playedMatches": 2
-    },
-    {
-      "name": "Julián Quiñones",
-      "teamId": "MEX",
-      "teamName": "Mexico",
-      "goals": 1,
-      "assists": 0,
-      "penalties": 0,
-      "playedMatches": 3
     },
     {
       "name": "Raúl Jiménez",

@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-25T00:20:04.190Z",
+  "lastUpdated": "2026-06-25T04:40:21.054Z",
   "matches": [
     {
       "id": "A1",
@@ -786,8 +786,12 @@
       "away": "MEX",
       "date": "2026-06-25T03:00:00+02:00",
       "venue": "Est. Akron, Guadalajara",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 0,
+        "away": 3
+      },
+      "status": "finished",
+      "minute": null
     },
     {
       "id": "A6",
@@ -797,8 +801,12 @@
       "away": "KOR",
       "date": "2026-06-25T03:00:00+02:00",
       "venue": "NRG Stadium, Houston",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 1,
+        "away": 0
+      },
+      "status": "finished",
+      "minute": null
     },
     {
       "id": "E5",
