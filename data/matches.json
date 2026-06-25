@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-25T22:08:33.524Z",
+  "lastUpdated": "2026-06-25T23:45:55.756Z",
   "matches": [
     {
       "id": "A1",
@@ -846,8 +846,12 @@
       "away": "NED",
       "date": "2026-06-26T01:00:00+02:00",
       "venue": "Est. BBVA, Monterrey",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 0,
+        "away": 2
+      },
+      "status": "live",
+      "minute": null
     },
     {
       "id": "F6",
@@ -857,8 +861,12 @@
       "away": "SWE",
       "date": "2026-06-26T01:00:00+02:00",
       "venue": null,
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "status": "live",
+      "minute": null
     },
     {
       "id": "D5",

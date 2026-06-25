@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-25T22:14:47.671Z",
+  "lastUpdated": "2026-06-25T23:45:55.756Z",
   "scorers": [
     {
       "name": "Lionel Messi",
@@ -77,6 +77,15 @@
       "name": "Matheus Cunha",
       "teamId": "BRA",
       "teamName": "Brazil",
+      "goals": 3,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 3
+    },
+    {
+      "name": "Brian Brobbey",
+      "teamId": "NED",
+      "teamName": "Netherlands",
       "goals": 3,
       "assists": 0,
       "penalties": 0,
@@ -194,15 +203,6 @@
       "name": "Ermin Mahmic",
       "teamId": "BIH",
       "teamName": "Bosnia-Herzegovina",
-      "goals": 2,
-      "assists": 0,
-      "penalties": 0,
-      "playedMatches": 3
-    },
-    {
-      "name": "Brian Brobbey",
-      "teamId": "NED",
-      "teamName": "Netherlands",
       "goals": 2,
       "assists": 0,
       "penalties": 0,
