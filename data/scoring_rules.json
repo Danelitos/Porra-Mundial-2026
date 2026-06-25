@@ -10,13 +10,13 @@
     "thirdQualifies": 1
   },
   "knockout": {
-    "r32": 2,
-    "r16": 3,
-    "qf": 4,
-    "sf": 5,
-    "thirdPlace": 6,
-    "runnerUp": 8,
-    "champion": 15
+    "r32": 5,
+    "r16": 10,
+    "qf": 15,
+    "sf": 20,
+    "thirdPlace": 25,
+    "runnerUp": 30,
+    "champion": 50
   },
   "bonus": {
     "pichichi": 20
@@ -46,13 +46,13 @@
       "section": "Fase Eliminatoria",
       "icon": "🔮",
       "items": [
-        { "label": "Acertar clasificado en 1/16 de final", "value": "2 pts por acierto" },
-        { "label": "Acertar clasificado en octavos", "value": "3 pts por acierto" },
-        { "label": "Acertar clasificado en cuartos", "value": "4 pts por acierto" },
-        { "label": "Acertar finalista (semifinales)", "value": "5 pts por acierto" },
-        { "label": "Acertar ganador del 3er puesto", "value": "6 pts" },
-        { "label": "Acertar el SUBCAMPEÓN", "value": "8 pts" },
-        { "label": "Acertar el CAMPEÓN DEL MUNDO 🏆", "value": "15 pts" }
+        { "label": "Acertar clasificado en 1/16 de final", "value": "5 pts por acierto" },
+        { "label": "Acertar clasificado en octavos", "value": "10 pts por acierto" },
+        { "label": "Acertar clasificado en cuartos", "value": "15 pts por acierto" },
+        { "label": "Acertar finalista (semifinales)", "value": "20 pts por acierto" },
+        { "label": "Acertar ganador del 3er puesto", "value": "25 pts" },
+        { "label": "Acertar el SUBCAMPEÓN", "value": "30 pts" },
+        { "label": "Acertar el CAMPEÓN DEL MUNDO 🏆", "value": "50 pts" }
       ]
     },
     {

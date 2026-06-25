@@ -229,7 +229,10 @@ export function computeParticipant(p, ctx, options = {}) {
       if (table[2] && pick.third === table[2].teamId) {
         thirdsPts += rules.groupStage.thirdQualifies;
         thirdsHits++;
-        if (groupResults[g.id]) groupResults[g.id].third = true;
+        if (groupResults[g.id]) {
+          groupResults[g.id].third = true;
+          groupResults[g.id].pts += rules.groupStage.thirdQualifies;
+        }
       } else if (groupResults[g.id] && groupResults[g.id].third == null) {
         groupResults[g.id].third = false;
       }
