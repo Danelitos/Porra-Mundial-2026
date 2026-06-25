@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-24T22:59:20.700Z",
+  "lastUpdated": "2026-06-25T00:20:04.190Z",
   "scorers": [
     {
       "name": "Lionel Messi",
@@ -68,6 +68,15 @@
       "name": "Jonathan David",
       "teamId": "CAN",
       "teamName": "Canada",
+      "goals": 3,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 3
+    },
+    {
+      "name": "Matheus Cunha",
+      "teamId": "BRA",
+      "teamName": "Brazil",
       "goals": 3,
       "assists": 0,
       "penalties": 0,
@@ -182,15 +191,6 @@
       "playedMatches": 3
     },
     {
-      "name": "Matheus Cunha",
-      "teamId": "BRA",
-      "teamName": "Brazil",
-      "goals": 2,
-      "assists": 0,
-      "penalties": 0,
-      "playedMatches": 3
-    },
-    {
       "name": "Brian Brobbey",
       "teamId": "NED",
       "teamName": "Netherlands",
@@ -251,7 +251,7 @@
       "goals": 1,
       "assists": 0,
       "penalties": 0,
-      "playedMatches": 2
+      "playedMatches": 3
     },
     {
       "name": "Raúl Jiménez",
@@ -260,7 +260,7 @@
       "goals": 1,
       "assists": 0,
       "penalties": 0,
-      "playedMatches": 2
+      "playedMatches": 3
     },
     {
       "name": "Ladislav Krejčí",
@@ -269,7 +269,7 @@
       "goals": 1,
       "assists": 0,
       "penalties": 0,
-      "playedMatches": 2
+      "playedMatches": 3
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-24T22:59:20.700Z",
+  "lastUpdated": "2026-06-25T00:20:04.190Z",
   "matches": [
     {
       "id": "A1",
@@ -757,10 +757,10 @@
       "date": "2026-06-25T00:00:00+02:00",
       "venue": "MetLife Stadium, Nueva York/NJ",
       "score": {
-        "home": 2,
+        "home": 4,
         "away": 2
       },
-      "status": "live",
+      "status": "finished",
       "minute": null
     },
     {
@@ -773,9 +773,9 @@
       "venue": "Gillette Stadium, Boston",
       "score": {
         "home": 0,
-        "away": 2
+        "away": 3
       },
-      "status": "live",
+      "status": "finished",
       "minute": null
     },
     {
