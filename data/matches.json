@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-25T20:31:33.180Z",
+  "lastUpdated": "2026-06-25T22:08:33.524Z",
   "matches": [
     {
       "id": "A1",
@@ -817,10 +817,10 @@
       "date": "2026-06-25T22:00:00+02:00",
       "venue": "AT&T Stadium, Dallas",
       "score": {
-        "home": 1,
+        "home": 2,
         "away": 1
       },
-      "status": "pending",
+      "status": "finished",
       "minute": null
     },
     {
@@ -833,9 +833,9 @@
       "venue": "Lincoln Financial, Filadelfia",
       "score": {
         "home": 0,
-        "away": 1
+        "away": 2
       },
-      "status": "pending",
+      "status": "finished",
       "minute": null
     },
     {
