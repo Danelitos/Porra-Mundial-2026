@@ -155,45 +155,78 @@ function rankRow(r, delta = null) {
   </a>`;
 }
 
-/** Gráfico SVG de líneas: evolución de puntos por participante. */
-function evolutionChart(checkpoints, { height = 260 } = {}) {
+/** Gráfico SVG de líneas: evolución de puntos. Destaca el Top y atenúa el resto
+ *  para que sea legible aunque haya muchos participantes ("líneas con foco"). */
+function evolutionChart(checkpoints, { height = 300, top = 6 } = {}) {
   if (!checkpoints.length) {
     return `<div class="card empty-card">${icon("chart-line", "big")}
       <p>La evolución aparecerá aquí en cuanto haya partidos finalizados.</p></div>`;
   }
-  const ids = checkpoints[checkpoints.length - 1].standings.map((s) => s.id);
-  const W = 720, H = height, padL = 34, padR = 14, padT = 14, padB = 28;
+  const standings = checkpoints[checkpoints.length - 1].standings; // ya ordenado por posición
+  const ids = standings.map((s) => s.id);
+  const TOP = Math.min(top, ids.length);
+  const W = 720, H = height, padL = 34, padR = 104, padT = 16, padB = 28;
   const maxPts = Math.max(4, ...checkpoints.flatMap((c) => c.standings.map((s) => s.total)));
   const x = (i) => padL + (i * (W - padL - padR)) / Math.max(1, checkpoints.length - 1);
   const y = (v) => padT + (H - padT - padB) * (1 - v / maxPts);
+  const seriesFor = (id) => checkpoints.map((c, i) => {
+    const s = c.standings.find((st) => st.id === id);
+    return { x: x(i), y: y(s ? s.total : 0), v: s ? s.total : 0 };
+  });
 
-  let lines = "", labels = "", legend = "";
-  ids.forEach((id, idx) => {
-    const color = PALETTE[idx % PALETTE.length];
-    const pts = checkpoints.map((c, i) => {
-      const s = c.standings.find((st) => st.id === id);
-      return `${x(i).toFixed(1)},${y(s ? s.total : 0).toFixed(1)}`;
-    });
-    const name = checkpoints[checkpoints.length - 1].standings.find((s) => s.id === id)?.name || id;
-    lines += `<polyline points="${pts.join(" ")}" fill="none" stroke="${color}" stroke-width="2.5" stroke-linejoin="round" opacity="0.9"/>`;
-    const lastPt = pts[pts.length - 1].split(",");
-    lines += `<circle cx="${lastPt[0]}" cy="${lastPt[1]}" r="3.5" fill="${color}"/>`;
-    legend += `<span class="key"><span class="swatch" style="background:${color}"></span>${esc(name)}</span>`;
-  });
-  checkpoints.forEach((c, i) => {
-    if (checkpoints.length <= 10 || i % Math.ceil(checkpoints.length / 10) === 0 || i === checkpoints.length - 1) {
-      labels += `<text x="${x(i)}" y="${H - 8}" text-anchor="middle" font-size="10" fill="#5d6c86">${esc(c.label)}</text>`;
-    }
-  });
+  // Rejilla horizontal con escala de puntos.
   let grid = "";
   for (let g = 0; g <= 4; g++) {
     const v = Math.round((maxPts * g) / 4);
     grid += `<line x1="${padL}" x2="${W - padR}" y1="${y(v)}" y2="${y(v)}" stroke="rgba(255,255,255,0.06)"/>
              <text x="${padL - 6}" y="${y(v) + 3}" text-anchor="end" font-size="10" fill="#5d6c86">${v}</text>`;
   }
+
+  // Resto de la peña: líneas grises tenues de fondo (contexto, sin saturar).
+  let muted = "";
+  ids.slice(TOP).forEach((id) => {
+    const pts = seriesFor(id).map((p) => `${p.x.toFixed(1)},${p.y.toFixed(1)}`);
+    muted += `<polyline points="${pts.join(" ")}" fill="none" stroke="rgba(255,255,255,0.09)" stroke-width="1.5" stroke-linejoin="round"/>`;
+  });
+
+  // Top destacado: líneas de color, grueso, con punto y etiqueta al final.
+  let lines = "";
+  const tags = [];
+  ids.slice(0, TOP).forEach((id, idx) => {
+    const color = PALETTE[idx % PALETTE.length];
+    const series = seriesFor(id);
+    const pts = series.map((p) => `${p.x.toFixed(1)},${p.y.toFixed(1)}`);
+    const last = series[series.length - 1];
+    lines += `<polyline points="${pts.join(" ")}" fill="none" stroke="${color}" stroke-width="2.75" stroke-linejoin="round" stroke-linecap="round"/>`;
+    lines += `<circle cx="${last.x.toFixed(1)}" cy="${last.y.toFixed(1)}" r="3.5" fill="${color}"/>`;
+    const name = standings.find((s) => s.id === id)?.name || id;
+    tags.push({ origY: last.y, ty: last.y, x: last.x, color, name, v: last.v });
+  });
+
+  // Anti-solapamiento vertical de las etiquetas finales (empuje hacia abajo).
+  tags.sort((a, b) => a.origY - b.origY);
+  const gapPx = 15;
+  for (let i = 1; i < tags.length; i++) {
+    if (tags[i].ty - tags[i - 1].ty < gapPx) tags[i].ty = tags[i - 1].ty + gapPx;
+  }
+  let endLabels = "";
+  for (const t of tags) {
+    const lx = W - padR + 9;
+    endLabels += `<path d="M ${(W - padR).toFixed(1)},${t.origY.toFixed(1)} C ${(W - padR + 5).toFixed(1)},${t.origY.toFixed(1)} ${(W - padR + 3).toFixed(1)},${t.ty.toFixed(1)} ${lx.toFixed(1)},${t.ty.toFixed(1)}" fill="none" stroke="${t.color}" stroke-width="1" opacity="0.45"/>`;
+    endLabels += `<text x="${(lx + 2).toFixed(1)}" y="${(t.ty + 3.5).toFixed(1)}" font-size="11" font-weight="600" fill="${t.color}">${esc(t.name)} <tspan fill="#9aa7bd" font-weight="400">${t.v}</tspan></text>`;
+  }
+
+  // Etiquetas del eje X (fechas).
+  let xlabels = "";
+  checkpoints.forEach((c, i) => {
+    if (checkpoints.length <= 10 || i % Math.ceil(checkpoints.length / 10) === 0 || i === checkpoints.length - 1) {
+      xlabels += `<text x="${x(i)}" y="${H - 8}" text-anchor="middle" font-size="10" fill="#5d6c86">${esc(c.label)}</text>`;
+    }
+  });
+
   return `<div class="card chart-card">
-    <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Evolución de puntos">${grid}${lines}${labels}</svg>
-    <div class="legend">${legend}</div>
+    <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Evolución de puntos">${grid}${muted}${lines}${endLabels}${xlabels}</svg>
+    <p class="muted table-note">Top ${TOP} destacado · el resto de la peña en gris. Ranking completo en la pestaña Ranking.</p>
   </div>`;
 }
 
