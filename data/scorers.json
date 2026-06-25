@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-25T04:40:21.054Z",
+  "lastUpdated": "2026-06-25T20:31:33.180Z",
   "scorers": [
     {
       "name": "Lionel Messi",
@@ -53,7 +53,7 @@
       "goals": 3,
       "assists": 2,
       "penalties": 0,
-      "playedMatches": 2
+      "playedMatches": 3
     },
     {
       "name": "Johan Manzambi",
@@ -116,7 +116,7 @@
       "goals": 2,
       "assists": 0,
       "penalties": 1,
-      "playedMatches": 2
+      "playedMatches": 3
     },
     {
       "name": "Crysencio Summerville",
