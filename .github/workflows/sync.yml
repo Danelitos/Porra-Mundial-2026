@@ -48,10 +48,24 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/
           git commit -m "Auto-sync resultados ($(date -u '+%Y-%m-%d %H:%M UTC'))"
-          # Reintenta el push si main se movió mientras tanto.
-          for i in 1 2 3; do
-            git pull --rebase origin main && git push origin HEAD:main && exit 0
+          # Reintenta si main se movió mientras tanto. Nuestro commit solo toca
+          # data/ (un snapshot completo regenerado desde la API), así que ante un
+          # conflicto siempre gana nuestra versión recién sincronizada: por eso el
+          # rebase usa -X theirs (resuelve los choques a favor de nuestros datos)
+          # y deja intacto el resto de ficheros (app.js, estilos, etc.).
+          for i in 1 2 3 4 5; do
+            git fetch origin main
+            if git rebase -X theirs origin/main; then
+              if git push origin HEAD:main; then
+                echo "Publicado en el intento $i."
+                exit 0
+              fi
+            else
+              echo "Rebase con conflictos; abortando para reintentar limpio."
+              git rebase --abort || true
+            fi
             echo "Push falló (intento $i), reintentando…"
-            sleep 5
+            sleep $((RANDOM % 4 + 3))
           done
+          echo "No se pudo publicar tras varios intentos."
           exit 1
