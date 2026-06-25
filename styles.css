@@ -1045,6 +1045,105 @@ select.ctl {
   .bk-desktop { display: block; }
 }
 
+/* ===================== Mi Quiniela (constructor de cuadro) ===================== */
+
+.q-locked { text-align: center; padding: 40px 22px; }
+.q-locked .ic.big { color: var(--gold); width: 40px; height: 40px; }
+.q-locked h2 { margin: 14px 0 8px; font-size: 1.3rem; }
+.q-locked p { margin: 0 auto; max-width: 52ch; }
+.q-lock-meta { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 18px; }
+
+.q-name-wrap { margin: 4px 0 20px; }
+.q-name-wrap label { display: block; font-size: 0.8rem; color: var(--text-dim); margin-bottom: 7px; }
+.q-name {
+  width: 100%; max-width: 400px; padding: 11px 15px;
+  border-radius: var(--radius-sm); border: 1px solid var(--border);
+  background: var(--surface-strong); color: var(--text);
+  font-family: var(--font-body); font-size: 1rem; font-weight: 600;
+}
+.q-name:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px var(--green-soft); }
+
+.q-preview-banner {
+  display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px;
+  border-color: rgba(255, 206, 79, 0.4); background: var(--gold-soft);
+}
+.q-preview-banner svg.lucide { width: 22px; height: 22px; color: var(--gold); flex: none; margin-top: 2px; }
+.q-preview-banner b { font-family: var(--font-display); display: block; }
+.q-preview-banner span { font-size: 0.86rem; color: var(--text-dim); }
+
+.q-champ-banner {
+  display: flex; align-items: center; gap: 16px;
+  padding: 16px 18px; margin-bottom: 6px;
+  background: linear-gradient(120deg, var(--gold-soft), transparent 70%);
+}
+.q-champ-banner.is-set { border-color: rgba(255, 206, 79, 0.4); }
+.q-crown { color: var(--gold); width: 30px; height: 30px; flex: none; }
+.q-champ-txt { display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1; }
+.q-champ-txt small { font-size: 0.72rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.04em; }
+.q-champ-txt b { font-family: var(--font-display); font-size: 1.25rem; display: flex; align-items: center; gap: 8px; }
+.q-champ-txt b .flag { font-size: 1.4rem; }
+.q-runner { font-size: 0.82rem; color: var(--text-dim); font-weight: 500; }
+.q-progress-big { text-align: center; flex: none; }
+.q-progress-big b { display: block; font-family: var(--font-display); font-size: 1.7rem; color: var(--green); line-height: 1; }
+.q-progress-big span { font-size: 0.72rem; color: var(--text-dim); }
+
+.q-note {
+  display: flex; align-items: center; gap: 8px;
+  margin: 14px 0 0; padding: 10px 14px;
+  border: 1px solid var(--blue-soft); border-radius: var(--radius-sm);
+  background: var(--blue-soft); color: var(--text-dim); font-size: 0.85rem;
+}
+.q-note svg.lucide { width: 16px; height: 16px; color: var(--blue); flex: none; }
+
+.q-round { margin-top: 26px; }
+.q-round-head { display: flex; align-items: center; gap: 11px; margin-bottom: 13px; }
+.q-round-head > span:first-child { font-family: var(--font-display); font-weight: 800; font-size: 1.1rem; }
+.q-progress {
+  font-size: 0.74rem; font-weight: 700; color: var(--text-dim);
+  background: var(--surface-strong); padding: 2px 10px; border-radius: 999px;
+}
+.q-progress.done { color: #04130a; background: var(--green); }
+.q-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(225px, 1fr)); gap: 12px; }
+
+.q-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 11px 12px 12px;
+}
+.q-card.is-locked { opacity: 0.55; }
+.q-card-head { display: flex; justify-content: space-between; gap: 8px; font-size: 0.66rem; color: var(--text-faint); margin-bottom: 8px; }
+.q-card-head .q-date { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.q-vs { text-align: center; font-size: 0.64rem; color: var(--text-faint); margin: 3px 0; letter-spacing: 0.08em; }
+
+.q-team {
+  display: flex; align-items: center; gap: 10px; width: 100%; text-align: left;
+  padding: 10px 11px; border-radius: 10px;
+  border: 1px solid transparent; background: var(--surface-strong);
+  color: var(--text); font-family: var(--font-body); font-size: 0.92rem; font-weight: 600;
+  cursor: pointer; min-height: 42px;
+  transition: border-color 0.15s, background 0.15s, color 0.15s;
+}
+.q-team .flag { font-size: 1.2rem; flex: none; }
+.q-team .nm { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.q-team .q-check { color: inherit; width: 17px; height: 17px; flex: none; }
+.q-team:not(:disabled):hover { border-color: var(--green); background: var(--green-soft); }
+.q-team.is-pick {
+  border-color: var(--green); background: var(--green-soft); color: var(--green);
+}
+.q-team:disabled { cursor: default; }
+.q-team.is-pending {
+  background: transparent; border: 1px dashed var(--border);
+  color: var(--text-faint); cursor: default; font-weight: 600;
+}
+.q-team.is-pending .q-pos { font-size: 0.86rem; }
+
+.q-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.q-actions .chip { padding: 9px 16px; font-size: 0.86rem; }
+.q-actions .chip.primary {
+  background: var(--green); color: #04130a; border-color: transparent;
+  box-shadow: 0 4px 14px rgba(46, 227, 125, 0.28);
+}
+.q-actions .chip.ok { background: var(--green); color: #04130a; border-color: transparent; }
+
 /* ------------------------------ Impresión ------------------------------ */
 
 @media print {

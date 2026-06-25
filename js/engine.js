@@ -158,6 +158,13 @@ export function isGroupComplete(groupId, matches) {
   return ms.length > 0 && ms.every((m) => m.status === "finished");
 }
 
+/** ¿Ha terminado toda la fase de grupos? (matches.json solo tiene partidos de
+ *  grupos, así que basta con que estén todos finalizados). Desbloquea la
+ *  sección "Mi Quiniela" del cuadro eliminatorio. */
+export function isGroupStageComplete(matches) {
+  return matches.length > 0 && matches.every((m) => m.status === "finished");
+}
+
 /* ================= Puntuación completa de un participante ================= */
 
 /**

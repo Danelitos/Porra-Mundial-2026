@@ -8,7 +8,7 @@
 
 import {
   buildContext, computeRanking, computeGroupTable,
-  isGroupComplete, computeEvolution, computeGlobalStats,
+  isGroupComplete, isGroupStageComplete, computeEvolution, computeGlobalStats,
   normName, levenshtein,
 } from "./js/engine.js";
 import { startLive, liveStatus } from "./js/live.js";
@@ -775,6 +775,298 @@ function viewEliminatorias(params) {
   </div>`;
 }
 
+/* ===================== Mi Quiniela (constructor de cuadro) =====================
+   Sección interactiva: cada porrista rellena su propio cuadro eliminatorio
+   (quién pasa en cada ronda hasta el campeón) y lo exporta para mandármelo.
+   Se desbloquea cuando termina la fase de grupos. Las picks se guardan en el
+   propio navegador (localStorage); nada viaja a ningún servidor. */
+
+const Q_KEY = "porra2026:quiniela";
+const KO_ROUND_ORDER = ["r32", "r16", "qf", "sf", "final"];
+
+/* Vista previa (solo admin, vía #/quiniela?preview=1): desbloquea el constructor
+   antes de tiempo y rellena las casillas con la clasificación PROVISIONAL de cada
+   grupo, para poder probar el flujo aunque la fase de grupos no haya cerrado. */
+let Q_PREVIEW = false;
+
+function loadQuiniela() {
+  try {
+    const s = JSON.parse(localStorage.getItem(Q_KEY));
+    if (s && typeof s === "object") return { name: s.name || "", picks: s.picks || {} };
+  } catch { /* corrupto o sin acceso */ }
+  return { name: "", picks: {} };
+}
+function saveQuiniela(st) {
+  try { localStorage.setItem(Q_KEY, JSON.stringify({ name: st.name || "", picks: st.picks || {} })); }
+  catch { /* modo incógnito / sin espacio */ }
+}
+
+/** Ids de partido del cuadro en orden de ronda (R32 → … → Final). */
+function orderedMatchIds() {
+  const bk = CTX.bracket, L = bk.layout.left, R = bk.layout.right;
+  const ids = [];
+  for (const r of KO_ROUND_ORDER) {
+    const round = r === "final" ? bk.layout.final : [...(L[r] || []), ...(R[r] || [])];
+    ids.push(...round.map(String));
+  }
+  return ids;
+}
+
+/** Equipo concreto que ocupa una casilla del cuadro, dado el estado de picks.
+ *  Devuelve un teamId o null si aún no se conoce (grupo sin cerrar, tercero sin
+ *  asignar por la FIFA, o partido previo sin resolver por el usuario). */
+function qSlotTeam(slot, matchId, picks) {
+  if (!slot) return null;
+  if (slot.type === "w" || slot.type === "r") {
+    const g = CTX.groupsData.groups.find((x) => x.id === slot.g);
+    if (!g || (!Q_PREVIEW && !isGroupComplete(g.id, CTX.matches))) return null;
+    return computeGroupTable(g, CTX.matches)[slot.type === "w" ? 0 : 1]?.teamId ?? null;
+  }
+  if (slot.type === "t") {
+    // El cruce del 3º lo fija la FIFA al acabar la fase de grupos. Lo cargamos en
+    // tournament.bestThirds como { "<idPartidoR32>": "<grupo>" }. Hasta entonces, null.
+    const bt = CTX.tournament.bestThirds;
+    let gId = bt && !Array.isArray(bt) ? bt[String(matchId)] : null;
+    if (!gId && Q_PREVIEW) gId = Array.isArray(slot.g) ? slot.g[0] : slot.g; // siembra provisional para la demo
+    if (!gId) return null;
+    const g = CTX.groupsData.groups.find((x) => x.id === gId);
+    if (!g || (!Q_PREVIEW && !isGroupComplete(g.id, CTX.matches))) return null;
+    return computeGroupTable(g, CTX.matches)[2]?.teamId ?? null;
+  }
+  if (slot.type === "m") {
+    const side = picks[String(slot.n)];
+    if (!side) return null;
+    const m = CTX.bracket.matches[String(slot.n)];
+    return m ? qSlotTeam(m[side], slot.n, picks) : null;
+  }
+  return null;
+}
+
+/** Etiqueta de la casilla cuando aún no hay equipo (1º A, 2º B, 3º, Ganador #X). */
+function qSlotLabel(slot) {
+  if (!slot) return "—";
+  if (slot.type === "w") return "1º " + slot.g;
+  if (slot.type === "r") return "2º " + slot.g;
+  if (slot.type === "t") return "3º (por asignar)";
+  if (slot.type === "m") return "Ganador #" + slot.n;
+  return "—";
+}
+
+/** Equipo que el usuario hace pasar de un partido (el del lado elegido). */
+function qWinner(matchId, picks) {
+  const m = CTX.bracket.matches[String(matchId)];
+  const side = picks[String(matchId)];
+  return m && side ? qSlotTeam(m[side], matchId, picks) : null;
+}
+/** El finalista que pierde la final (subcampeón) según la pick de la final. */
+function qOtherFinalist(matchId, picks) {
+  const m = CTX.bracket.matches[String(matchId)];
+  const side = picks[String(matchId)];
+  if (!m || !side) return null;
+  return qSlotTeam(m[side === "home" ? "away" : "home"], matchId, picks);
+}
+
+/** Elimina picks que han dejado de ser válidas (p. ej. al deshacer un ganador
+ *  previo, la casilla "Ganador #X" vuelve a quedar vacía y arrastra a las
+ *  siguientes). Itera en orden de ronda hasta estabilizar. Muta picks. */
+function pruneQuiniela(picks) {
+  const order = orderedMatchIds();
+  let changed = true;
+  while (changed) {
+    changed = false;
+    for (const id of order) {
+      if (!picks[id]) continue;
+      const m = CTX.bracket.matches[id];
+      if (!m || qSlotTeam(m[picks[id]], id, picks) == null) { delete picks[id]; changed = true; }
+    }
+  }
+}
+
+function qTeamRow(matchId, side, picks, ready) {
+  const m = CTX.bracket.matches[matchId];
+  const teamId = qSlotTeam(m[side], matchId, picks);
+  if (!teamId) return `<div class="q-team is-pending"><span class="q-pos">${esc(qSlotLabel(m[side]))}</span></div>`;
+  const t = CTX.teamsById[teamId];
+  const selected = picks[matchId] === side;
+  return `<button type="button" class="q-team ${selected ? "is-pick" : ""}" data-match="${matchId}" data-side="${side}"${ready ? "" : " disabled"} aria-pressed="${selected}">
+    <span class="flag">${t?.flag || "🏳️"}</span><span class="nm">${esc(t?.name || teamId)}</span>
+    ${selected ? icon("check", "q-check") : ""}
+  </button>`;
+}
+
+function qMatchCard(matchId, picks) {
+  const m = CTX.bracket.matches[matchId];
+  const ready = qSlotTeam(m.home, matchId, picks) && qSlotTeam(m.away, matchId, picks);
+  const d = new Date(m.date).toLocaleDateString("es-ES", { day: "numeric", month: "short" });
+  return `<div class="q-card ${ready ? "" : "is-locked"}">
+    <div class="q-card-head"><span class="q-no">#${matchId}</span><span class="q-date">${esc(d)}${m.venue ? " · " + esc(m.venue) : ""}</span></div>
+    ${qTeamRow(matchId, "home", picks, ready)}
+    <div class="q-vs">vs</div>
+    ${qTeamRow(matchId, "away", picks, ready)}
+  </div>`;
+}
+
+function qRoundSection(r, picks) {
+  const bk = CTX.bracket;
+  const ids = (r === "final" ? bk.layout.final : [...(bk.layout.left[r] || []), ...(bk.layout.right[r] || [])]).map(String);
+  const picked = ids.filter((id) => picks[id]).length;
+  const done = picked === ids.length;
+  return `<div class="q-round">
+    <div class="q-round-head"><span>${esc(bk.rounds[r])}</span><span class="q-progress ${done ? "done" : ""}">${picked}/${ids.length}</span></div>
+    <div class="q-grid">${ids.map((id) => qMatchCard(id, picks)).join("")}</div>
+  </div>`;
+}
+
+/** Contenido recalculable: banner de campeón, progreso, rondas y exportación.
+ *  Se re-renderiza solo (sin tocar el hash) cada vez que se elige un equipo. */
+function quinielaInner(picks) {
+  const bk = CTX.bracket;
+  const finalId = String(bk.layout.final[0]);
+  const champ = qWinner(finalId, picks);
+  const runner = qOtherFinalist(finalId, picks);
+  const total = orderedMatchIds().length;
+  const picked = orderedMatchIds().filter((id) => picks[id]).length;
+  const t = champ ? CTX.teamsById[champ] : null;
+
+  const champBanner = `
+    <div class="card q-champ-banner ${champ ? "is-set" : ""}">
+      ${icon("crown", "crown q-crown")}
+      <div class="q-champ-txt">
+        <small>Tu campeón del mundo</small>
+        <b>${champ ? `<span class="flag">${t?.flag || "🏳️"}</span> ${esc(t?.name || champ)}` : "Por decidir"}</b>
+        ${runner ? `<span class="q-runner">Subcampeón: ${teamShort(runner)}</span>` : ""}
+      </div>
+      <div class="q-progress-big"><b>${picked}</b><span>/ ${total} cruces</span></div>
+    </div>`;
+
+  // ¿Hay casillas de tercero sin resolver? Avisamos (dependen de la FIFA).
+  const pendingThirds = orderedMatchIds().some((id) => {
+    const m = bk.matches[id];
+    return (m.home?.type === "t" && !qSlotTeam(m.home, id, picks)) ||
+           (m.away?.type === "t" && !qSlotTeam(m.away, id, picks));
+  });
+  const thirdsNote = pendingThirds
+    ? `<p class="q-note">${icon("info")}Algunos cruces esperan al <b>mejor tercero</b>: se activarán en cuanto se confirme la asignación oficial de la FIFA.</p>`
+    : "";
+
+  const rounds = KO_ROUND_ORDER.map((r) => qRoundSection(r, picks)).join("");
+
+  const actions = `
+    <div class="q-actions">
+      <button type="button" class="chip primary" data-action="txt">${icon("file-down")}Descargar .txt</button>
+      <button type="button" class="chip" data-action="wa">${icon("send")}Enviar por WhatsApp</button>
+      <button type="button" class="chip" data-action="pdf">${icon("printer")}Guardar PDF</button>
+      <button type="button" class="chip" data-action="copy">${icon("copy")}Copiar texto</button>
+    </div>
+    <p class="muted table-note">Cuando lo tengas, descárgalo o mándamelo por WhatsApp y yo lo meto en la porra. Tus elecciones se guardan en este dispositivo automáticamente.</p>`;
+
+  return champBanner + thirdsNote + rounds + actions;
+}
+
+function viewQuiniela(params) {
+  Q_PREVIEW = params?.get("preview") === "1";
+  if (!CTX.bracket) {
+    return `<div class="card error-card">${icon("triangle-alert", "big")}<h2>No hay datos del cuadro</h2><p class="muted">Falta data/bracket.json.</p></div>`;
+  }
+
+  // ----- Bloqueada hasta que acabe la fase de grupos (salvo vista previa admin) -----
+  if (!isGroupStageComplete(CTX.matches) && !Q_PREVIEW) {
+    const pending = CTX.matches.filter((m) => m.status !== "finished");
+    const lastDate = CTX.matches.reduce((mx, m) => (m.date > mx ? m.date : mx), "");
+    return `
+    <div class="page-head"><h1>${icon("list-checks")}Mi Quiniela</h1>
+      <p>Tu cuadro de la fase eliminatoria: elige quién pasa en cada ronda hasta el campeón y expórtalo.</p></div>
+    <div class="card q-locked">
+      ${icon("lock", "big")}
+      <h2>Disponible al terminar la fase de grupos</h2>
+      <p class="muted">Esta sección se abre cuando se juegue el <b>último partido de la fase de grupos</b>. Entonces conoceremos los 1º y 2º de cada grupo y podrás montar tu cuadro.</p>
+      <div class="q-lock-meta">
+        <span class="pill">${icon("calendar-days")}Último partido: ${fmtDate(lastDate, false)}</span>
+        <span class="pill gold">${icon("hourglass")}Quedan ${pending.length} ${pending.length === 1 ? "partido" : "partidos"}</span>
+      </div>
+      <p class="mt"><a class="chip" href="#/eliminatorias">${icon("git-merge")}Ver el cuadro oficial mientras tanto</a></p>
+    </div>`;
+  }
+
+  // ----- Desbloqueada: constructor interactivo -----
+  const st = loadQuiniela();
+  pruneQuiniela(st.picks);
+  saveQuiniela(st);
+  const previewBanner = (Q_PREVIEW && !isGroupStageComplete(CTX.matches))
+    ? `<div class="card q-preview-banner">${icon("flask-conical")}<div><b>Vista previa (solo tú)</b><span>La fase de grupos no ha terminado: el cuadro está sembrado con la <b>clasificación provisional</b> de ahora mismo, solo para que pruebes. Cuando cierren los grupos se rellenará con los puestos definitivos.</span></div></div>`
+    : "";
+  return `
+  <div class="page-head"><h1>${icon("list-checks")}Mi Quiniela</h1>
+    <p>Elige quién pasa en cada cruce y se irá rellenando hasta el campeón. Cuando acabes, expórtalo y mándamelo.</p></div>
+  ${previewBanner}
+  <div class="q-name-wrap">
+    <label for="q-name">Tu nombre (para identificar el cuadro)</label>
+    <input id="q-name" class="q-name" type="text" maxlength="40" placeholder="Escribe tu nombre…" value="${esc(st.name)}" autocomplete="off" />
+  </div>
+  <div id="q-app">${quinielaInner(st.picks)}</div>`;
+}
+
+/** Texto bonito del cuadro para exportar (.txt / WhatsApp / PDF). */
+function quinielaText(name, picks) {
+  const bk = CTX.bracket;
+  const finalId = String(bk.layout.final[0]);
+  const tl = (id) => { const t = CTX.teamsById[id]; return t ? `${t.flag} ${t.name}` : "—"; };
+  const winnersOf = (r) => {
+    const ids = (r === "final" ? bk.layout.final : [...(bk.layout.left[r] || []), ...(bk.layout.right[r] || [])]).map(String);
+    return ids.map((id) => qWinner(id, picks)).filter(Boolean).map(tl);
+  };
+  const champ = qWinner(finalId, picks);
+  const runner = qOtherFinalist(finalId, picks);
+
+  const L = [];
+  L.push("🏆 PORRA MUNDIAL 2026 · CUADRO ELIMINATORIO");
+  L.push("👤 " + (name && name.trim() ? name.trim() : "(sin nombre)"));
+  L.push("🗓 " + new Date().toLocaleDateString("es-ES", { day: "2-digit", month: "long", year: "numeric" }));
+  L.push("");
+  const sec = (title, arr) => { L.push(title); L.push(arr.length ? arr.join("\n") : "— (sin completar)"); L.push(""); };
+  sec("🔵 PASAN A OCTAVOS", winnersOf("r32"));
+  sec("🟣 PASAN A CUARTOS", winnersOf("r16"));
+  sec("🟢 SEMIFINALISTAS", winnersOf("qf"));
+  sec("🟠 FINALISTAS", winnersOf("sf"));
+  L.push("🥈 SUBCAMPEÓN: " + (runner ? tl(runner) : "—"));
+  L.push("🏆 CAMPEÓN DEL MUNDO: " + (champ ? tl(champ) : "—"));
+  L.push("");
+  L.push("──────────");
+  L.push("Detalle partido a partido:");
+  for (const r of KO_ROUND_ORDER) {
+    const ids = (r === "final" ? bk.layout.final : [...(bk.layout.left[r] || []), ...(bk.layout.right[r] || [])]).map(String);
+    L.push("");
+    L.push("· " + bk.rounds[r] + " ·");
+    for (const id of ids) {
+      const m = bk.matches[id];
+      const h = qSlotTeam(m.home, id, picks), a = qSlotTeam(m.away, id, picks);
+      const w = qWinner(id, picks);
+      L.push(`#${id}: ${h ? tl(h) : qSlotLabel(m.home)} vs ${a ? tl(a) : qSlotLabel(m.away)}  → ${w ? tl(w) : "—"}`);
+    }
+  }
+  return L.join("\n");
+}
+
+function downloadText(filename, text) {
+  const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url; a.download = filename;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+/** Abre una ventana con el texto monoespaciado y lanza la impresión (→ "Guardar
+ *  como PDF" en el diálogo del navegador). */
+function printQuinielaText(text, name) {
+  const w = window.open("", "_blank");
+  if (!w) return;
+  w.document.write(`<!doctype html><html><head><meta charset="utf-8"><title>Cuadro Mundial 2026${name ? " - " + esc(name) : ""}</title></head>
+    <body style="margin:0;background:#fff;color:#111"><pre style="font:14px/1.6 ui-monospace,Menlo,Consolas,monospace;white-space:pre-wrap;padding:28px">${esc(text)}</pre></body></html>`);
+  w.document.close(); w.focus();
+  setTimeout(() => w.print(), 250);
+}
+
 /* ================================ Router ================================ */
 
 const routes = {
@@ -785,6 +1077,7 @@ const routes = {
   resultados: viewResultados,
   goleadores: viewGoleadores,
   eliminatorias: viewEliminatorias,
+  quiniela: viewQuiniela,
   reglas: viewReglas,
 };
 
@@ -816,7 +1109,7 @@ function render() {
   });
   document.getElementById("morebtn")?.classList.toggle(
     "active",
-    ["participantes", "eliminatorias", "goleadores", "reglas"].includes(active)
+    ["participantes", "eliminatorias", "quiniela", "goleadores", "reglas"].includes(active)
   );
 
   // Centra el chip activo en los carruseles de filtros (móvil).
@@ -872,6 +1165,43 @@ function wireEvents(route) {
       const { params } = parseHash();
       const estado = params.get("estado") || "todos";
       location.hash = `#/resultados?estado=${estado}${e.target.value ? "&g=" + e.target.value : ""}`;
+    });
+  }
+  if (route === "quiniela") {
+    const nameIn = document.getElementById("q-name");
+    nameIn?.addEventListener("input", () => {
+      const st = loadQuiniela(); st.name = nameIn.value; saveQuiniela(st);
+    });
+    const app = document.getElementById("q-app");
+    app?.addEventListener("click", (e) => {
+      // Elegir quién pasa en un cruce.
+      const pick = e.target.closest("button[data-match]");
+      if (pick && !pick.disabled) {
+        const id = pick.dataset.match, side = pick.dataset.side;
+        const st = loadQuiniela();
+        if (st.picks[id] === side) delete st.picks[id]; // re-toque = deshacer
+        else st.picks[id] = side;
+        pruneQuiniela(st.picks);
+        saveQuiniela(st);
+        app.innerHTML = quinielaInner(st.picks);
+        refreshIcons();
+        return;
+      }
+      // Exportar.
+      const act = e.target.closest("button[data-action]");
+      if (!act) return;
+      const st = loadQuiniela();
+      const text = quinielaText(st.name, st.picks);
+      const slug = (st.name || "porra").trim().replace(/[^\w\-]+/g, "_").replace(/^_+|_+$/g, "") || "porra";
+      if (act.dataset.action === "txt") downloadText(`Cuadro-${slug}-Mundial2026.txt`, text);
+      else if (act.dataset.action === "wa") window.open("https://wa.me/?text=" + encodeURIComponent(text), "_blank");
+      else if (act.dataset.action === "pdf") printQuinielaText(text, st.name);
+      else if (act.dataset.action === "copy") {
+        navigator.clipboard?.writeText(text).then(() => {
+          act.classList.add("ok");
+          setTimeout(() => act.classList.remove("ok"), 1500);
+        });
+      }
     });
   }
   if (route === "eliminatorias") {
