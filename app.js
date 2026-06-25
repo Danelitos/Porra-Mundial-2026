@@ -230,6 +230,26 @@ function evolutionChart(checkpoints, { height = 300, top = 6 } = {}) {
   </div>`;
 }
 
+/** Badges de los partidos ya jugados por un equipo en su grupo (V/E/D, en orden). */
+function teamFormHTML(teamId, groupId) {
+  const ms = CTX.matches
+    .filter((m) => m.group === groupId && m.status === "finished" && m.score && (m.home === teamId || m.away === teamId))
+    .sort((a, b) => String(a.date || "").localeCompare(String(b.date || "")));
+  if (!ms.length) return `<span class="form-empty">—</span>`;
+  const dots = ms.map((m) => {
+    const isHome = m.home === teamId;
+    const gf = isHome ? m.score.home : m.score.away;
+    const ga = isHome ? m.score.away : m.score.home;
+    const opp = CTX.teamsById[isHome ? m.away : m.home];
+    const res = gf > ga ? "w" : gf < ga ? "l" : "d";
+    const ic = res === "w" ? "check" : res === "l" ? "x" : "minus";
+    const label = res === "w" ? "Victoria" : res === "l" ? "Derrota" : "Empate";
+    const title = `${label} ${gf}-${ga} vs ${opp ? opp.name : "?"}`;
+    return `<span class="fdot ${res}" title="${esc(title)}">${icon(ic)}</span>`;
+  }).join("");
+  return `<span class="form-cell">${dots}</span>`;
+}
+
 function groupTableHTML(g, { compact = false } = {}) {
   const table = computeGroupTable(g, CTX.matches);
   const played = table.some((r) => r.pj > 0);
@@ -240,12 +260,14 @@ function groupTableHTML(g, { compact = false } = {}) {
       ${compact ? "" : `<td class="num">${r.gf}</td><td class="num">${r.gc}</td>`}
       <td class="num">${r.dg > 0 ? "+" : ""}${r.dg}</td>
       <td class="num"><b>${r.pts}</b></td>
+      ${compact ? "" : `<td class="form-td">${teamFormHTML(r.teamId, g.id)}</td>`}
     </tr>`).join("");
   return `
   <div class="table-wrap">
     <table class="std">
       <thead><tr><th>Equipo</th><th class="num">PJ</th><th class="num">PG</th><th class="num">PE</th><th class="num">PP</th>
-      ${compact ? "" : `<th class="num">GF</th><th class="num">GC</th>`}<th class="num">DG</th><th class="num">Pts</th></tr></thead>
+      ${compact ? "" : `<th class="num">GF</th><th class="num">GC</th>`}<th class="num">DG</th><th class="num">Pts</th>
+      ${compact ? "" : `<th class="form-td">Últimos</th>`}</tr></thead>
       <tbody>${rows}</tbody>
     </table>
   </div>
