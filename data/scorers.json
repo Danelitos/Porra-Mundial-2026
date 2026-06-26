@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-26T19:03:05.048Z",
+  "lastUpdated": "2026-06-26T20:52:10.783Z",
   "scorers": [
     {
       "name": "Lionel Messi",
@@ -24,7 +24,7 @@
       "teamId": "FRA",
       "teamName": "France",
       "goals": 4,
-      "assists": 0,
+      "assists": 2,
       "penalties": 0,
       "playedMatches": 3
     },
@@ -34,6 +34,15 @@
       "teamName": "Norway",
       "goals": 4,
       "assists": 0,
+      "penalties": 0,
+      "playedMatches": 3
+    },
+    {
+      "name": "Ousmane Dembélé",
+      "teamId": "FRA",
+      "teamName": "France",
+      "goals": 4,
+      "assists": 1,
       "penalties": 0,
       "playedMatches": 3
     },
@@ -88,6 +97,15 @@
       "teamName": "Netherlands",
       "goals": 3,
       "assists": 0,
+      "penalties": 0,
+      "playedMatches": 3
+    },
+    {
+      "name": "Ismaïla Sarr",
+      "teamId": "SEN",
+      "teamName": "Senegal",
+      "goals": 3,
+      "assists": 1,
       "penalties": 0,
       "playedMatches": 3
     },
@@ -245,27 +263,9 @@
       "playedMatches": 2
     },
     {
-      "name": "Ismaïla Sarr",
-      "teamId": "SEN",
-      "teamName": "Senegal",
-      "goals": 2,
-      "assists": 0,
-      "penalties": 0,
-      "playedMatches": 3
-    },
-    {
       "name": "Cristiano Ronaldo",
       "teamId": "POR",
       "teamName": "Portugal",
-      "goals": 2,
-      "assists": 0,
-      "penalties": 0,
-      "playedMatches": 2
-    },
-    {
-      "name": "Nicolas Pépé",
-      "teamId": "CIV",
-      "teamName": "Ivory Coast",
       "goals": 2,
       "assists": 0,
       "penalties": 0,
