@@ -678,6 +678,8 @@ function resolveBracketSlot(slot) {
   // El ganador de una eliminatoria no se conoce hasta que se juega: como en los
   // cuadros oficiales, mostramos "Por definir" (no el nº interno de partido).
   if (slot.type === "m") return { label: "Por definir", tbd: true, fromMatch: slot.n };
+  // El perdedor de una semifinal (partido por el 3.er y 4.º puesto).
+  if (slot.type === "l") return { label: "Perdedor semifinal", tbd: true, fromMatch: slot.n };
   return { label: "—" };
 }
 
@@ -745,6 +747,10 @@ function viewEliminatorias(params) {
     ? `<div class="bk-final-wrap">
          <div class="bk-champ inline">${icon("crown", "crown")}<span>Final · Campeón del Mundo</span></div>
          ${bracketCard(bk.layout.final[0])}
+         <div class="bk-third">
+           <div class="bk-third-head">${icon("medal")}${esc(T.tp)}</div>
+           ${bracketCard(103)}
+         </div>
        </div>`
     : `<div class="bk-mini-scroll">
          <div class="bk-mini" style="height:${miniH}px">
@@ -770,6 +776,10 @@ function viewEliminatorias(params) {
           <div class="bk-col-head">${icon("trophy")}${esc(T.final)}</div>
           <div class="bk-round">${bracketMatch(bk.layout.final[0])}
             <div class="bk-champ">${icon("crown", "crown")}<span>Campeón del Mundo</span></div>
+            <div class="bk-third">
+              <div class="bk-third-head">${icon("medal")}${esc(T.tp)}</div>
+              ${bracketCard(103)}
+            </div>
           </div>
         </div>
         ${bracketColumn(T.sf, R.sf, { side: "right", round: "sf", mirror: true })}

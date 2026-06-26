@@ -5,6 +5,7 @@
     "r16": "Octavos",
     "qf": "Cuartos",
     "sf": "Semifinal",
+    "tp": "Tercer puesto",
     "final": "Final"
   },
   "layout": {
@@ -56,6 +57,8 @@
 
     "101": { "round": "sf", "date": "2026-07-14", "venue": "Arlington", "home": { "type": "m", "n": 97 }, "away": { "type": "m", "n": 98 } },
     "102": { "round": "sf", "date": "2026-07-15", "venue": "Atlanta", "home": { "type": "m", "n": 99 }, "away": { "type": "m", "n": 100 } },
+
+    "103": { "round": "tp", "date": "2026-07-18", "venue": "Miami Gardens", "home": { "type": "l", "n": 101 }, "away": { "type": "l", "n": 102 } },
 
     "104": { "round": "final", "date": "2026-07-19", "venue": "East Rutherford", "home": { "type": "m", "n": 101 }, "away": { "type": "m", "n": 102 } }
   }

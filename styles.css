@@ -982,6 +982,17 @@ select.ctl {
 }
 .bk-champ.inline svg.lucide { width: 18px; height: 18px; }
 
+/* ---- Partido por el 3.er y 4.º puesto ---- */
+.bk-third { margin-top: 18px; display: flex; flex-direction: column; align-items: center; }
+.bk-third-head {
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  color: #cd7f32; margin-bottom: 6px;
+}
+.bk-third-head svg.lucide { width: 15px; height: 15px; color: #cd7f32; }
+.bk-third .bk-card { border-color: rgba(205, 127, 50, 0.45); box-shadow: inset 0 0 0 1px rgba(205, 127, 50, 0.18); }
+.bk-final-wrap .bk-third { margin-top: 22px; }
+
 /* ---- Conectores ----
    Cada partido "emisor" dibuja una línea horizontal (::after) que cruza el
    hueco hasta el borde de la columna receptora; cada partido "receptor"
