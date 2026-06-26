@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-26T20:52:10.783Z",
+  "lastUpdated": "2026-06-26T21:16:56.494Z",
   "matches": [
     {
       "id": "A1",
@@ -908,9 +908,9 @@
       "venue": "Gillette Stadium, Boston",
       "score": {
         "home": 1,
-        "away": 3
+        "away": 4
       },
-      "status": "live",
+      "status": "finished",
       "minute": null
     },
     {
@@ -922,10 +922,10 @@
       "date": "2026-06-26T21:00:00+02:00",
       "venue": "Arrowhead Stadium, Kansas City",
       "score": {
-        "home": 4,
+        "home": 5,
         "away": 0
       },
-      "status": "live",
+      "status": "finished",
       "minute": null
     },
     {
