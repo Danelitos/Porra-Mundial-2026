@@ -1157,45 +1157,144 @@ function downloadBlob(filename, blob) {
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 
-/** Quita emojis/banderas: las fuentes estándar de jsPDF no los dibujan. */
-function stripEmoji(s) {
-  return s.replace(/[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{1F1E6}-\u{1F1FF}️⃣]/gu, "")
-          .replace(/[ \t]{2,}/g, " ").trimEnd();
-}
-
-/** Genera el PDF del cuadro a partir del texto monoespaciado. Devuelve un Blob
- *  (o null si jsPDF no está disponible). */
-function quinielaPdfBlob(text, name) {
+/** Genera un PDF maquetado del cuadro (cabecera, podio y partido a partido con
+ *  el ganador resaltado). Dibujado con primitivas de jsPDF y solo fuente
+ *  Helvetica (los acentos del español sí se renderizan; nada de emojis ni
+ *  flechas, que las fuentes estándar no soportan). Devuelve un Blob o null. */
+function quinielaPdfBlob(name, picks) {
   const JsPDF = window.jspdf?.jsPDF;
   if (!JsPDF) return null;
+  const bk = CTX.bracket;
   const doc = new JsPDF({ unit: "pt", format: "a4" });
-  const margin = 42, top = 54, lh = 15;
-  const pageH = doc.internal.pageSize.getHeight();
-  const maxW = doc.internal.pageSize.getWidth() - margin * 2;
-  doc.setFont("courier", "normal");
-  doc.setFontSize(11);
-  let y = top;
-  for (const raw of text.split("\n")) {
-    const clean = stripEmoji(raw);
-    const lines = doc.splitTextToSize(clean === "" ? " " : clean, maxW);
-    for (const ln of lines) {
-      if (y > pageH - margin) { doc.addPage(); y = top; }
-      doc.text(ln, margin, y);
-      y += lh;
+  const W = doc.internal.pageSize.getWidth();
+  const H = doc.internal.pageSize.getHeight();
+  const M = 40, contentW = W - M * 2;
+  const C = {
+    navy: [15, 23, 42], slate: [51, 65, 85], grey: [120, 130, 145],
+    line: [228, 233, 240], soft: [243, 246, 250], white: [255, 255, 255],
+    gold: [180, 134, 11], silver: [110, 122, 140], bronze: [176, 110, 46],
+    green: [21, 128, 61], greenBg: [220, 248, 230], navyTxt: [203, 213, 225],
+  };
+  const fill = (c) => doc.setFillColor(c[0], c[1], c[2]);
+  const txt = (c) => doc.setTextColor(c[0], c[1], c[2]);
+  const draw = (c) => doc.setDrawColor(c[0], c[1], c[2]);
+  const tname = (id) => CTX.teamsById[id]?.name || id || "—";
+  let y = 0;
+
+  // ---------- Cabecera ----------
+  fill(C.navy); doc.rect(0, 0, W, 88, "F");
+  doc.setFont("helvetica", "bold"); doc.setFontSize(18); txt(C.white);
+  doc.text("PORRA MUNDIAL 2026", M, 38);
+  doc.setFont("helvetica", "normal"); doc.setFontSize(10); txt(C.navyTxt);
+  doc.text("Cuadro de la fase eliminatoria", M, 56);
+  doc.setFont("helvetica", "bold"); doc.setFontSize(13); txt(C.white);
+  doc.text(name && name.trim() ? name.trim() : "(sin nombre)", W - M, 38, { align: "right" });
+  doc.setFont("helvetica", "normal"); doc.setFontSize(9); txt([148, 163, 184]);
+  doc.text(new Date().toLocaleDateString("es-ES", { day: "2-digit", month: "long", year: "numeric" }), W - M, 56, { align: "right" });
+  y = 88 + 22;
+
+  // ---------- Podio (Campeón / Subcampeón / 3º / 4º) ----------
+  const finalId = String(bk.layout.final[0]);
+  const podium = [
+    { lbl: "CAMPEÓN", team: qWinner(finalId, picks), col: C.gold },
+    { lbl: "SUBCAMPEÓN", team: qOtherFinalist(finalId, picks), col: C.silver },
+    { lbl: "3.er PUESTO", team: qThird(picks), col: C.bronze },
+    { lbl: "4.º PUESTO", team: qFourth(picks), col: C.slate },
+  ];
+  const gap = 9, bw = (contentW - gap * 3) / 4, bh = 56;
+  podium.forEach((p, i) => {
+    const x = M + i * (bw + gap);
+    fill(C.soft); doc.roundedRect(x, y, bw, bh, 6, 6, "F");
+    fill(p.col); doc.roundedRect(x, y, 4, bh, 2, 2, "F");
+    doc.setFont("helvetica", "bold"); doc.setFontSize(7); txt(p.col);
+    doc.text(p.lbl, x + 11, y + 17);
+    doc.setFont("helvetica", "bold"); doc.setFontSize(11); txt(C.navy);
+    const nm = p.team ? tname(p.team) : "Por decidir";
+    doc.text(doc.splitTextToSize(nm, bw - 16)[0], x + 11, y + 38);
+  });
+  y += bh + 24;
+
+  // ---------- Detalle partido a partido ----------
+  const ensure = (need) => { if (y + need > H - M) { doc.addPage(); y = M; } };
+  const cellW = contentW * 0.42;
+  const midX = M + contentW * 0.52;
+
+  const roundHeader = (title) => {
+    ensure(50);
+    fill(C.navy); doc.roundedRect(M, y, contentW, 21, 4, 4, "F");
+    doc.setFont("helvetica", "bold"); doc.setFontSize(9.5); txt(C.white);
+    doc.text(title.toUpperCase(), M + 10, y + 14.5);
+    y += 21 + 7;
+  };
+
+  // Dibuja una casilla de equipo anclada en x (align left/right); resalta al ganador.
+  const teamCell = (x, align, label, isWinner) => {
+    doc.setFont("helvetica", isWinner ? "bold" : "normal"); doc.setFontSize(9.5);
+    const t = doc.splitTextToSize(label, cellW)[0];
+    if (isWinner) {
+      const tw = doc.getTextWidth(t), padX = 5, chipH = 15, cx = align === "right" ? x - tw : x;
+      fill(C.greenBg); doc.roundedRect(cx - padX, y + 1.5, tw + padX * 2, chipH, 4, 4, "F");
+      txt(C.green);
+    } else txt(C.slate);
+    doc.text(t, x, y + 12, { align });
+  };
+
+  const matchRow = (numTxt, homeLbl, awayLbl, homeWin, awayWin) => {
+    ensure(24);
+    doc.setFont("helvetica", "normal"); doc.setFontSize(8); txt(C.grey);
+    doc.text(numTxt, M + 2, y + 12);
+    teamCell(midX - 16, "right", homeLbl, homeWin);
+    doc.setFont("helvetica", "normal"); doc.setFontSize(7.5); txt(C.grey);
+    doc.text("vs", midX, y + 12, { align: "center" });
+    teamCell(midX + 16, "left", awayLbl, awayWin);
+    y += 19;
+    draw(C.line); doc.line(M, y, M + contentW, y);
+    y += 4;
+  };
+
+  for (const r of KO_ROUND_ORDER) {
+    roundHeader(bk.rounds[r]);
+    for (const id of roundMatchIds(r)) {
+      const m = bk.matches[id];
+      const hTeam = qSlotTeam(m.home, id, picks), aTeam = qSlotTeam(m.away, id, picks);
+      const w = qWinner(id, picks);
+      matchRow(
+        "#" + id,
+        hTeam ? tname(hTeam) : qSlotLabel(m.home),
+        aTeam ? tname(aTeam) : qSlotLabel(m.away),
+        !!w && w === hTeam, !!w && w === aTeam,
+      );
     }
   }
-  doc.setProperties({ title: "Cuadro Mundial 2026" + (name ? " - " + name : "") });
+  // 3.er y 4.º puesto (no es un partido del cuadro: lo derivamos de las semis).
+  roundHeader(bk.rounds.tp || "Tercer puesto");
+  const losers = qSemifinalLosers(picks);
+  const third = qThird(picks);
+  matchRow(
+    "3-4",
+    losers[0].team ? tname(losers[0].team) : "Perdedor semifinal",
+    losers[1].team ? tname(losers[1].team) : "Perdedor semifinal",
+    !!third && third === losers[0].team, !!third && third === losers[1].team,
+  );
+
+  // ---------- Pie ----------
+  ensure(20);
+  doc.setFont("helvetica", "normal"); doc.setFontSize(7.5); txt(C.grey);
+  doc.text("Generado desde la web · Porra Mundial 2026", M, y + 10);
+
+  doc.setProperties({ title: "Fase Eliminatoria" + (name ? " - " + name : "") });
   return doc.output("blob");
 }
 
 /** Comparte el PDF del cuadro por WhatsApp (hoja de compartir del sistema, que
  *  permite adjuntar el fichero). Si el dispositivo no admite compartir ficheros,
  *  descarga el PDF y abre WhatsApp con una nota para que lo adjunten a mano. */
-async function shareQuinielaPdf(text, name) {
-  const blob = quinielaPdfBlob(text, name);
+async function shareQuinielaPdf(name, picks) {
+  const blob = quinielaPdfBlob(name, picks);
   const cleanName = (name || "").replace(/[\\/:*?"<>|]+/g, "").replace(/\s+/g, " ").trim() || "sin nombre";
   const filename = `Fase Eliminatoria - ${cleanName}.pdf`;
   if (!blob) { // jsPDF no cargó (sin red): ventana imprimible como último recurso
+    const text = quinielaText(name, picks);
     const w = window.open("", "_blank");
     if (w) {
       w.document.write(`<!doctype html><html><head><meta charset="utf-8"><title>Cuadro Mundial 2026${name ? " - " + esc(name) : ""}</title></head>
@@ -1355,9 +1454,8 @@ function wireEvents(route) {
       const act = e.target.closest("button[data-action='wa']");
       if (!act) return;
       const st = loadQuiniela();
-      const text = quinielaText(st.name, st.picks);
       act.disabled = true;
-      shareQuinielaPdf(text, st.name).finally(() => { act.disabled = false; });
+      shareQuinielaPdf(st.name, st.picks).finally(() => { act.disabled = false; });
     });
   }
   if (route === "eliminatorias") {
