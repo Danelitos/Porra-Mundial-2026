@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-25T23:45:55.756Z",
+  "lastUpdated": "2026-06-26T01:54:50.040Z",
   "scorers": [
     {
       "name": "Lionel Messi",
@@ -116,7 +116,7 @@
       "goals": 2,
       "assists": 0,
       "penalties": 0,
-      "playedMatches": 2
+      "playedMatches": 3
     },
     {
       "name": "Kai Havertz",
@@ -218,6 +218,15 @@
       "playedMatches": 3
     },
     {
+      "name": "Anthony Elanga",
+      "teamId": "SWE",
+      "teamName": "Sweden",
+      "goals": 2,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 3
+    },
+    {
       "name": "Ayase Ueda",
       "teamId": "JPN",
       "teamName": "Japan",
@@ -261,15 +270,6 @@
       "assists": 0,
       "penalties": 0,
       "playedMatches": 2
-    },
-    {
-      "name": "Raúl Jiménez",
-      "teamId": "MEX",
-      "teamName": "Mexico",
-      "goals": 1,
-      "assists": 0,
-      "penalties": 0,
-      "playedMatches": 3
     }
   ]
 }
