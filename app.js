@@ -1252,7 +1252,22 @@ function quinielaPdfBlob(name, picks) {
     y += 4;
   };
 
+  // 3.er y 4.º puesto: no es un partido del cuadro (lo derivamos de las semis) y
+  // va justo antes de la Final, como en la web.
+  const thirdPlaceRow = () => {
+    roundHeader(bk.rounds.tp || "Tercer puesto");
+    const losers = qSemifinalLosers(picks);
+    const third = qThird(picks);
+    matchRow(
+      "3-4",
+      losers[0].team ? tname(losers[0].team) : "Perdedor semifinal",
+      losers[1].team ? tname(losers[1].team) : "Perdedor semifinal",
+      !!third && third === losers[0].team, !!third && third === losers[1].team,
+    );
+  };
+
   for (const r of KO_ROUND_ORDER) {
+    if (r === "final") thirdPlaceRow();
     roundHeader(bk.rounds[r]);
     for (const id of roundMatchIds(r)) {
       const m = bk.matches[id];
@@ -1266,16 +1281,6 @@ function quinielaPdfBlob(name, picks) {
       );
     }
   }
-  // 3.er y 4.º puesto (no es un partido del cuadro: lo derivamos de las semis).
-  roundHeader(bk.rounds.tp || "Tercer puesto");
-  const losers = qSemifinalLosers(picks);
-  const third = qThird(picks);
-  matchRow(
-    "3-4",
-    losers[0].team ? tname(losers[0].team) : "Perdedor semifinal",
-    losers[1].team ? tname(losers[1].team) : "Perdedor semifinal",
-    !!third && third === losers[0].team, !!third && third === losers[1].team,
-  );
 
   // ---------- Pie ----------
   ensure(20);
