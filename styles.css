@@ -1121,6 +1121,7 @@ select.ctl {
   border-radius: var(--radius-sm); padding: 11px 12px 12px;
 }
 .q-card.is-locked { opacity: 0.55; }
+.q-card-third { border-color: #cd7f32; box-shadow: inset 0 0 0 1px rgba(205, 127, 50, 0.25); }
 .q-card-head { display: flex; justify-content: space-between; gap: 8px; font-size: 0.66rem; color: var(--text-faint); margin-bottom: 8px; }
 .q-card-head .q-date { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .q-vs { text-align: center; font-size: 0.64rem; color: var(--text-faint); margin: 3px 0; letter-spacing: 0.08em; }
