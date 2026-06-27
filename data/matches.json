@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-26T21:16:56.494Z",
+  "lastUpdated": "2026-06-27T01:33:11.484Z",
   "matches": [
     {
       "id": "A1",
@@ -936,8 +936,12 @@
       "away": "ESP",
       "date": "2026-06-27T02:00:00+02:00",
       "venue": "Est. Akron, Guadalajara (México)",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 0,
+        "away": 1
+      },
+      "status": "live",
+      "minute": null
     },
     {
       "id": "H6",
@@ -947,8 +951,12 @@
       "away": "KSA",
       "date": "2026-06-27T02:00:00+02:00",
       "venue": "Hard Rock Stadium, Miami",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "status": "live",
+      "minute": null
     },
     {
       "id": "J5",
