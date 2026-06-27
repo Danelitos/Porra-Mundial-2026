@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-27T23:06:55.114Z",
+  "lastUpdated": "2026-06-27T23:43:50.677Z",
   "matches": [
     {
       "id": "A1",
@@ -1048,8 +1048,12 @@
       "away": "POR",
       "date": "2026-06-28T01:30:00+02:00",
       "venue": "SoFi Stadium, Los Ángeles",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "status": "pending",
+      "minute": null
     },
     {
       "id": "K6",
@@ -1059,8 +1063,12 @@
       "away": "UZB",
       "date": "2026-06-28T01:30:00+02:00",
       "venue": "Levi's Stadium, San Francisco",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "status": "pending",
+      "minute": null
     }
   ]
 }
