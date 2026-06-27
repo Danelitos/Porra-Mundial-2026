@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-27T05:36:52.213Z",
+  "lastUpdated": "2026-06-27T21:33:17.576Z",
   "matches": [
     {
       "id": "A1",
@@ -1018,8 +1018,12 @@
       "away": "ENG",
       "date": "2026-06-27T23:00:00+02:00",
       "venue": "Lincoln Financial, Filadelfia",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "status": "live",
+      "minute": null
     },
     {
       "id": "L6",
@@ -1029,8 +1033,12 @@
       "away": "GHA",
       "date": "2026-06-27T23:00:00+02:00",
       "venue": "AT&T Stadium, Dallas",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "status": "pending",
+      "minute": null
     },
     {
       "id": "K5",
