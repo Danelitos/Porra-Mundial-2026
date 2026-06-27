@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-26T23:35:38.989Z",
+  "lastUpdated": "2026-06-27T05:36:52.213Z",
   "scorers": [
     {
       "name": "Lionel Messi",
@@ -61,6 +61,15 @@
       "teamName": "Germany",
       "goals": 3,
       "assists": 2,
+      "penalties": 0,
+      "playedMatches": 3
+    },
+    {
+      "name": "Elijah Just",
+      "teamId": "NZL",
+      "teamName": "New Zealand",
+      "goals": 3,
+      "assists": 0,
       "penalties": 0,
       "playedMatches": 3
     },
@@ -182,13 +191,13 @@
       "playedMatches": 3
     },
     {
-      "name": "Elijah Just",
-      "teamId": "NZL",
-      "teamName": "New Zealand",
+      "name": "Ramin Rezaeian",
+      "teamId": "IRN",
+      "teamName": "Iran",
       "goals": 2,
-      "assists": 0,
+      "assists": 1,
       "penalties": 0,
-      "playedMatches": 2
+      "playedMatches": 3
     },
     {
       "name": "Harry Kane",
@@ -261,15 +270,6 @@
       "assists": 1,
       "penalties": 0,
       "playedMatches": 3
-    },
-    {
-      "name": "Cristiano Ronaldo",
-      "teamId": "POR",
-      "teamName": "Portugal",
-      "goals": 2,
-      "assists": 0,
-      "penalties": 0,
-      "playedMatches": 2
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-27T02:07:32.735Z",
+  "lastUpdated": "2026-06-27T05:36:52.213Z",
   "matches": [
     {
       "id": "A1",
@@ -988,8 +988,12 @@
       "away": "BEL",
       "date": "2026-06-27T05:00:00+02:00",
       "venue": null,
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 1,
+        "away": 5
+      },
+      "status": "finished",
+      "minute": null
     },
     {
       "id": "G6",
@@ -999,8 +1003,12 @@
       "away": "IRN",
       "date": "2026-06-27T05:00:00+02:00",
       "venue": "Lumen Field, Seattle",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 1,
+        "away": 1
+      },
+      "status": "finished",
+      "minute": null
     },
     {
       "id": "L5",
