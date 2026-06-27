@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-27T20:15:26.303Z",
+  "lastUpdated": "2026-06-27T22:40:54.348Z",
   "scorers": [
     {
       "name": "Lionel Messi",
@@ -71,6 +71,15 @@
       "goals": 3,
       "assists": 0,
       "penalties": 0,
+      "playedMatches": 3
+    },
+    {
+      "name": "Harry Kane",
+      "teamId": "ENG",
+      "teamName": "England",
+      "goals": 3,
+      "assists": 0,
+      "penalties": 1,
       "playedMatches": 3
     },
     {
@@ -200,12 +209,12 @@
       "playedMatches": 3
     },
     {
-      "name": "Harry Kane",
+      "name": "Jude Bellingham",
       "teamId": "ENG",
       "teamName": "England",
       "goals": 2,
-      "assists": 0,
-      "penalties": 1,
+      "assists": 1,
+      "penalties": 0,
       "playedMatches": 3
     },
     {
@@ -215,7 +224,7 @@
       "goals": 2,
       "assists": 0,
       "penalties": 0,
-      "playedMatches": 1
+      "playedMatches": 2
     },
     {
       "name": "Ruben Vargas",
@@ -257,15 +266,6 @@
       "name": "Ayase Ueda",
       "teamId": "JPN",
       "teamName": "Japan",
-      "goals": 2,
-      "assists": 1,
-      "penalties": 0,
-      "playedMatches": 3
-    },
-    {
-      "name": "Mikel Oyarzabal",
-      "teamId": "ESP",
-      "teamName": "Spain",
       "goals": 2,
       "assists": 1,
       "penalties": 0,
