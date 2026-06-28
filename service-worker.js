@@ -10,7 +10,7 @@
  * Sube CACHE_VERSION al publicar cambios para invalidar cachés antiguas.
  */
 
-const CACHE_VERSION = "porra2026-v18";
+const CACHE_VERSION = "porra2026-v19";
 const SHELL = [
   "./",
   "./index.html",

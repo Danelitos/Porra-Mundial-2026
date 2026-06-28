@@ -121,6 +121,55 @@ function matchCard(m, { showVenue = true } = {}) {
   </div>`;
 }
 
+/** Cómo mostrar una casilla del cuadro: equipo concreto (con bandera) o etiqueta
+ *  (1º A, 3º C/E/F…, Por definir) cuando aún no se conoce. */
+function koSlotDisplay(slot, matchId) {
+  const r = resolveBracketSlot(slot, matchId);
+  const id = r.teamId || r.provisional;
+  if (id) {
+    const t = CTX.teamsById[id];
+    return { flag: t?.flag || "🏳️", name: t?.name || id, set: !!r.teamId };
+  }
+  return { flag: "🏳️", name: r.label, set: false };
+}
+
+/** Tarjeta de un partido de la fase eliminatoria, con el mismo aspecto que las de
+ *  grupos. Aún no hay resultados de eliminatoria, así que se muestran como
+ *  pendientes (VS) con la ronda, fecha y sede. */
+function koMatchCard(n) {
+  const m = CTX.bracket?.matches[String(n)];
+  if (!m) return "";
+  const h = koSlotDisplay(m.home, n), a = koSlotDisplay(m.away, n);
+  const roundName = CTX.bracket.rounds[m.round] || "Eliminatoria";
+  return `
+  <div class="match-card">
+    <div class="team"><span class="flag">${h.flag}</span><span class="nm ${h.set ? "" : "muted"}">${esc(h.name)}</span></div>
+    <div class="score pending"><span class="muted">VS</span></div>
+    <div class="team right"><span class="nm ${a.set ? "" : "muted"}">${esc(a.name)}</span><span class="flag">${a.flag}</span></div>
+    <div class="meta">
+      <span>${icon("git-merge")}${esc(roundName)} · ${fmtDate(m.date, false)}</span>
+      ${m.venue ? `<span class="venue">${icon("map-pin")}${esc(m.venue)}</span>` : ""}
+      <span class="status-dot pending">${STATUS_LABEL.pending}</span>
+    </div>
+  </div>`;
+}
+
+/** Orden de las rondas eliminatorias para listarlas (incluye 3.er puesto). */
+const KO_RESULT_ROUNDS = ["r32", "r16", "qf", "sf", "tp", "final"];
+
+/** Nº de partido del cuadro agrupados por ronda y ordenados por fecha. */
+function koMatchesByRound() {
+  const out = {};
+  for (const [n, m] of Object.entries(CTX.bracket?.matches || {})) (out[m.round] ||= []).push(n);
+  for (const r of Object.keys(out)) {
+    out[r].sort((a, b) => {
+      const da = CTX.bracket.matches[a].date || "", db = CTX.bracket.matches[b].date || "";
+      return da < db ? -1 : da > db ? 1 : Number(a) - Number(b);
+    });
+  }
+  return out;
+}
+
 /** Variación de posición respecto al día anterior. */
 function positionDeltas() {
   const evo = evolutionOf();
@@ -281,7 +330,18 @@ function viewHome() {
   const stats = globalStatsOf();
   const top3 = ranking.slice(0, 3);
   const leader = ranking[0];
-  const upcoming = CTX.matches.filter((m) => viewStatus(m) === "pending").slice(0, 5);
+  // Próximos: partidos de grupos pendientes y, cuando los grupos cierran, también
+  // los de la fase eliminatoria. Se mezclan y ordenan por fecha.
+  const upcomingItems = CTX.matches
+    .filter((m) => viewStatus(m) === "pending")
+    .map((m) => ({ date: m.date, html: matchCard(m) }));
+  if (CTX.bracket && isGroupStageComplete(CTX.matches)) {
+    for (const [n, m] of Object.entries(CTX.bracket.matches)) {
+      upcomingItems.push({ date: m.date, html: koMatchCard(n) });
+    }
+  }
+  upcomingItems.sort((a, b) => String(a.date).localeCompare(String(b.date)));
+  const upcoming = upcomingItems.slice(0, 6);
   const live = CTX.matches.filter((m) => viewStatus(m) === "live");
   const anyPoints = leader && leader.breakdown.total > 0;
 
@@ -336,7 +396,7 @@ function viewHome() {
 
   ${sectionTitle("calendar-days", "Próximos partidos")}
   <div class="grid grid-2">
-    ${upcoming.length ? upcoming.map((m) => matchCard(m)).join("") : `<p class="muted">No quedan partidos pendientes de la fase de grupos.</p>`}
+    ${upcoming.length ? upcoming.map((u) => u.html).join("") : `<p class="muted">No quedan partidos por jugar.</p>`}
   </div>
 
   ${sectionTitle("chart-line", "Evolución de la porra")}
@@ -554,13 +614,24 @@ function viewResultados(params) {
     ${sectionTitle("calendar", `Jornada ${j}`)}
     <div class="grid grid-2">${byDay[j].map((m) => matchCard(m)).join("")}</div>`).join("");
 
+  // Fase eliminatoria: se muestra al cerrarse los grupos. Sus partidos están
+  // pendientes, así que solo aparece sin filtro de grupo y en "Todos"/"Pendientes".
+  let koSections = "";
+  if (CTX.bracket && isGroupStageComplete(CTX.matches) && !fGroup && (fStatus === "todos" || fStatus === "pending")) {
+    const byRound = koMatchesByRound();
+    koSections = KO_RESULT_ROUNDS.filter((r) => byRound[r]).map((r) => `
+      ${sectionTitle("git-merge", CTX.bracket.rounds[r] || r)}
+      <div class="grid grid-2">${byRound[r].map((n) => koMatchCard(n)).join("")}</div>`).join("");
+  }
+
   return `
   <div class="page-head"><h1>${icon("calendar-days")}Resultados y calendario</h1><p>${CTX.matches.filter((m) => m.status === "finished").length} de ${CTX.matches.length} partidos finalizados.</p></div>
   <div class="chips filters">
     ${mkChip("Todos", "todos")}${mkChip("Pendientes", "pending")}${mkChip("En juego", "live")}${mkChip("Finalizados", "finished")}
     <select class="ctl" id="groupfilter">${groupOpts}</select>
   </div>
-  ${sections || `<p class="muted">No hay partidos con ese filtro.</p>`}`;
+  ${sections || (koSections ? "" : `<p class="muted">No hay partidos con ese filtro.</p>`)}
+  ${koSections}`;
 }
 
 const RULE_ICONS = { "Fase de Grupos": "layout-grid", "Fase Eliminatoria": "git-merge", "Bonus": "star", "Desempates": "scale" };
@@ -661,7 +732,7 @@ function viewGoleadores() {
 
 /** Resuelve una casilla del cuadro a un equipo concreto o, si aún no se sabe,
  *  a la etiqueta de posición (1º A, 2º B, 3º C/E/F…, Ganador 73). */
-function resolveBracketSlot(slot) {
+function resolveBracketSlot(slot, matchId) {
   if (!slot) return { label: "—" };
   if (slot.type === "w" || slot.type === "r") {
     const idx = slot.type === "w" ? 0 : 1;
@@ -674,7 +745,21 @@ function resolveBracketSlot(slot) {
     const played = table.some((r) => r.pj > 0);
     return { label, provisional: played ? teamId : null };
   }
-  if (slot.type === "t") return { label: "3º " + slot.g.join("/"), third: true };
+  if (slot.type === "t") {
+    // El cruce del 3º lo fija la FIFA al cerrar la fase de grupos: lo cargamos en
+    // tournament.bestThirds como { "<idPartido>": "<grupo>" }. Si ya está, mostramos
+    // el equipo concreto; si no, la etiqueta con los grupos candidatos.
+    const bt = CTX.tournament.bestThirds;
+    const gId = bt && !Array.isArray(bt) ? bt[String(matchId)] : null;
+    if (gId) {
+      const g = CTX.groupsData.groups.find((x) => x.id === gId);
+      if (g && isGroupComplete(g.id, CTX.matches)) {
+        const teamId = computeGroupTable(g, CTX.matches)[2]?.teamId;
+        if (teamId) return { label: "3º " + gId, teamId, confirmed: true };
+      }
+    }
+    return { label: "3º " + slot.g.join("/"), third: true };
+  }
   // El ganador de una eliminatoria no se conoce hasta que se juega: como en los
   // cuadros oficiales, mostramos "Por definir" (no el nº interno de partido).
   if (slot.type === "m") return { label: "Por definir", tbd: true, fromMatch: slot.n };
@@ -684,8 +769,8 @@ function resolveBracketSlot(slot) {
 }
 
 /** Una línea de equipo dentro de un partido del cuadro. */
-function bracketTeam(slot) {
-  const r = resolveBracketSlot(slot);
+function bracketTeam(slot, matchId) {
+  const r = resolveBracketSlot(slot, matchId);
   if (r.confirmed && r.teamId) {
     const t = CTX.teamsById[r.teamId];
     return `<div class="bk-team is-set"><span class="flag">${t?.flag || "🏳️"}</span><span class="nm">${esc(t?.name || r.teamId)}</span><span class="bk-tag">${esc(r.label)}</span></div>`;
@@ -705,9 +790,9 @@ function bracketCard(n, { mirror = false } = {}) {
   return `
     <div class="bk-card${mirror ? " mirror" : ""}">
       <div class="bk-head"><span class="bk-no">#${n}</span><span class="bk-date">${d}${m.venue ? " · " + esc(m.venue) : ""}</span></div>
-      ${bracketTeam(m.home)}
+      ${bracketTeam(m.home, n)}
       <div class="bk-vs"><span>VS</span></div>
-      ${bracketTeam(m.away)}
+      ${bracketTeam(m.away, n)}
     </div>`;
 }
 
