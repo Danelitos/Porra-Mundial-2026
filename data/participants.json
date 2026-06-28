@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-14T09:22:22.383Z",
+  "lastUpdated": "2026-06-28T18:22:19.275Z",
   "participants": [
     {
       "id": "aitor",
@@ -435,142 +435,142 @@
         "knockout": {
           "r32": [
             {
-              "home": "MEX",
-              "away": "BIH"
-            },
-            {
               "home": "CAN",
-              "away": "TUR"
-            },
-            {
-              "home": "BRA",
-              "away": "SCO"
-            },
-            {
-              "home": "USA",
-              "away": "CZE"
+              "away": "RSA"
             },
             {
               "home": "GER",
-              "away": "JPN"
-            },
-            {
-              "home": "NED",
-              "away": "ECU"
-            },
-            {
-              "home": "BEL",
-              "away": "IRN"
-            },
-            {
-              "home": "ESP",
-              "away": "GHA"
-            },
-            {
-              "home": "FRA",
-              "away": "NOR"
-            },
-            {
-              "home": "ARG",
-              "away": "KSA"
-            },
-            {
-              "home": "POR",
-              "away": "AUT"
-            },
-            {
-              "home": "ENG",
-              "away": "EGY"
-            },
-            {
-              "home": "SEN",
-              "away": "CRO"
-            },
-            {
-              "home": "SUI",
-              "away": "KOR"
-            },
-            {
-              "home": "MAR",
               "away": "PAR"
             },
             {
-              "home": "URU",
-              "away": "COL"
+              "home": "NED",
+              "away": "MAR"
+            },
+            {
+              "home": "BRA",
+              "away": "JPN"
+            },
+            {
+              "home": "FRA",
+              "away": "SWE"
+            },
+            {
+              "home": "NOR",
+              "away": "CIV"
+            },
+            {
+              "home": "MEX",
+              "away": "ECU"
+            },
+            {
+              "home": "ENG",
+              "away": "COD"
+            },
+            {
+              "home": "USA",
+              "away": "BIH"
+            },
+            {
+              "home": "BEL",
+              "away": "SEN"
+            },
+            {
+              "home": "POR",
+              "away": "CRO"
+            },
+            {
+              "home": "ESP",
+              "away": "AUT"
+            },
+            {
+              "home": "SUI",
+              "away": "ALG"
+            },
+            {
+              "home": "ARG",
+              "away": "CPV"
+            },
+            {
+              "home": "COL",
+              "away": "GHA"
+            },
+            {
+              "home": "AUS",
+              "away": "EGY"
             }
           ],
           "r16": [
             {
-              "home": "MEX",
-              "away": "SUI"
-            },
-            {
-              "home": "BRA",
-              "away": "MAR"
-            },
-            {
-              "home": "USA",
+              "home": "FRA",
               "away": "GER"
             },
             {
               "home": "NED",
-              "away": "BEL"
+              "away": "CAN"
             },
             {
-              "home": "ESP",
-              "away": "URU"
-            },
-            {
-              "home": "FRA",
-              "away": "SEN"
-            },
-            {
-              "home": "ARG",
-              "away": "POR"
+              "home": "BRA",
+              "away": "NOR"
             },
             {
               "home": "ENG",
-              "away": "TUR"
+              "away": "MEX"
+            },
+            {
+              "home": "ESP",
+              "away": "POR"
+            },
+            {
+              "home": "BEL",
+              "away": "USA"
+            },
+            {
+              "home": "ARG",
+              "away": "AUS"
+            },
+            {
+              "home": "COL",
+              "away": "SUI"
             }
           ],
           "qf": [
             {
-              "home": "SUI",
-              "away": "BRA"
+              "home": "FRA",
+              "away": "NED"
             },
             {
-              "home": "GER",
+              "home": "ESP",
               "away": "BEL"
             },
+            {
+              "home": "BRA",
+              "away": "ENG"
+            },
+            {
+              "home": "ARG",
+              "away": "COL"
+            }
+          ],
+          "sf": [
             {
               "home": "ESP",
               "away": "FRA"
             },
             {
               "home": "ARG",
-              "away": "ENG"
-            }
-          ],
-          "sf": [
-            {
-              "home": "BRA",
-              "away": "BEL"
-            },
-            {
-              "home": "ESP",
-              "away": "ARG"
+              "away": "BRA"
             }
           ],
           "thirdPlace": [
             {
-              "home": "BEL",
-              "away": "ARG"
+              "home": "FRA",
+              "away": "BRA"
             }
           ],
           "final": [
             {
-              "home": "BRA",
-              "away": "ESP"
+              "home": "ESP",
+              "away": "ARG"
             }
           ]
         }
@@ -1433,7 +1433,148 @@
             "third": "GHA"
           }
         },
-        "knockout": {}
+        "knockout": {
+          "r32": [
+            {
+              "home": "CAN",
+              "away": "RSA"
+            },
+            {
+              "home": "GER",
+              "away": "PAR"
+            },
+            {
+              "home": "MAR",
+              "away": "NED"
+            },
+            {
+              "home": "BRA",
+              "away": "JPN"
+            },
+            {
+              "home": "FRA",
+              "away": "SWE"
+            },
+            {
+              "home": "NOR",
+              "away": "CIV"
+            },
+            {
+              "home": "ECU",
+              "away": "MEX"
+            },
+            {
+              "home": "ENG",
+              "away": "COD"
+            },
+            {
+              "home": "USA",
+              "away": "BIH"
+            },
+            {
+              "home": "SEN",
+              "away": "BEL"
+            },
+            {
+              "home": "POR",
+              "away": "CRO"
+            },
+            {
+              "home": "ESP",
+              "away": "AUT"
+            },
+            {
+              "home": "SUI",
+              "away": "ALG"
+            },
+            {
+              "home": "ARG",
+              "away": "CPV"
+            },
+            {
+              "home": "COL",
+              "away": "GHA"
+            },
+            {
+              "home": "EGY",
+              "away": "AUS"
+            }
+          ],
+          "r16": [
+            {
+              "home": "FRA",
+              "away": "GER"
+            },
+            {
+              "home": "MAR",
+              "away": "CAN"
+            },
+            {
+              "home": "NOR",
+              "away": "BRA"
+            },
+            {
+              "home": "ENG",
+              "away": "ECU"
+            },
+            {
+              "home": "ESP",
+              "away": "POR"
+            },
+            {
+              "home": "SEN",
+              "away": "USA"
+            },
+            {
+              "home": "ARG",
+              "away": "EGY"
+            },
+            {
+              "home": "COL",
+              "away": "SUI"
+            }
+          ],
+          "qf": [
+            {
+              "home": "FRA",
+              "away": "MAR"
+            },
+            {
+              "home": "ESP",
+              "away": "SEN"
+            },
+            {
+              "home": "ENG",
+              "away": "NOR"
+            },
+            {
+              "home": "ARG",
+              "away": "COL"
+            }
+          ],
+          "sf": [
+            {
+              "home": "ESP",
+              "away": "FRA"
+            },
+            {
+              "home": "ARG",
+              "away": "ENG"
+            }
+          ],
+          "thirdPlace": [
+            {
+              "home": "FRA",
+              "away": "ENG"
+            }
+          ],
+          "final": [
+            {
+              "home": "ESP",
+              "away": "ARG"
+            }
+          ]
+        }
       }
     },
     {
@@ -1867,7 +2008,148 @@
             "third": "GHA"
           }
         },
-        "knockout": {}
+        "knockout": {
+          "r32": [
+            {
+              "home": "CAN",
+              "away": "RSA"
+            },
+            {
+              "home": "GER",
+              "away": "PAR"
+            },
+            {
+              "home": "MAR",
+              "away": "NED"
+            },
+            {
+              "home": "JPN",
+              "away": "BRA"
+            },
+            {
+              "home": "FRA",
+              "away": "SWE"
+            },
+            {
+              "home": "CIV",
+              "away": "NOR"
+            },
+            {
+              "home": "ECU",
+              "away": "MEX"
+            },
+            {
+              "home": "ENG",
+              "away": "COD"
+            },
+            {
+              "home": "USA",
+              "away": "BIH"
+            },
+            {
+              "home": "SEN",
+              "away": "BEL"
+            },
+            {
+              "home": "CRO",
+              "away": "POR"
+            },
+            {
+              "home": "ESP",
+              "away": "AUT"
+            },
+            {
+              "home": "SUI",
+              "away": "ALG"
+            },
+            {
+              "home": "ARG",
+              "away": "CPV"
+            },
+            {
+              "home": "COL",
+              "away": "GHA"
+            },
+            {
+              "home": "EGY",
+              "away": "AUS"
+            }
+          ],
+          "r16": [
+            {
+              "home": "FRA",
+              "away": "GER"
+            },
+            {
+              "home": "MAR",
+              "away": "CAN"
+            },
+            {
+              "home": "JPN",
+              "away": "CIV"
+            },
+            {
+              "home": "ENG",
+              "away": "ECU"
+            },
+            {
+              "home": "ESP",
+              "away": "CRO"
+            },
+            {
+              "home": "USA",
+              "away": "SEN"
+            },
+            {
+              "home": "ARG",
+              "away": "EGY"
+            },
+            {
+              "home": "COL",
+              "away": "SUI"
+            }
+          ],
+          "qf": [
+            {
+              "home": "FRA",
+              "away": "MAR"
+            },
+            {
+              "home": "ESP",
+              "away": "USA"
+            },
+            {
+              "home": "ENG",
+              "away": "JPN"
+            },
+            {
+              "home": "COL",
+              "away": "ARG"
+            }
+          ],
+          "sf": [
+            {
+              "home": "FRA",
+              "away": "ESP"
+            },
+            {
+              "home": "ENG",
+              "away": "COL"
+            }
+          ],
+          "thirdPlace": [
+            {
+              "home": "ESP",
+              "away": "COL"
+            }
+          ],
+          "final": [
+            {
+              "home": "FRA",
+              "away": "ENG"
+            }
+          ]
+        }
       }
     },
     {
@@ -2301,7 +2583,148 @@
             "third": "PAN"
           }
         },
-        "knockout": {}
+        "knockout": {
+          "r32": [
+            {
+              "home": "CAN",
+              "away": "RSA"
+            },
+            {
+              "home": "GER",
+              "away": "PAR"
+            },
+            {
+              "home": "NED",
+              "away": "MAR"
+            },
+            {
+              "home": "BRA",
+              "away": "JPN"
+            },
+            {
+              "home": "FRA",
+              "away": "SWE"
+            },
+            {
+              "home": "NOR",
+              "away": "CIV"
+            },
+            {
+              "home": "ECU",
+              "away": "MEX"
+            },
+            {
+              "home": "ENG",
+              "away": "COD"
+            },
+            {
+              "home": "USA",
+              "away": "BIH"
+            },
+            {
+              "home": "SEN",
+              "away": "BEL"
+            },
+            {
+              "home": "POR",
+              "away": "CRO"
+            },
+            {
+              "home": "ESP",
+              "away": "AUT"
+            },
+            {
+              "home": "SUI",
+              "away": "ALG"
+            },
+            {
+              "home": "ARG",
+              "away": "CPV"
+            },
+            {
+              "home": "COL",
+              "away": "GHA"
+            },
+            {
+              "home": "AUS",
+              "away": "EGY"
+            }
+          ],
+          "r16": [
+            {
+              "home": "FRA",
+              "away": "GER"
+            },
+            {
+              "home": "NED",
+              "away": "CAN"
+            },
+            {
+              "home": "NOR",
+              "away": "BRA"
+            },
+            {
+              "home": "ENG",
+              "away": "ECU"
+            },
+            {
+              "home": "ESP",
+              "away": "POR"
+            },
+            {
+              "home": "SEN",
+              "away": "USA"
+            },
+            {
+              "home": "ARG",
+              "away": "AUS"
+            },
+            {
+              "home": "COL",
+              "away": "SUI"
+            }
+          ],
+          "qf": [
+            {
+              "home": "FRA",
+              "away": "NED"
+            },
+            {
+              "home": "ESP",
+              "away": "SEN"
+            },
+            {
+              "home": "ENG",
+              "away": "NOR"
+            },
+            {
+              "home": "ARG",
+              "away": "COL"
+            }
+          ],
+          "sf": [
+            {
+              "home": "FRA",
+              "away": "ESP"
+            },
+            {
+              "home": "ARG",
+              "away": "ENG"
+            }
+          ],
+          "thirdPlace": [
+            {
+              "home": "ESP",
+              "away": "ENG"
+            }
+          ],
+          "final": [
+            {
+              "home": "FRA",
+              "away": "ARG"
+            }
+          ]
+        }
       }
     },
     {
@@ -2735,7 +3158,148 @@
             "third": "ENG"
           }
         },
-        "knockout": {}
+        "knockout": {
+          "r32": [
+            {
+              "home": "RSA",
+              "away": "CAN"
+            },
+            {
+              "home": "GER",
+              "away": "PAR"
+            },
+            {
+              "home": "NED",
+              "away": "MAR"
+            },
+            {
+              "home": "BRA",
+              "away": "JPN"
+            },
+            {
+              "home": "FRA",
+              "away": "SWE"
+            },
+            {
+              "home": "NOR",
+              "away": "CIV"
+            },
+            {
+              "home": "MEX",
+              "away": "ECU"
+            },
+            {
+              "home": "ENG",
+              "away": "COD"
+            },
+            {
+              "home": "USA",
+              "away": "BIH"
+            },
+            {
+              "home": "SEN",
+              "away": "BEL"
+            },
+            {
+              "home": "POR",
+              "away": "CRO"
+            },
+            {
+              "home": "ESP",
+              "away": "AUT"
+            },
+            {
+              "home": "SUI",
+              "away": "ALG"
+            },
+            {
+              "home": "ARG",
+              "away": "CPV"
+            },
+            {
+              "home": "COL",
+              "away": "GHA"
+            },
+            {
+              "home": "EGY",
+              "away": "AUS"
+            }
+          ],
+          "r16": [
+            {
+              "home": "FRA",
+              "away": "GER"
+            },
+            {
+              "home": "NED",
+              "away": "RSA"
+            },
+            {
+              "home": "BRA",
+              "away": "NOR"
+            },
+            {
+              "home": "ENG",
+              "away": "MEX"
+            },
+            {
+              "home": "ESP",
+              "away": "POR"
+            },
+            {
+              "home": "SEN",
+              "away": "USA"
+            },
+            {
+              "home": "ARG",
+              "away": "EGY"
+            },
+            {
+              "home": "SUI",
+              "away": "COL"
+            }
+          ],
+          "qf": [
+            {
+              "home": "FRA",
+              "away": "NED"
+            },
+            {
+              "home": "ESP",
+              "away": "SEN"
+            },
+            {
+              "home": "ENG",
+              "away": "BRA"
+            },
+            {
+              "home": "ARG",
+              "away": "SUI"
+            }
+          ],
+          "sf": [
+            {
+              "home": "ESP",
+              "away": "FRA"
+            },
+            {
+              "home": "ENG",
+              "away": "ARG"
+            }
+          ],
+          "thirdPlace": [
+            {
+              "home": "FRA",
+              "away": "ARG"
+            }
+          ],
+          "final": [
+            {
+              "home": "ESP",
+              "away": "ENG"
+            }
+          ]
+        }
       }
     },
     {
@@ -3169,7 +3733,148 @@
             "third": "GHA"
           }
         },
-        "knockout": {}
+        "knockout": {
+          "r32": [
+            {
+              "home": "CAN",
+              "away": "RSA"
+            },
+            {
+              "home": "GER",
+              "away": "PAR"
+            },
+            {
+              "home": "MAR",
+              "away": "NED"
+            },
+            {
+              "home": "BRA",
+              "away": "JPN"
+            },
+            {
+              "home": "FRA",
+              "away": "SWE"
+            },
+            {
+              "home": "NOR",
+              "away": "CIV"
+            },
+            {
+              "home": "MEX",
+              "away": "ECU"
+            },
+            {
+              "home": "ENG",
+              "away": "COD"
+            },
+            {
+              "home": "USA",
+              "away": "BIH"
+            },
+            {
+              "home": "SEN",
+              "away": "BEL"
+            },
+            {
+              "home": "POR",
+              "away": "CRO"
+            },
+            {
+              "home": "ESP",
+              "away": "AUT"
+            },
+            {
+              "home": "SUI",
+              "away": "ALG"
+            },
+            {
+              "home": "ARG",
+              "away": "CPV"
+            },
+            {
+              "home": "COL",
+              "away": "GHA"
+            },
+            {
+              "home": "EGY",
+              "away": "AUS"
+            }
+          ],
+          "r16": [
+            {
+              "home": "FRA",
+              "away": "GER"
+            },
+            {
+              "home": "MAR",
+              "away": "CAN"
+            },
+            {
+              "home": "BRA",
+              "away": "NOR"
+            },
+            {
+              "home": "ENG",
+              "away": "MEX"
+            },
+            {
+              "home": "ESP",
+              "away": "POR"
+            },
+            {
+              "home": "USA",
+              "away": "SEN"
+            },
+            {
+              "home": "ARG",
+              "away": "EGY"
+            },
+            {
+              "home": "COL",
+              "away": "SUI"
+            }
+          ],
+          "qf": [
+            {
+              "home": "FRA",
+              "away": "MAR"
+            },
+            {
+              "home": "ESP",
+              "away": "USA"
+            },
+            {
+              "home": "BRA",
+              "away": "ENG"
+            },
+            {
+              "home": "ARG",
+              "away": "COL"
+            }
+          ],
+          "sf": [
+            {
+              "home": "ESP",
+              "away": "FRA"
+            },
+            {
+              "home": "BRA",
+              "away": "ARG"
+            }
+          ],
+          "thirdPlace": [
+            {
+              "home": "FRA",
+              "away": "ARG"
+            }
+          ],
+          "final": [
+            {
+              "home": "ESP",
+              "away": "BRA"
+            }
+          ]
+        }
       }
     },
     {
@@ -3603,7 +4308,148 @@
             "third": "GHA"
           }
         },
-        "knockout": {}
+        "knockout": {
+          "r32": [
+            {
+              "home": "CAN",
+              "away": "RSA"
+            },
+            {
+              "home": "GER",
+              "away": "PAR"
+            },
+            {
+              "home": "MAR",
+              "away": "NED"
+            },
+            {
+              "home": "BRA",
+              "away": "JPN"
+            },
+            {
+              "home": "FRA",
+              "away": "SWE"
+            },
+            {
+              "home": "NOR",
+              "away": "CIV"
+            },
+            {
+              "home": "MEX",
+              "away": "ECU"
+            },
+            {
+              "home": "ENG",
+              "away": "COD"
+            },
+            {
+              "home": "USA",
+              "away": "BIH"
+            },
+            {
+              "home": "BEL",
+              "away": "SEN"
+            },
+            {
+              "home": "POR",
+              "away": "CRO"
+            },
+            {
+              "home": "ESP",
+              "away": "AUT"
+            },
+            {
+              "home": "SUI",
+              "away": "ALG"
+            },
+            {
+              "home": "ARG",
+              "away": "CPV"
+            },
+            {
+              "home": "COL",
+              "away": "GHA"
+            },
+            {
+              "home": "EGY",
+              "away": "AUS"
+            }
+          ],
+          "r16": [
+            {
+              "home": "FRA",
+              "away": "GER"
+            },
+            {
+              "home": "MAR",
+              "away": "CAN"
+            },
+            {
+              "home": "NOR",
+              "away": "BRA"
+            },
+            {
+              "home": "ENG",
+              "away": "MEX"
+            },
+            {
+              "home": "ESP",
+              "away": "POR"
+            },
+            {
+              "home": "USA",
+              "away": "BEL"
+            },
+            {
+              "home": "ARG",
+              "away": "EGY"
+            },
+            {
+              "home": "SUI",
+              "away": "COL"
+            }
+          ],
+          "qf": [
+            {
+              "home": "FRA",
+              "away": "MAR"
+            },
+            {
+              "home": "ESP",
+              "away": "USA"
+            },
+            {
+              "home": "ENG",
+              "away": "NOR"
+            },
+            {
+              "home": "ARG",
+              "away": "SUI"
+            }
+          ],
+          "sf": [
+            {
+              "home": "FRA",
+              "away": "ESP"
+            },
+            {
+              "home": "ENG",
+              "away": "ARG"
+            }
+          ],
+          "thirdPlace": [
+            {
+              "home": "ESP",
+              "away": "ARG"
+            }
+          ],
+          "final": [
+            {
+              "home": "FRA",
+              "away": "ENG"
+            }
+          ]
+        }
       }
     },
     {
@@ -4037,7 +4883,148 @@
             "third": "GHA"
           }
         },
-        "knockout": {}
+        "knockout": {
+          "r32": [
+            {
+              "home": "CAN",
+              "away": "RSA"
+            },
+            {
+              "home": "GER",
+              "away": "PAR"
+            },
+            {
+              "home": "NED",
+              "away": "MAR"
+            },
+            {
+              "home": "BRA",
+              "away": "JPN"
+            },
+            {
+              "home": "FRA",
+              "away": "SWE"
+            },
+            {
+              "home": "NOR",
+              "away": "CIV"
+            },
+            {
+              "home": "MEX",
+              "away": "ECU"
+            },
+            {
+              "home": "ENG",
+              "away": "COD"
+            },
+            {
+              "home": "USA",
+              "away": "BIH"
+            },
+            {
+              "home": "BEL",
+              "away": "SEN"
+            },
+            {
+              "home": "POR",
+              "away": "CRO"
+            },
+            {
+              "home": "ESP",
+              "away": "AUT"
+            },
+            {
+              "home": "SUI",
+              "away": "ALG"
+            },
+            {
+              "home": "ARG",
+              "away": "CPV"
+            },
+            {
+              "home": "COL",
+              "away": "GHA"
+            },
+            {
+              "home": "EGY",
+              "away": "AUS"
+            }
+          ],
+          "r16": [
+            {
+              "home": "FRA",
+              "away": "GER"
+            },
+            {
+              "home": "NED",
+              "away": "CAN"
+            },
+            {
+              "home": "BRA",
+              "away": "NOR"
+            },
+            {
+              "home": "ENG",
+              "away": "MEX"
+            },
+            {
+              "home": "ESP",
+              "away": "POR"
+            },
+            {
+              "home": "USA",
+              "away": "BEL"
+            },
+            {
+              "home": "ARG",
+              "away": "EGY"
+            },
+            {
+              "home": "COL",
+              "away": "SUI"
+            }
+          ],
+          "qf": [
+            {
+              "home": "FRA",
+              "away": "NED"
+            },
+            {
+              "home": "ESP",
+              "away": "USA"
+            },
+            {
+              "home": "BRA",
+              "away": "ENG"
+            },
+            {
+              "home": "ARG",
+              "away": "COL"
+            }
+          ],
+          "sf": [
+            {
+              "home": "ESP",
+              "away": "FRA"
+            },
+            {
+              "home": "ARG",
+              "away": "BRA"
+            }
+          ],
+          "thirdPlace": [
+            {
+              "home": "FRA",
+              "away": "BRA"
+            }
+          ],
+          "final": [
+            {
+              "home": "ESP",
+              "away": "ARG"
+            }
+          ]
+        }
       }
     },
     {
@@ -4471,7 +5458,148 @@
             "third": "GHA"
           }
         },
-        "knockout": {}
+        "knockout": {
+          "r32": [
+            {
+              "home": "CAN",
+              "away": "RSA"
+            },
+            {
+              "home": "GER",
+              "away": "PAR"
+            },
+            {
+              "home": "MAR",
+              "away": "NED"
+            },
+            {
+              "home": "BRA",
+              "away": "JPN"
+            },
+            {
+              "home": "FRA",
+              "away": "SWE"
+            },
+            {
+              "home": "NOR",
+              "away": "CIV"
+            },
+            {
+              "home": "MEX",
+              "away": "ECU"
+            },
+            {
+              "home": "ENG",
+              "away": "COD"
+            },
+            {
+              "home": "USA",
+              "away": "BIH"
+            },
+            {
+              "home": "BEL",
+              "away": "SEN"
+            },
+            {
+              "home": "CRO",
+              "away": "POR"
+            },
+            {
+              "home": "ESP",
+              "away": "AUT"
+            },
+            {
+              "home": "SUI",
+              "away": "ALG"
+            },
+            {
+              "home": "ARG",
+              "away": "CPV"
+            },
+            {
+              "home": "GHA",
+              "away": "COL"
+            },
+            {
+              "home": "EGY",
+              "away": "AUS"
+            }
+          ],
+          "r16": [
+            {
+              "home": "FRA",
+              "away": "GER"
+            },
+            {
+              "home": "MAR",
+              "away": "CAN"
+            },
+            {
+              "home": "BRA",
+              "away": "NOR"
+            },
+            {
+              "home": "ENG",
+              "away": "MEX"
+            },
+            {
+              "home": "ESP",
+              "away": "CRO"
+            },
+            {
+              "home": "BEL",
+              "away": "USA"
+            },
+            {
+              "home": "ARG",
+              "away": "EGY"
+            },
+            {
+              "home": "GHA",
+              "away": "SUI"
+            }
+          ],
+          "qf": [
+            {
+              "home": "FRA",
+              "away": "MAR"
+            },
+            {
+              "home": "ESP",
+              "away": "BEL"
+            },
+            {
+              "home": "BRA",
+              "away": "ENG"
+            },
+            {
+              "home": "ARG",
+              "away": "GHA"
+            }
+          ],
+          "sf": [
+            {
+              "home": "FRA",
+              "away": "ESP"
+            },
+            {
+              "home": "ARG",
+              "away": "BRA"
+            }
+          ],
+          "thirdPlace": [
+            {
+              "home": "BRA",
+              "away": "ESP"
+            }
+          ],
+          "final": [
+            {
+              "home": "FRA",
+              "away": "ARG"
+            }
+          ]
+        }
       }
     },
     {
@@ -4905,7 +6033,148 @@
             "third": "GHA"
           }
         },
-        "knockout": {}
+        "knockout": {
+          "r32": [
+            {
+              "home": "CAN",
+              "away": "RSA"
+            },
+            {
+              "home": "GER",
+              "away": "PAR"
+            },
+            {
+              "home": "MAR",
+              "away": "NED"
+            },
+            {
+              "home": "BRA",
+              "away": "JPN"
+            },
+            {
+              "home": "FRA",
+              "away": "SWE"
+            },
+            {
+              "home": "NOR",
+              "away": "CIV"
+            },
+            {
+              "home": "ECU",
+              "away": "MEX"
+            },
+            {
+              "home": "ENG",
+              "away": "COD"
+            },
+            {
+              "home": "USA",
+              "away": "BIH"
+            },
+            {
+              "home": "SEN",
+              "away": "BEL"
+            },
+            {
+              "home": "POR",
+              "away": "CRO"
+            },
+            {
+              "home": "ESP",
+              "away": "AUT"
+            },
+            {
+              "home": "SUI",
+              "away": "ALG"
+            },
+            {
+              "home": "ARG",
+              "away": "CPV"
+            },
+            {
+              "home": "COL",
+              "away": "GHA"
+            },
+            {
+              "home": "EGY",
+              "away": "AUS"
+            }
+          ],
+          "r16": [
+            {
+              "home": "FRA",
+              "away": "GER"
+            },
+            {
+              "home": "MAR",
+              "away": "CAN"
+            },
+            {
+              "home": "BRA",
+              "away": "NOR"
+            },
+            {
+              "home": "ENG",
+              "away": "ECU"
+            },
+            {
+              "home": "ESP",
+              "away": "POR"
+            },
+            {
+              "home": "USA",
+              "away": "SEN"
+            },
+            {
+              "home": "ARG",
+              "away": "EGY"
+            },
+            {
+              "home": "COL",
+              "away": "SUI"
+            }
+          ],
+          "qf": [
+            {
+              "home": "FRA",
+              "away": "MAR"
+            },
+            {
+              "home": "ESP",
+              "away": "USA"
+            },
+            {
+              "home": "BRA",
+              "away": "ENG"
+            },
+            {
+              "home": "ARG",
+              "away": "COL"
+            }
+          ],
+          "sf": [
+            {
+              "home": "ESP",
+              "away": "FRA"
+            },
+            {
+              "home": "ARG",
+              "away": "BRA"
+            }
+          ],
+          "thirdPlace": [
+            {
+              "home": "FRA",
+              "away": "BRA"
+            }
+          ],
+          "final": [
+            {
+              "home": "ESP",
+              "away": "ARG"
+            }
+          ]
+        }
       }
     },
     {
@@ -5329,7 +6598,148 @@
             "third": "GHA"
           }
         },
-        "knockout": {}
+        "knockout": {
+          "r32": [
+            {
+              "home": "CAN",
+              "away": "RSA"
+            },
+            {
+              "home": "GER",
+              "away": "PAR"
+            },
+            {
+              "home": "NED",
+              "away": "MAR"
+            },
+            {
+              "home": "BRA",
+              "away": "JPN"
+            },
+            {
+              "home": "FRA",
+              "away": "SWE"
+            },
+            {
+              "home": "CIV",
+              "away": "NOR"
+            },
+            {
+              "home": "MEX",
+              "away": "ECU"
+            },
+            {
+              "home": "ENG",
+              "away": "COD"
+            },
+            {
+              "home": "USA",
+              "away": "BIH"
+            },
+            {
+              "home": "BEL",
+              "away": "SEN"
+            },
+            {
+              "home": "POR",
+              "away": "CRO"
+            },
+            {
+              "home": "ESP",
+              "away": "AUT"
+            },
+            {
+              "home": "SUI",
+              "away": "ALG"
+            },
+            {
+              "home": "ARG",
+              "away": "CPV"
+            },
+            {
+              "home": "COL",
+              "away": "GHA"
+            },
+            {
+              "home": "EGY",
+              "away": "AUS"
+            }
+          ],
+          "r16": [
+            {
+              "home": "GER",
+              "away": "FRA"
+            },
+            {
+              "home": "NED",
+              "away": "CAN"
+            },
+            {
+              "home": "BRA",
+              "away": "CIV"
+            },
+            {
+              "home": "MEX",
+              "away": "ENG"
+            },
+            {
+              "home": "ESP",
+              "away": "POR"
+            },
+            {
+              "home": "USA",
+              "away": "BEL"
+            },
+            {
+              "home": "ARG",
+              "away": "EGY"
+            },
+            {
+              "home": "SUI",
+              "away": "COL"
+            }
+          ],
+          "qf": [
+            {
+              "home": "GER",
+              "away": "NED"
+            },
+            {
+              "home": "ESP",
+              "away": "USA"
+            },
+            {
+              "home": "MEX",
+              "away": "BRA"
+            },
+            {
+              "home": "ARG",
+              "away": "SUI"
+            }
+          ],
+          "sf": [
+            {
+              "home": "ESP",
+              "away": "GER"
+            },
+            {
+              "home": "MEX",
+              "away": "ARG"
+            }
+          ],
+          "thirdPlace": [
+            {
+              "home": "GER",
+              "away": "ARG"
+            }
+          ],
+          "final": [
+            {
+              "home": "ESP",
+              "away": "MEX"
+            }
+          ]
+        }
       }
     },
     {
@@ -5763,7 +7173,148 @@
             "third": "GHA"
           }
         },
-        "knockout": {}
+        "knockout": {
+          "r32": [
+            {
+              "home": "CAN",
+              "away": "RSA"
+            },
+            {
+              "home": "GER",
+              "away": "PAR"
+            },
+            {
+              "home": "MAR",
+              "away": "NED"
+            },
+            {
+              "home": "BRA",
+              "away": "JPN"
+            },
+            {
+              "home": "FRA",
+              "away": "SWE"
+            },
+            {
+              "home": "NOR",
+              "away": "CIV"
+            },
+            {
+              "home": "ECU",
+              "away": "MEX"
+            },
+            {
+              "home": "ENG",
+              "away": "COD"
+            },
+            {
+              "home": "USA",
+              "away": "BIH"
+            },
+            {
+              "home": "BEL",
+              "away": "SEN"
+            },
+            {
+              "home": "CRO",
+              "away": "POR"
+            },
+            {
+              "home": "ESP",
+              "away": "AUT"
+            },
+            {
+              "home": "SUI",
+              "away": "ALG"
+            },
+            {
+              "home": "ARG",
+              "away": "CPV"
+            },
+            {
+              "home": "COL",
+              "away": "GHA"
+            },
+            {
+              "home": "EGY",
+              "away": "AUS"
+            }
+          ],
+          "r16": [
+            {
+              "home": "FRA",
+              "away": "GER"
+            },
+            {
+              "home": "MAR",
+              "away": "CAN"
+            },
+            {
+              "home": "BRA",
+              "away": "NOR"
+            },
+            {
+              "home": "ENG",
+              "away": "ECU"
+            },
+            {
+              "home": "ESP",
+              "away": "CRO"
+            },
+            {
+              "home": "BEL",
+              "away": "USA"
+            },
+            {
+              "home": "ARG",
+              "away": "EGY"
+            },
+            {
+              "home": "COL",
+              "away": "SUI"
+            }
+          ],
+          "qf": [
+            {
+              "home": "FRA",
+              "away": "MAR"
+            },
+            {
+              "home": "ESP",
+              "away": "BEL"
+            },
+            {
+              "home": "BRA",
+              "away": "ENG"
+            },
+            {
+              "home": "ARG",
+              "away": "COL"
+            }
+          ],
+          "sf": [
+            {
+              "home": "ESP",
+              "away": "FRA"
+            },
+            {
+              "home": "BRA",
+              "away": "ARG"
+            }
+          ],
+          "thirdPlace": [
+            {
+              "home": "FRA",
+              "away": "ARG"
+            }
+          ],
+          "final": [
+            {
+              "home": "ESP",
+              "away": "BRA"
+            }
+          ]
+        }
       }
     },
     {
@@ -6197,7 +7748,148 @@
             "third": "GHA"
           }
         },
-        "knockout": {}
+        "knockout": {
+          "r32": [
+            {
+              "home": "CAN",
+              "away": "RSA"
+            },
+            {
+              "home": "GER",
+              "away": "PAR"
+            },
+            {
+              "home": "MAR",
+              "away": "NED"
+            },
+            {
+              "home": "JPN",
+              "away": "BRA"
+            },
+            {
+              "home": "FRA",
+              "away": "SWE"
+            },
+            {
+              "home": "NOR",
+              "away": "CIV"
+            },
+            {
+              "home": "MEX",
+              "away": "ECU"
+            },
+            {
+              "home": "ENG",
+              "away": "COD"
+            },
+            {
+              "home": "USA",
+              "away": "BIH"
+            },
+            {
+              "home": "SEN",
+              "away": "BEL"
+            },
+            {
+              "home": "POR",
+              "away": "CRO"
+            },
+            {
+              "home": "ESP",
+              "away": "AUT"
+            },
+            {
+              "home": "SUI",
+              "away": "ALG"
+            },
+            {
+              "home": "ARG",
+              "away": "CPV"
+            },
+            {
+              "home": "GHA",
+              "away": "COL"
+            },
+            {
+              "home": "EGY",
+              "away": "AUS"
+            }
+          ],
+          "r16": [
+            {
+              "home": "FRA",
+              "away": "GER"
+            },
+            {
+              "home": "MAR",
+              "away": "CAN"
+            },
+            {
+              "home": "JPN",
+              "away": "NOR"
+            },
+            {
+              "home": "ENG",
+              "away": "MEX"
+            },
+            {
+              "home": "ESP",
+              "away": "POR"
+            },
+            {
+              "home": "USA",
+              "away": "SEN"
+            },
+            {
+              "home": "ARG",
+              "away": "EGY"
+            },
+            {
+              "home": "SUI",
+              "away": "GHA"
+            }
+          ],
+          "qf": [
+            {
+              "home": "FRA",
+              "away": "MAR"
+            },
+            {
+              "home": "ESP",
+              "away": "USA"
+            },
+            {
+              "home": "ENG",
+              "away": "JPN"
+            },
+            {
+              "home": "ARG",
+              "away": "SUI"
+            }
+          ],
+          "sf": [
+            {
+              "home": "FRA",
+              "away": "ESP"
+            },
+            {
+              "home": "ENG",
+              "away": "ARG"
+            }
+          ],
+          "thirdPlace": [
+            {
+              "home": "ARG",
+              "away": "ESP"
+            }
+          ],
+          "final": [
+            {
+              "home": "FRA",
+              "away": "ENG"
+            }
+          ]
+        }
       }
     },
     {
@@ -6631,7 +8323,148 @@
             "third": "GHA"
           }
         },
-        "knockout": {}
+        "knockout": {
+          "r32": [
+            {
+              "home": "CAN",
+              "away": "RSA"
+            },
+            {
+              "home": "GER",
+              "away": "PAR"
+            },
+            {
+              "home": "NED",
+              "away": "MAR"
+            },
+            {
+              "home": "BRA",
+              "away": "JPN"
+            },
+            {
+              "home": "FRA",
+              "away": "SWE"
+            },
+            {
+              "home": "NOR",
+              "away": "CIV"
+            },
+            {
+              "home": "MEX",
+              "away": "ECU"
+            },
+            {
+              "home": "ENG",
+              "away": "COD"
+            },
+            {
+              "home": "USA",
+              "away": "BIH"
+            },
+            {
+              "home": "SEN",
+              "away": "BEL"
+            },
+            {
+              "home": "POR",
+              "away": "CRO"
+            },
+            {
+              "home": "ESP",
+              "away": "AUT"
+            },
+            {
+              "home": "SUI",
+              "away": "ALG"
+            },
+            {
+              "home": "ARG",
+              "away": "CPV"
+            },
+            {
+              "home": "COL",
+              "away": "GHA"
+            },
+            {
+              "home": "EGY",
+              "away": "AUS"
+            }
+          ],
+          "r16": [
+            {
+              "home": "FRA",
+              "away": "GER"
+            },
+            {
+              "home": "NED",
+              "away": "CAN"
+            },
+            {
+              "home": "BRA",
+              "away": "NOR"
+            },
+            {
+              "home": "ENG",
+              "away": "MEX"
+            },
+            {
+              "home": "ESP",
+              "away": "POR"
+            },
+            {
+              "home": "SEN",
+              "away": "USA"
+            },
+            {
+              "home": "ARG",
+              "away": "EGY"
+            },
+            {
+              "home": "COL",
+              "away": "SUI"
+            }
+          ],
+          "qf": [
+            {
+              "home": "FRA",
+              "away": "NED"
+            },
+            {
+              "home": "ESP",
+              "away": "SEN"
+            },
+            {
+              "home": "BRA",
+              "away": "ENG"
+            },
+            {
+              "home": "ARG",
+              "away": "COL"
+            }
+          ],
+          "sf": [
+            {
+              "home": "FRA",
+              "away": "ESP"
+            },
+            {
+              "home": "ARG",
+              "away": "BRA"
+            }
+          ],
+          "thirdPlace": [
+            {
+              "home": "BRA",
+              "away": "ESP"
+            }
+          ],
+          "final": [
+            {
+              "home": "FRA",
+              "away": "ARG"
+            }
+          ]
+        }
       }
     },
     {
@@ -7065,7 +8898,148 @@
             "third": "PAN"
           }
         },
-        "knockout": {}
+        "knockout": {
+          "r32": [
+            {
+              "home": "CAN",
+              "away": "RSA"
+            },
+            {
+              "home": "GER",
+              "away": "PAR"
+            },
+            {
+              "home": "MAR",
+              "away": "NED"
+            },
+            {
+              "home": "BRA",
+              "away": "JPN"
+            },
+            {
+              "home": "FRA",
+              "away": "SWE"
+            },
+            {
+              "home": "NOR",
+              "away": "CIV"
+            },
+            {
+              "home": "MEX",
+              "away": "ECU"
+            },
+            {
+              "home": "ENG",
+              "away": "COD"
+            },
+            {
+              "home": "USA",
+              "away": "BIH"
+            },
+            {
+              "home": "BEL",
+              "away": "SEN"
+            },
+            {
+              "home": "CRO",
+              "away": "POR"
+            },
+            {
+              "home": "ESP",
+              "away": "AUT"
+            },
+            {
+              "home": "SUI",
+              "away": "ALG"
+            },
+            {
+              "home": "ARG",
+              "away": "CPV"
+            },
+            {
+              "home": "COL",
+              "away": "GHA"
+            },
+            {
+              "home": "AUS",
+              "away": "EGY"
+            }
+          ],
+          "r16": [
+            {
+              "home": "FRA",
+              "away": "GER"
+            },
+            {
+              "home": "MAR",
+              "away": "CAN"
+            },
+            {
+              "home": "BRA",
+              "away": "NOR"
+            },
+            {
+              "home": "ENG",
+              "away": "MEX"
+            },
+            {
+              "home": "ESP",
+              "away": "CRO"
+            },
+            {
+              "home": "USA",
+              "away": "BEL"
+            },
+            {
+              "home": "ARG",
+              "away": "AUS"
+            },
+            {
+              "home": "SUI",
+              "away": "COL"
+            }
+          ],
+          "qf": [
+            {
+              "home": "FRA",
+              "away": "MAR"
+            },
+            {
+              "home": "ESP",
+              "away": "USA"
+            },
+            {
+              "home": "BRA",
+              "away": "ENG"
+            },
+            {
+              "home": "ARG",
+              "away": "SUI"
+            }
+          ],
+          "sf": [
+            {
+              "home": "FRA",
+              "away": "ESP"
+            },
+            {
+              "home": "BRA",
+              "away": "ARG"
+            }
+          ],
+          "thirdPlace": [
+            {
+              "home": "ARG",
+              "away": "ESP"
+            }
+          ],
+          "final": [
+            {
+              "home": "FRA",
+              "away": "BRA"
+            }
+          ]
+        }
       }
     },
     {
@@ -7499,7 +9473,148 @@
             "third": "GHA"
           }
         },
-        "knockout": {}
+        "knockout": {
+          "r32": [
+            {
+              "home": "RSA",
+              "away": "CAN"
+            },
+            {
+              "home": "GER",
+              "away": "PAR"
+            },
+            {
+              "home": "MAR",
+              "away": "NED"
+            },
+            {
+              "home": "BRA",
+              "away": "JPN"
+            },
+            {
+              "home": "FRA",
+              "away": "SWE"
+            },
+            {
+              "home": "CIV",
+              "away": "NOR"
+            },
+            {
+              "home": "MEX",
+              "away": "ECU"
+            },
+            {
+              "home": "ENG",
+              "away": "COD"
+            },
+            {
+              "home": "USA",
+              "away": "BIH"
+            },
+            {
+              "home": "SEN",
+              "away": "BEL"
+            },
+            {
+              "home": "CRO",
+              "away": "POR"
+            },
+            {
+              "home": "ESP",
+              "away": "AUT"
+            },
+            {
+              "home": "ALG",
+              "away": "SUI"
+            },
+            {
+              "home": "ARG",
+              "away": "CPV"
+            },
+            {
+              "home": "COL",
+              "away": "GHA"
+            },
+            {
+              "home": "AUS",
+              "away": "EGY"
+            }
+          ],
+          "r16": [
+            {
+              "home": "FRA",
+              "away": "GER"
+            },
+            {
+              "home": "MAR",
+              "away": "RSA"
+            },
+            {
+              "home": "BRA",
+              "away": "CIV"
+            },
+            {
+              "home": "MEX",
+              "away": "ENG"
+            },
+            {
+              "home": "ESP",
+              "away": "CRO"
+            },
+            {
+              "home": "USA",
+              "away": "SEN"
+            },
+            {
+              "home": "ARG",
+              "away": "AUS"
+            },
+            {
+              "home": "COL",
+              "away": "ALG"
+            }
+          ],
+          "qf": [
+            {
+              "home": "FRA",
+              "away": "MAR"
+            },
+            {
+              "home": "ESP",
+              "away": "USA"
+            },
+            {
+              "home": "MEX",
+              "away": "BRA"
+            },
+            {
+              "home": "ARG",
+              "away": "COL"
+            }
+          ],
+          "sf": [
+            {
+              "home": "ESP",
+              "away": "FRA"
+            },
+            {
+              "home": "ARG",
+              "away": "MEX"
+            }
+          ],
+          "thirdPlace": [
+            {
+              "home": "FRA",
+              "away": "MEX"
+            }
+          ],
+          "final": [
+            {
+              "home": "ESP",
+              "away": "ARG"
+            }
+          ]
+        }
       }
     },
     {
@@ -7918,7 +10033,148 @@
             "third": "GHA"
           }
         },
-        "knockout": {}
+        "knockout": {
+          "r32": [
+            {
+              "home": "CAN",
+              "away": "RSA"
+            },
+            {
+              "home": "GER",
+              "away": "PAR"
+            },
+            {
+              "home": "MAR",
+              "away": "NED"
+            },
+            {
+              "home": "BRA",
+              "away": "JPN"
+            },
+            {
+              "home": "FRA",
+              "away": "SWE"
+            },
+            {
+              "home": "NOR",
+              "away": "CIV"
+            },
+            {
+              "home": "MEX",
+              "away": "ECU"
+            },
+            {
+              "home": "ENG",
+              "away": "COD"
+            },
+            {
+              "home": "USA",
+              "away": "BIH"
+            },
+            {
+              "home": "BEL",
+              "away": "SEN"
+            },
+            {
+              "home": "POR",
+              "away": "CRO"
+            },
+            {
+              "home": "ESP",
+              "away": "AUT"
+            },
+            {
+              "home": "SUI",
+              "away": "ALG"
+            },
+            {
+              "home": "ARG",
+              "away": "CPV"
+            },
+            {
+              "home": "COL",
+              "away": "GHA"
+            },
+            {
+              "home": "EGY",
+              "away": "AUS"
+            }
+          ],
+          "r16": [
+            {
+              "home": "FRA",
+              "away": "GER"
+            },
+            {
+              "home": "MAR",
+              "away": "CAN"
+            },
+            {
+              "home": "BRA",
+              "away": "NOR"
+            },
+            {
+              "home": "ENG",
+              "away": "MEX"
+            },
+            {
+              "home": "ESP",
+              "away": "POR"
+            },
+            {
+              "home": "BEL",
+              "away": "USA"
+            },
+            {
+              "home": "ARG",
+              "away": "EGY"
+            },
+            {
+              "home": "COL",
+              "away": "SUI"
+            }
+          ],
+          "qf": [
+            {
+              "home": "FRA",
+              "away": "MAR"
+            },
+            {
+              "home": "ESP",
+              "away": "BEL"
+            },
+            {
+              "home": "BRA",
+              "away": "ENG"
+            },
+            {
+              "home": "ARG",
+              "away": "COL"
+            }
+          ],
+          "sf": [
+            {
+              "home": "ESP",
+              "away": "FRA"
+            },
+            {
+              "home": "BRA",
+              "away": "ARG"
+            }
+          ],
+          "thirdPlace": [
+            {
+              "home": "FRA",
+              "away": "ARG"
+            }
+          ],
+          "final": [
+            {
+              "home": "ESP",
+              "away": "BRA"
+            }
+          ]
+        }
       }
     },
     {
@@ -8355,142 +10611,142 @@
         "knockout": {
           "r32": [
             {
-              "home": "KOR",
-              "away": "BIH"
+              "home": "CAN",
+              "away": "RSA"
             },
             {
               "home": "GER",
-              "away": "USA"
+              "away": "PAR"
             },
             {
-              "home": "NED",
-              "away": "SCO"
+              "home": "MAR",
+              "away": "NED"
             },
             {
               "home": "BRA",
-              "away": "SWE"
-            },
-            {
-              "home": "NOR",
               "away": "JPN"
             },
             {
-              "home": "ECU",
-              "away": "FRA"
+              "home": "FRA",
+              "away": "SWE"
+            },
+            {
+              "home": "CIV",
+              "away": "NOR"
             },
             {
               "home": "MEX",
-              "away": "SEN"
+              "away": "ECU"
             },
             {
               "home": "ENG",
               "away": "COD"
             },
             {
-              "home": "PAR",
-              "away": "CAN"
+              "home": "USA",
+              "away": "BIH"
             },
             {
               "home": "BEL",
-              "away": "CZE"
+              "away": "SEN"
             },
             {
-              "home": "COL",
+              "home": "POR",
               "away": "CRO"
             },
             {
-              "home": "URU",
+              "home": "ESP",
               "away": "AUT"
             },
             {
               "home": "SUI",
-              "away": "EGY"
+              "away": "ALG"
             },
             {
               "home": "ARG",
-              "away": "ESP"
+              "away": "CPV"
             },
             {
-              "home": "POR",
-              "away": "PAN"
+              "home": "GHA",
+              "away": "COL"
             },
             {
-              "home": "TUR",
-              "away": "NZL"
+              "home": "EGY",
+              "away": "AUS"
             }
           ],
           "r16": [
             {
-              "home": "GER",
-              "away": "NOR"
+              "home": "FRA",
+              "away": "GER"
             },
             {
-              "home": "BIH",
-              "away": "NED"
+              "home": "MAR",
+              "away": "CAN"
             },
             {
               "home": "BRA",
-              "away": "FRA"
+              "away": "CIV"
             },
             {
-              "home": "MEX",
-              "away": "ENG"
-            },
-            {
-              "home": "CRO",
-              "away": "URU"
-            },
-            {
-              "home": "PAR",
-              "away": "CZE"
+              "home": "ENG",
+              "away": "MEX"
             },
             {
               "home": "ESP",
-              "away": "TUR"
+              "away": "POR"
             },
             {
-              "home": "EGY",
-              "away": "POR"
+              "home": "USA",
+              "away": "BEL"
+            },
+            {
+              "home": "ARG",
+              "away": "EGY"
+            },
+            {
+              "home": "SUI",
+              "away": "GHA"
             }
           ],
           "qf": [
             {
-              "home": "GER",
-              "away": "NED"
+              "home": "FRA",
+              "away": "MAR"
             },
             {
-              "home": "CRO",
-              "away": "CZE"
+              "home": "ESP",
+              "away": "USA"
             },
             {
               "home": "BRA",
               "away": "ENG"
             },
             {
-              "home": "ESP",
-              "away": "POR"
+              "home": "ARG",
+              "away": "SUI"
             }
           ],
           "sf": [
             {
-              "home": "NED",
-              "away": "CRO"
+              "home": "FRA",
+              "away": "ESP"
             },
             {
-              "home": "ENG",
-              "away": "ESP"
+              "home": "ARG",
+              "away": "BRA"
             }
           ],
           "thirdPlace": [
             {
-              "home": "NED",
+              "home": "BRA",
               "away": "ESP"
             }
           ],
           "final": [
             {
-              "home": "CRO",
-              "away": "ENG"
+              "home": "FRA",
+              "away": "ARG"
             }
           ]
         }
@@ -8927,7 +11183,148 @@
             "third": "GHA"
           }
         },
-        "knockout": {}
+        "knockout": {
+          "r32": [
+            {
+              "home": "RSA",
+              "away": "CAN"
+            },
+            {
+              "home": "GER",
+              "away": "PAR"
+            },
+            {
+              "home": "NED",
+              "away": "MAR"
+            },
+            {
+              "home": "BRA",
+              "away": "JPN"
+            },
+            {
+              "home": "FRA",
+              "away": "SWE"
+            },
+            {
+              "home": "CIV",
+              "away": "NOR"
+            },
+            {
+              "home": "ECU",
+              "away": "MEX"
+            },
+            {
+              "home": "ENG",
+              "away": "COD"
+            },
+            {
+              "home": "USA",
+              "away": "BIH"
+            },
+            {
+              "home": "SEN",
+              "away": "BEL"
+            },
+            {
+              "home": "POR",
+              "away": "CRO"
+            },
+            {
+              "home": "ESP",
+              "away": "AUT"
+            },
+            {
+              "home": "SUI",
+              "away": "ALG"
+            },
+            {
+              "home": "ARG",
+              "away": "CPV"
+            },
+            {
+              "home": "COL",
+              "away": "GHA"
+            },
+            {
+              "home": "EGY",
+              "away": "AUS"
+            }
+          ],
+          "r16": [
+            {
+              "home": "FRA",
+              "away": "GER"
+            },
+            {
+              "home": "NED",
+              "away": "RSA"
+            },
+            {
+              "home": "BRA",
+              "away": "CIV"
+            },
+            {
+              "home": "ENG",
+              "away": "ECU"
+            },
+            {
+              "home": "ESP",
+              "away": "POR"
+            },
+            {
+              "home": "SEN",
+              "away": "USA"
+            },
+            {
+              "home": "ARG",
+              "away": "EGY"
+            },
+            {
+              "home": "COL",
+              "away": "SUI"
+            }
+          ],
+          "qf": [
+            {
+              "home": "FRA",
+              "away": "NED"
+            },
+            {
+              "home": "ESP",
+              "away": "SEN"
+            },
+            {
+              "home": "BRA",
+              "away": "ENG"
+            },
+            {
+              "home": "ARG",
+              "away": "COL"
+            }
+          ],
+          "sf": [
+            {
+              "home": "ESP",
+              "away": "FRA"
+            },
+            {
+              "home": "ARG",
+              "away": "BRA"
+            }
+          ],
+          "thirdPlace": [
+            {
+              "home": "FRA",
+              "away": "BRA"
+            }
+          ],
+          "final": [
+            {
+              "home": "ESP",
+              "away": "ARG"
+            }
+          ]
+        }
       }
     },
     {
@@ -9337,146 +11734,12 @@
           }
         },
         "knockout": {
-          "r32": [
-            {
-              "home": "ESP",
-              "away": "ALG"
-            },
-            {
-              "home": "FRA",
-              "away": "IRN"
-            },
-            {
-              "home": "GER",
-              "away": "BIH"
-            },
-            {
-              "home": "NED",
-              "away": "MAR"
-            },
-            {
-              "home": "BRA",
-              "away": "JPN"
-            },
-            {
-              "home": "ENG",
-              "away": "KOR"
-            },
-            {
-              "home": "ARG",
-              "away": "ECU"
-            },
-            {
-              "home": "POR",
-              "away": "SCO"
-            },
-            {
-              "home": "BEL",
-              "away": "CZE"
-            },
-            {
-              "home": "USA",
-              "away": "AUT"
-            },
-            {
-              "home": "MEX",
-              "away": "EGY"
-            },
-            {
-              "home": "COL",
-              "away": "SWE"
-            },
-            {
-              "home": "SUI",
-              "away": "SEN"
-            },
-            {
-              "home": "CAN",
-              "away": "CIV"
-            },
-            {
-              "home": "NOR",
-              "away": "CRO"
-            },
-            {
-              "home": "TUR",
-              "away": "URU"
-            }
-          ],
-          "r16": [
-            {
-              "home": "ESP",
-              "away": "COL"
-            },
-            {
-              "home": "BEL",
-              "away": "USA"
-            },
-            {
-              "home": "ARG",
-              "away": "TUR"
-            },
-            {
-              "home": "POR",
-              "away": "SUI"
-            },
-            {
-              "home": "FRA",
-              "away": "GER"
-            },
-            {
-              "home": "NED",
-              "away": "CAN"
-            },
-            {
-              "home": "BRA",
-              "away": "NOR"
-            },
-            {
-              "home": "ENG",
-              "away": "MEX"
-            }
-          ],
-          "qf": [
-            {
-              "home": "ESP",
-              "away": "BEL"
-            },
-            {
-              "home": "ARG",
-              "away": "POR"
-            },
-            {
-              "home": "FRA",
-              "away": "NED"
-            },
-            {
-              "home": "ENG",
-              "away": "BRA"
-            }
-          ],
-          "sf": [
-            {
-              "home": "ESP",
-              "away": "ARG"
-            },
-            {
-              "home": "FRA",
-              "away": "ENG"
-            }
-          ],
-          "thirdPlace": [
-            {
-              "home": "ARG",
-              "away": "ENG"
-            }
-          ],
-          "final": [
-            {
-              "home": "ESP",
-              "away": "FRA"
-            }
-          ]
+          "r32": [],
+          "r16": [],
+          "qf": [],
+          "sf": [],
+          "thirdPlace": [],
+          "final": []
         }
       }
     }

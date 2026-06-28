@@ -48,7 +48,9 @@ export function signOf(home, away) {
 
 /**
  * Construye el contexto a partir de los JSON crudos.
- * data = { rules, groupsData, matches, participants, tournament }
+ * data = { rules, groupsData, matches, participants, tournament, bracket?, knockout? }
+ * bracket: data/bracket.json (estructura del cuadro). knockout: data/knockout.json
+ * (resultados reales de la eliminatoria, { results: { <idPartido>: {…} } }).
  */
 export function buildContext(data) {
   const teamsById = {};
@@ -65,6 +67,8 @@ export function buildContext(data) {
     matches: data.matches,
     participants: data.participants,
     tournament: data.tournament,
+    bracket: data.bracket || null,
+    knockout: data.knockout || { results: {} },
     teamsById,
     groupByTeam,
   };
@@ -105,6 +109,9 @@ export function matchPoints(pred, score, rules) {
   if (!pred || !score || score.home == null || score.away == null) return out;
   const g = rules.groupStage;
   const real = signOf(score.home, score.away);
+  // El signo (1·X·2) es una apuesta INDEPENDIENTE del marcador: se puede poner,
+  // p. ej., 1-1 pero firmar "1" para cubrirse. Por eso el punto de signo se rige
+  // por el campo 'sign' elegido, no por el marcador previsto.
 
   if (pred.home === score.home && pred.away === score.away) {
     out.exact = g.exact;
@@ -163,6 +170,143 @@ export function isGroupComplete(groupId, matches) {
  *  sección "Mi Quiniela" del cuadro eliminatorio. */
 export function isGroupStageComplete(matches) {
   return matches.length > 0 && matches.every((m) => m.status === "finished");
+}
+
+/* ===================== Cuadro eliminatorio (real) ===================== */
+
+/** Rondas cuyo ganador "clasifica" para la siguiente (y dan puntos por acierto). */
+export const KO_QUALIFY_ROUNDS = ["r32", "r16", "qf", "sf"];
+
+/** Resultados reales de la eliminatoria: { <idPartido>: {home,away,score,winner,loser,status} }. */
+export function koResults(ctx) {
+  return (ctx.knockout && ctx.knockout.results) || {};
+}
+
+/** Perdedor de un partido KO ya resuelto (a partir del ganador y los equipos). */
+function koLoser(r) {
+  if (!r || !r.winner) return null;
+  if (r.loser) return r.loser;
+  if (r.home && r.away) return r.winner === r.home ? r.away : r.home;
+  return null;
+}
+
+/**
+ * Equipo concreto que ocupa una casilla del cuadro según los RESULTADOS reales.
+ * w/r = 1º/2º de grupo (cuando el grupo está cerrado); t = mejor tercero
+ * asignado por la FIFA (tournament.bestThirds); m = ganador del partido indicado;
+ * l = perdedor (partido por el 3.er puesto). Devuelve teamId o null si no se sabe.
+ */
+export function koSlotTeam(ctx, slot, matchId) {
+  if (!slot) return null;
+  if (slot.type === "w" || slot.type === "r") {
+    const g = ctx.groupsData.groups.find((x) => x.id === slot.g);
+    if (!g || !isGroupComplete(g.id, ctx.matches)) return null;
+    return computeGroupTable(g, ctx.matches)[slot.type === "w" ? 0 : 1]?.teamId ?? null;
+  }
+  if (slot.type === "t") {
+    const bt = ctx.tournament.bestThirds;
+    const gId = bt && !Array.isArray(bt) ? bt[String(matchId)] : null;
+    if (!gId) return null;
+    const g = ctx.groupsData.groups.find((x) => x.id === gId);
+    if (!g || !isGroupComplete(g.id, ctx.matches)) return null;
+    return computeGroupTable(g, ctx.matches)[2]?.teamId ?? null;
+  }
+  if (slot.type === "m") return koResults(ctx)[String(slot.n)]?.winner ?? null;
+  if (slot.type === "l") return koLoser(koResults(ctx)[String(slot.n)]);
+  return null;
+}
+
+/** Equipos reales (home/away) de cada partido del cuadro, en la medida en que se
+ *  conocen. { <idPartido>: { home: teamId|null, away: teamId|null } }. */
+export function computeActualBracketTeams(ctx) {
+  const out = {};
+  if (!ctx.bracket) return out;
+  for (const [id, m] of Object.entries(ctx.bracket.matches)) {
+    out[id] = { home: koSlotTeam(ctx, m.home, id), away: koSlotTeam(ctx, m.away, id) };
+  }
+  return out;
+}
+
+/**
+ * Clasificados reales de la eliminatoria a partir de los resultados.
+ * upTo (ISO) limita a los partidos del cuadro disputados hasta esa fecha.
+ * Devuelve {
+ *   qualifiers: { r32, r16, qf, sf } (Set de teamId que ganaron en esa ronda),
+ *   eliminated: Set de teamId que han perdido algún cruce,
+ *   champion, runnerUp, third, fourth
+ * }.
+ */
+export function knockoutQualifiers(ctx, upTo = null) {
+  const res = koResults(ctx);
+  const q = { r32: new Set(), r16: new Set(), qf: new Set(), sf: new Set() };
+  const eliminated = new Set();
+  let champion = null, runnerUp = null, third = null, fourth = null;
+  if (ctx.bracket) {
+    for (const [id, m] of Object.entries(ctx.bracket.matches)) {
+      const r = res[id];
+      if (!r || r.status !== "finished" || !r.winner) continue;
+      if (upTo && m.date && m.date > upTo) continue;
+      const loser = koLoser(r);
+      if (loser) eliminated.add(loser);
+      if (m.round === "final") { champion = r.winner; runnerUp = loser; }
+      else if (m.round === "tp") { third = r.winner; fourth = loser; }
+      else if (q[m.round]) q[m.round].add(r.winner);
+    }
+  }
+  return { qualifiers: q, eliminated, champion, runnerUp, third, fourth };
+}
+
+/**
+ * Puntos de la eliminatoria de un participante. Modelo "cuadro": por cada equipo
+ * que el participante hizo avanzar de una ronda y que realmente avanzó, suma los
+ * puntos de esa ronda (acumulativo: un equipo que llega lejos puntúa en cada
+ * fase). Más bonus de 3.er puesto, subcampeón y campeón.
+ */
+export function computeKnockout(p, ctx, upTo = null) {
+  const kr = (ctx.rules && ctx.rules.knockout) || {};
+  const ko = (p.predictions && p.predictions.knockout) || null;
+  const breakdown = { r32: 0, r16: 0, qf: 0, sf: 0, thirdPlace: 0, runnerUp: 0, champion: 0 };
+  const detail = { rounds: {}, podium: null };
+  let pts = 0, hits = 0;
+  if (!ctx.bracket || !ko) return { pts, hits, breakdown, detail };
+
+  const act = knockoutQualifiers(ctx, upTo);
+  const statusOf = (team, round) => {
+    if (act.qualifiers[round].has(team)) return "hit";
+    if (act.eliminated.has(team)) return "miss";
+    return "pending";
+  };
+  for (const round of KO_QUALIFY_ROUNDS) {
+    const picks = (ko[round] || []).map((x) => x.home).filter(Boolean);
+    const rows = picks.map((team) => {
+      const st = statusOf(team, round);
+      const ptsRow = st === "hit" ? (kr[round] || 0) : 0;
+      if (st === "hit") { hits++; breakdown[round] += ptsRow; pts += ptsRow; }
+      return { team, status: st, pts: ptsRow };
+    });
+    detail.rounds[round] = { picks: rows, decided: act.qualifiers[round].size > 0 };
+  }
+
+  const myThird = ko.thirdPlace?.[0]?.home || null;
+  const myChamp = ko.final?.[0]?.home || null;
+  const myRunner = ko.final?.[0]?.away || null;
+  const podiumStatus = (team, actual, alive) => {
+    if (!team) return "pending";
+    if (actual) return team === actual ? "hit" : "miss";
+    return act.eliminated.has(team) && !alive ? "miss" : "pending";
+  };
+  const champSt = podiumStatus(myChamp, act.champion);
+  const runnerSt = podiumStatus(myRunner, act.runnerUp);
+  const thirdSt = podiumStatus(myThird, act.third);
+  if (champSt === "hit") { breakdown.champion = kr.champion || 0; pts += breakdown.champion; hits++; }
+  if (runnerSt === "hit") { breakdown.runnerUp = kr.runnerUp || 0; pts += breakdown.runnerUp; hits++; }
+  if (thirdSt === "hit") { breakdown.thirdPlace = kr.thirdPlace || 0; pts += breakdown.thirdPlace; hits++; }
+  detail.podium = {
+    champion: { team: myChamp, status: champSt, actual: act.champion, pts: breakdown.champion },
+    runnerUp: { team: myRunner, status: runnerSt, actual: act.runnerUp, pts: breakdown.runnerUp },
+    third: { team: myThird, status: thirdSt, actual: act.third, pts: breakdown.thirdPlace },
+  };
+  return { pts, hits, breakdown, detail };
 }
 
 /* ================= Puntuación completa de un participante ================= */
@@ -258,15 +402,21 @@ export function computeParticipant(p, ctx, options = {}) {
     }
   }
 
-  const total = signPts + exactPts + groupPickPts + thirdsPts + pichichiPts;
+  // Fase eliminatoria: puntos del cuadro (clasificados por ronda + podio).
+  const ko = computeKnockout(p, ctx, upTo);
+  const koPts = ko.pts;
+
+  const total = signPts + exactPts + groupPickPts + thirdsPts + pichichiPts + koPts;
   return {
     id: p.id,
     name: p.name,
     demo: !!p.demo,
-    breakdown: { signPts, exactPts, groupPickPts, thirdsPts, pichichiPts, total },
+    breakdown: { signPts, exactPts, groupPickPts, thirdsPts, pichichiPts, koPts, total },
+    koBreakdown: ko.breakdown,
+    koDetail: ko.detail,
     stats: {
       playedWithPred, signHits, exactHits, winsHit, drawsHit, lossesHit,
-      groupPickHits, thirdsHits, pichichiHit,
+      groupPickHits, thirdsHits, pichichiHit, koHits: ko.hits,
       accuracy: playedWithPred ? Math.round((signHits / playedWithPred) * 100) : 0,
       exactRate: playedWithPred ? Math.round((exactHits / playedWithPred) * 100) : 0,
     },
@@ -317,8 +467,15 @@ export function computeRanking(ctx, options = {}) {
 export function computeEvolution(ctx) {
   const finished = ctx.matches
     .filter((m) => m.status === "finished")
-    .map((m) => m.date)
-    .sort();
+    .map((m) => m.date);
+  // Días de la eliminatoria ya disputados (sus resultados extienden la línea).
+  if (ctx.bracket) {
+    const res = koResults(ctx);
+    for (const [id, r] of Object.entries(res)) {
+      if (r.status === "finished" && ctx.bracket.matches[id]?.date) finished.push(ctx.bracket.matches[id].date);
+    }
+  }
+  finished.sort();
   const days = [...new Set(finished.map((d) => d.slice(0, 10)))];
   const checkpoints = [];
   for (let i = 0; i < days.length; i++) {
@@ -395,15 +552,31 @@ export function computeScenarios(ctx) {
 export function computeGlobalStats(ctx) {
   const ranking = computeRanking(ctx);
   const finished = ctx.matches.filter((m) => m.status === "finished");
-  const totalGoals = finished.reduce((s, m) => s + (m.score ? m.score.home + m.score.away : 0), 0);
+  const groupGoals = finished.reduce((s, m) => s + (m.score ? m.score.home + m.score.away : 0), 0);
+
+  // Fase eliminatoria: cuenta sus partidos (32: del cuadro) y goles.
+  const koRes = (ctx.knockout && ctx.knockout.results) || {};
+  const koFinished = Object.values(koRes).filter((r) => r.status === "finished");
+  const koGoals = koFinished.reduce((s, r) => s + (r.score ? r.score.home + r.score.away : 0), 0);
+  const koTotal = ctx.bracket ? Object.keys(ctx.bracket.matches).length : 0;
+
+  const matchesPlayed = finished.length + koFinished.length;
+  const matchesTotal = ctx.matches.length + koTotal;
+  const totalGoals = groupGoals + koGoals;
+  const totalPoints = ranking.reduce((s, r) => s + r.breakdown.total, 0);
+
   return {
     participants: ranking.length,
-    matchesPlayed: finished.length,
-    matchesTotal: ctx.matches.length,
+    matchesPlayed,
+    matchesTotal,
+    groupMatchesPlayed: finished.length,
+    koMatchesPlayed: koFinished.length,
+    koMatchesTotal: koTotal,
     totalGoals,
-    avgGoals: finished.length ? +(totalGoals / finished.length).toFixed(2) : 0,
+    avgGoals: matchesPlayed ? +(totalGoals / matchesPlayed).toFixed(2) : 0,
     totalExactHits: ranking.reduce((s, r) => s + r.stats.exactHits, 0),
     totalSignHits: ranking.reduce((s, r) => s + r.stats.signHits, 0),
+    avgPoints: ranking.length ? Math.round(totalPoints / ranking.length) : 0,
     leader: ranking[0] ? { id: ranking[0].id, name: ranking[0].name, total: ranking[0].breakdown.total } : null,
   };
 }

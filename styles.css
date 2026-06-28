@@ -460,6 +460,8 @@ h3 > svg.lucide { color: var(--green); margin-right: 8px; }
 .stat-tile .v.green { color: var(--green); }
 .stat-tile .v.gold { color: var(--gold); }
 .stat-tile .v.blue { color: var(--blue); }
+.stat-tile .v.red { color: var(--red); }
+.stat-tile .st-sub { font-size: 0.66rem; color: var(--text-faint); margin-top: 3px; }
 
 /* ------------------------------ Partidos ------------------------------ */
 
@@ -1201,6 +1203,50 @@ select.q-name option { color: var(--text); background: var(--surface-strong); }
   box-shadow: 0 4px 14px rgba(46, 227, 125, 0.28);
 }
 .q-actions .chip.ok { background: var(--green); color: #04130a; border-color: transparent; }
+
+/* --------------------- Eliminatoria: resultados y perfil --------------------- */
+
+/* Resaltado del ganador / eliminado en las tarjetas de partido KO. */
+.match-card .team.ko-win .nm { color: var(--green); font-weight: 800; }
+.match-card .team.ko-out { opacity: 0.5; }
+.match-card .team.ko-out .nm { text-decoration: line-through; }
+svg.lucide.ko-check { width: 15px; height: 15px; color: var(--green); flex: none; }
+
+svg.lucide.ko-x { width: 13px; height: 13px; color: var(--red); flex: none; }
+
+/* Cuadro del participante en el perfil: resalta su pick y marca acierto/fallo. */
+.bk-team.pk-win .nm { font-weight: 800; color: var(--text); }
+.bk-team.pk-win.ok .nm { color: var(--green); }
+.bk-team.pk-win.no .nm { color: var(--red); }
+.bk-team.pk-lose { opacity: 0.5; }
+.bk-team.pk-lose .nm { font-weight: 600; }
+.bk-legend .sw.ok { background: var(--green); }
+.bk-legend .sw.no { background: var(--red); }
+
+/* Tabla de evolución día a día: colapsada a 5 filas con botón "ver más". */
+.evo-toggle-row { text-align: center; margin-top: 10px; }
+.evo-table.collapsed .evo-extra { display: none; }
+
+/* Total / subtotales del desglose de puntos. */
+.breakdown-help { margin: -4px 0 12px; font-size: 0.82rem; }
+.breakdown-total { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--border); font-weight: 700; }
+.breakdown-total b { font-size: 1.25rem; }
+
+/* Podio del Mundial pronosticado, en el perfil. */
+.wc-podium-title { display: flex; align-items: center; gap: 8px; font-weight: 700; margin-bottom: 12px; }
+.wc-podium-slots { display: flex; gap: 10px; align-items: flex-end; justify-content: center; }
+.wc-pod {
+  flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 4px;
+  padding: 12px 8px; border-radius: 14px; text-align: center;
+  background: var(--surface-2, rgba(255,255,255,0.03)); border: 1px solid var(--border);
+}
+.wc-podium-slots .wc-pod:nth-child(2) { transform: translateY(-8px); border-color: rgba(255, 206, 79, 0.5); background: var(--gold-soft); padding-bottom: 16px; }
+.wc-pod-medal { font-size: 1.4rem; line-height: 1; }
+.wc-pod .flag { font-size: 1.7rem; line-height: 1; }
+.wc-pod-name { font-weight: 700; font-size: 0.84rem; display: inline-flex; align-items: center; gap: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+.wc-pod-lbl { font-size: 0.72rem; color: var(--text-dim); }
+.wc-pod.ok .wc-pod-name { color: var(--green); }
+.wc-pod.no .wc-pod-name { color: var(--red); }
 
 /* ------------------------------ Impresión ------------------------------ */
 
