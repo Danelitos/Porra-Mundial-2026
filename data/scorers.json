@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "2026-06-28T01:49:09.289Z",
+  "lastUpdated": "2026-06-28T06:26:20.758Z",
   "scorers": [
     {
       "name": "Lionel Messi",
       "teamId": "ARG",
       "teamName": "Argentina",
-      "goals": 5,
+      "goals": 6,
       "assists": 0,
       "penalties": 0,
       "playedMatches": 3
@@ -218,6 +218,15 @@
       "playedMatches": 3
     },
     {
+      "name": "Marko Arnautovic",
+      "teamId": "AUT",
+      "teamName": "Austria",
+      "goals": 2,
+      "assists": 0,
+      "penalties": 1,
+      "playedMatches": 3
+    },
+    {
       "name": "Jude Bellingham",
       "teamId": "ENG",
       "teamName": "England",
@@ -259,15 +268,6 @@
       "teamName": "Netherlands",
       "goals": 2,
       "assists": 1,
-      "penalties": 0,
-      "playedMatches": 3
-    },
-    {
-      "name": "Anthony Elanga",
-      "teamId": "SWE",
-      "teamName": "Sweden",
-      "goals": 2,
-      "assists": 0,
       "penalties": 0,
       "playedMatches": 3
     }

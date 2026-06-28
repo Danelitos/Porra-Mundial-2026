@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-28T01:49:09.289Z",
+  "lastUpdated": "2026-06-28T06:26:20.758Z",
   "matches": [
     {
       "id": "A1",
@@ -966,8 +966,12 @@
       "away": "ARG",
       "date": "2026-06-27T04:00:00+02:00",
       "venue": "NRG Stadium, Houston",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 1,
+        "away": 3
+      },
+      "status": "finished",
+      "minute": null
     },
     {
       "id": "J6",
@@ -977,8 +981,12 @@
       "away": "AUT",
       "date": "2026-06-27T04:00:00+02:00",
       "venue": "Arrowhead Stadium, Kansas City",
-      "score": null,
-      "status": "pending"
+      "score": {
+        "home": 3,
+        "away": 3
+      },
+      "status": "finished",
+      "minute": null
     },
     {
       "id": "G5",
