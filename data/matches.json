@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-27T23:43:50.677Z",
+  "lastUpdated": "2026-06-28T01:49:09.289Z",
   "matches": [
     {
       "id": "A1",
@@ -1052,7 +1052,7 @@
         "home": 0,
         "away": 0
       },
-      "status": "pending",
+      "status": "finished",
       "minute": null
     },
     {
@@ -1064,10 +1064,10 @@
       "date": "2026-06-28T01:30:00+02:00",
       "venue": "Levi's Stadium, San Francisco",
       "score": {
-        "home": 0,
-        "away": 0
+        "home": 3,
+        "away": 1
       },
-      "status": "pending",
+      "status": "finished",
       "minute": null
     }
   ]

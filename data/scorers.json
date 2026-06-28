@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-27T22:40:54.348Z",
+  "lastUpdated": "2026-06-28T01:49:09.289Z",
   "scorers": [
     {
       "name": "Lionel Messi",
@@ -8,7 +8,7 @@
       "goals": 5,
       "assists": 0,
       "penalties": 0,
-      "playedMatches": 2
+      "playedMatches": 3
     },
     {
       "name": "Vinicius Junior",
@@ -72,6 +72,15 @@
       "assists": 0,
       "penalties": 0,
       "playedMatches": 3
+    },
+    {
+      "name": "Yoane Wissa",
+      "teamId": "COD",
+      "teamName": "Congo DR",
+      "goals": 3,
+      "assists": 0,
+      "penalties": 1,
+      "playedMatches": 2
     },
     {
       "name": "Harry Kane",
@@ -259,15 +268,6 @@
       "teamName": "Sweden",
       "goals": 2,
       "assists": 0,
-      "penalties": 0,
-      "playedMatches": 3
-    },
-    {
-      "name": "Ayase Ueda",
-      "teamId": "JPN",
-      "teamName": "Japan",
-      "goals": 2,
-      "assists": 1,
       "penalties": 0,
       "playedMatches": 3
     }
