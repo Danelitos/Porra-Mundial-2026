@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-28T06:26:20.758Z",
+  "lastUpdated": "2026-06-28T11:08:48.073Z",
   "ranking": [
     {
       "position": 1,
@@ -213,6 +213,20 @@
     },
     {
       "position": 16,
+      "id": "aaron",
+      "name": "Aaron",
+      "demo": false,
+      "signPts": 46,
+      "exactPts": 12,
+      "groupPickPts": 38,
+      "thirdsPts": 8,
+      "pichichiPts": 0,
+      "total": 104,
+      "exactHits": 4,
+      "signHits": 46
+    },
+    {
+      "position": 17,
       "id": "jonbel",
       "name": "JonBel",
       "demo": false,
@@ -224,20 +238,6 @@
       "total": 103,
       "exactHits": 3,
       "signHits": 44
-    },
-    {
-      "position": 17,
-      "id": "aaron",
-      "name": "Aaron",
-      "demo": false,
-      "signPts": 46,
-      "exactPts": 12,
-      "groupPickPts": 38,
-      "thirdsPts": 6,
-      "pichichiPts": 0,
-      "total": 102,
-      "exactHits": 4,
-      "signHits": 46
     },
     {
       "position": 18,

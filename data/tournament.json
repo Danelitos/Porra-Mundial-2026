@@ -1,8 +1,17 @@
 {
   "name": "Porra Mundial 2026",
-  "phase": "groups",
+  "phase": "knockout",
   "_bestThirds_help": "Cuando la FIFA confirme el cruce de los mejores terceros, cambia bestThirds de [] a un objeto que asigne, a cada partido de la Ronda de 32 con casilla de tercero, el grupo cuyo 3º la ocupa. Ej: { \"74\": \"F\", \"77\": \"D\", \"79\": \"C\", \"80\": \"E\", \"81\": \"B\", \"82\": \"A\", \"85\": \"G\", \"87\": \"L\" }. Eso resuelve los terceros tanto en Eliminatorias como en Mi Quiniela.",
-  "bestThirds": [],
+  "bestThirds": {
+    "74": "D",
+    "77": "F",
+    "79": "E",
+    "80": "K",
+    "81": "B",
+    "82": "I",
+    "85": "J",
+    "87": "L"
+  },
   "pichichi": {
     "real": null,
     "aliases": []

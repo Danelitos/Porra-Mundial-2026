@@ -1096,8 +1096,14 @@ function viewQuiniela(params) {
     <p>Elige quién pasa en cada cruce y se irá rellenando hasta el campeón. Cuando acabes, expórtalo y mándamelo.</p></div>
   ${previewBanner}
   <div class="q-name-wrap">
-    <label for="q-name">Tu nombre (para identificar el cuadro)</label>
-    <input id="q-name" class="q-name" type="text" maxlength="40" placeholder="Escribe tu nombre…" value="${esc(st.name)}" autocomplete="off" />
+    <label for="q-name">¿Quién eres? (para identificar el cuadro)</label>
+    <select id="q-name" class="q-name">
+      <option value="" ${st.name ? "" : "selected"} disabled>Elige tu nombre…</option>
+      ${[...CTX.participants]
+        .sort((a, b) => a.name.localeCompare(b.name, "es"))
+        .map((p) => `<option value="${esc(p.name)}" ${p.name === st.name ? "selected" : ""}>${esc(p.name)}</option>`)
+        .join("")}
+    </select>
   </div>
   <div id="q-app">${quinielaInner(st.picks)}</div>`;
 }
@@ -1365,7 +1371,7 @@ function render() {
   });
   document.getElementById("morebtn")?.classList.toggle(
     "active",
-    ["participantes", "eliminatorias", "quiniela", "goleadores", "reglas"].includes(active)
+    ["participantes", "grupos", "quiniela", "goleadores", "reglas"].includes(active)
   );
 
   // Centra el chip activo en los carruseles de filtros (móvil).
@@ -1425,7 +1431,7 @@ function wireEvents(route) {
   }
   if (route === "quiniela") {
     const nameIn = document.getElementById("q-name");
-    nameIn?.addEventListener("input", () => {
+    nameIn?.addEventListener("change", () => {
       const st = loadQuiniela(); st.name = nameIn.value; saveQuiniela(st);
     });
     const app = document.getElementById("q-app");

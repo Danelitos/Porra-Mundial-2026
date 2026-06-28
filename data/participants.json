@@ -1379,7 +1379,8 @@
           },
           "B": {
             "first": "SUI",
-            "second": "CAN"
+            "second": "CAN",
+            "third": "BIH"
           },
           "C": {
             "first": "BRA",
@@ -1398,15 +1399,18 @@
           },
           "F": {
             "first": "JPN",
-            "second": "NED"
+            "second": "NED",
+            "third": "SWE"
           },
           "G": {
             "first": "BEL",
-            "second": "EGY"
+            "second": "EGY",
+            "third": "NZL"
           },
           "H": {
             "first": "ESP",
-            "second": "URU"
+            "second": "URU",
+            "third": "CPV"
           },
           "I": {
             "first": "NOR",
@@ -1420,7 +1424,7 @@
           },
           "K": {
             "first": "POR",
-            "second": "GHA",
+            "second": "COL",
             "third": "COD"
           },
           "L": {
@@ -8128,7 +8132,7 @@
           "G5": {
             "home": 1,
             "away": 2,
-            "sign": "1"
+            "sign": "2"
           },
           "G6": {
             "home": 2,
