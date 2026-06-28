@@ -18,7 +18,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { buildContext, computeRanking, computeGlobalStats } from "../js/engine.js";
+import { buildContext, computeRanking, computeGlobalStats, computeActualBracketTeams } from "../js/engine.js";
 import { applyUpdates } from "../js/livesource.js";
 import { fetchWorldCupMatches, mapFDToUpdates, mapFDKnockout, fetchWorldCupScorers, mapFDScorers } from "./footballdata.js";
 
