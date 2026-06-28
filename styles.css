@@ -494,14 +494,27 @@ h3 > svg.lucide { color: var(--green); margin-right: 8px; }
 }
 .match-card .score.pending { color: var(--text-faint); font-size: 0.88rem; font-weight: 700; }
 .match-card.is-live .score { color: var(--red); border-color: rgba(255, 93, 108, 0.3); }
+.match-card .mc-top {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.03em;
+  color: var(--text-faint);
+  margin-bottom: 2px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
 .match-card .meta {
   grid-column: 1 / -1;
-  display: flex; justify-content: space-between; gap: 6px 12px;
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
   font-size: 0.72rem; color: var(--text-faint);
-  margin-top: 6px; flex-wrap: wrap;
+  margin-top: 2px; padding-top: 10px;
+  border-top: 1px solid var(--border-soft);
 }
-.match-card .meta .venue { display: inline-flex; align-items: center; gap: 4px; min-width: 0; }
-.match-card .meta svg.lucide { width: 12px; height: 12px; }
+.match-card .meta .venue {
+  display: inline-flex; align-items: center; gap: 4px; min-width: 0;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.match-card .meta .status-dot { flex-shrink: 0; }
+.match-card .meta svg.lucide { width: 12px; height: 12px; flex-shrink: 0; }
 
 .status-dot { display: inline-flex; align-items: center; gap: 5px; font-weight: 700; white-space: nowrap; }
 .status-dot::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--text-faint); flex-shrink: 0; }

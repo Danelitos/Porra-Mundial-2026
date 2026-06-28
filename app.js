@@ -110,12 +110,12 @@ function matchCard(m, { showVenue = true } = {}) {
   const minute = min ? ` <span class="minute-badge">${esc(/^\d/.test(min) ? min + "′" : min)}</span>` : "";
   return `
   <div class="match-card ${st === "live" ? "is-live" : ""}">
+    <div class="mc-top">Grupo ${m.group} · J${m.matchday} · ${fmtDate(m.date)}</div>
     <div class="team"><span class="flag">${CTX.teamsById[m.home]?.flag || "🏳️"}</span><span class="nm">${esc(CTX.teamsById[m.home]?.name || m.home)}</span></div>
     <div class="score ${st === "pending" ? "pending" : ""}">${score}</div>
     <div class="team right"><span class="nm">${esc(CTX.teamsById[m.away]?.name || m.away)}</span><span class="flag">${CTX.teamsById[m.away]?.flag || "🏳️"}</span></div>
     <div class="meta">
-      <span>Grupo ${m.group} · J${m.matchday} · ${fmtDate(m.date)}</span>
-      ${showVenue && m.venue ? `<span class="venue">${icon("map-pin")}${esc(m.venue)}</span>` : ""}
+      <span class="venue">${showVenue && m.venue ? `${icon("map-pin")}${esc(m.venue)}` : ""}</span>
       <span class="status-dot ${st}">${STATUS_LABEL[st]}${minute}</span>
     </div>
   </div>`;
@@ -143,12 +143,12 @@ function koMatchCard(n) {
   const roundName = CTX.bracket.rounds[m.round] || "Eliminatoria";
   return `
   <div class="match-card">
+    <div class="mc-top">${esc(roundName)} · ${fmtDate(m.date)}</div>
     <div class="team"><span class="flag">${h.flag}</span><span class="nm ${h.set ? "" : "muted"}">${esc(h.name)}</span></div>
     <div class="score pending"><span class="muted">VS</span></div>
     <div class="team right"><span class="nm ${a.set ? "" : "muted"}">${esc(a.name)}</span><span class="flag">${a.flag}</span></div>
     <div class="meta">
-      <span>${icon("git-merge")}${esc(roundName)} · ${fmtDate(m.date)}</span>
-      ${m.venue ? `<span class="venue">${icon("map-pin")}${esc(m.venue)}</span>` : ""}
+      <span class="venue">${m.venue ? `${icon("map-pin")}${esc(m.venue)}` : ""}</span>
       <span class="status-dot pending">${STATUS_LABEL.pending}</span>
     </div>
   </div>`;
