@@ -601,8 +601,11 @@ table.std td.form-td, table.std th.form-td { text-align: center; white-space: no
 .chips.fase-toggle .chip {
   border: none; background: transparent; padding: 9px 18px; font-size: 0.9rem;
 }
-.chips.fase-toggle .chip:hover { background: transparent; color: var(--text); }
-.chips.fase-toggle .chip.active { box-shadow: none; }
+.chips.fase-toggle .chip:not(.active):hover { background: var(--surface-strong); color: var(--text); }
+.chips.fase-toggle .chip.active {
+  background: var(--green); color: #04130a;
+  border-radius: 999px; box-shadow: none;
+}
 
 .team-chip { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; white-space: nowrap; max-width: 100%; }
 .team-chip > span:last-child { overflow: hidden; text-overflow: ellipsis; }
