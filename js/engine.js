@@ -276,13 +276,22 @@ export function computeKnockout(p, ctx, upTo = null) {
     if (act.eliminated.has(team)) return "miss";
     return "pending";
   };
+  // Partidos excluidos para este participante (p.ej. envió su cuadro tarde y no
+  // se le cuenta ese cruce). Las casillas están ordenadas por nº de partido, así
+  // que el nº = base de la ronda + índice.
+  const roundBase = { r32: 73, r16: 89, qf: 97, sf: 101 };
+  const excluded = new Set((ko.excludeMatches || []).map(Number));
   for (const round of KO_QUALIFY_ROUNDS) {
-    const picks = (ko[round] || []).map((x) => x.home).filter(Boolean);
-    const rows = picks.map((team) => {
+    const base = roundBase[round];
+    const rows = [];
+    (ko[round] || []).forEach((x, i) => {
+      const team = x.home;
+      if (!team) return;
+      if (excluded.has(base + i)) return; // partido excluido: no puntúa ni se lista
       const st = statusOf(team, round);
       const ptsRow = st === "hit" ? (kr[round] || 0) : 0;
       if (st === "hit") { hits++; breakdown[round] += ptsRow; pts += ptsRow; }
-      return { team, status: st, pts: ptsRow };
+      rows.push({ team, status: st, pts: ptsRow });
     });
     detail.rounds[round] = { picks: rows, decided: act.qualifiers[round].size > 0 };
   }

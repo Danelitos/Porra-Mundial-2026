@@ -519,7 +519,8 @@ function pkBracketCard(p, pb, n, { mirror = false } = {}) {
   const m = CTX.bracket.matches[String(n)];
   if (!m) return "";
   const node = pb[String(n)] || {};
-  const real = CTX.knockout?.results?.[String(n)]?.winner || null;
+  const excluded = (p.predictions?.knockout?.excludeMatches || []).map(Number).includes(Number(n));
+  const real = excluded ? null : (CTX.knockout?.results?.[String(n)]?.winner || null);
   const d = fmtDate(m.date);
   return `
     <div class="bk-card${mirror ? " mirror" : ""}">
