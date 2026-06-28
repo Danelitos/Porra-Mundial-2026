@@ -1701,9 +1701,15 @@ function render() {
     ["participantes", "grupos", "quiniela", "goleadores", "reglas"].includes(active)
   );
 
-  // Centra el chip activo en los carruseles de filtros (móvil).
-  document.querySelector(".chips .chip.active")
-    ?.scrollIntoView({ block: "nearest", inline: "center" });
+  // Centra el chip activo en su carrusel de filtros (solo desplazamiento
+  // HORIZONTAL del contenedor; nunca movemos la página verticalmente, que si no
+  // al entrar a un perfil saltaría hasta los chips del cuadro, abajo del todo).
+  const activeChip = document.querySelector(".chips .chip.active");
+  const chipRow = activeChip?.closest(".chips");
+  if (activeChip && chipRow && chipRow.scrollWidth > chipRow.clientWidth) {
+    const c = activeChip.getBoundingClientRect(), row = chipRow.getBoundingClientRect();
+    chipRow.scrollLeft += (c.left - row.left) - (chipRow.clientWidth - c.width) / 2;
+  }
 
   wireEvents(route, params);
 }
