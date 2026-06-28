@@ -10,56 +10,523 @@
   },
   "layout": {
     "left": {
-      "r32": [74, 77, 73, 75, 83, 84, 81, 82],
-      "r16": [89, 90, 93, 94],
-      "qf": [97, 98],
-      "sf": [101]
+      "r32": [
+        74,
+        77,
+        73,
+        75,
+        83,
+        84,
+        81,
+        82
+      ],
+      "r16": [
+        89,
+        90,
+        93,
+        94
+      ],
+      "qf": [
+        97,
+        98
+      ],
+      "sf": [
+        101
+      ]
     },
-    "final": [104],
+    "final": [
+      104
+    ],
     "right": {
-      "sf": [102],
-      "qf": [99, 100],
-      "r16": [91, 92, 95, 96],
-      "r32": [76, 78, 79, 80, 86, 88, 85, 87]
+      "sf": [
+        102
+      ],
+      "qf": [
+        99,
+        100
+      ],
+      "r16": [
+        91,
+        92,
+        95,
+        96
+      ],
+      "r32": [
+        76,
+        78,
+        79,
+        80,
+        86,
+        88,
+        85,
+        87
+      ]
     }
   },
   "matches": {
-    "73": { "round": "r32", "date": "2026-06-28", "venue": "Inglewood", "home": { "type": "r", "g": "A" }, "away": { "type": "r", "g": "B" } },
-    "74": { "round": "r32", "date": "2026-06-29", "venue": "Foxborough", "home": { "type": "w", "g": "E" }, "away": { "type": "t", "g": ["A", "B", "C", "D", "F"] } },
-    "75": { "round": "r32", "date": "2026-06-29", "venue": "Monterrey", "home": { "type": "w", "g": "F" }, "away": { "type": "r", "g": "C" } },
-    "76": { "round": "r32", "date": "2026-06-29", "venue": "Houston", "home": { "type": "w", "g": "C" }, "away": { "type": "r", "g": "F" } },
-    "77": { "round": "r32", "date": "2026-06-30", "venue": "East Rutherford", "home": { "type": "w", "g": "I" }, "away": { "type": "t", "g": ["C", "D", "F", "G", "H"] } },
-    "78": { "round": "r32", "date": "2026-06-30", "venue": "Arlington", "home": { "type": "r", "g": "E" }, "away": { "type": "r", "g": "I" } },
-    "79": { "round": "r32", "date": "2026-06-30", "venue": "Ciudad de México", "home": { "type": "w", "g": "A" }, "away": { "type": "t", "g": ["C", "E", "F", "H", "I"] } },
-    "80": { "round": "r32", "date": "2026-07-01", "venue": "Atlanta", "home": { "type": "w", "g": "L" }, "away": { "type": "t", "g": ["E", "H", "I", "J", "K"] } },
-    "81": { "round": "r32", "date": "2026-07-01", "venue": "Santa Clara", "home": { "type": "w", "g": "D" }, "away": { "type": "t", "g": ["B", "E", "F", "I", "J"] } },
-    "82": { "round": "r32", "date": "2026-07-01", "venue": "Seattle", "home": { "type": "w", "g": "G" }, "away": { "type": "t", "g": ["A", "E", "H", "I", "J"] } },
-    "83": { "round": "r32", "date": "2026-07-02", "venue": "Toronto", "home": { "type": "r", "g": "K" }, "away": { "type": "r", "g": "L" } },
-    "84": { "round": "r32", "date": "2026-07-02", "venue": "Inglewood", "home": { "type": "w", "g": "H" }, "away": { "type": "r", "g": "J" } },
-    "85": { "round": "r32", "date": "2026-07-02", "venue": "Vancouver", "home": { "type": "w", "g": "B" }, "away": { "type": "t", "g": ["E", "F", "G", "I", "J"] } },
-    "86": { "round": "r32", "date": "2026-07-03", "venue": "Miami Gardens", "home": { "type": "w", "g": "J" }, "away": { "type": "r", "g": "H" } },
-    "87": { "round": "r32", "date": "2026-07-03", "venue": "Kansas City", "home": { "type": "w", "g": "K" }, "away": { "type": "t", "g": ["D", "E", "I", "J", "L"] } },
-    "88": { "round": "r32", "date": "2026-07-03", "venue": "Arlington", "home": { "type": "r", "g": "D" }, "away": { "type": "r", "g": "G" } },
-
-    "89": { "round": "r16", "date": "2026-07-04", "venue": "Philadelphia", "home": { "type": "m", "n": 74 }, "away": { "type": "m", "n": 77 } },
-    "90": { "round": "r16", "date": "2026-07-04", "venue": "Houston", "home": { "type": "m", "n": 73 }, "away": { "type": "m", "n": 75 } },
-    "91": { "round": "r16", "date": "2026-07-05", "venue": "East Rutherford", "home": { "type": "m", "n": 76 }, "away": { "type": "m", "n": 78 } },
-    "92": { "round": "r16", "date": "2026-07-05", "venue": "Ciudad de México", "home": { "type": "m", "n": 79 }, "away": { "type": "m", "n": 80 } },
-    "93": { "round": "r16", "date": "2026-07-06", "venue": "Arlington", "home": { "type": "m", "n": 83 }, "away": { "type": "m", "n": 84 } },
-    "94": { "round": "r16", "date": "2026-07-06", "venue": "Seattle", "home": { "type": "m", "n": 81 }, "away": { "type": "m", "n": 82 } },
-    "95": { "round": "r16", "date": "2026-07-07", "venue": "Atlanta", "home": { "type": "m", "n": 86 }, "away": { "type": "m", "n": 88 } },
-    "96": { "round": "r16", "date": "2026-07-07", "venue": "Vancouver", "home": { "type": "m", "n": 85 }, "away": { "type": "m", "n": 87 } },
-
-    "97": { "round": "qf", "date": "2026-07-09", "venue": "Foxborough", "home": { "type": "m", "n": 89 }, "away": { "type": "m", "n": 90 } },
-    "98": { "round": "qf", "date": "2026-07-10", "venue": "Inglewood", "home": { "type": "m", "n": 93 }, "away": { "type": "m", "n": 94 } },
-    "99": { "round": "qf", "date": "2026-07-11", "venue": "Miami Gardens", "home": { "type": "m", "n": 91 }, "away": { "type": "m", "n": 92 } },
-    "100": { "round": "qf", "date": "2026-07-11", "venue": "Kansas City", "home": { "type": "m", "n": 95 }, "away": { "type": "m", "n": 96 } },
-
-    "101": { "round": "sf", "date": "2026-07-14", "venue": "Arlington", "home": { "type": "m", "n": 97 }, "away": { "type": "m", "n": 98 } },
-    "102": { "round": "sf", "date": "2026-07-15", "venue": "Atlanta", "home": { "type": "m", "n": 99 }, "away": { "type": "m", "n": 100 } },
-
-    "103": { "round": "tp", "date": "2026-07-18", "venue": "Miami Gardens", "home": { "type": "l", "n": 101 }, "away": { "type": "l", "n": 102 } },
-
-    "104": { "round": "final", "date": "2026-07-19", "venue": "East Rutherford", "home": { "type": "m", "n": 101 }, "away": { "type": "m", "n": 102 } }
+    "73": {
+      "round": "r32",
+      "date": "2026-06-28T21:00:00+02:00",
+      "venue": "Inglewood",
+      "home": {
+        "type": "r",
+        "g": "A"
+      },
+      "away": {
+        "type": "r",
+        "g": "B"
+      }
+    },
+    "74": {
+      "round": "r32",
+      "date": "2026-06-29T22:30:00+02:00",
+      "venue": "Foxborough",
+      "home": {
+        "type": "w",
+        "g": "E"
+      },
+      "away": {
+        "type": "t",
+        "g": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "F"
+        ]
+      }
+    },
+    "75": {
+      "round": "r32",
+      "date": "2026-06-30T03:00:00+02:00",
+      "venue": "Monterrey",
+      "home": {
+        "type": "w",
+        "g": "F"
+      },
+      "away": {
+        "type": "r",
+        "g": "C"
+      }
+    },
+    "76": {
+      "round": "r32",
+      "date": "2026-06-29T19:00:00+02:00",
+      "venue": "Houston",
+      "home": {
+        "type": "w",
+        "g": "C"
+      },
+      "away": {
+        "type": "r",
+        "g": "F"
+      }
+    },
+    "77": {
+      "round": "r32",
+      "date": "2026-06-30T23:00:00+02:00",
+      "venue": "East Rutherford",
+      "home": {
+        "type": "w",
+        "g": "I"
+      },
+      "away": {
+        "type": "t",
+        "g": [
+          "C",
+          "D",
+          "F",
+          "G",
+          "H"
+        ]
+      }
+    },
+    "78": {
+      "round": "r32",
+      "date": "2026-06-30T19:00:00+02:00",
+      "venue": "Arlington",
+      "home": {
+        "type": "r",
+        "g": "E"
+      },
+      "away": {
+        "type": "r",
+        "g": "I"
+      }
+    },
+    "79": {
+      "round": "r32",
+      "date": "2026-07-01T03:00:00+02:00",
+      "venue": "Ciudad de México",
+      "home": {
+        "type": "w",
+        "g": "A"
+      },
+      "away": {
+        "type": "t",
+        "g": [
+          "C",
+          "E",
+          "F",
+          "H",
+          "I"
+        ]
+      }
+    },
+    "80": {
+      "round": "r32",
+      "date": "2026-07-01T18:00:00+02:00",
+      "venue": "Atlanta",
+      "home": {
+        "type": "w",
+        "g": "L"
+      },
+      "away": {
+        "type": "t",
+        "g": [
+          "E",
+          "H",
+          "I",
+          "J",
+          "K"
+        ]
+      }
+    },
+    "81": {
+      "round": "r32",
+      "date": "2026-07-02T02:00:00+02:00",
+      "venue": "Santa Clara",
+      "home": {
+        "type": "w",
+        "g": "D"
+      },
+      "away": {
+        "type": "t",
+        "g": [
+          "B",
+          "E",
+          "F",
+          "I",
+          "J"
+        ]
+      }
+    },
+    "82": {
+      "round": "r32",
+      "date": "2026-07-01T22:00:00+02:00",
+      "venue": "Seattle",
+      "home": {
+        "type": "w",
+        "g": "G"
+      },
+      "away": {
+        "type": "t",
+        "g": [
+          "A",
+          "E",
+          "H",
+          "I",
+          "J"
+        ]
+      }
+    },
+    "83": {
+      "round": "r32",
+      "date": "2026-07-03T01:00:00+02:00",
+      "venue": "Toronto",
+      "home": {
+        "type": "r",
+        "g": "K"
+      },
+      "away": {
+        "type": "r",
+        "g": "L"
+      }
+    },
+    "84": {
+      "round": "r32",
+      "date": "2026-07-02T21:00:00+02:00",
+      "venue": "Inglewood",
+      "home": {
+        "type": "w",
+        "g": "H"
+      },
+      "away": {
+        "type": "r",
+        "g": "J"
+      }
+    },
+    "85": {
+      "round": "r32",
+      "date": "2026-07-03T05:00:00+02:00",
+      "venue": "Vancouver",
+      "home": {
+        "type": "w",
+        "g": "B"
+      },
+      "away": {
+        "type": "t",
+        "g": [
+          "E",
+          "F",
+          "G",
+          "I",
+          "J"
+        ]
+      }
+    },
+    "86": {
+      "round": "r32",
+      "date": "2026-07-04T00:00:00+02:00",
+      "venue": "Miami Gardens",
+      "home": {
+        "type": "w",
+        "g": "J"
+      },
+      "away": {
+        "type": "r",
+        "g": "H"
+      }
+    },
+    "87": {
+      "round": "r32",
+      "date": "2026-07-04T03:30:00+02:00",
+      "venue": "Kansas City",
+      "home": {
+        "type": "w",
+        "g": "K"
+      },
+      "away": {
+        "type": "t",
+        "g": [
+          "D",
+          "E",
+          "I",
+          "J",
+          "L"
+        ]
+      }
+    },
+    "88": {
+      "round": "r32",
+      "date": "2026-07-03T20:00:00+02:00",
+      "venue": "Arlington",
+      "home": {
+        "type": "r",
+        "g": "D"
+      },
+      "away": {
+        "type": "r",
+        "g": "G"
+      }
+    },
+    "89": {
+      "round": "r16",
+      "date": "2026-07-04T23:00:00+02:00",
+      "venue": "Philadelphia",
+      "home": {
+        "type": "m",
+        "n": 74
+      },
+      "away": {
+        "type": "m",
+        "n": 77
+      }
+    },
+    "90": {
+      "round": "r16",
+      "date": "2026-07-04T19:00:00+02:00",
+      "venue": "Houston",
+      "home": {
+        "type": "m",
+        "n": 73
+      },
+      "away": {
+        "type": "m",
+        "n": 75
+      }
+    },
+    "91": {
+      "round": "r16",
+      "date": "2026-07-05T22:00:00+02:00",
+      "venue": "East Rutherford",
+      "home": {
+        "type": "m",
+        "n": 76
+      },
+      "away": {
+        "type": "m",
+        "n": 78
+      }
+    },
+    "92": {
+      "round": "r16",
+      "date": "2026-07-06T02:00:00+02:00",
+      "venue": "Ciudad de México",
+      "home": {
+        "type": "m",
+        "n": 79
+      },
+      "away": {
+        "type": "m",
+        "n": 80
+      }
+    },
+    "93": {
+      "round": "r16",
+      "date": "2026-07-06T21:00:00+02:00",
+      "venue": "Arlington",
+      "home": {
+        "type": "m",
+        "n": 83
+      },
+      "away": {
+        "type": "m",
+        "n": 84
+      }
+    },
+    "94": {
+      "round": "r16",
+      "date": "2026-07-07T02:00:00+02:00",
+      "venue": "Seattle",
+      "home": {
+        "type": "m",
+        "n": 81
+      },
+      "away": {
+        "type": "m",
+        "n": 82
+      }
+    },
+    "95": {
+      "round": "r16",
+      "date": "2026-07-07T18:00:00+02:00",
+      "venue": "Atlanta",
+      "home": {
+        "type": "m",
+        "n": 86
+      },
+      "away": {
+        "type": "m",
+        "n": 88
+      }
+    },
+    "96": {
+      "round": "r16",
+      "date": "2026-07-07T22:00:00+02:00",
+      "venue": "Vancouver",
+      "home": {
+        "type": "m",
+        "n": 85
+      },
+      "away": {
+        "type": "m",
+        "n": 87
+      }
+    },
+    "97": {
+      "round": "qf",
+      "date": "2026-07-09T22:00:00+02:00",
+      "venue": "Foxborough",
+      "home": {
+        "type": "m",
+        "n": 89
+      },
+      "away": {
+        "type": "m",
+        "n": 90
+      }
+    },
+    "98": {
+      "round": "qf",
+      "date": "2026-07-10T21:00:00+02:00",
+      "venue": "Inglewood",
+      "home": {
+        "type": "m",
+        "n": 93
+      },
+      "away": {
+        "type": "m",
+        "n": 94
+      }
+    },
+    "99": {
+      "round": "qf",
+      "date": "2026-07-11T23:00:00+02:00",
+      "venue": "Miami Gardens",
+      "home": {
+        "type": "m",
+        "n": 91
+      },
+      "away": {
+        "type": "m",
+        "n": 92
+      }
+    },
+    "100": {
+      "round": "qf",
+      "date": "2026-07-12T03:00:00+02:00",
+      "venue": "Kansas City",
+      "home": {
+        "type": "m",
+        "n": 95
+      },
+      "away": {
+        "type": "m",
+        "n": 96
+      }
+    },
+    "101": {
+      "round": "sf",
+      "date": "2026-07-14T21:00:00+02:00",
+      "venue": "Arlington",
+      "home": {
+        "type": "m",
+        "n": 97
+      },
+      "away": {
+        "type": "m",
+        "n": 98
+      }
+    },
+    "102": {
+      "round": "sf",
+      "date": "2026-07-15T21:00:00+02:00",
+      "venue": "Atlanta",
+      "home": {
+        "type": "m",
+        "n": 99
+      },
+      "away": {
+        "type": "m",
+        "n": 100
+      }
+    },
+    "103": {
+      "round": "tp",
+      "date": "2026-07-18T23:00:00+02:00",
+      "venue": "Miami Gardens",
+      "home": {
+        "type": "l",
+        "n": 101
+      },
+      "away": {
+        "type": "l",
+        "n": 102
+      }
+    },
+    "104": {
+      "round": "final",
+      "date": "2026-07-19T21:00:00+02:00",
+      "venue": "East Rutherford",
+      "home": {
+        "type": "m",
+        "n": 101
+      },
+      "away": {
+        "type": "m",
+        "n": 102
+      }
+    }
   }
 }

@@ -147,7 +147,7 @@ function koMatchCard(n) {
     <div class="score pending"><span class="muted">VS</span></div>
     <div class="team right"><span class="nm ${a.set ? "" : "muted"}">${esc(a.name)}</span><span class="flag">${a.flag}</span></div>
     <div class="meta">
-      <span>${icon("git-merge")}${esc(roundName)} · ${fmtDate(m.date, false)}</span>
+      <span>${icon("git-merge")}${esc(roundName)} · ${fmtDate(m.date)}</span>
       ${m.venue ? `<span class="venue">${icon("map-pin")}${esc(m.venue)}</span>` : ""}
       <span class="status-dot pending">${STATUS_LABEL.pending}</span>
     </div>
@@ -798,7 +798,7 @@ function bracketTeam(slot, matchId) {
 function bracketCard(n, { mirror = false } = {}) {
   const m = CTX.bracket.matches[String(n)];
   if (!m) return "";
-  const d = new Date(m.date).toLocaleDateString("es-ES", { day: "numeric", month: "short" });
+  const d = fmtDate(m.date);
   return `
     <div class="bk-card${mirror ? " mirror" : ""}">
       <div class="bk-head"><span class="bk-no">#${n}</span><span class="bk-date">${d}${m.venue ? " · " + esc(m.venue) : ""}</span></div>
@@ -1062,7 +1062,7 @@ function qTeamRow(matchId, side, picks, ready) {
 function qMatchCard(matchId, picks) {
   const m = CTX.bracket.matches[matchId];
   const ready = qSlotTeam(m.home, matchId, picks) && qSlotTeam(m.away, matchId, picks);
-  const d = new Date(m.date).toLocaleDateString("es-ES", { day: "numeric", month: "short" });
+  const d = fmtDate(m.date);
   return `<div class="q-card ${ready ? "" : "is-locked"}">
     <div class="q-card-head"><span class="q-no">#${matchId}</span><span class="q-date">${esc(d)}${m.venue ? " · " + esc(m.venue) : ""}</span></div>
     ${qTeamRow(matchId, "home", picks, ready)}
