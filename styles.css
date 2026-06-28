@@ -592,6 +592,18 @@ table.std td.form-td, table.std th.form-td { text-align: center; white-space: no
   box-shadow: 0 4px 14px rgba(46, 227, 125, 0.3);
 }
 
+/* Selector de fase (Grupos / Eliminatoria) en Resultados: control segmentado. */
+.chips.fase-toggle {
+  display: inline-flex; gap: 0; margin: 4px 0 14px; flex-wrap: nowrap;
+  padding: 4px; border-radius: 999px;
+  background: var(--surface); border: 1px solid var(--border);
+}
+.chips.fase-toggle .chip {
+  border: none; background: transparent; padding: 9px 18px; font-size: 0.9rem;
+}
+.chips.fase-toggle .chip:hover { background: transparent; color: var(--text); }
+.chips.fase-toggle .chip.active { box-shadow: none; }
+
 .team-chip { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; white-space: nowrap; max-width: 100%; }
 .team-chip > span:last-child { overflow: hidden; text-overflow: ellipsis; }
 .team-chip .flag { font-size: 1.1rem; flex-shrink: 0; }

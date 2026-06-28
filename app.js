@@ -593,6 +593,29 @@ function viewGrupos(params) {
 }
 
 function viewResultados(params) {
+  const koAvailable = !!(CTX.bracket && isGroupStageComplete(CTX.matches));
+  // Selector de fase: por defecto la eliminatoria si ya está disponible.
+  let fase = params.get("fase");
+  if (fase !== "grupos" && fase !== "elim") fase = koAvailable ? "elim" : "grupos";
+  if (fase === "elim" && !koAvailable) fase = "grupos";
+
+  const head = `
+  <div class="page-head"><h1>${icon("calendar-days")}Resultados y calendario</h1><p>${CTX.matches.filter((m) => m.status === "finished").length} de ${CTX.matches.length} partidos finalizados.</p></div>
+  ${koAvailable ? `<div class="chips fase-toggle">
+    <a class="chip ${fase === "grupos" ? "active" : ""}" href="#/resultados?fase=grupos">${icon("layout-grid")}Fase de grupos</a>
+    <a class="chip ${fase === "elim" ? "active" : ""}" href="#/resultados?fase=elim">${icon("git-merge")}Eliminatoria</a>
+  </div>` : ""}`;
+
+  // ----- Vista eliminatoria -----
+  if (fase === "elim") {
+    const byRound = koMatchesByRound();
+    const koSections = KO_RESULT_ROUNDS.filter((r) => byRound[r]).map((r) => `
+      ${sectionTitle("git-merge", CTX.bracket.rounds[r] || r)}
+      <div class="grid grid-2">${byRound[r].map((n) => koMatchCard(n)).join("")}</div>`).join("");
+    return `${head}${koSections || `<p class="muted">Aún no hay cuadro de eliminatoria.</p>`}`;
+  }
+
+  // ----- Vista fase de grupos -----
   const fStatus = params.get("estado") || "todos";
   const fGroup = (params.get("g") || "").toUpperCase();
 
@@ -601,7 +624,7 @@ function viewResultados(params) {
   if (fGroup) ms = ms.filter((m) => m.group === fGroup);
 
   const mkChip = (label, val) =>
-    `<a class="chip ${fStatus === val ? "active" : ""}" href="#/resultados?estado=${val}${fGroup ? "&g=" + fGroup : ""}">${label}</a>`;
+    `<a class="chip ${fStatus === val ? "active" : ""}" href="#/resultados?fase=grupos&estado=${val}${fGroup ? "&g=" + fGroup : ""}">${label}</a>`;
 
   const groupOpts = ["", ...CTX.groupsData.groups.map((g) => g.id)]
     .map((id) => `<option value="${id}" ${id === fGroup ? "selected" : ""}>${id ? "Grupo " + id : "Todos los grupos"}</option>`).join("");
@@ -614,24 +637,13 @@ function viewResultados(params) {
     ${sectionTitle("calendar", `Jornada ${j}`)}
     <div class="grid grid-2">${byDay[j].map((m) => matchCard(m)).join("")}</div>`).join("");
 
-  // Fase eliminatoria: se muestra al cerrarse los grupos. Sus partidos están
-  // pendientes, así que solo aparece sin filtro de grupo y en "Todos"/"Pendientes".
-  let koSections = "";
-  if (CTX.bracket && isGroupStageComplete(CTX.matches) && !fGroup && (fStatus === "todos" || fStatus === "pending")) {
-    const byRound = koMatchesByRound();
-    koSections = KO_RESULT_ROUNDS.filter((r) => byRound[r]).map((r) => `
-      ${sectionTitle("git-merge", CTX.bracket.rounds[r] || r)}
-      <div class="grid grid-2">${byRound[r].map((n) => koMatchCard(n)).join("")}</div>`).join("");
-  }
-
   return `
-  <div class="page-head"><h1>${icon("calendar-days")}Resultados y calendario</h1><p>${CTX.matches.filter((m) => m.status === "finished").length} de ${CTX.matches.length} partidos finalizados.</p></div>
+  ${head}
   <div class="chips filters">
     ${mkChip("Todos", "todos")}${mkChip("Pendientes", "pending")}${mkChip("En juego", "live")}${mkChip("Finalizados", "finished")}
     <select class="ctl" id="groupfilter">${groupOpts}</select>
   </div>
-  ${sections || (koSections ? "" : `<p class="muted">No hay partidos con ese filtro.</p>`)}
-  ${koSections}`;
+  ${sections || `<p class="muted">No hay partidos con ese filtro.</p>`}`;
 }
 
 const RULE_ICONS = { "Fase de Grupos": "layout-grid", "Fase Eliminatoria": "git-merge", "Bonus": "star", "Desempates": "scale" };
@@ -1511,7 +1523,7 @@ function wireEvents(route) {
     document.getElementById("groupfilter")?.addEventListener("change", (e) => {
       const { params } = parseHash();
       const estado = params.get("estado") || "todos";
-      location.hash = `#/resultados?estado=${estado}${e.target.value ? "&g=" + e.target.value : ""}`;
+      location.hash = `#/resultados?fase=grupos&estado=${estado}${e.target.value ? "&g=" + e.target.value : ""}`;
     });
   }
   if (route === "quiniela") {
