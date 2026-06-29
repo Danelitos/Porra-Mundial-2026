@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-29T20:25:32.548Z",
+  "lastUpdated": "2026-06-29T21:53:34.359Z",
   "scorers": [
     {
       "name": "Lionel Messi",
@@ -54,6 +54,15 @@
       "assists": 0,
       "penalties": 0,
       "playedMatches": 3
+    },
+    {
+      "name": "Kai Havertz",
+      "teamId": "GER",
+      "teamName": "Germany",
+      "goals": 3,
+      "assists": 0,
+      "penalties": 1,
+      "playedMatches": 4
     },
     {
       "name": "Deniz Undav",
@@ -162,15 +171,6 @@
       "assists": 0,
       "penalties": 0,
       "playedMatches": 3
-    },
-    {
-      "name": "Kai Havertz",
-      "teamId": "GER",
-      "teamName": "Germany",
-      "goals": 2,
-      "assists": 0,
-      "penalties": 1,
-      "playedMatches": 4
     },
     {
       "name": "Crysencio Summerville",
