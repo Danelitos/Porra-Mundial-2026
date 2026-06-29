@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-29T21:53:34.359Z",
+  "lastUpdated": "2026-06-29T22:58:53.158Z",
   "scorers": [
     {
       "name": "Lionel Messi",
@@ -771,7 +771,7 @@
       "teamId": "PAR",
       "teamName": "Paraguay",
       "goals": 1,
-      "assists": 0,
+      "assists": 1,
       "penalties": 0,
       "playedMatches": 4
     },
