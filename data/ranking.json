@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-29T19:03:49.457Z",
+  "lastUpdated": "2026-06-29T19:08:30.522Z",
   "ranking": [
     {
       "position": 1,
@@ -11,11 +11,11 @@
       "groupPickPts": 58,
       "thirdsPts": 8,
       "pichichiPts": 0,
-      "koPts": 5,
-      "total": 143,
+      "koPts": 10,
+      "total": 148,
       "exactHits": 9,
       "signHits": 45,
-      "koHits": 1
+      "koHits": 2
     },
     {
       "position": 2,
@@ -27,11 +27,11 @@
       "groupPickPts": 48,
       "thirdsPts": 8,
       "pichichiPts": 0,
-      "koPts": 5,
-      "total": 141,
+      "koPts": 10,
+      "total": 146,
       "exactHits": 13,
       "signHits": 41,
-      "koHits": 1
+      "koHits": 2
     },
     {
       "position": 3,
@@ -43,11 +43,11 @@
       "groupPickPts": 54,
       "thirdsPts": 6,
       "pichichiPts": 0,
-      "koPts": 5,
-      "total": 137,
+      "koPts": 10,
+      "total": 142,
       "exactHits": 11,
       "signHits": 39,
-      "koHits": 1
+      "koHits": 2
     },
     {
       "position": 4,
@@ -75,11 +75,11 @@
       "groupPickPts": 56,
       "thirdsPts": 7,
       "pichichiPts": 0,
-      "koPts": 0,
-      "total": 128,
+      "koPts": 5,
+      "total": 133,
       "exactHits": 8,
       "signHits": 41,
-      "koHits": 0
+      "koHits": 1
     },
     {
       "position": 6,
@@ -91,11 +91,11 @@
       "groupPickPts": 58,
       "thirdsPts": 8,
       "pichichiPts": 0,
-      "koPts": 5,
-      "total": 128,
+      "koPts": 10,
+      "total": 133,
       "exactHits": 5,
       "signHits": 42,
-      "koHits": 1
+      "koHits": 2
     },
     {
       "position": 7,
@@ -107,11 +107,11 @@
       "groupPickPts": 48,
       "thirdsPts": 8,
       "pichichiPts": 0,
-      "koPts": 5,
-      "total": 127,
+      "koPts": 10,
+      "total": 132,
       "exactHits": 6,
       "signHits": 48,
-      "koHits": 1
+      "koHits": 2
     },
     {
       "position": 8,
@@ -123,11 +123,11 @@
       "groupPickPts": 48,
       "thirdsPts": 8,
       "pichichiPts": 0,
-      "koPts": 0,
-      "total": 126,
+      "koPts": 5,
+      "total": 131,
       "exactHits": 10,
       "signHits": 40,
-      "koHits": 0
+      "koHits": 1
     },
     {
       "position": 9,
@@ -139,11 +139,11 @@
       "groupPickPts": 42,
       "thirdsPts": 6,
       "pichichiPts": 0,
-      "koPts": 5,
-      "total": 125,
+      "koPts": 10,
+      "total": 130,
       "exactHits": 9,
       "signHits": 45,
-      "koHits": 1
+      "koHits": 2
     },
     {
       "position": 10,
@@ -155,14 +155,62 @@
       "groupPickPts": 46,
       "thirdsPts": 6,
       "pichichiPts": 0,
-      "koPts": 5,
-      "total": 121,
+      "koPts": 10,
+      "total": 126,
       "exactHits": 9,
       "signHits": 37,
-      "koHits": 1
+      "koHits": 2
     },
     {
       "position": 11,
+      "id": "wiki",
+      "name": "Wiki",
+      "demo": false,
+      "signPts": 42,
+      "exactPts": 21,
+      "groupPickPts": 46,
+      "thirdsPts": 8,
+      "pichichiPts": 0,
+      "koPts": 5,
+      "total": 122,
+      "exactHits": 7,
+      "signHits": 42,
+      "koHits": 1
+    },
+    {
+      "position": 12,
+      "id": "txiki",
+      "name": "Txiki",
+      "demo": false,
+      "signPts": 44,
+      "exactPts": 12,
+      "groupPickPts": 50,
+      "thirdsPts": 6,
+      "pichichiPts": 0,
+      "koPts": 10,
+      "total": 122,
+      "exactHits": 4,
+      "signHits": 44,
+      "koHits": 2
+    },
+    {
+      "position": 13,
+      "id": "aitor",
+      "name": "Aitor",
+      "demo": false,
+      "signPts": 42,
+      "exactPts": 12,
+      "groupPickPts": 50,
+      "thirdsPts": 7,
+      "pichichiPts": 0,
+      "koPts": 10,
+      "total": 121,
+      "exactHits": 4,
+      "signHits": 42,
+      "koHits": 2
+    },
+    {
+      "position": 14,
       "id": "coco",
       "name": "Coco",
       "demo": false,
@@ -178,54 +226,6 @@
       "koHits": 1
     },
     {
-      "position": 12,
-      "id": "wiki",
-      "name": "Wiki",
-      "demo": false,
-      "signPts": 42,
-      "exactPts": 21,
-      "groupPickPts": 46,
-      "thirdsPts": 8,
-      "pichichiPts": 0,
-      "koPts": 0,
-      "total": 117,
-      "exactHits": 7,
-      "signHits": 42,
-      "koHits": 0
-    },
-    {
-      "position": 13,
-      "id": "txiki",
-      "name": "Txiki",
-      "demo": false,
-      "signPts": 44,
-      "exactPts": 12,
-      "groupPickPts": 50,
-      "thirdsPts": 6,
-      "pichichiPts": 0,
-      "koPts": 5,
-      "total": 117,
-      "exactHits": 4,
-      "signHits": 44,
-      "koHits": 1
-    },
-    {
-      "position": 14,
-      "id": "aitor",
-      "name": "Aitor",
-      "demo": false,
-      "signPts": 42,
-      "exactPts": 12,
-      "groupPickPts": 50,
-      "thirdsPts": 7,
-      "pichichiPts": 0,
-      "koPts": 5,
-      "total": 116,
-      "exactHits": 4,
-      "signHits": 42,
-      "koHits": 1
-    },
-    {
       "position": 15,
       "id": "juanro",
       "name": "JuanRo",
@@ -235,11 +235,11 @@
       "groupPickPts": 48,
       "thirdsPts": 8,
       "pichichiPts": 0,
-      "koPts": 5,
-      "total": 113,
+      "koPts": 10,
+      "total": 118,
       "exactHits": 3,
       "signHits": 43,
-      "koHits": 1
+      "koHits": 2
     },
     {
       "position": 16,
@@ -251,11 +251,11 @@
       "groupPickPts": 38,
       "thirdsPts": 8,
       "pichichiPts": 0,
-      "koPts": 5,
-      "total": 109,
+      "koPts": 10,
+      "total": 114,
       "exactHits": 4,
       "signHits": 46,
-      "koHits": 1
+      "koHits": 2
     },
     {
       "position": 17,
@@ -267,11 +267,11 @@
       "groupPickPts": 42,
       "thirdsPts": 8,
       "pichichiPts": 0,
-      "koPts": 5,
-      "total": 108,
+      "koPts": 10,
+      "total": 113,
       "exactHits": 3,
       "signHits": 44,
-      "koHits": 1
+      "koHits": 2
     },
     {
       "position": 18,
@@ -283,11 +283,11 @@
       "groupPickPts": 30,
       "thirdsPts": 5,
       "pichichiPts": 0,
-      "koPts": 0,
-      "total": 94,
+      "koPts": 5,
+      "total": 99,
       "exactHits": 6,
       "signHits": 41,
-      "koHits": 0
+      "koHits": 1
     },
     {
       "position": 19,
@@ -299,11 +299,11 @@
       "groupPickPts": 36,
       "thirdsPts": 5,
       "pichichiPts": 0,
-      "koPts": 5,
-      "total": 86,
+      "koPts": 10,
+      "total": 91,
       "exactHits": 4,
       "signHits": 28,
-      "koHits": 1
+      "koHits": 2
     },
     {
       "position": 20,
@@ -315,11 +315,11 @@
       "groupPickPts": 36,
       "thirdsPts": 2,
       "pichichiPts": 0,
-      "koPts": 5,
-      "total": 86,
+      "koPts": 10,
+      "total": 91,
       "exactHits": 2,
       "signHits": 37,
-      "koHits": 1
+      "koHits": 2
     },
     {
       "position": 21,
@@ -331,11 +331,11 @@
       "groupPickPts": 42,
       "thirdsPts": 3,
       "pichichiPts": 0,
-      "koPts": 0,
-      "total": 83,
+      "koPts": 5,
+      "total": 88,
       "exactHits": 4,
       "signHits": 26,
-      "koHits": 0
+      "koHits": 1
     }
   ]
 }
