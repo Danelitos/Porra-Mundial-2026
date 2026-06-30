@@ -339,18 +339,26 @@ function viewHome() {
   const stats = globalStatsOf();
   const top3 = ranking.slice(0, 3);
   const leader = ranking[0];
-  // Próximos: partidos de grupos pendientes y, cuando los grupos cierran, también
-  // los de la fase eliminatoria. Se mezclan y ordenan por fecha.
-  const upcomingItems = CTX.matches
-    .filter((m) => viewStatus(m) === "pending")
-    .map((m) => ({ date: m.date, html: matchCard(m) }));
-  if (CTX.bracket && isGroupStageComplete(CTX.matches)) {
-    for (const [n, m] of Object.entries(CTX.bracket.matches)) {
-      upcomingItems.push({ date: m.date, html: koMatchCard(n) });
-    }
+  // Próximos partidos. Durante la fase de grupos: los siguientes pendientes.
+  // En la fase eliminatoria: TODOS los partidos de la ronda en curso (al acabar
+  // una ronda entera salta sola a la siguiente: Ronda de 32 → Octavos → …).
+  const inKnockout = CTX.bracket && isGroupStageComplete(CTX.matches);
+  let upcomingIcon = "calendar-days", upcomingTitle = "Próximos partidos", upcomingHTML;
+  if (inKnockout) {
+    const round = defaultBracketRound();
+    const byRound = koMatchesByRound();
+    const nums = [...(byRound[round] || []), ...(round === "final" ? byRound.tp || [] : [])]
+      .sort((a, b) => String(CTX.bracket.matches[a].date).localeCompare(String(CTX.bracket.matches[b].date)));
+    upcomingIcon = "git-merge";
+    upcomingTitle = round === "final" ? "Final y 3.er puesto" : (CTX.bracket.rounds[round] || "Eliminatoria");
+    upcomingHTML = nums.length ? nums.map((n) => koMatchCard(n)).join("") : `<p class="muted">No quedan partidos por jugar.</p>`;
+  } else {
+    const upcoming = CTX.matches
+      .filter((m) => viewStatus(m) === "pending")
+      .sort((a, b) => String(a.date).localeCompare(String(b.date)))
+      .slice(0, 6);
+    upcomingHTML = upcoming.length ? upcoming.map((m) => matchCard(m)).join("") : `<p class="muted">No quedan partidos por jugar.</p>`;
   }
-  upcomingItems.sort((a, b) => String(a.date).localeCompare(String(b.date)));
-  const upcoming = upcomingItems.slice(0, 6);
   const live = CTX.matches.filter((m) => viewStatus(m) === "live");
   const anyPoints = leader && leader.breakdown.total > 0;
 
@@ -407,9 +415,9 @@ function viewHome() {
 
   ${live.length ? `${sectionTitle("radio", "En juego")}<div class="grid grid-2">${live.map((m) => matchCard(m)).join("")}</div>` : ""}
 
-  ${sectionTitle("calendar-days", "Próximos partidos")}
+  ${sectionTitle(upcomingIcon, upcomingTitle)}
   <div class="grid grid-2">
-    ${upcoming.length ? upcoming.map((u) => u.html).join("") : `<p class="muted">No quedan partidos por jugar.</p>`}
+    ${upcomingHTML}
   </div>
 
   ${sectionTitle("chart-line", "Evolución de la porra")}
