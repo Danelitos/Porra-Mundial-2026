@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-30T16:05:30.097Z",
+  "lastUpdated": "2026-06-30T20:22:07.660Z",
   "scorers": [
     {
       "name": "Lionel Messi",
@@ -9,6 +9,15 @@
       "assists": 0,
       "penalties": 0,
       "playedMatches": 3
+    },
+    {
+      "name": "Erling Haaland",
+      "teamId": "NOR",
+      "teamName": "Norway",
+      "goals": 5,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 4
     },
     {
       "name": "Vinicius Junior",
@@ -26,15 +35,6 @@
       "goals": 4,
       "assists": 2,
       "penalties": 0,
-      "playedMatches": 3
-    },
-    {
-      "name": "Erling Haaland",
-      "teamId": "NOR",
-      "teamName": "Norway",
-      "goals": 4,
-      "assists": 0,
-      "penalties": 0,
       "playedMatches": 4
     },
     {
@@ -44,7 +44,7 @@
       "goals": 4,
       "assists": 1,
       "penalties": 0,
-      "playedMatches": 3
+      "playedMatches": 4
     },
     {
       "name": "Ismael Saibari",
@@ -200,13 +200,22 @@
       "playedMatches": 4
     },
     {
+      "name": "Amad Diallo",
+      "teamId": "CIV",
+      "teamName": "Ivory Coast",
+      "goals": 2,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 3
+    },
+    {
       "name": "Yasin Ayari",
       "teamId": "SWE",
       "teamName": "Sweden",
       "goals": 2,
       "assists": 0,
       "penalties": 0,
-      "playedMatches": 3
+      "playedMatches": 4
     },
     {
       "name": "Maximiliano Araújo",
@@ -278,7 +287,7 @@
       "goals": 2,
       "assists": 0,
       "penalties": 0,
-      "playedMatches": 3
+      "playedMatches": 4
     },
     {
       "name": "Ayase Ueda",
@@ -312,7 +321,7 @@
       "teamId": "CIV",
       "teamName": "Ivory Coast",
       "goals": 2,
-      "assists": 0,
+      "assists": 1,
       "penalties": 0,
       "playedMatches": 3
     },
@@ -515,22 +524,13 @@
       "playedMatches": 4
     },
     {
-      "name": "Amad Diallo",
-      "teamId": "CIV",
-      "teamName": "Ivory Coast",
-      "goals": 1,
-      "assists": 0,
-      "penalties": 0,
-      "playedMatches": 3
-    },
-    {
       "name": "Alexander Isak",
       "teamId": "SWE",
       "teamName": "Sweden",
       "goals": 1,
       "assists": 3,
       "penalties": 0,
-      "playedMatches": 3
+      "playedMatches": 4
     },
     {
       "name": "Omar Rekik",
@@ -548,7 +548,7 @@
       "goals": 1,
       "assists": 2,
       "penalties": 0,
-      "playedMatches": 3
+      "playedMatches": 4
     },
     {
       "name": "Mattias Svanberg",
@@ -557,7 +557,7 @@
       "goals": 1,
       "assists": 0,
       "penalties": 0,
-      "playedMatches": 3
+      "playedMatches": 4
     },
     {
       "name": "Emam Ashour",
@@ -593,7 +593,7 @@
       "goals": 1,
       "assists": 1,
       "penalties": 0,
-      "playedMatches": 3
+      "playedMatches": 4
     },
     {
       "name": "Ibrahim M'Baye",

@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-30T18:12:29.189Z",
+  "lastUpdated": "2026-06-30T20:22:07.660Z",
   "ranking": [
     {
       "position": 1,
@@ -11,11 +11,11 @@
       "groupPickPts": 48,
       "thirdsPts": 8,
       "pichichiPts": 0,
-      "koPts": 15,
-      "total": 151,
+      "koPts": 20,
+      "total": 156,
       "exactHits": 13,
       "signHits": 41,
-      "koHits": 3
+      "koHits": 4
     },
     {
       "position": 2,
@@ -27,11 +27,11 @@
       "groupPickPts": 58,
       "thirdsPts": 8,
       "pichichiPts": 0,
-      "koPts": 10,
-      "total": 148,
+      "koPts": 15,
+      "total": 153,
       "exactHits": 9,
       "signHits": 45,
-      "koHits": 2
+      "koHits": 3
     },
     {
       "position": 3,
@@ -43,11 +43,11 @@
       "groupPickPts": 54,
       "thirdsPts": 6,
       "pichichiPts": 0,
-      "koPts": 10,
-      "total": 142,
+      "koPts": 15,
+      "total": 147,
       "exactHits": 11,
       "signHits": 39,
-      "koHits": 2
+      "koHits": 3
     },
     {
       "position": 4,
@@ -59,11 +59,11 @@
       "groupPickPts": 54,
       "thirdsPts": 8,
       "pichichiPts": 0,
-      "koPts": 10,
-      "total": 141,
+      "koPts": 15,
+      "total": 146,
       "exactHits": 8,
       "signHits": 45,
-      "koHits": 2
+      "koHits": 3
     },
     {
       "position": 5,
@@ -75,11 +75,11 @@
       "groupPickPts": 58,
       "thirdsPts": 8,
       "pichichiPts": 0,
-      "koPts": 15,
-      "total": 138,
+      "koPts": 20,
+      "total": 143,
       "exactHits": 5,
       "signHits": 42,
-      "koHits": 3
+      "koHits": 4
     },
     {
       "position": 6,
@@ -91,11 +91,11 @@
       "groupPickPts": 48,
       "thirdsPts": 8,
       "pichichiPts": 0,
-      "koPts": 15,
-      "total": 137,
+      "koPts": 20,
+      "total": 142,
       "exactHits": 6,
       "signHits": 48,
-      "koHits": 3
+      "koHits": 4
     },
     {
       "position": 7,
@@ -107,14 +107,46 @@
       "groupPickPts": 56,
       "thirdsPts": 7,
       "pichichiPts": 0,
-      "koPts": 5,
-      "total": 133,
+      "koPts": 10,
+      "total": 138,
       "exactHits": 8,
       "signHits": 41,
-      "koHits": 1
+      "koHits": 2
     },
     {
       "position": 8,
+      "id": "roberto",
+      "name": "Roberto",
+      "demo": false,
+      "signPts": 45,
+      "exactPts": 27,
+      "groupPickPts": 42,
+      "thirdsPts": 6,
+      "pichichiPts": 0,
+      "koPts": 15,
+      "total": 135,
+      "exactHits": 9,
+      "signHits": 45,
+      "koHits": 3
+    },
+    {
+      "position": 9,
+      "id": "txiki",
+      "name": "Txiki",
+      "demo": false,
+      "signPts": 44,
+      "exactPts": 12,
+      "groupPickPts": 50,
+      "thirdsPts": 6,
+      "pichichiPts": 0,
+      "koPts": 20,
+      "total": 132,
+      "exactHits": 4,
+      "signHits": 44,
+      "koHits": 4
+    },
+    {
+      "position": 10,
       "id": "xabi",
       "name": "Xabi",
       "demo": false,
@@ -130,23 +162,23 @@
       "koHits": 1
     },
     {
-      "position": 9,
-      "id": "roberto",
-      "name": "Roberto",
+      "position": 11,
+      "id": "juanro",
+      "name": "JuanRo",
       "demo": false,
-      "signPts": 45,
-      "exactPts": 27,
-      "groupPickPts": 42,
-      "thirdsPts": 6,
+      "signPts": 43,
+      "exactPts": 9,
+      "groupPickPts": 48,
+      "thirdsPts": 8,
       "pichichiPts": 0,
-      "koPts": 10,
-      "total": 130,
-      "exactHits": 9,
-      "signHits": 45,
-      "koHits": 2
+      "koPts": 20,
+      "total": 128,
+      "exactHits": 3,
+      "signHits": 43,
+      "koHits": 4
     },
     {
-      "position": 10,
+      "position": 12,
       "id": "wiki",
       "name": "Wiki",
       "demo": false,
@@ -162,23 +194,7 @@
       "koHits": 2
     },
     {
-      "position": 11,
-      "id": "txiki",
-      "name": "Txiki",
-      "demo": false,
-      "signPts": 44,
-      "exactPts": 12,
-      "groupPickPts": 50,
-      "thirdsPts": 6,
-      "pichichiPts": 0,
-      "koPts": 15,
-      "total": 127,
-      "exactHits": 4,
-      "signHits": 44,
-      "koHits": 3
-    },
-    {
-      "position": 12,
+      "position": 13,
       "id": "luismi",
       "name": "LuisMi",
       "demo": false,
@@ -194,7 +210,23 @@
       "koHits": 2
     },
     {
-      "position": 13,
+      "position": 14,
+      "id": "aitor",
+      "name": "Aitor",
+      "demo": false,
+      "signPts": 42,
+      "exactPts": 12,
+      "groupPickPts": 50,
+      "thirdsPts": 7,
+      "pichichiPts": 0,
+      "koPts": 15,
+      "total": 126,
+      "exactHits": 4,
+      "signHits": 42,
+      "koHits": 3
+    },
+    {
+      "position": 15,
       "id": "coco",
       "name": "Coco",
       "demo": false,
@@ -210,38 +242,6 @@
       "koHits": 2
     },
     {
-      "position": 14,
-      "id": "juanro",
-      "name": "JuanRo",
-      "demo": false,
-      "signPts": 43,
-      "exactPts": 9,
-      "groupPickPts": 48,
-      "thirdsPts": 8,
-      "pichichiPts": 0,
-      "koPts": 15,
-      "total": 123,
-      "exactHits": 3,
-      "signHits": 43,
-      "koHits": 3
-    },
-    {
-      "position": 15,
-      "id": "aitor",
-      "name": "Aitor",
-      "demo": false,
-      "signPts": 42,
-      "exactPts": 12,
-      "groupPickPts": 50,
-      "thirdsPts": 7,
-      "pichichiPts": 0,
-      "koPts": 10,
-      "total": 121,
-      "exactHits": 4,
-      "signHits": 42,
-      "koHits": 2
-    },
-    {
       "position": 16,
       "id": "aaron",
       "name": "Aaron",
@@ -251,11 +251,11 @@
       "groupPickPts": 38,
       "thirdsPts": 8,
       "pichichiPts": 0,
-      "koPts": 15,
-      "total": 119,
+      "koPts": 20,
+      "total": 124,
       "exactHits": 4,
       "signHits": 46,
-      "koHits": 3
+      "koHits": 4
     },
     {
       "position": 17,
@@ -267,11 +267,11 @@
       "groupPickPts": 42,
       "thirdsPts": 8,
       "pichichiPts": 0,
-      "koPts": 15,
-      "total": 118,
+      "koPts": 20,
+      "total": 123,
       "exactHits": 3,
       "signHits": 44,
-      "koHits": 3
+      "koHits": 4
     },
     {
       "position": 18,
@@ -283,11 +283,11 @@
       "groupPickPts": 30,
       "thirdsPts": 5,
       "pichichiPts": 0,
-      "koPts": 5,
-      "total": 99,
+      "koPts": 10,
+      "total": 104,
       "exactHits": 6,
       "signHits": 41,
-      "koHits": 1
+      "koHits": 2
     },
     {
       "position": 19,
@@ -299,11 +299,11 @@
       "groupPickPts": 36,
       "thirdsPts": 5,
       "pichichiPts": 0,
-      "koPts": 15,
-      "total": 96,
+      "koPts": 20,
+      "total": 101,
       "exactHits": 4,
       "signHits": 28,
-      "koHits": 3
+      "koHits": 4
     },
     {
       "position": 20,
