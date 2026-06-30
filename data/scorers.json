@@ -1,6 +1,15 @@
 {
-  "lastUpdated": "2026-06-30T21:54:34.011Z",
+  "lastUpdated": "2026-06-30T23:16:32.871Z",
   "scorers": [
+    {
+      "name": "Kylian Mbappé",
+      "teamId": "FRA",
+      "teamName": "France",
+      "goals": 6,
+      "assists": 2,
+      "penalties": 0,
+      "playedMatches": 4
+    },
     {
       "name": "Lionel Messi",
       "teamId": "ARG",
@@ -9,15 +18,6 @@
       "assists": 0,
       "penalties": 0,
       "playedMatches": 3
-    },
-    {
-      "name": "Kylian Mbappé",
-      "teamId": "FRA",
-      "teamName": "France",
-      "goals": 5,
-      "assists": 2,
-      "penalties": 0,
-      "playedMatches": 4
     },
     {
       "name": "Erling Haaland",
@@ -234,6 +234,15 @@
       "assists": 1,
       "penalties": 0,
       "playedMatches": 3
+    },
+    {
+      "name": "Bradley Barcola",
+      "teamId": "FRA",
+      "teamName": "France",
+      "goals": 2,
+      "assists": 1,
+      "penalties": 0,
+      "playedMatches": 4
     },
     {
       "name": "Marko Arnautovic",
@@ -585,15 +594,6 @@
       "assists": 0,
       "penalties": 0,
       "playedMatches": 3
-    },
-    {
-      "name": "Bradley Barcola",
-      "teamId": "FRA",
-      "teamName": "France",
-      "goals": 1,
-      "assists": 1,
-      "penalties": 0,
-      "playedMatches": 4
     },
     {
       "name": "Ibrahim M'Baye",
