@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-30T20:22:07.660Z",
+  "lastUpdated": "2026-06-30T21:54:34.011Z",
   "scorers": [
     {
       "name": "Lionel Messi",
@@ -9,6 +9,15 @@
       "assists": 0,
       "penalties": 0,
       "playedMatches": 3
+    },
+    {
+      "name": "Kylian Mbappé",
+      "teamId": "FRA",
+      "teamName": "France",
+      "goals": 5,
+      "assists": 2,
+      "penalties": 0,
+      "playedMatches": 4
     },
     {
       "name": "Erling Haaland",
@@ -29,20 +38,11 @@
       "playedMatches": 4
     },
     {
-      "name": "Kylian Mbappé",
-      "teamId": "FRA",
-      "teamName": "France",
-      "goals": 4,
-      "assists": 2,
-      "penalties": 0,
-      "playedMatches": 4
-    },
-    {
       "name": "Ousmane Dembélé",
       "teamId": "FRA",
       "teamName": "France",
       "goals": 4,
-      "assists": 1,
+      "assists": 2,
       "penalties": 0,
       "playedMatches": 4
     },
