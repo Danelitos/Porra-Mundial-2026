@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-30T00:15:54.676Z",
+  "lastUpdated": "2026-06-30T04:38:42.605Z",
   "scorers": [
     {
       "name": "Lionel Messi",
@@ -137,6 +137,15 @@
       "playedMatches": 4
     },
     {
+      "name": "Cody Gakpo",
+      "teamId": "NED",
+      "teamName": "Netherlands",
+      "goals": 3,
+      "assists": 1,
+      "penalties": 0,
+      "playedMatches": 4
+    },
+    {
       "name": "Ismaïla Sarr",
       "teamId": "SEN",
       "teamName": "Senegal",
@@ -177,7 +186,7 @@
       "teamId": "NED",
       "teamName": "Netherlands",
       "goals": 2,
-      "assists": 1,
+      "assists": 2,
       "penalties": 0,
       "playedMatches": 4
     },
@@ -261,15 +270,6 @@
       "assists": 0,
       "penalties": 0,
       "playedMatches": 3
-    },
-    {
-      "name": "Cody Gakpo",
-      "teamId": "NED",
-      "teamName": "Netherlands",
-      "goals": 2,
-      "assists": 1,
-      "penalties": 0,
-      "playedMatches": 4
     },
     {
       "name": "Anthony Elanga",
