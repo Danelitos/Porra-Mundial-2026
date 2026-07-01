@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-01T21:53:19.837Z",
+  "lastUpdated": "2026-07-01T23:16:08.143Z",
   "scorers": [
     {
       "name": "Kylian Mbappé",
@@ -188,7 +188,7 @@
       "goals": 2,
       "assists": 0,
       "penalties": 0,
-      "playedMatches": 3
+      "playedMatches": 4
     },
     {
       "name": "Crysencio Summerville",
@@ -296,7 +296,7 @@
       "goals": 2,
       "assists": 0,
       "penalties": 0,
-      "playedMatches": 3
+      "playedMatches": 4
     },
     {
       "name": "Anthony Elanga",
@@ -389,6 +389,15 @@
       "playedMatches": 3
     },
     {
+      "name": "Youri Tielemans",
+      "teamId": "BEL",
+      "teamName": "Belgium",
+      "goals": 2,
+      "assists": 0,
+      "penalties": 1,
+      "playedMatches": 4
+    },
+    {
       "name": "Ladislav Krejčí",
       "teamId": "CZE",
       "teamName": "Czechia",
@@ -422,7 +431,7 @@
       "goals": 1,
       "assists": 0,
       "penalties": 0,
-      "playedMatches": 3
+      "playedMatches": 4
     },
     {
       "name": "Mauricio",
@@ -440,7 +449,7 @@
       "goals": 1,
       "assists": 0,
       "penalties": 0,
-      "playedMatches": 3
+      "playedMatches": 4
     },
     {
       "name": "Breel Embolo",
@@ -782,7 +791,7 @@
       "goals": 1,
       "assists": 0,
       "penalties": 0,
-      "playedMatches": 3
+      "playedMatches": 4
     },
     {
       "name": "Matías Galarza",
@@ -891,15 +900,6 @@
       "assists": 0,
       "penalties": 0,
       "playedMatches": 4
-    },
-    {
-      "name": "Nizar Al Rashdan",
-      "teamId": "JOR",
-      "teamName": "Jordan",
-      "goals": 1,
-      "assists": 0,
-      "penalties": 0,
-      "playedMatches": 3
     }
   ]
 }
