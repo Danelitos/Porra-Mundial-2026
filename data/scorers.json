@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-01T16:01:15.903Z",
+  "lastUpdated": "2026-07-01T18:08:10.806Z",
   "scorers": [
     {
       "name": "Kylian Mbappé",
@@ -26,6 +26,15 @@
       "goals": 5,
       "assists": 0,
       "penalties": 0,
+      "playedMatches": 4
+    },
+    {
+      "name": "Harry Kane",
+      "teamId": "ENG",
+      "teamName": "England",
+      "goals": 5,
+      "assists": 0,
+      "penalties": 1,
       "playedMatches": 4
     },
     {
@@ -99,15 +108,6 @@
       "assists": 0,
       "penalties": 1,
       "playedMatches": 3
-    },
-    {
-      "name": "Harry Kane",
-      "teamId": "ENG",
-      "teamName": "England",
-      "goals": 3,
-      "assists": 0,
-      "penalties": 1,
-      "playedMatches": 4
     },
     {
       "name": "Johan Manzambi",
