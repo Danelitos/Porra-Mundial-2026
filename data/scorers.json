@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-01T23:16:08.143Z",
+  "lastUpdated": "2026-07-02T01:27:48.169Z",
   "scorers": [
     {
       "name": "Kylian Mbappé",
@@ -70,6 +70,15 @@
       "teamName": "Mexico",
       "goals": 3,
       "assists": 1,
+      "penalties": 0,
+      "playedMatches": 4
+    },
+    {
+      "name": "Folarin Balogun",
+      "teamId": "USA",
+      "teamName": "United States",
+      "goals": 3,
+      "assists": 0,
       "penalties": 0,
       "playedMatches": 4
     },
@@ -176,15 +185,6 @@
       "name": "Cyle Larin",
       "teamId": "CAN",
       "teamName": "Canada",
-      "goals": 2,
-      "assists": 0,
-      "penalties": 0,
-      "playedMatches": 4
-    },
-    {
-      "name": "Folarin Balogun",
-      "teamId": "USA",
-      "teamName": "United States",
       "goals": 2,
       "assists": 0,
       "penalties": 0,
