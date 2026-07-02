@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-02T20:17:13.070Z",
+  "lastUpdated": "2026-07-02T21:30:48.735Z",
   "scorers": [
     {
       "name": "Kylian Mbappé",
@@ -41,6 +41,15 @@
       "name": "Vinicius Junior",
       "teamId": "BRA",
       "teamName": "Brazil",
+      "goals": 4,
+      "assists": 1,
+      "penalties": 0,
+      "playedMatches": 4
+    },
+    {
+      "name": "Mikel Oyarzabal",
+      "teamId": "ESP",
+      "teamName": "Spain",
       "goals": 4,
       "assists": 1,
       "penalties": 0,
@@ -167,15 +176,6 @@
       "name": "Cody Gakpo",
       "teamId": "NED",
       "teamName": "Netherlands",
-      "goals": 3,
-      "assists": 1,
-      "penalties": 0,
-      "playedMatches": 4
-    },
-    {
-      "name": "Mikel Oyarzabal",
-      "teamId": "ESP",
-      "teamName": "Spain",
       "goals": 3,
       "assists": 1,
       "penalties": 0,
