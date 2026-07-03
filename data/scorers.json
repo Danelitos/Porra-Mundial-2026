@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-02T22:46:13.885Z",
+  "lastUpdated": "2026-07-03T02:03:59.994Z",
   "scorers": [
     {
       "name": "Kylian Mbappé",
@@ -182,6 +182,15 @@
       "playedMatches": 4
     },
     {
+      "name": "Cristiano Ronaldo",
+      "teamId": "POR",
+      "teamName": "Portugal",
+      "goals": 3,
+      "assists": 0,
+      "penalties": 1,
+      "playedMatches": 4
+    },
+    {
       "name": "Raúl Jiménez",
       "teamId": "MEX",
       "teamName": "Mexico",
@@ -322,15 +331,6 @@
       "teamName": "Japan",
       "goals": 2,
       "assists": 1,
-      "penalties": 0,
-      "playedMatches": 4
-    },
-    {
-      "name": "Cristiano Ronaldo",
-      "teamId": "POR",
-      "teamName": "Portugal",
-      "goals": 2,
-      "assists": 0,
       "penalties": 0,
       "playedMatches": 4
     },
