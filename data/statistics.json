@@ -1,19 +1,19 @@
 {
-  "lastUpdated": "2026-07-03T20:13:40.168Z",
+  "lastUpdated": "2026-07-03T21:34:47.451Z",
   "participants": 21,
-  "matchesPlayed": 85,
+  "matchesPlayed": 86,
   "matchesTotal": 104,
   "groupMatchesPlayed": 72,
-  "koMatchesPlayed": 13,
+  "koMatchesPlayed": 14,
   "koMatchesTotal": 32,
-  "totalGoals": 261,
-  "avgGoals": 3.07,
+  "totalGoals": 269,
+  "avgGoals": 3.13,
   "totalExactHits": 134,
   "totalSignHits": 857,
-  "avgPoints": 162,
+  "avgPoints": 166,
   "leader": {
     "id": "jonmo",
     "name": "JonMo",
-    "total": 193
+    "total": 198
   }
 }
