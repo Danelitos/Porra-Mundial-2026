@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-03T02:03:59.994Z",
+  "lastUpdated": "2026-07-03T05:58:37.203Z",
   "scorers": [
     {
       "name": "Kylian Mbappé",
@@ -141,9 +141,9 @@
       "teamId": "SUI",
       "teamName": "Switzerland",
       "goals": 3,
-      "assists": 1,
+      "assists": 2,
       "penalties": 0,
-      "playedMatches": 3
+      "playedMatches": 4
     },
     {
       "name": "Jonathan David",
@@ -206,6 +206,15 @@
       "goals": 2,
       "assists": 0,
       "penalties": 0,
+      "playedMatches": 4
+    },
+    {
+      "name": "Breel Embolo",
+      "teamId": "SUI",
+      "teamName": "Switzerland",
+      "goals": 2,
+      "assists": 2,
+      "penalties": 1,
       "playedMatches": 4
     },
     {
@@ -305,7 +314,7 @@
       "goals": 2,
       "assists": 1,
       "penalties": 0,
-      "playedMatches": 3
+      "playedMatches": 4
     },
     {
       "name": "Ermin Mahmic",
@@ -386,7 +395,7 @@
       "goals": 2,
       "assists": 2,
       "penalties": 0,
-      "playedMatches": 3
+      "playedMatches": 4
     },
     {
       "name": "Youri Tielemans",
@@ -450,15 +459,6 @@
       "assists": 0,
       "penalties": 0,
       "playedMatches": 4
-    },
-    {
-      "name": "Breel Embolo",
-      "teamId": "SUI",
-      "teamName": "Switzerland",
-      "goals": 1,
-      "assists": 2,
-      "penalties": 1,
-      "playedMatches": 3
     },
     {
       "name": "Boualem Khoukhi",
@@ -764,7 +764,7 @@
       "goals": 1,
       "assists": 0,
       "penalties": 1,
-      "playedMatches": 3
+      "playedMatches": 4
     },
     {
       "name": "Nathan-Dylan Saliba",
