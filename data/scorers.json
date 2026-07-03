@@ -1,21 +1,21 @@
 {
-  "lastUpdated": "2026-07-03T21:34:47.451Z",
+  "lastUpdated": "2026-07-03T22:40:20.169Z",
   "scorers": [
+    {
+      "name": "Lionel Messi",
+      "teamId": "ARG",
+      "teamName": "Argentina",
+      "goals": 7,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 4
+    },
     {
       "name": "Kylian Mbappé",
       "teamId": "FRA",
       "teamName": "France",
       "goals": 6,
       "assists": 2,
-      "penalties": 0,
-      "playedMatches": 4
-    },
-    {
-      "name": "Lionel Messi",
-      "teamId": "ARG",
-      "teamName": "Argentina",
-      "goals": 6,
-      "assists": 0,
       "penalties": 0,
       "playedMatches": 4
     },
