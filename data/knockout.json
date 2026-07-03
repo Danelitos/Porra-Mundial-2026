@@ -1,6 +1,6 @@
 {
   "_comment": "Resultados reales de la fase eliminatoria, rellenados por scripts/sync-results.js. Cada clave es el nº de partido del cuadro (data/bracket.json) y guarda los equipos que realmente lo jugaron, el marcador, el ganador (quien avanza, ya sea en 90', prórroga o penaltis) y el estado. A partir de estos ganadores se calculan los clasificados de cada ronda y los puntos de la eliminatoria.",
-  "lastUpdated": "2026-07-03T05:58:37.203Z",
+  "lastUpdated": "2026-07-03T18:53:05.730Z",
   "results": {
     "73": {
       "id": "73",
@@ -169,6 +169,19 @@
       "winner": "SUI",
       "loser": "ALG",
       "status": "finished",
+      "minute": null
+    },
+    "88": {
+      "id": "88",
+      "home": "AUS",
+      "away": "EGY",
+      "score": {
+        "home": 0,
+        "away": 1
+      },
+      "winner": null,
+      "loser": null,
+      "status": "live",
       "minute": null
     }
   }
