@@ -1,12 +1,12 @@
 {
-  "lastUpdated": "2026-07-03T22:40:20.169Z",
+  "lastUpdated": "2026-07-04T01:20:47.553Z",
   "scorers": [
     {
       "name": "Lionel Messi",
       "teamId": "ARG",
       "teamName": "Argentina",
       "goals": 7,
-      "assists": 0,
+      "assists": 1,
       "penalties": 0,
       "playedMatches": 4
     },
@@ -314,7 +314,7 @@
       "goals": 2,
       "assists": 0,
       "penalties": 0,
-      "playedMatches": 2
+      "playedMatches": 3
     },
     {
       "name": "Ruben Vargas",
@@ -710,7 +710,7 @@
       "goals": 1,
       "assists": 0,
       "penalties": 0,
-      "playedMatches": 3
+      "playedMatches": 4
     },
     {
       "name": "Abbosbek Fayzullaev",
@@ -728,7 +728,7 @@
       "goals": 1,
       "assists": 1,
       "penalties": 0,
-      "playedMatches": 2
+      "playedMatches": 3
     },
     {
       "name": "Jaminton Campaz",
@@ -737,7 +737,7 @@
       "goals": 1,
       "assists": 0,
       "penalties": 0,
-      "playedMatches": 2
+      "playedMatches": 3
     },
     {
       "name": "Michal Sadílek",
