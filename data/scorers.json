@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-04T16:53:39.933Z",
+  "lastUpdated": "2026-07-04T19:28:18.582Z",
   "scorers": [
     {
       "name": "Lionel Messi",
@@ -353,6 +353,15 @@
       "playedMatches": 4
     },
     {
+      "name": "Soufiane Rahimi",
+      "teamId": "MAR",
+      "teamName": "Morocco",
+      "goals": 2,
+      "assists": 1,
+      "penalties": 0,
+      "playedMatches": 5
+    },
+    {
       "name": "Nicolas Pépé",
       "teamId": "CIV",
       "teamName": "Ivory Coast",
@@ -414,6 +423,15 @@
       "assists": 0,
       "penalties": 1,
       "playedMatches": 4
+    },
+    {
+      "name": "Azzedine Ounahi",
+      "teamId": "MAR",
+      "teamName": "Morocco",
+      "goals": 2,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 5
     },
     {
       "name": "Ladislav Krejčí",
@@ -880,24 +898,6 @@
       "teamName": "Egypt",
       "goals": 1,
       "assists": 2,
-      "penalties": 0,
-      "playedMatches": 4
-    },
-    {
-      "name": "Trezeguet",
-      "teamId": "EGY",
-      "teamName": "Egypt",
-      "goals": 1,
-      "assists": 0,
-      "penalties": 0,
-      "playedMatches": 4
-    },
-    {
-      "name": "Marcus Pedersen",
-      "teamId": "NOR",
-      "teamName": "Norway",
-      "goals": 1,
-      "assists": 0,
       "penalties": 0,
       "playedMatches": 4
     }
