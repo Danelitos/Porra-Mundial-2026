@@ -1,12 +1,12 @@
 {
-  "lastUpdated": "2026-07-04T01:20:47.553Z",
+  "lastUpdated": "2026-07-04T13:08:59.957Z",
   "scorers": [
     {
       "name": "Lionel Messi",
       "teamId": "ARG",
       "teamName": "Argentina",
       "goals": 7,
-      "assists": 1,
+      "assists": 0,
       "penalties": 0,
       "playedMatches": 4
     },
