@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-05T19:01:50.247Z",
+  "lastUpdated": "2026-07-05T22:35:42.491Z",
   "scorers": [
     {
       "name": "Kylian Mbappé",
@@ -11,6 +11,15 @@
       "playedMatches": 5
     },
     {
+      "name": "Erling Haaland",
+      "teamId": "NOR",
+      "teamName": "Norway",
+      "goals": 7,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 5
+    },
+    {
       "name": "Lionel Messi",
       "teamId": "ARG",
       "teamName": "Argentina",
@@ -18,15 +27,6 @@
       "assists": 0,
       "penalties": 0,
       "playedMatches": 4
-    },
-    {
-      "name": "Erling Haaland",
-      "teamId": "NOR",
-      "teamName": "Norway",
-      "goals": 5,
-      "assists": 0,
-      "penalties": 0,
-      "playedMatches": 5
     },
     {
       "name": "Harry Kane",

@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-05T21:32:12.109Z",
+  "lastUpdated": "2026-07-05T22:35:42.491Z",
   "ranking": [
     {
       "position": 1,
@@ -83,6 +83,38 @@
     },
     {
       "position": 6,
+      "id": "jonbel",
+      "name": "JonBel",
+      "demo": false,
+      "signPts": 44,
+      "exactPts": 9,
+      "groupPickPts": 42,
+      "thirdsPts": 8,
+      "pichichiPts": 0,
+      "koPts": 105,
+      "total": 208,
+      "exactHits": 3,
+      "signHits": 44,
+      "koHits": 18
+    },
+    {
+      "position": 7,
+      "id": "danel",
+      "name": "Danel",
+      "demo": false,
+      "signPts": 39,
+      "exactPts": 33,
+      "groupPickPts": 54,
+      "thirdsPts": 6,
+      "pichichiPts": 0,
+      "koPts": 75,
+      "total": 207,
+      "exactHits": 11,
+      "signHits": 39,
+      "koHits": 13
+    },
+    {
+      "position": 8,
       "id": "david",
       "name": "David",
       "demo": false,
@@ -98,39 +130,23 @@
       "koHits": 14
     },
     {
-      "position": 7,
-      "id": "jonbel",
-      "name": "JonBel",
+      "position": 9,
+      "id": "aaron",
+      "name": "Aaron",
       "demo": false,
-      "signPts": 44,
-      "exactPts": 9,
-      "groupPickPts": 42,
+      "signPts": 46,
+      "exactPts": 12,
+      "groupPickPts": 38,
       "thirdsPts": 8,
       "pichichiPts": 0,
       "koPts": 95,
-      "total": 198,
-      "exactHits": 3,
-      "signHits": 44,
-      "koHits": 17
+      "total": 199,
+      "exactHits": 4,
+      "signHits": 46,
+      "koHits": 16
     },
     {
-      "position": 8,
-      "id": "danel",
-      "name": "Danel",
-      "demo": false,
-      "signPts": 39,
-      "exactPts": 33,
-      "groupPickPts": 54,
-      "thirdsPts": 6,
-      "pichichiPts": 0,
-      "koPts": 65,
-      "total": 197,
-      "exactHits": 11,
-      "signHits": 39,
-      "koHits": 12
-    },
-    {
-      "position": 9,
+      "position": 10,
       "id": "txiki",
       "name": "Txiki",
       "demo": false,
@@ -146,7 +162,7 @@
       "koHits": 15
     },
     {
-      "position": 10,
+      "position": 11,
       "id": "roberto",
       "name": "Roberto",
       "demo": false,
@@ -162,7 +178,7 @@
       "koHits": 14
     },
     {
-      "position": 11,
+      "position": 12,
       "id": "juanro",
       "name": "JuanRo",
       "demo": false,
@@ -175,22 +191,6 @@
       "total": 193,
       "exactHits": 3,
       "signHits": 43,
-      "koHits": 15
-    },
-    {
-      "position": 12,
-      "id": "aaron",
-      "name": "Aaron",
-      "demo": false,
-      "signPts": 46,
-      "exactPts": 12,
-      "groupPickPts": 38,
-      "thirdsPts": 8,
-      "pichichiPts": 0,
-      "koPts": 85,
-      "total": 189,
-      "exactHits": 4,
-      "signHits": 46,
       "koHits": 15
     },
     {
