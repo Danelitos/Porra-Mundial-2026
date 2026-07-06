@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-05T23:42:47.140Z",
+  "lastUpdated": "2026-07-06T04:51:59.484Z",
   "scorers": [
     {
       "name": "Kylian Mbappé",
@@ -32,15 +32,33 @@
       "name": "Harry Kane",
       "teamId": "ENG",
       "teamName": "England",
-      "goals": 5,
-      "assists": 0,
-      "penalties": 1,
+      "goals": 6,
+      "assists": 1,
+      "penalties": 2,
+      "playedMatches": 5
+    },
+    {
+      "name": "Julián Quiñones",
+      "teamId": "MEX",
+      "teamName": "Mexico",
+      "goals": 4,
+      "assists": 1,
+      "penalties": 0,
       "playedMatches": 5
     },
     {
       "name": "Vinicius Junior",
       "teamId": "BRA",
       "teamName": "Brazil",
+      "goals": 4,
+      "assists": 1,
+      "penalties": 0,
+      "playedMatches": 5
+    },
+    {
+      "name": "Jude Bellingham",
+      "teamId": "ENG",
+      "teamName": "England",
       "goals": 4,
       "assists": 1,
       "penalties": 0,
@@ -74,12 +92,12 @@
       "playedMatches": 4
     },
     {
-      "name": "Julián Quiñones",
+      "name": "Raúl Jiménez",
       "teamId": "MEX",
       "teamName": "Mexico",
       "goals": 3,
-      "assists": 1,
-      "penalties": 0,
+      "assists": 0,
+      "penalties": 1,
       "playedMatches": 5
     },
     {
@@ -191,15 +209,6 @@
       "playedMatches": 4
     },
     {
-      "name": "Raúl Jiménez",
-      "teamId": "MEX",
-      "teamName": "Mexico",
-      "goals": 2,
-      "assists": 0,
-      "penalties": 0,
-      "playedMatches": 5
-    },
-    {
       "name": "Cyle Larin",
       "teamId": "CAN",
       "teamName": "Canada",
@@ -297,15 +306,6 @@
       "assists": 0,
       "penalties": 1,
       "playedMatches": 4
-    },
-    {
-      "name": "Jude Bellingham",
-      "teamId": "ENG",
-      "teamName": "England",
-      "goals": 2,
-      "assists": 1,
-      "penalties": 0,
-      "playedMatches": 5
     },
     {
       "name": "Daniel Muñoz",
