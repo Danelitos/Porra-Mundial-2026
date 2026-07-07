@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-07T01:27:29.218Z",
+  "lastUpdated": "2026-07-07T05:09:51.954Z",
   "ranking": [
     {
       "position": 1,
@@ -11,14 +11,30 @@
       "groupPickPts": 48,
       "thirdsPts": 8,
       "pichichiPts": 0,
-      "koPts": 105,
-      "total": 241,
+      "koPts": 115,
+      "total": 251,
       "exactHits": 13,
       "signHits": 41,
-      "koHits": 17
+      "koHits": 18
     },
     {
       "position": 2,
+      "id": "ignacio",
+      "name": "Ignacio",
+      "demo": false,
+      "signPts": 42,
+      "exactPts": 15,
+      "groupPickPts": 58,
+      "thirdsPts": 8,
+      "pichichiPts": 0,
+      "koPts": 125,
+      "total": 248,
+      "exactHits": 5,
+      "signHits": 42,
+      "koHits": 20
+    },
+    {
+      "position": 3,
       "id": "jonmo",
       "name": "JonMo",
       "demo": false,
@@ -34,23 +50,23 @@
       "koHits": 17
     },
     {
-      "position": 3,
-      "id": "ignacio",
-      "name": "Ignacio",
+      "position": 4,
+      "id": "david",
+      "name": "David",
       "demo": false,
-      "signPts": 42,
-      "exactPts": 15,
-      "groupPickPts": 58,
-      "thirdsPts": 8,
+      "signPts": 41,
+      "exactPts": 24,
+      "groupPickPts": 56,
+      "thirdsPts": 7,
       "pichichiPts": 0,
-      "koPts": 115,
-      "total": 238,
-      "exactHits": 5,
-      "signHits": 42,
-      "koHits": 19
+      "koPts": 105,
+      "total": 233,
+      "exactHits": 8,
+      "signHits": 41,
+      "koHits": 17
     },
     {
-      "position": 4,
+      "position": 5,
       "id": "jaime",
       "name": "Jaime",
       "demo": false,
@@ -66,7 +82,7 @@
       "koHits": 18
     },
     {
-      "position": 5,
+      "position": 6,
       "id": "pablo",
       "name": "Pablo",
       "demo": false,
@@ -82,7 +98,7 @@
       "koHits": 16
     },
     {
-      "position": 6,
+      "position": 7,
       "id": "jonbel",
       "name": "JonBel",
       "demo": false,
@@ -98,7 +114,7 @@
       "koHits": 20
     },
     {
-      "position": 7,
+      "position": 8,
       "id": "danel",
       "name": "Danel",
       "demo": false,
@@ -112,22 +128,6 @@
       "exactHits": 11,
       "signHits": 39,
       "koHits": 15
-    },
-    {
-      "position": 8,
-      "id": "david",
-      "name": "David",
-      "demo": false,
-      "signPts": 41,
-      "exactPts": 24,
-      "groupPickPts": 56,
-      "thirdsPts": 7,
-      "pichichiPts": 0,
-      "koPts": 95,
-      "total": 223,
-      "exactHits": 8,
-      "signHits": 41,
-      "koHits": 16
     },
     {
       "position": 9,
@@ -163,6 +163,22 @@
     },
     {
       "position": 11,
+      "id": "aitor",
+      "name": "Aitor",
+      "demo": false,
+      "signPts": 42,
+      "exactPts": 12,
+      "groupPickPts": 50,
+      "thirdsPts": 7,
+      "pichichiPts": 0,
+      "koPts": 105,
+      "total": 216,
+      "exactHits": 4,
+      "signHits": 42,
+      "koHits": 17
+    },
+    {
+      "position": 12,
       "id": "roberto",
       "name": "Roberto",
       "demo": false,
@@ -178,7 +194,7 @@
       "koHits": 16
     },
     {
-      "position": 12,
+      "position": 13,
       "id": "juanro",
       "name": "JuanRo",
       "demo": false,
@@ -194,7 +210,7 @@
       "koHits": 17
     },
     {
-      "position": 13,
+      "position": 14,
       "id": "xabi",
       "name": "Xabi",
       "demo": false,
@@ -208,22 +224,6 @@
       "exactHits": 10,
       "signHits": 40,
       "koHits": 13
-    },
-    {
-      "position": 14,
-      "id": "aitor",
-      "name": "Aitor",
-      "demo": false,
-      "signPts": 42,
-      "exactPts": 12,
-      "groupPickPts": 50,
-      "thirdsPts": 7,
-      "pichichiPts": 0,
-      "koPts": 95,
-      "total": 206,
-      "exactHits": 4,
-      "signHits": 42,
-      "koHits": 16
     },
     {
       "position": 15,
@@ -243,6 +243,22 @@
     },
     {
       "position": 16,
+      "id": "juanlu",
+      "name": "JuanLu",
+      "demo": false,
+      "signPts": 28,
+      "exactPts": 12,
+      "groupPickPts": 36,
+      "thirdsPts": 5,
+      "pichichiPts": 0,
+      "koPts": 115,
+      "total": 196,
+      "exactHits": 4,
+      "signHits": 28,
+      "koHits": 18
+    },
+    {
+      "position": 17,
       "id": "wiki",
       "name": "Wiki",
       "demo": false,
@@ -258,7 +274,7 @@
       "koHits": 12
     },
     {
-      "position": 17,
+      "position": 18,
       "id": "luismi",
       "name": "LuisMi",
       "demo": false,
@@ -272,22 +288,6 @@
       "exactHits": 9,
       "signHits": 37,
       "koHits": 14
-    },
-    {
-      "position": 18,
-      "id": "juanlu",
-      "name": "JuanLu",
-      "demo": false,
-      "signPts": 28,
-      "exactPts": 12,
-      "groupPickPts": 36,
-      "thirdsPts": 5,
-      "pichichiPts": 0,
-      "koPts": 105,
-      "total": 186,
-      "exactHits": 4,
-      "signHits": 28,
-      "koHits": 17
     },
     {
       "position": 19,
