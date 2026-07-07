@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-06T23:43:52.947Z",
+  "lastUpdated": "2026-07-07T01:27:29.218Z",
   "scorers": [
     {
       "name": "Kylian Mbappé",
@@ -393,7 +393,7 @@
       "teamId": "BEL",
       "teamName": "Belgium",
       "goals": 2,
-      "assists": 1,
+      "assists": 2,
       "penalties": 0,
       "playedMatches": 5
     },
@@ -425,11 +425,29 @@
       "playedMatches": 5
     },
     {
+      "name": "Malik Tillman",
+      "teamId": "USA",
+      "teamName": "United States",
+      "goals": 2,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 5
+    },
+    {
       "name": "Azzedine Ounahi",
       "teamId": "MAR",
       "teamName": "Morocco",
       "goals": 2,
       "assists": 0,
+      "penalties": 0,
+      "playedMatches": 5
+    },
+    {
+      "name": "Charles De Ketelaere",
+      "teamId": "BEL",
+      "teamName": "Belgium",
+      "goals": 2,
+      "assists": 1,
       "penalties": 0,
       "playedMatches": 5
     },
@@ -882,24 +900,6 @@
       "assists": 0,
       "penalties": 0,
       "playedMatches": 3
-    },
-    {
-      "name": "Mostafa Ziko",
-      "teamId": "EGY",
-      "teamName": "Egypt",
-      "goals": 1,
-      "assists": 1,
-      "penalties": 0,
-      "playedMatches": 4
-    },
-    {
-      "name": "Mohamed Salah",
-      "teamId": "EGY",
-      "teamName": "Egypt",
-      "goals": 1,
-      "assists": 2,
-      "penalties": 0,
-      "playedMatches": 4
     }
   ]
 }
