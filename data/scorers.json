@@ -1,6 +1,15 @@
 {
-  "lastUpdated": "2026-07-07T15:13:18.646Z",
+  "lastUpdated": "2026-07-07T19:22:03.999Z",
   "scorers": [
+    {
+      "name": "Lionel Messi",
+      "teamId": "ARG",
+      "teamName": "Argentina",
+      "goals": 8,
+      "assists": 1,
+      "penalties": 0,
+      "playedMatches": 5
+    },
     {
       "name": "Kylian Mbappé",
       "teamId": "FRA",
@@ -14,15 +23,6 @@
       "name": "Erling Haaland",
       "teamId": "NOR",
       "teamName": "Norway",
-      "goals": 7,
-      "assists": 0,
-      "penalties": 0,
-      "playedMatches": 5
-    },
-    {
-      "name": "Lionel Messi",
-      "teamId": "ARG",
-      "teamName": "Argentina",
       "goals": 7,
       "assists": 0,
       "penalties": 0,
@@ -233,7 +233,7 @@
       "goals": 2,
       "assists": 2,
       "penalties": 1,
-      "playedMatches": 4
+      "playedMatches": 5
     },
     {
       "name": "Crysencio Summerville",
@@ -323,7 +323,7 @@
       "goals": 2,
       "assists": 0,
       "penalties": 0,
-      "playedMatches": 3
+      "playedMatches": 4
     },
     {
       "name": "Ruben Vargas",
@@ -332,7 +332,7 @@
       "goals": 2,
       "assists": 1,
       "penalties": 0,
-      "playedMatches": 4
+      "playedMatches": 5
     },
     {
       "name": "Ermin Mahmic",
@@ -360,6 +360,15 @@
       "assists": 1,
       "penalties": 0,
       "playedMatches": 4
+    },
+    {
+      "name": "Mostafa Ziko",
+      "teamId": "EGY",
+      "teamName": "Egypt",
+      "goals": 2,
+      "assists": 1,
+      "penalties": 0,
+      "playedMatches": 5
     },
     {
       "name": "Soufiane Rahimi",
@@ -764,7 +773,7 @@
       "goals": 1,
       "assists": 1,
       "penalties": 0,
-      "playedMatches": 3
+      "playedMatches": 4
     },
     {
       "name": "Jaminton Campaz",
@@ -773,7 +782,7 @@
       "goals": 1,
       "assists": 0,
       "penalties": 0,
-      "playedMatches": 3
+      "playedMatches": 4
     },
     {
       "name": "Michal Sadílek",
@@ -800,7 +809,7 @@
       "goals": 1,
       "assists": 0,
       "penalties": 1,
-      "playedMatches": 4
+      "playedMatches": 5
     },
     {
       "name": "Nathan-Dylan Saliba",
@@ -891,15 +900,6 @@
       "assists": 0,
       "penalties": 0,
       "playedMatches": 4
-    },
-    {
-      "name": "Finn Surman",
-      "teamId": "NZL",
-      "teamName": "New Zealand",
-      "goals": 1,
-      "assists": 0,
-      "penalties": 0,
-      "playedMatches": 3
     }
   ]
 }
