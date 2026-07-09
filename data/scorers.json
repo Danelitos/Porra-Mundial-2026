@@ -1,6 +1,15 @@
 {
-  "lastUpdated": "2026-07-09T19:10:09.813Z",
+  "lastUpdated": "2026-07-09T22:39:07.007Z",
   "scorers": [
+    {
+      "name": "Kylian Mbappé",
+      "teamId": "FRA",
+      "teamName": "France",
+      "goals": 8,
+      "assists": 2,
+      "penalties": 1,
+      "playedMatches": 6
+    },
     {
       "name": "Lionel Messi",
       "teamId": "ARG",
@@ -9,15 +18,6 @@
       "assists": 1,
       "penalties": 0,
       "playedMatches": 5
-    },
-    {
-      "name": "Kylian Mbappé",
-      "teamId": "FRA",
-      "teamName": "France",
-      "goals": 7,
-      "assists": 2,
-      "penalties": 1,
-      "playedMatches": 6
     },
     {
       "name": "Erling Haaland",
@@ -36,6 +36,15 @@
       "assists": 1,
       "penalties": 2,
       "playedMatches": 5
+    },
+    {
+      "name": "Ousmane Dembélé",
+      "teamId": "FRA",
+      "teamName": "France",
+      "goals": 5,
+      "assists": 2,
+      "penalties": 0,
+      "playedMatches": 6
     },
     {
       "name": "Julián Quiñones",
@@ -72,15 +81,6 @@
       "assists": 1,
       "penalties": 0,
       "playedMatches": 5
-    },
-    {
-      "name": "Ousmane Dembélé",
-      "teamId": "FRA",
-      "teamName": "France",
-      "goals": 4,
-      "assists": 2,
-      "penalties": 0,
-      "playedMatches": 6
     },
     {
       "name": "Ismaïla Sarr",
