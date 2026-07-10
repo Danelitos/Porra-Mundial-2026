@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-10T20:13:34.950Z",
+  "lastUpdated": "2026-07-10T22:36:00.594Z",
   "scorers": [
     {
       "name": "Kylian Mbappé",
@@ -461,6 +461,15 @@
       "playedMatches": 6
     },
     {
+      "name": "Mikel Merino",
+      "teamId": "ESP",
+      "teamName": "Spain",
+      "goals": 2,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 6
+    },
+    {
       "name": "Ladislav Krejčí",
       "teamId": "CZE",
       "teamName": "Czechia",
@@ -891,15 +900,6 @@
       "assists": 0,
       "penalties": 0,
       "playedMatches": 3
-    },
-    {
-      "name": "Hélio Varela",
-      "teamId": "CPV",
-      "teamName": "Cape Verde Islands",
-      "goals": 1,
-      "assists": 0,
-      "penalties": 0,
-      "playedMatches": 4
     }
   ]
 }
