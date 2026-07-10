@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-10T18:49:46.870Z",
+  "lastUpdated": "2026-07-10T20:13:34.950Z",
   "scorers": [
     {
       "name": "Kylian Mbappé",
@@ -210,6 +210,15 @@
     },
     {
       "name": "Romelu Lukaku",
+      "teamId": "BEL",
+      "teamName": "Belgium",
+      "goals": 3,
+      "assists": 1,
+      "penalties": 0,
+      "playedMatches": 6
+    },
+    {
+      "name": "Charles De Ketelaere",
       "teamId": "BEL",
       "teamName": "Belgium",
       "goals": 3,
@@ -431,7 +440,7 @@
       "goals": 2,
       "assists": 0,
       "penalties": 1,
-      "playedMatches": 6
+      "playedMatches": 5
     },
     {
       "name": "Malik Tillman",
@@ -448,15 +457,6 @@
       "teamName": "Morocco",
       "goals": 2,
       "assists": 0,
-      "penalties": 0,
-      "playedMatches": 6
-    },
-    {
-      "name": "Charles De Ketelaere",
-      "teamId": "BEL",
-      "teamName": "Belgium",
-      "goals": 2,
-      "assists": 1,
       "penalties": 0,
       "playedMatches": 6
     },
