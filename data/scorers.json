@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-12T01:07:26.231Z",
+  "lastUpdated": "2026-07-12T04:38:25.529Z",
   "scorers": [
     {
       "name": "Kylian Mbappé",
@@ -15,7 +15,7 @@
       "teamId": "ARG",
       "teamName": "Argentina",
       "goals": 8,
-      "assists": 1,
+      "assists": 2,
       "penalties": 0,
       "playedMatches": 6
     },
@@ -425,6 +425,15 @@
       "playedMatches": 6
     },
     {
+      "name": "Lautaro Martínez",
+      "teamId": "ARG",
+      "teamName": "Argentina",
+      "goals": 2,
+      "assists": 1,
+      "penalties": 1,
+      "playedMatches": 6
+    },
+    {
       "name": "Riyad Mahrez",
       "teamId": "ALG",
       "teamName": "Algeria",
@@ -450,6 +459,15 @@
       "assists": 0,
       "penalties": 0,
       "playedMatches": 5
+    },
+    {
+      "name": "Dan Ndoye",
+      "teamId": "SUI",
+      "teamName": "Switzerland",
+      "goals": 2,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 6
     },
     {
       "name": "Azzedine Ounahi",
@@ -882,24 +900,6 @@
       "assists": 0,
       "penalties": 0,
       "playedMatches": 6
-    },
-    {
-      "name": "Kevin Pina",
-      "teamId": "CPV",
-      "teamName": "Cape Verde Islands",
-      "goals": 1,
-      "assists": 0,
-      "penalties": 0,
-      "playedMatches": 4
-    },
-    {
-      "name": "Agustín Canobbio",
-      "teamId": "URU",
-      "teamName": "Uruguay",
-      "goals": 1,
-      "assists": 0,
-      "penalties": 0,
-      "playedMatches": 3
     }
   ]
 }
