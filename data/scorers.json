@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-14T20:02:23.776Z",
+  "lastUpdated": "2026-07-14T21:11:25.261Z",
   "scorers": [
     {
       "name": "Kylian Mbappé",
@@ -461,6 +461,15 @@
       "playedMatches": 5
     },
     {
+      "name": "Pedro Porro",
+      "teamId": "ESP",
+      "teamName": "Spain",
+      "goals": 2,
+      "assists": 0,
+      "penalties": 0,
+      "playedMatches": 7
+    },
+    {
       "name": "Dan Ndoye",
       "teamId": "SUI",
       "teamName": "Switzerland",
@@ -891,15 +900,6 @@
       "assists": 0,
       "penalties": 0,
       "playedMatches": 4
-    },
-    {
-      "name": "Lamine Yamal",
-      "teamId": "ESP",
-      "teamName": "Spain",
-      "goals": 1,
-      "assists": 0,
-      "penalties": 0,
-      "playedMatches": 7
     }
   ]
 }

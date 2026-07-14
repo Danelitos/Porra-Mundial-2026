@@ -1,19 +1,19 @@
 {
-  "lastUpdated": "2026-07-14T20:02:23.776Z",
+  "lastUpdated": "2026-07-14T21:11:25.261Z",
   "participants": 21,
-  "matchesPlayed": 100,
+  "matchesPlayed": 101,
   "matchesTotal": 104,
   "groupMatchesPlayed": 72,
-  "koMatchesPlayed": 28,
+  "koMatchesPlayed": 29,
   "koMatchesTotal": 32,
-  "totalGoals": 317,
-  "avgGoals": 3.17,
+  "totalGoals": 319,
+  "avgGoals": 3.16,
   "totalExactHits": 134,
   "totalSignHits": 857,
-  "avgPoints": 274,
+  "avgPoints": 287,
   "leader": {
-    "id": "pablo",
-    "name": "Pablo",
-    "total": 311
+    "id": "mario",
+    "name": "Mario",
+    "total": 326
   }
 }
