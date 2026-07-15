@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-14T21:11:25.261Z",
+  "lastUpdated": "2026-07-15T18:16:32.655Z",
   "scorers": [
     {
       "name": "Kylian Mbappé",
@@ -17,7 +17,7 @@
       "goals": 8,
       "assists": 2,
       "penalties": 0,
-      "playedMatches": 6
+      "playedMatches": 7
     },
     {
       "name": "Erling Haaland",
@@ -35,7 +35,7 @@
       "goals": 6,
       "assists": 1,
       "penalties": 2,
-      "playedMatches": 6
+      "playedMatches": 7
     },
     {
       "name": "Jude Bellingham",
@@ -44,7 +44,7 @@
       "goals": 6,
       "assists": 1,
       "penalties": 0,
-      "playedMatches": 6
+      "playedMatches": 7
     },
     {
       "name": "Mikel Oyarzabal",
@@ -431,7 +431,7 @@
       "goals": 2,
       "assists": 1,
       "penalties": 1,
-      "playedMatches": 6
+      "playedMatches": 7
     },
     {
       "name": "Riyad Mahrez",
@@ -782,7 +782,7 @@
       "goals": 1,
       "assists": 0,
       "penalties": 0,
-      "playedMatches": 6
+      "playedMatches": 7
     },
     {
       "name": "Caleb Yirenkyi",
