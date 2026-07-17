@@ -1,12 +1,12 @@
 {
-  "lastUpdated": "2026-07-15T21:42:42.365Z",
+  "lastUpdated": "2026-07-17T08:59:15.030Z",
   "scorers": [
     {
       "name": "Kylian Mbappé",
       "teamId": "FRA",
       "teamName": "France",
       "goals": 8,
-      "assists": 2,
+      "assists": 3,
       "penalties": 1,
       "playedMatches": 7
     },
