@@ -1,12 +1,12 @@
 {
-  "lastUpdated": "2026-07-18T19:46:25.729Z",
+  "lastUpdated": "2026-07-18T22:28:29.052Z",
   "scorers": [
     {
       "name": "Kylian Mbappé",
       "teamId": "FRA",
       "teamName": "France",
-      "goals": 8,
-      "assists": 3,
+      "goals": 9,
+      "assists": 4,
       "penalties": 1,
       "playedMatches": 8
     },
@@ -144,6 +144,15 @@
       "assists": 0,
       "penalties": 0,
       "playedMatches": 3
+    },
+    {
+      "name": "Bradley Barcola",
+      "teamId": "FRA",
+      "teamName": "France",
+      "goals": 3,
+      "assists": 1,
+      "penalties": 0,
+      "playedMatches": 8
     },
     {
       "name": "Yoane Wissa",
@@ -315,15 +324,6 @@
       "assists": 1,
       "penalties": 0,
       "playedMatches": 3
-    },
-    {
-      "name": "Bradley Barcola",
-      "teamId": "FRA",
-      "teamName": "France",
-      "goals": 2,
-      "assists": 1,
-      "penalties": 0,
-      "playedMatches": 8
     },
     {
       "name": "Marko Arnautovic",
@@ -504,6 +504,15 @@
       "assists": 0,
       "penalties": 0,
       "playedMatches": 7
+    },
+    {
+      "name": "Bukayo Saka",
+      "teamId": "ENG",
+      "teamName": "England",
+      "goals": 2,
+      "assists": 3,
+      "penalties": 0,
+      "playedMatches": 8
     },
     {
       "name": "Ladislav Krejčí",
@@ -789,7 +798,7 @@
       "teamId": "ENG",
       "teamName": "England",
       "goals": 1,
-      "assists": 0,
+      "assists": 1,
       "penalties": 0,
       "playedMatches": 8
     },
@@ -891,15 +900,6 @@
       "assists": 1,
       "penalties": 0,
       "playedMatches": 5
-    },
-    {
-      "name": "Franck Kessié",
-      "teamId": "CIV",
-      "teamName": "Ivory Coast",
-      "goals": 1,
-      "assists": 0,
-      "penalties": 0,
-      "playedMatches": 3
     }
   ]
 }
