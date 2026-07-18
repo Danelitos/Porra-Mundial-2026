@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-17T08:59:15.030Z",
+  "lastUpdated": "2026-07-18T19:46:25.729Z",
   "scorers": [
     {
       "name": "Kylian Mbappé",
@@ -8,7 +8,7 @@
       "goals": 8,
       "assists": 3,
       "penalties": 1,
-      "playedMatches": 7
+      "playedMatches": 8
     },
     {
       "name": "Lionel Messi",
@@ -35,7 +35,7 @@
       "goals": 6,
       "assists": 1,
       "penalties": 2,
-      "playedMatches": 7
+      "playedMatches": 8
     },
     {
       "name": "Jude Bellingham",
@@ -44,7 +44,7 @@
       "goals": 6,
       "assists": 1,
       "penalties": 0,
-      "playedMatches": 7
+      "playedMatches": 8
     },
     {
       "name": "Mikel Oyarzabal",
@@ -62,7 +62,7 @@
       "goals": 5,
       "assists": 2,
       "penalties": 0,
-      "playedMatches": 7
+      "playedMatches": 8
     },
     {
       "name": "Julián Quiñones",
@@ -323,7 +323,7 @@
       "goals": 2,
       "assists": 1,
       "penalties": 0,
-      "playedMatches": 7
+      "playedMatches": 8
     },
     {
       "name": "Marko Arnautovic",
@@ -791,7 +791,7 @@
       "goals": 1,
       "assists": 0,
       "penalties": 0,
-      "playedMatches": 7
+      "playedMatches": 8
     },
     {
       "name": "Caleb Yirenkyi",
