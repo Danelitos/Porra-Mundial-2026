@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "2026-07-18T22:28:29.052Z",
+  "lastUpdated": "2026-07-18T23:31:32.479Z",
   "scorers": [
     {
       "name": "Kylian Mbappé",
       "teamId": "FRA",
       "teamName": "France",
-      "goals": 9,
+      "goals": 10,
       "assists": 4,
       "penalties": 1,
       "playedMatches": 8
@@ -29,6 +29,15 @@
       "playedMatches": 6
     },
     {
+      "name": "Jude Bellingham",
+      "teamId": "ENG",
+      "teamName": "England",
+      "goals": 7,
+      "assists": 1,
+      "penalties": 0,
+      "playedMatches": 8
+    },
+    {
       "name": "Harry Kane",
       "teamId": "ENG",
       "teamName": "England",
@@ -38,11 +47,11 @@
       "playedMatches": 8
     },
     {
-      "name": "Jude Bellingham",
-      "teamId": "ENG",
-      "teamName": "England",
+      "name": "Ousmane Dembélé",
+      "teamId": "FRA",
+      "teamName": "France",
       "goals": 6,
-      "assists": 1,
+      "assists": 2,
       "penalties": 0,
       "playedMatches": 8
     },
@@ -54,15 +63,6 @@
       "assists": 1,
       "penalties": 1,
       "playedMatches": 7
-    },
-    {
-      "name": "Ousmane Dembélé",
-      "teamId": "FRA",
-      "teamName": "France",
-      "goals": 5,
-      "assists": 2,
-      "penalties": 0,
-      "playedMatches": 8
     },
     {
       "name": "Julián Quiñones",
@@ -243,6 +243,15 @@
       "assists": 1,
       "penalties": 0,
       "playedMatches": 6
+    },
+    {
+      "name": "Bukayo Saka",
+      "teamId": "ENG",
+      "teamName": "England",
+      "goals": 3,
+      "assists": 3,
+      "penalties": 1,
+      "playedMatches": 8
     },
     {
       "name": "Cyle Larin",
@@ -504,15 +513,6 @@
       "assists": 0,
       "penalties": 0,
       "playedMatches": 7
-    },
-    {
-      "name": "Bukayo Saka",
-      "teamId": "ENG",
-      "teamName": "England",
-      "goals": 2,
-      "assists": 3,
-      "penalties": 0,
-      "playedMatches": 8
     },
     {
       "name": "Ladislav Krejčí",
